@@ -3,6 +3,7 @@ import _ from 'lodash';
 import csv from 'csv';
 
 const DATA_DIR = './src/data';
+const WEEKDAYS = ['Thứ hai', 'Thứ ba', 'Thứ tư', 'Thứ năm', 'Thứ sáu', 'Thứ 7', 'Chủ nhật'];
 
 function resolveDailySchedulesRecords(records) {
   const dailySchedules = [];
@@ -47,24 +48,27 @@ function resolveDailySchedulesRecords(records) {
   return dailySchedules;
 }
 
+function mapWeekDays(weekDays) {
+  const titles = _.slice(WEEKDAYS, 0, weekDays.length);
+  const pairs = _.zip(titles, weekDays);
+  return _.map(pairs, ([title, exercises]) => ({ title, exercises }));
+}
+
 function resolveWeeklySchedulesRecords(records) {
   const schedulesMapping = {};
 
   _.each(records, row => {
-    const [code, week, ...weekdays] = row;
+    const [code, weekNumber, ...weekdays] = row;
     schedulesMapping[code] = schedulesMapping[code] || {};
-    schedulesMapping[code][week] = weekdays;
+    schedulesMapping[code][weekNumber] = mapWeekDays(weekdays);
   });
 
   const schedulesPairs = _.toPairs(schedulesMapping);
 
   return _.map(schedulesPairs, ([code, schedulesByWeek]) => {
     const weekPairs = _.toPairs(schedulesByWeek);
-    const weekSchedules = _.map(weekPairs, ([week, weekDays]) => {
-      const weekNumber = parseInt(week.replace('week_', ''), 10);
-      return { weekNumber, weekDays };
-    });
-    return { code, weekSchedules };
+    const byWeeks = _.map(weekPairs, ([weekNumber, weekDays]) => ({ weekNumber, weekDays }));
+    return { code, byWeeks };
   });
 }
 

@@ -1,3 +1,5 @@
+import fs from 'fs';
+import _ from 'lodash';
 import Handlebars from 'handlebars/runtime';
 
 import './configs/templates.handlebars';
@@ -17,6 +19,12 @@ registerPartials();
 
 /* eslint-disable import/prefer-default-export */
 
-export async function renderWeeklySchedules(schedules) {
-  return Handlebars.templates.weekly({ schedule: schedules[0] });
+export function renderWeeklySchedule(schedule) {
+  const { code, byWeeks } = schedule;
+
+  _.each(byWeeks, ({ weekNumber, weekDays }) => {
+    const fileName = `${code}_${weekNumber}`;
+    const html = Handlebars.templates.weekly({ code, weekNumber, weekDays });
+    fs.writeFileSync(`./outputs/weekly/${fileName}.html`, html, 'utf-8');
+  });
 }
