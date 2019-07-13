@@ -1,5 +1,6 @@
 {
   "env": {
+    "browser": true,
     "node": true
   },
   "extends": [
@@ -10,6 +11,14 @@
     "arrow-parens": [
       "error",
       "as-needed"
+    ],
+    "no-console": [
+      "error",
+      {
+        "allow": [
+          "warn"
+        ]
+      }
     ]
   }
 }

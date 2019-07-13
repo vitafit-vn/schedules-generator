@@ -1,8 +1,6 @@
-import fs from 'fs';
 import _ from 'lodash';
 import csv from 'csv';
 
-const DATA_DIR = './src/data';
 const WEEKDAYS = ['Thứ hai', 'Thứ ba', 'Thứ tư', 'Thứ năm', 'Thứ sáu', 'Thứ 7', 'Chủ nhật'];
 
 function resolveDailySchedulesRecords(records) {
@@ -17,7 +15,8 @@ function resolveDailySchedulesRecords(records) {
     if (!_.isEmpty(scheduleName)) {
       // Save current schedule
       if (!_.isEmpty(currentSchedule)) {
-        dailySchedules.push({ name: currentSchedule, exercises: currentExercises });
+        const [code, muscles] = currentSchedule.split(/\s*[()]/);
+        dailySchedules.push({ code, muscles, exercises: currentExercises });
       }
 
       // Move to next schedule
@@ -72,8 +71,7 @@ function resolveWeeklySchedulesRecords(records) {
   });
 }
 
-export function parseDailySchedules(level) {
-  const csvData = fs.readFileSync(`${DATA_DIR}/daily_schedules/${level}.csv`, 'utf-8');
+function parseCsvData(csvData, parser) {
   const stringifiedCsvData = String(csvData);
 
   return new Promise((resolve, reject) => {
@@ -83,25 +81,15 @@ export function parseDailySchedules(level) {
         return;
       }
 
-      const schedules = resolveDailySchedulesRecords(records);
-      resolve(schedules);
+      resolve(parser(records));
     });
   });
 }
 
-export function parseWeeklySchedules() {
-  const csvData = fs.readFileSync(`${DATA_DIR}/weekly_schedules.csv`, 'utf-8');
-  const stringifiedCsvData = String(csvData);
+export function parseDailySchedules(csvData) {
+  return parseCsvData(csvData, resolveDailySchedulesRecords);
+}
 
-  return new Promise((resolve, reject) => {
-    csv.parse(stringifiedCsvData, (error, records) => {
-      if (error != null) {
-        reject(error);
-        return;
-      }
-
-      const schedules = resolveWeeklySchedulesRecords(records);
-      resolve(schedules);
-    });
-  });
+export function parseWeeklySchedules(csvData) {
+  return parseCsvData(csvData, resolveWeeklySchedulesRecords);
 }

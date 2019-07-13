@@ -1,32 +1,49 @@
 function toggleLoading(loading) {
   if (!loading) {
     $('.loading-ring').addClass('hidden');
-    $('#reports-input')[0].value = null;
     return;
   }
 
   $('.loading-ring').removeClass('hidden');
-  $('#report-container').empty();
+  $('#schedule-container').empty();
 }
 
 function downloadSchedule(schedule, checksum, userId) {
-  const reportBlob = new Blob([schedule], { type: 'text/html;charset=utf-8' });
-  const anchor = document.createElement('a', { id: 'report-download' });
-  anchor.href = URL.createObjectURL(reportBlob);
+  const scheduleBlob = new Blob([schedule], { type: 'text/html;charset=utf-8' });
+  const anchor = document.createElement('a', { id: 'schedule-download' });
+  anchor.href = URL.createObjectURL(scheduleBlob);
   anchor.download = `${userId}_${checksum.substring(checksum.length - 6)}.html`;
   anchor.click();
 }
 
-async function handleInputFiles() {
+async function handleInputData() {
   try {
     toggleLoading(true);
 
-    const [record] = records;
-    const report = await ZCR.renderChartReading(record);
+    const checksum = 'abc123';
+    const userId = 'KH0001';
+    const record = {
+      code: 'WS08',
+      byWeeks: [
+        {
+          weekNumber: 'week_1',
+          weekDays: [
+            'UPPER-3',
+            'LOWER-4',
+            'NGHỈ',
+            'UPPER-4',
+            'LOWER-3',
+            'NGHỈ',
+            'CARDIO-1\nCARDIO-2\nCARDIO-3\nCARDIO-4',
+          ],
+        },
+      ],
+    };
+    const schedule = await VSG.renderWeeklySchedule(record, 'week_1');
 
     toggleLoading(false);
-    downloadReport(report, record);
-    $('#report-wrapper').html(report);
+    downloadSchedule(schedule, checksum, userId);
+    $('#schedule-wrapper').html(schedule);
   } catch (error) {
     toggleLoading(false);
     console.debug(error);
