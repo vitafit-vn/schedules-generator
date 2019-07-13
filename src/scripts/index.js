@@ -22,23 +22,7 @@ async function handleInputData() {
 
     const checksum = 'abc123';
     const userId = 'KH0001';
-    const record = {
-      code: 'WS08',
-      byWeeks: [
-        {
-          weekNumber: 'week_1',
-          weekDays: [
-            'UPPER-3',
-            'LOWER-4',
-            'NGHỈ',
-            'UPPER-4',
-            'LOWER-3',
-            'NGHỈ',
-            'CARDIO-1\nCARDIO-2\nCARDIO-3\nCARDIO-4',
-          ],
-        },
-      ],
-    };
+    const record = _.sample(window.VSG.weeklySchedules);
     const schedule = await VSG.renderWeeklySchedule(record, 'week_1');
 
     toggleLoading(false);
