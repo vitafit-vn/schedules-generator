@@ -6,7 +6,8 @@
   "author": "Ethan Nguyen <thanhnx.605@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "generate": "babel-node ./src/app.js"
+    "generate": "babel-node ./src/app.js",
+    "precompile-templates": "handlebars -m -e html src/templates -f src/configs/templates.handlebars -c handlebars/runtime"
   },
   "devDependencies": {
     "@babel/cli": "^7.5.0",
