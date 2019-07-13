@@ -1,8 +1,8 @@
 <html>
-
-<body>
-  <div>
+  {{> htmlHead }}
+  <body>
     <div class="schedule">
+      <div class="logo"></div>
       <p>Code: {{code}}</p>
       <p>Week number: {{weekNumber}}</p>
       <p>Week days:</p>
@@ -11,7 +11,5 @@
         <p>{{exercises}}</p>
       {{/each}}
     </div>
-  </div>
-</body>
-
+  </body>
 </html>
