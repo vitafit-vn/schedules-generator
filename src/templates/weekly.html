@@ -3,7 +3,13 @@
 <body>
   <div>
     <div class="schedule">
-      <p>Hello World!</p>
+      <p>Code: {{code}}</p>
+      <p>Week number: {{weekNumber}}</p>
+      <p>Week days:</p>
+      {{#each weekDays}}
+        <p>{{title}}</p>
+        <p>{{exercises}}</p>
+      {{/each}}
     </div>
   </div>
 </body>
