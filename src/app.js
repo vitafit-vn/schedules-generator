@@ -1,11 +1,12 @@
 // Locals
-import { parseDailySchedules } from './parsers';
+import { /* parseDailySchedules, */ parseWeeklySchedules } from './parsers';
 
 async function parseAndGenerate() {
   try {
-    // const beginnerRecords = await parseDailySchedules('beginner');
-    const intermediateRecords = await parseDailySchedules('intermediate');
-    console.debug(JSON.stringify(intermediateRecords, null, 2));
+    // const beginnerDailySchedules = await parseDailySchedules('beginner');
+    // const intermediateDailySchedules = await parseDailySchedules('intermediate');
+    const weeklySchedules = await parseWeeklySchedules();
+    console.debug(JSON.stringify(weeklySchedules, null, 2));
   } catch (error) {
     console.error(error);
   }
