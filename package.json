@@ -1,0 +1,25 @@
+{
+  "name": "schedules-generator",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:vitafit-vn/schedules-generator.git",
+  "author": "Ethan Nguyen <thanhnx.605@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.5.0",
+    "@babel/core": "^7.5.4",
+    "@babel/node": "^7.5.0",
+    "@babel/plugin-transform-runtime": "^7.5.0",
+    "@babel/preset-env": "^7.5.4",
+    "babel-eslint": "^10.0.2",
+    "eslint": "^6.0.1",
+    "eslint-config-airbnb-base": "^13.2.0",
+    "eslint-plugin-import": "^2.18.0"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.5.4",
+    "csv": "^5.1.1",
+    "handlebars": "^4.1.2",
+    "lodash": "^4.17.14"
+  }
+}
