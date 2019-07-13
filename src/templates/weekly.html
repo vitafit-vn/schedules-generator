@@ -3,13 +3,27 @@
   <body>
     <div class="schedule">
       <div class="logo"></div>
-      <p>Code: {{code}}</p>
-      <p>Week number: {{weekNumber}}</p>
-      <p>Week days:</p>
-      {{#each weekDays}}
-        <p>{{title}}</p>
-        <p>{{exercises}}</p>
-      {{/each}}
+      <table>
+        <tr>
+          <td>Khách hàng: {{userInfo.name}}</td>
+          <td>
+            Chiều cao: {{userInfo.height}} cm<br />
+            Cân nặng: {{userInfo.height}} cm
+          </td>
+        </tr>
+      </table>
+      <table>
+        <tr>
+          {{#each weekDays}}
+            <td>{{title}}</td>
+          {{/each}}
+        </tr>
+        <tr>
+          {{#each weekDays}}
+            <td><span style="white-space: pre-line">{{exercises}}</span></td>
+          {{/each}}
+        </tr>
+      </table>
     </div>
   </body>
 </html>

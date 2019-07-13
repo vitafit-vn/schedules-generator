@@ -1,3 +1,21 @@
+function setupWeeklyCodeSelect() {
+  const weeklyCodeOptions = _.map(
+    window.VSG.weeklySchedules,
+    ({ code }) => `<option value="${code}">${code}</option>`,
+  );
+  $('#user-data select[name=weekly_code]').html(weeklyCodeOptions);
+}
+
+function setupWeekNumberSelect() {
+  const weeklyCode = $('#user-data select[name=weekly_code]').val();
+  const weeklyData = _.find(window.VSG.weeklySchedules, { code: weeklyCode });
+  const weekNumberOptions = _.map(
+    weeklyData.byWeeks,
+    ({ weekNumber }) => `<option value="${weekNumber}">${weekNumber}</option>`,
+  );
+  $('#user-data select[name=week_number]').html(weekNumberOptions);
+}
+
 function toggleLoading(loading) {
   if (!loading) {
     $('.loading-ring').addClass('hidden');
@@ -6,6 +24,26 @@ function toggleLoading(loading) {
 
   $('.loading-ring').removeClass('hidden');
   $('#schedule-container').empty();
+}
+
+async function generateScheduleFromInputs() {
+  const userId = $('#user-data input[name=user_id]').val();
+  const name = $('#user-data input[name=full_name]').val();
+  const height = $('#user-data input[name=height]').val();
+  const weight = $('#user-data input[name=weight]').val();
+  const weeklyCode = $('#user-data select[name=weekly_code]').val();
+  const weekNumber = $('#user-data select[name=week_number]').val();
+  const checksum = window.VSG.computeChecksum(userId, height, weight);
+  const userInfo = {
+    userId,
+    name,
+    height,
+    weight,
+  };
+  const weeklyData = _.find(window.VSG.weeklySchedules, { code: weeklyCode });
+  const schedule = await VSG.renderWeeklySchedule(weeklyData, weekNumber, userInfo);
+
+  return { checksum, schedule, userId };
 }
 
 function downloadSchedule(schedule, checksum, userId) {
@@ -20,13 +58,10 @@ async function handleInputData() {
   try {
     toggleLoading(true);
 
-    const checksum = 'abc123';
-    const userId = 'KH0001';
-    const record = _.sample(window.VSG.weeklySchedules);
-    const schedule = await VSG.renderWeeklySchedule(record, 'week_1');
+    const { checksum, schedule, userId } = await generateScheduleFromInputs();
 
     toggleLoading(false);
-    downloadSchedule(schedule, checksum, userId);
+    // downloadSchedule(schedule, checksum, userId);
     $('#schedule-wrapper').html(schedule);
   } catch (error) {
     toggleLoading(false);
@@ -35,5 +70,7 @@ async function handleInputData() {
   }
 }
 
-// $(document).ready(() => {
-// });
+$(document).ready(() => {
+  setupWeeklyCodeSelect();
+  setupWeekNumberSelect();
+});
