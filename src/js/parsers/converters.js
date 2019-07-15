@@ -67,6 +67,6 @@ export function convertWeeklySchedulesRecords(records) {
   return _.map(schedulesPairs, ([code, schedulesByWeek]) => {
     const weekPairs = _.toPairs(schedulesByWeek);
     const byWeeks = _.map(weekPairs, ([weekNumber, weekDays]) => ({ weekNumber, weekDays }));
-    return { code, byWeeks };
+    return { byWeeks, code };
   });
 }

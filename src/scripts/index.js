@@ -1,17 +1,16 @@
 function setupWeeklyCodeSelect() {
   const weeklyCodeOptions = _.map(
-    window.VSG.WEEKLY_SCHEDULES,
-    ({ code }) => `<option value="${code}">${code}</option>`,
+    window.VSG.WEEKLY_CODES,
+    code => `<option value="${code}">${code}</option>`,
   );
   $('#user-data select[name=weekly_code]').html(weeklyCodeOptions);
 }
 
 function setupWeekNumberSelect() {
   const weeklyCode = $('#user-data select[name=weekly_code]').val();
-  const weeklyData = _.find(window.VSG.WEEKLY_SCHEDULES, { code: weeklyCode });
   const weekNumberOptions = _.map(
-    weeklyData.byWeeks,
-    ({ weekNumber }) => `<option value="${weekNumber}">${weekNumber}</option>`,
+    window.VSG.WEEK_NUMBERS_BY_CODE[weeklyCode],
+    weekNumber => `<option value="${weekNumber}">${weekNumber}</option>`,
   );
   $('#user-data select[name=week_number]').html(weekNumberOptions);
 }

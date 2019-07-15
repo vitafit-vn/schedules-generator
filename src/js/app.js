@@ -1,10 +1,9 @@
-import { DAILY_SCHEDULES, WEEKLY_SCHEDULES } from './constants';
+import * as constants from './constants';
 import { renderWeeklySchedule } from './renderers';
 import { computeChecksum } from './utils';
 
 window.VSG = {
-  DAILY_SCHEDULES,
-  WEEKLY_SCHEDULES,
+  ...constants,
   computeChecksum,
   renderWeeklySchedule,
 };
