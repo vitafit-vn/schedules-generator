@@ -1,6 +1,6 @@
 function setupWeeklyCodeSelect() {
   const weeklyCodeOptions = _.map(
-    window.VSG.weeklySchedules,
+    window.VSG.WEEKLY_SCHEDULES,
     ({ code }) => `<option value="${code}">${code}</option>`,
   );
   $('#user-data select[name=weekly_code]').html(weeklyCodeOptions);
@@ -8,7 +8,7 @@ function setupWeeklyCodeSelect() {
 
 function setupWeekNumberSelect() {
   const weeklyCode = $('#user-data select[name=weekly_code]').val();
-  const weeklyData = _.find(window.VSG.weeklySchedules, { code: weeklyCode });
+  const weeklyData = _.find(window.VSG.WEEKLY_SCHEDULES, { code: weeklyCode });
   const weekNumberOptions = _.map(
     weeklyData.byWeeks,
     ({ weekNumber }) => `<option value="${weekNumber}">${weekNumber}</option>`,
@@ -40,7 +40,7 @@ async function generateScheduleFromInputs() {
     height,
     weight,
   };
-  const weeklyData = _.find(window.VSG.weeklySchedules, { code: weeklyCode });
+  const weeklyData = _.find(window.VSG.WEEKLY_SCHEDULES, { code: weeklyCode });
   const schedule = await VSG.renderWeeklySchedule(weeklyData, weekNumber, userInfo);
 
   return { checksum, schedule, userId };

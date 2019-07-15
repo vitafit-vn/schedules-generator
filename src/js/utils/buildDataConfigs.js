@@ -2,7 +2,7 @@ import fs from 'fs';
 import _ from 'lodash';
 
 // Locals
-import { parseDailySchedules, parseWeeklySchedules } from './parsers';
+import { parseDailySchedules, parseWeeklySchedules } from '../parsers';
 
 const CONFIGS_DIR = './src/js/configs';
 const DATA_DIR = './src/js/data';

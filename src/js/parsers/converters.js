@@ -1,9 +1,15 @@
 import _ from 'lodash';
-import csv from 'csv';
 
-const WEEKDAYS = ['Thứ hai', 'Thứ ba', 'Thứ tư', 'Thứ năm', 'Thứ sáu', 'Thứ 7', 'Chủ nhật'];
+// Locals
+import { WEEKDAYS } from '../constants';
 
-function resolveDailySchedulesRecords(records) {
+function mapWeekDays(weekDays) {
+  const titles = _.slice(WEEKDAYS, 0, weekDays.length);
+  const pairs = _.zip(titles, weekDays);
+  return _.map(pairs, ([title, exercises]) => ({ title, exercises }));
+}
+
+export function convertDailySchedulesRecords(records) {
   const dailySchedules = [];
   let currentSchedule;
   let currentExercises = [];
@@ -47,13 +53,7 @@ function resolveDailySchedulesRecords(records) {
   return dailySchedules;
 }
 
-function mapWeekDays(weekDays) {
-  const titles = _.slice(WEEKDAYS, 0, weekDays.length);
-  const pairs = _.zip(titles, weekDays);
-  return _.map(pairs, ([title, exercises]) => ({ title, exercises }));
-}
-
-function resolveWeeklySchedulesRecords(records) {
+export function convertWeeklySchedulesRecords(records) {
   const schedulesMapping = {};
 
   _.each(records, row => {
@@ -69,27 +69,4 @@ function resolveWeeklySchedulesRecords(records) {
     const byWeeks = _.map(weekPairs, ([weekNumber, weekDays]) => ({ weekNumber, weekDays }));
     return { code, byWeeks };
   });
-}
-
-function parseCsvData(csvData, parser) {
-  const stringifiedCsvData = String(csvData);
-
-  return new Promise((resolve, reject) => {
-    csv.parse(stringifiedCsvData, (error, records) => {
-      if (error != null) {
-        reject(error);
-        return;
-      }
-
-      resolve(parser(records));
-    });
-  });
-}
-
-export function parseDailySchedules(csvData) {
-  return parseCsvData(csvData, resolveDailySchedulesRecords);
-}
-
-export function parseWeeklySchedules(csvData) {
-  return parseCsvData(csvData, resolveWeeklySchedulesRecords);
 }
