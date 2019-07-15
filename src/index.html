@@ -15,42 +15,49 @@
 <body>
   <div>
     <h1>Công cụ tạo lịch tập</h1>
-    <form id="user-data" action="javascript: handleInputData();">
+    <form id="user-data" action="javascript: showSchedules();">
       <table>
         <tr>
-          <td>Mã KH: <input type="text" name="user_id"></td>
-          <td>Họ và tên: <input type="text" name="full_name"></td>
+          <td>Mã KH:</td>
+          <td><input type="text" name="user_id"></td>
+          <td></td>
+          <td>Họ và tên:</td>
+          <td><input type="text" name="full_name"></td>
         </tr>
         <tr>
-          <td>Chiều cao: <input type="text" name="height"></td>
-          <td>Cân nặng: <input type="text" name="weight"></td>
+          <td>Chiều cao:</td>
+          <td><input type="text" name="height"></td>
+          <td>(cm)</td>
+          <td>Cân nặng:</td>
+          <td><input type="text" name="weight"></td>
+          <td>(kg)</td>
         </tr>
         <tr>
-          <td>
-            Preset lịch tuần: <select name="weekly_code" onchange="setupWeekNumberSelect()"></select>
-          </td>
-          <td>
-            Tuần: <select name="week_number"></select>
-          </td>
+          <td>Trình độ:</td>
+          <td><select name="workout_level" onchange="setupWorkoutLevelSelect()"></select></td>
         </tr>
         <tr>
-          <td>
-            Trình độ: <select name="workout_level" onchange="setupWorkoutLevelSelect()"></select>
-          </td>
+          <td>Preset lịch tuần:</td>
+          <td><select name="weekly_code" onchange="setupWeekNumberSelect()"></select></td>
+          <td></td>
+          <td>Tuần:</td>
+          <td><select name="week_number"></select></td>
         </tr>
         <tr>
+          <td><input type="submit" value="Tạo lịch"></td>
+          <td><input onclick="downloadSchedules()" type="button" value="Tải file HTML"></td>
+          <td></td>
           <td>
-            <input type="submit" value="Tạo">
+            <div class="loading-ring hidden">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
           </td>
         </tr>
       </table>
     </form>
-    <div class="loading-ring hidden">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
   </div>
-  <div id="schedule-wrapper"></div>
+  <div id="schedules-wrapper"></div>
 </body>
