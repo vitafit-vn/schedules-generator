@@ -1,9 +1,15 @@
-import * as constants from './constants';
+import _ from 'lodash';
+import $$ from 'lodash/fp';
+
+import * as CONSTANTS from './constants';
 import { renderWeeklySchedule } from './renderers';
 import { computeChecksum } from './utils';
 
-window.VSG = {
-  ...constants,
+const UTILS = {
   computeChecksum,
   renderWeeklySchedule,
 };
+
+const VSG = { CONSTANTS, UTILS };
+
+Object.assign(window, { VSG, _, $$ });

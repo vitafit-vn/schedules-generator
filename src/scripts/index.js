@@ -37,10 +37,10 @@ function generateScheduleFromInputs() {
   };
   const weeklyCode = $('#user-data select[name=weekly_code]').val();
   const weekNumber = $('#user-data select[name=week_number]').val();
-  const weeklyData = _.find(window.VSG.WEEKLY_SCHEDULES, { code: weeklyCode });
-  const schedule = VSG.renderWeeklySchedule(weeklyData, weekNumber, userInfo);
+  const weeklyData = _.find(VSG.CONSTANTS.WEEKLY_SCHEDULES, { code: weeklyCode });
+  const schedule = VSG.UTILS.renderWeeklySchedule(weeklyData, weekNumber, userInfo);
 
-  const checksum = window.VSG.computeChecksum(userId, height, weight);
+  const checksum = VSG.UTILS.computeChecksum(userId, height, weight);
   return { checksum, schedule, userId };
 }
 
