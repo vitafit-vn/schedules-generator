@@ -19,6 +19,13 @@ const WEEK_NUMBERS_BY_CODE = $.flow(
 
 const WEEKDAYS = ['Thứ hai', 'Thứ ba', 'Thứ tư', 'Thứ năm', 'Thứ sáu', 'Thứ bảy', 'Chủ nhật'];
 
+const WORKOUT_LEVELS = ['beginner', 'intermediate'];
+
 export {
-  DAILY_SCHEDULES, WEEKDAYS, WEEKLY_CODES, WEEKLY_SCHEDULES, WEEK_NUMBERS_BY_CODE,
+  DAILY_SCHEDULES,
+  WEEKDAYS,
+  WEEKLY_CODES,
+  WEEKLY_SCHEDULES,
+  WEEK_NUMBERS_BY_CODE,
+  WORKOUT_LEVELS,
 };

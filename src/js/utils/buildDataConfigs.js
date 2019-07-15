@@ -2,13 +2,14 @@ import fs from 'fs';
 import _ from 'lodash';
 
 // Locals
+import { WORKOUT_LEVELS } from '../constants';
 import { parseDailySchedules, parseWeeklySchedules } from '../parsers';
 
 const CONFIGS_DIR = './src/js/configs';
 const DATA_DIR = './src/js/data';
 
 function buildDailyScheduleConfigs() {
-  _.each(['beginner', 'intermediate'], async level => {
+  _.each(WORKOUT_LEVELS, async level => {
     try {
       const csvData = fs.readFileSync(`${DATA_DIR}/daily_schedules/${level}.csv`, 'utf-8');
       const dailySchedules = await parseDailySchedules(csvData);

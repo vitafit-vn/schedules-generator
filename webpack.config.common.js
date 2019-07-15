@@ -91,8 +91,9 @@ module.exports = {
     }),
     new CopyPlugin([
       {
-        from: './src/scripts/index.js',
-        to: './scripts.js',
+        from: './src/scripts/',
+        to: './scripts/',
+        test: /\.png$/,
       },
     ]),
     new FaviconsPlugin({
