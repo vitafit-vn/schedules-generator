@@ -7,10 +7,10 @@
   "license": "MIT",
   "scripts": {
     "build": "webpack --config webpack.config.prod.js",
-    "build:data-configs": "babel-node ./src/js/utils/buildDataConfigs.js",
-    "build:templates": "handlebars src/templates -f src/js/configs/templates.handlebars --min --extension html -c handlebars/runtime",
+    "build:data-configs": "babel-node ./src/tasks/buildDataConfigs.js",
+    "build:templates": "handlebars src/templates -f src/app/configs/templates.handlebars --min --extension html -c handlebars/runtime",
     "lint:html": "pa11y-ci ./src/**/*.html",
-    "lint:js": "./node_modules/.bin/eslint src/js/**/*.js",
+    "lint:js": "eslint src/app/**/*.js",
     "lint:styles": "stylelint \"src/**/*.scss\"",
     "prebuild": "yarn build:templates",
     "start": "webpack --config webpack.config.prod.js && http-server ./dist -o",
