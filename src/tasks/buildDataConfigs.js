@@ -3,7 +3,7 @@ import _ from 'lodash';
 
 // Locals
 import CONSTANTS from '../app/constants';
-import { parseDailySchedules, parseWeeklySchedules } from './parsers';
+import { parseDailySchedules, parseExercisesDatabase, parseWeeklySchedules } from './parsers';
 
 const CONFIGS_DIR = './src/app/configs';
 const DATA_DIR = './src/tasks/data';
@@ -23,6 +23,19 @@ function buildDailyScheduleConfigs() {
   });
 }
 
+async function buildExercisesDatabaseConfigs() {
+  try {
+    const csvData = fs.readFileSync(`${DATA_DIR}/exercises_database.csv`, 'utf-8');
+    const exercisesDatabase = await parseExercisesDatabase(csvData);
+    fs.writeFileSync(
+      `${CONFIGS_DIR}/exercises_database.json`,
+      JSON.stringify(exercisesDatabase, null, 2),
+    );
+  } catch (error) {
+    throw error;
+  }
+}
+
 async function buildWeeklyScheduleConfigs() {
   try {
     const csvData = fs.readFileSync(`${DATA_DIR}/weekly_schedules.csv`, 'utf-8');
@@ -37,6 +50,7 @@ async function buildWeeklyScheduleConfigs() {
 }
 
 try {
+  buildExercisesDatabaseConfigs();
   buildWeeklyScheduleConfigs();
   buildDailyScheduleConfigs();
 } catch (error) {

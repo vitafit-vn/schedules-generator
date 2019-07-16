@@ -22,6 +22,10 @@ export function parseDailySchedules(csvData) {
   return parseCsvData(csvData, convertDailySchedulesRecords);
 }
 
+export function parseExercisesDatabase(csvData) {
+  return parseCsvData(csvData, convertDailySchedulesRecords);
+}
+
 export function parseWeeklySchedules(csvData) {
   return parseCsvData(csvData, convertWeeklySchedulesRecords);
 }

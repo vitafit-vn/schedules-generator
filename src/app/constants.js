@@ -4,6 +4,7 @@ import $ from 'lodash/fp';
 // Locals
 import DAILY_SCHEDULES_BEGINNER from './configs/daily_schedules_beginner.json';
 import DAILY_SCHEDULES_INTERMEDIATE from './configs/daily_schedules_intermediate.json';
+import EXERCISES_DATABASE from './configs/exercises_database.json';
 import WEEKLY_SCHEDULES from './configs/weekly_schedules.json';
 
 const WORKOUT_LEVELS = ['beginner', 'intermediate'];
@@ -26,6 +27,7 @@ const WEEKDAYS = ['Thứ hai', 'Thứ ba', 'Thứ tư', 'Thứ năm', 'Thứ sá
 
 export default {
   DAILY_SCHEDULES,
+  EXERCISES_DATABASE,
   OFF_DAY,
   WEEKDAYS,
   WEEKLY_CODES,

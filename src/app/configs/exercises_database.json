@@ -1,0 +1,394 @@
+[
+  {
+    "code": "AB01",
+    "exercises": []
+  },
+  {
+    "code": "AB02",
+    "exercises": []
+  },
+  {
+    "code": "AB03",
+    "exercises": []
+  },
+  {
+    "code": "AB04",
+    "exercises": []
+  },
+  {
+    "code": "AB05",
+    "exercises": []
+  },
+  {
+    "code": "AB06",
+    "exercises": []
+  },
+  {
+    "code": "BC01",
+    "exercises": []
+  },
+  {
+    "code": "BC02",
+    "exercises": []
+  },
+  {
+    "code": "BC03",
+    "exercises": []
+  },
+  {
+    "code": "BC04",
+    "exercises": []
+  },
+  {
+    "code": "BC05",
+    "exercises": []
+  },
+  {
+    "code": "BC06",
+    "exercises": []
+  },
+  {
+    "code": "BC07",
+    "exercises": []
+  },
+  {
+    "code": "BL01",
+    "exercises": []
+  },
+  {
+    "code": "BL02",
+    "exercises": []
+  },
+  {
+    "code": "BL03",
+    "exercises": []
+  },
+  {
+    "code": "BL04",
+    "exercises": []
+  },
+  {
+    "code": "BL05",
+    "exercises": []
+  },
+  {
+    "code": "BL06",
+    "exercises": []
+  },
+  {
+    "code": "BL07",
+    "exercises": []
+  },
+  {
+    "code": "BL08",
+    "exercises": []
+  },
+  {
+    "code": "BL09",
+    "exercises": []
+  },
+  {
+    "code": "BL10",
+    "exercises": []
+  },
+  {
+    "code": "BL11",
+    "exercises": []
+  },
+  {
+    "code": "BL12",
+    "exercises": []
+  },
+  {
+    "code": "BL13",
+    "exercises": []
+  },
+  {
+    "code": "BL14",
+    "exercises": []
+  },
+  {
+    "code": "BL15",
+    "exercises": []
+  },
+  {
+    "code": "BP01",
+    "exercises": []
+  },
+  {
+    "code": "BP02",
+    "exercises": []
+  },
+  {
+    "code": "BP03",
+    "exercises": []
+  },
+  {
+    "code": "BP04",
+    "exercises": []
+  },
+  {
+    "code": "BP05",
+    "exercises": []
+  },
+  {
+    "code": "BP06",
+    "exercises": []
+  },
+  {
+    "code": "BP07",
+    "exercises": []
+  },
+  {
+    "code": "BP08",
+    "exercises": []
+  },
+  {
+    "code": "CD01",
+    "exercises": []
+  },
+  {
+    "code": "CD02",
+    "exercises": []
+  },
+  {
+    "code": "CD03",
+    "exercises": []
+  },
+  {
+    "code": "CD04",
+    "exercises": []
+  },
+  {
+    "code": "CD05",
+    "exercises": []
+  },
+  {
+    "code": "CD06",
+    "exercises": []
+  },
+  {
+    "code": "CD07",
+    "exercises": []
+  },
+  {
+    "code": "CD08",
+    "exercises": []
+  },
+  {
+    "code": "CD09",
+    "exercises": []
+  },
+  {
+    "code": "DL01",
+    "exercises": []
+  },
+  {
+    "code": "DL02",
+    "exercises": []
+  },
+  {
+    "code": "DL03",
+    "exercises": []
+  },
+  {
+    "code": "DL04",
+    "exercises": []
+  },
+  {
+    "code": "DL05",
+    "exercises": []
+  },
+  {
+    "code": "DL06",
+    "exercises": []
+  },
+  {
+    "code": "DL07",
+    "exercises": []
+  },
+  {
+    "code": "DL08",
+    "exercises": []
+  },
+  {
+    "code": "FS01",
+    "exercises": []
+  },
+  {
+    "code": "FS02",
+    "exercises": []
+  },
+  {
+    "code": "FS03",
+    "exercises": []
+  },
+  {
+    "code": "DK01",
+    "exercises": []
+  },
+  {
+    "code": "HT01",
+    "exercises": []
+  },
+  {
+    "code": "HT02",
+    "exercises": []
+  },
+  {
+    "code": "HT03",
+    "exercises": []
+  },
+  {
+    "code": "HT04",
+    "exercises": []
+  },
+  {
+    "code": "LC01",
+    "exercises": []
+  },
+  {
+    "code": "LC02",
+    "exercises": []
+  },
+  {
+    "code": "LC03",
+    "exercises": []
+  },
+  {
+    "code": "LE01",
+    "exercises": []
+  },
+  {
+    "code": "LP01",
+    "exercises": []
+  },
+  {
+    "code": "LP02",
+    "exercises": []
+  },
+  {
+    "code": "LU01",
+    "exercises": []
+  },
+  {
+    "code": "LU02",
+    "exercises": []
+  },
+  {
+    "code": "LU03",
+    "exercises": []
+  },
+  {
+    "code": "RD01",
+    "exercises": []
+  },
+  {
+    "code": "RD02",
+    "exercises": []
+  },
+  {
+    "code": "RP01",
+    "exercises": []
+  },
+  {
+    "code": "SO01",
+    "exercises": []
+  },
+  {
+    "code": "SO02",
+    "exercises": []
+  },
+  {
+    "code": "SO03",
+    "exercises": []
+  },
+  {
+    "code": "SO04",
+    "exercises": []
+  },
+  {
+    "code": "SP01",
+    "exercises": []
+  },
+  {
+    "code": "SP02",
+    "exercises": []
+  },
+  {
+    "code": "SP03",
+    "exercises": []
+  },
+  {
+    "code": "SP04",
+    "exercises": []
+  },
+  {
+    "code": "SP05",
+    "exercises": []
+  },
+  {
+    "code": "SP06",
+    "exercises": []
+  },
+  {
+    "code": "SQ01",
+    "exercises": []
+  },
+  {
+    "code": "SQ02",
+    "exercises": []
+  },
+  {
+    "code": "SQ03",
+    "exercises": []
+  },
+  {
+    "code": "SQ04",
+    "exercises": []
+  },
+  {
+    "code": "SQ05",
+    "exercises": []
+  },
+  {
+    "code": "SQ06",
+    "exercises": []
+  },
+  {
+    "code": "SQ07",
+    "exercises": []
+  },
+  {
+    "code": "SQ08",
+    "exercises": []
+  },
+  {
+    "code": "SQ09",
+    "exercises": []
+  },
+  {
+    "code": "TC01",
+    "exercises": []
+  },
+  {
+    "code": "TC02",
+    "exercises": []
+  },
+  {
+    "code": "TC03",
+    "exercises": []
+  },
+  {
+    "code": "TC04",
+    "exercises": []
+  },
+  {
+    "code": "TC05",
+    "exercises": []
+  },
+  {
+    "name": "TC06",
+    "exercises": []
+  }
+]

@@ -5,8 +5,6 @@
     "exercises": [
       {
         "code": "BP02",
-        "difficulty": "Khó",
-        "muscle": "Ngực",
         "name": "Dumbbell Bench Press",
         "reps": "5",
         "rest": "",
@@ -15,8 +13,6 @@
       },
       {
         "code": "BL04",
-        "difficulty": "Khó",
-        "muscle": "Lưng - Xô",
         "name": "Dumbbell Row",
         "reps": "15",
         "rest": "",
@@ -25,8 +21,6 @@
       },
       {
         "code": "SP03",
-        "difficulty": "Trung bình",
-        "muscle": "Vai",
         "name": "Dumbbell Shoulder Press",
         "reps": "8",
         "rest": "",
@@ -35,8 +29,6 @@
       },
       {
         "code": "BC02",
-        "difficulty": "Dễ",
-        "muscle": "Tay trước",
         "name": "Dumbbell Curl",
         "reps": "15",
         "rest": "",
@@ -45,8 +37,6 @@
       },
       {
         "code": "TC06",
-        "difficulty": "Dễ",
-        "muscle": "Tay sau",
         "name": "Triceps Rope Pushdown",
         "reps": "15",
         "rest": "",
@@ -61,8 +51,6 @@
     "exercises": [
       {
         "code": "BL02",
-        "difficulty": "Khó",
-        "muscle": "Lưng - Xô",
         "name": "Barbell Row",
         "reps": "10",
         "rest": "",
@@ -71,8 +59,6 @@
       },
       {
         "code": "BP08",
-        "difficulty": "Dễ",
-        "muscle": "Ngực",
         "name": "Dumbbell Incline Bench Press",
         "reps": "8",
         "rest": "",
@@ -81,8 +67,6 @@
       },
       {
         "code": "SP05",
-        "difficulty": "Dễ",
-        "muscle": "Vai",
         "name": "Dumbbell Arnold Press",
         "reps": "15",
         "rest": "",
@@ -91,8 +75,6 @@
       },
       {
         "code": "BC04",
-        "difficulty": "Dễ",
-        "muscle": "Tay trước",
         "name": "Dumbbell Hammer Curl",
         "reps": "15",
         "rest": "",
@@ -101,8 +83,6 @@
       },
       {
         "code": "TC05",
-        "difficulty": "Dễ",
-        "muscle": "Tay sau",
         "name": "Tricep Kickback",
         "reps": "15",
         "rest": "",
@@ -117,8 +97,6 @@
     "exercises": [
       {
         "code": "DL07",
-        "difficulty": "Khó",
-        "muscle": "Lưng - Xô",
         "name": "Conventional Block Pull",
         "reps": "8",
         "rest": "",
@@ -127,8 +105,6 @@
       },
       {
         "code": "BP06",
-        "difficulty": "Khó",
-        "muscle": "Ngực",
         "name": "Dumbbell Chest Fly",
         "reps": "12",
         "rest": "",
@@ -137,8 +113,6 @@
       },
       {
         "code": "SP01",
-        "difficulty": "Khó",
-        "muscle": "Vai",
         "name": "Barbell Overhead Press",
         "reps": "5",
         "rest": "",
@@ -147,8 +121,6 @@
       },
       {
         "code": "SO01",
-        "difficulty": "Dễ",
-        "muscle": "Vai",
         "name": "Dumbbell Lateral Raise",
         "reps": "15",
         "rest": "",
@@ -157,8 +129,6 @@
       },
       {
         "code": "BC06",
-        "difficulty": "Dễ",
-        "muscle": "Tay trước",
         "name": "Dumbbell Concentration Curl",
         "reps": "15",
         "rest": "",
@@ -167,8 +137,6 @@
       },
       {
         "code": "TC06",
-        "difficulty": "Dễ",
-        "muscle": "Tay sau",
         "name": "Triceps Rope Pushdown",
         "reps": "15",
         "rest": "",
@@ -183,8 +151,6 @@
     "exercises": [
       {
         "code": "BL02",
-        "difficulty": "Khó",
-        "muscle": "Lưng - Xô",
         "name": "Barbell Row",
         "reps": "10",
         "rest": "",
@@ -193,8 +159,6 @@
       },
       {
         "code": "BP02",
-        "difficulty": "Khó",
-        "muscle": "Ngực",
         "name": "Dumbbell Bench Press",
         "reps": "10",
         "rest": "",
@@ -203,8 +167,6 @@
       },
       {
         "code": "SP03",
-        "difficulty": "Trung bình",
-        "muscle": "Vai",
         "name": "Dumbbell Shoulder Press",
         "reps": "15",
         "rest": "",
@@ -213,8 +175,6 @@
       },
       {
         "code": "BL09",
-        "difficulty": "Dễ",
-        "muscle": "Lưng - Xô",
         "name": "Lat Pulldown",
         "reps": "15",
         "rest": "",
@@ -223,8 +183,6 @@
       },
       {
         "code": "BL13",
-        "difficulty": "Trung bình",
-        "muscle": "Lưng - Xô",
         "name": "Machine-assisted Pull-up",
         "reps": "15",
         "rest": "",
@@ -233,8 +191,6 @@
       },
       {
         "code": "BC05",
-        "difficulty": "Trung bình",
-        "muscle": "Tay trước",
         "name": "Dumbbell Preacher Curl",
         "reps": "15",
         "rest": "",
@@ -249,8 +205,6 @@
     "exercises": [
       {
         "code": "SQ03",
-        "difficulty": "Dễ",
-        "muscle": "Chân",
         "name": "Goblet Squat",
         "reps": "8",
         "rest": "",
@@ -259,8 +213,6 @@
       },
       {
         "code": "LU02",
-        "difficulty": "Dễ",
-        "muscle": "Chân",
         "name": "Dumbbell Lunge",
         "reps": "15",
         "rest": "",
@@ -269,8 +221,6 @@
       },
       {
         "code": "LE01",
-        "difficulty": "Dễ",
-        "muscle": "Chân",
         "name": "Leg Extension",
         "reps": "15",
         "rest": "",
@@ -279,8 +229,6 @@
       },
       {
         "code": "LC01",
-        "difficulty": "Dễ",
-        "muscle": "Chân",
         "name": "Lying Leg Curl",
         "reps": "15",
         "rest": "",
@@ -295,8 +243,6 @@
     "exercises": [
       {
         "code": "SQ04",
-        "difficulty": "Dễ",
-        "muscle": "Chân",
         "name": "Dumbbell Front Squat",
         "reps": "10",
         "rest": "",
@@ -305,8 +251,6 @@
       },
       {
         "code": "DL08",
-        "difficulty": "Trung bình",
-        "muscle": "Chân",
         "name": "Trap Bar Deadlift",
         "reps": "15",
         "rest": "",
@@ -315,8 +259,6 @@
       },
       {
         "code": "LU02",
-        "difficulty": "Dễ",
-        "muscle": "Chân",
         "name": "Dumbbell Lunge",
         "reps": "15",
         "rest": "",
@@ -325,8 +267,6 @@
       },
       {
         "code": "LE01",
-        "difficulty": "Dễ",
-        "muscle": "Chân",
         "name": "Leg Extension",
         "reps": "15",
         "rest": "",
@@ -335,8 +275,6 @@
       },
       {
         "code": "LC01",
-        "difficulty": "Dễ",
-        "muscle": "Chân",
         "name": "Lying Leg Curl",
         "reps": "15",
         "rest": "",
@@ -351,8 +289,6 @@
     "exercises": [
       {
         "code": "SQ01",
-        "difficulty": "Khó",
-        "muscle": "Chân",
         "name": "Barbell Back Squat",
         "reps": "5",
         "rest": "",
@@ -361,8 +297,6 @@
       },
       {
         "code": "DL04",
-        "difficulty": "Khó",
-        "muscle": "Chân",
         "name": "Barbell Sumo Deadlift",
         "reps": "10",
         "rest": "",
@@ -371,8 +305,6 @@
       },
       {
         "code": "HT01",
-        "difficulty": "Khó",
-        "muscle": "Mông",
         "name": "Barbell Hip Thrust",
         "reps": "10",
         "rest": "",
@@ -381,8 +313,6 @@
       },
       {
         "code": "LP01",
-        "difficulty": "Khó",
-        "muscle": "Chân",
         "name": "Leg Press",
         "reps": "12",
         "rest": "",
@@ -391,8 +321,6 @@
       },
       {
         "code": "LC01",
-        "difficulty": "Dễ",
-        "muscle": "Chân",
         "name": "Lying Leg Curl",
         "reps": "15",
         "rest": "",
@@ -407,8 +335,6 @@
     "exercises": [
       {
         "code": "DL04",
-        "difficulty": "Khó",
-        "muscle": "Chân",
         "name": "Barbell Sumo Deadlift",
         "reps": "6",
         "rest": "",
@@ -417,8 +343,6 @@
       },
       {
         "code": "SQ01",
-        "difficulty": "Khó",
-        "muscle": "Chân",
         "name": "Barbell Back Squat",
         "reps": "15",
         "rest": "",
@@ -427,8 +351,6 @@
       },
       {
         "code": "HT01",
-        "difficulty": "Khó",
-        "muscle": "Mông",
         "name": "Barbell Hip Thrust",
         "reps": "10",
         "rest": "",
@@ -437,8 +359,6 @@
       },
       {
         "code": "RP01",
-        "difficulty": "Khó",
-        "muscle": "Mông",
         "name": "Rope Pull Through",
         "reps": "12",
         "rest": "",
@@ -447,8 +367,6 @@
       },
       {
         "code": "SQ09",
-        "difficulty": "Trung bình",
-        "muscle": "Chân",
         "name": "Dumbbell Sumo Squat",
         "reps": "12",
         "rest": "",
@@ -463,8 +381,6 @@
     "exercises": [
       {
         "code": "BP02",
-        "difficulty": "Khó",
-        "muscle": "Ngực",
         "name": "Dumbbell Bench Press",
         "reps": "10",
         "rest": "",
@@ -473,8 +389,6 @@
       },
       {
         "code": "BP06",
-        "difficulty": "Khó",
-        "muscle": "Ngực",
         "name": "Dumbbell Chest Fly",
         "reps": "12",
         "rest": "",
@@ -483,8 +397,6 @@
       },
       {
         "code": "SP05",
-        "difficulty": "Dễ",
-        "muscle": "Vai",
         "name": "Dumbbell Arnold Press",
         "reps": "8",
         "rest": "",
@@ -493,8 +405,6 @@
       },
       {
         "code": "SO01",
-        "difficulty": "Dễ",
-        "muscle": "Vai",
         "name": "Dumbbell Lateral Raise",
         "reps": "15",
         "rest": "",
@@ -503,8 +413,6 @@
       },
       {
         "code": "TC06",
-        "difficulty": "Dễ",
-        "muscle": "Tay sau",
         "name": "Triceps Rope Pushdown",
         "reps": "15",
         "rest": "",
@@ -519,8 +427,6 @@
     "exercises": [
       {
         "code": "SP01",
-        "difficulty": "Khó",
-        "muscle": "Vai",
         "name": "Barbell Overhead Press",
         "reps": "5",
         "rest": "",
@@ -529,8 +435,6 @@
       },
       {
         "code": "BP04",
-        "difficulty": "Khó",
-        "muscle": "Ngực",
         "name": "Dumbbell Bench Press",
         "reps": "10",
         "rest": "",
@@ -539,8 +443,6 @@
       },
       {
         "code": "FS01",
-        "difficulty": "Dễ",
-        "muscle": "Vai",
         "name": "Dumbbell Front Raise",
         "reps": "10",
         "rest": "",
@@ -549,8 +451,6 @@
       },
       {
         "code": "TC06",
-        "difficulty": "Dễ",
-        "muscle": "Tay sau",
         "name": "Triceps Rope Pushdown",
         "reps": "15",
         "rest": "",
@@ -559,8 +459,6 @@
       },
       {
         "code": "TC05",
-        "difficulty": "Dễ",
-        "muscle": "Tay sau",
         "name": "Tricep Kickback",
         "reps": "15",
         "rest": "",
@@ -575,8 +473,6 @@
     "exercises": [
       {
         "code": "BP01",
-        "difficulty": "Khó",
-        "muscle": "Ngực",
         "name": "Barbell Bench Press",
         "reps": "5",
         "rest": "",
@@ -585,8 +481,6 @@
       },
       {
         "code": "SP06",
-        "difficulty": "Dễ",
-        "muscle": "Vai",
         "name": "Dumbbell Hammer Shoulder Press",
         "reps": "8",
         "rest": "",
@@ -595,8 +489,6 @@
       },
       {
         "code": "SO04",
-        "difficulty": "Dễ",
-        "muscle": "Vai",
         "name": "Reverse Butterfly",
         "reps": "15",
         "rest": "",
@@ -605,8 +497,6 @@
       },
       {
         "code": "SP05",
-        "difficulty": "Dễ",
-        "muscle": "Vai",
         "name": "Dumbbell Arnold Press",
         "reps": "15",
         "rest": "",
@@ -615,8 +505,6 @@
       },
       {
         "code": "TC06",
-        "difficulty": "Dễ",
-        "muscle": "Tay sau",
         "name": "Triceps Rope Pushdown",
         "reps": "15",
         "rest": "",
@@ -631,8 +519,6 @@
     "exercises": [
       {
         "code": "SP01",
-        "difficulty": "Khó",
-        "muscle": "Vai",
         "name": " Barbell overhead Press",
         "reps": "6",
         "rest": "",
@@ -641,8 +527,6 @@
       },
       {
         "code": "BP01",
-        "difficulty": "Khó",
-        "muscle": "Ngực",
         "name": "Barbell Bench Press",
         "reps": "5",
         "rest": "",
@@ -651,8 +535,6 @@
       },
       {
         "code": "BP05",
-        "difficulty": "Trung bình",
-        "muscle": "Ngực",
         "name": "Cable Chest Fly",
         "reps": "12",
         "rest": "",
@@ -661,8 +543,6 @@
       },
       {
         "code": "SO01",
-        "difficulty": "Dễ",
-        "muscle": "Vai",
         "name": "Dumbbell Lateral Raise",
         "reps": "15",
         "rest": "",
@@ -671,8 +551,6 @@
       },
       {
         "code": "RD01",
-        "difficulty": "Khó",
-        "muscle": "Vai",
         "name": "Dumbbell Rear Delt Fly",
         "reps": "15",
         "rest": "",
@@ -681,8 +559,6 @@
       },
       {
         "code": "TC03",
-        "difficulty": "Khó",
-        "muscle": "Tay sau",
         "name": "Dumbbell Skull Crusher",
         "reps": "15",
         "rest": "",
@@ -697,8 +573,6 @@
     "exercises": [
       {
         "code": "BL04",
-        "difficulty": "Khó",
-        "muscle": "Lưng - Xô",
         "name": "Dumbbell Row",
         "reps": "8",
         "rest": "",
@@ -707,8 +581,6 @@
       },
       {
         "code": "BL09",
-        "difficulty": "Dễ",
-        "muscle": "Lưng - Xô",
         "name": "Lat Pulldown",
         "reps": "12",
         "rest": "",
@@ -717,8 +589,6 @@
       },
       {
         "code": "BL14",
-        "difficulty": "Dễ",
-        "muscle": "Lưng - Xô",
         "name": "Close Grip Pulldown",
         "reps": "12",
         "rest": "",
@@ -727,8 +597,6 @@
       },
       {
         "code": "BL13",
-        "difficulty": "Trung bình",
-        "muscle": "Lưng - Xô",
         "name": "Machine-assisted Pull-up",
         "reps": "15",
         "rest": "",
@@ -737,8 +605,6 @@
       },
       {
         "code": "BC02",
-        "difficulty": "Dễ",
-        "muscle": "Tay trước",
         "name": "Dumbbell Curl",
         "reps": "8",
         "rest": "",
@@ -753,8 +619,6 @@
     "exercises": [
       {
         "code": "BL04",
-        "difficulty": "Khó",
-        "muscle": "Lưng - Xô",
         "name": "Dumbbell Row",
         "reps": "8",
         "rest": "",
@@ -763,8 +627,6 @@
       },
       {
         "code": "BL09",
-        "difficulty": "Dễ",
-        "muscle": "Lưng - Xô",
         "name": "Lat Pulldown",
         "reps": "12",
         "rest": "",
@@ -773,8 +635,6 @@
       },
       {
         "code": "BL06",
-        "difficulty": "Trung bình",
-        "muscle": "Lưng - Xô",
         "name": "Seated Cable Row",
         "reps": "12",
         "rest": "",
@@ -783,8 +643,6 @@
       },
       {
         "code": "BL05",
-        "difficulty": "Khó",
-        "muscle": "Lưng - Xô",
         "name": "Incline Dumbbell Row",
         "reps": "15",
         "rest": "",
@@ -793,8 +651,6 @@
       },
       {
         "code": "BC04",
-        "difficulty": "Dễ",
-        "muscle": "Tay trước",
         "name": "Dumbbell Hammer Curl",
         "reps": "10",
         "rest": "",
@@ -809,8 +665,6 @@
     "exercises": [
       {
         "code": "BL01",
-        "difficulty": "Khó",
-        "muscle": "Lưng - Xô",
         "name": "Barbell Conventional Deadlift",
         "reps": "5",
         "rest": "",
@@ -819,8 +673,6 @@
       },
       {
         "code": "BL02",
-        "difficulty": "Khó",
-        "muscle": "Lưng - Xô",
         "name": "Barbell Row",
         "reps": "10",
         "rest": "",
@@ -829,8 +681,6 @@
       },
       {
         "code": "BL13",
-        "difficulty": "Trung bình",
-        "muscle": "Lưng - Xô",
         "name": "Machine-assisted Pull-up",
         "reps": "15",
         "rest": "",
@@ -839,8 +689,6 @@
       },
       {
         "code": "BL09",
-        "difficulty": "Dễ",
-        "muscle": "Lưng - Xô",
         "name": "Lat Pulldown",
         "reps": "15",
         "rest": "",
@@ -849,8 +697,6 @@
       },
       {
         "code": "BL07",
-        "difficulty": "Dễ",
-        "muscle": "Lưng - Xô",
         "name": "Face Pull",
         "reps": "10",
         "rest": "",
@@ -859,8 +705,6 @@
       },
       {
         "code": "BC02",
-        "difficulty": "Dễ",
-        "muscle": "Tay trước",
         "name": "Dumbbell Curl",
         "reps": "15",
         "rest": "",
@@ -875,8 +719,6 @@
     "exercises": [
       {
         "code": "BL04",
-        "difficulty": "Khó",
-        "muscle": "Lưng - Xô",
         "name": "Dumbbell Row",
         "reps": "6",
         "rest": "",
@@ -885,8 +727,6 @@
       },
       {
         "code": "BL11",
-        "difficulty": "Dễ",
-        "muscle": "Lưng - Xô",
         "name": "Straight Arm Pulldown",
         "reps": "12",
         "rest": "",
@@ -895,8 +735,6 @@
       },
       {
         "code": "BL09",
-        "difficulty": "Dễ",
-        "muscle": "Lưng - Xô",
         "name": "Lat Pulldown",
         "reps": "12",
         "rest": "",
@@ -905,8 +743,6 @@
       },
       {
         "code": "BL06",
-        "difficulty": "Trung bình",
-        "muscle": "Lưng - Xô",
         "name": "Seated Cable Row",
         "reps": "12",
         "rest": "",
@@ -915,8 +751,6 @@
       },
       {
         "code": "SO04",
-        "difficulty": "Dễ",
-        "muscle": "Vai",
         "name": "Reverse Butterfly",
         "reps": "15",
         "rest": "",
@@ -925,8 +759,6 @@
       },
       {
         "code": "BC01",
-        "difficulty": "Trung bình",
-        "muscle": "Tay trước",
         "name": "Barbell Curl",
         "reps": "12",
         "rest": "",
@@ -941,8 +773,6 @@
     "exercises": [
       {
         "code": "RP01",
-        "difficulty": "Khó",
-        "muscle": "Mông",
         "name": "Rope Pull Through",
         "reps": "12",
         "rest": "",
@@ -951,8 +781,6 @@
       },
       {
         "code": "LU03",
-        "difficulty": "Dễ",
-        "muscle": "Chân",
         "name": "Walking Lunge",
         "reps": "12",
         "rest": "",
@@ -961,8 +789,6 @@
       },
       {
         "code": "HT01",
-        "difficulty": "Khó",
-        "muscle": "Mông",
         "name": "Barbell Hip Thrust",
         "reps": "10",
         "rest": "",
@@ -971,8 +797,6 @@
       },
       {
         "code": "DK01",
-        "difficulty": "Khó",
-        "muscle": "Mông",
         "name": "Cable Donkey Kick",
         "reps": "10",
         "rest": "",
@@ -987,8 +811,6 @@
     "exercises": [
       {
         "code": "AB02",
-        "difficulty": "Dễ",
-        "muscle": "Bụng",
         "name": "Crunch",
         "reps": "15",
         "rest": "45s - 1p",
@@ -997,8 +819,6 @@
       },
       {
         "code": "AB04",
-        "difficulty": "Dễ",
-        "muscle": "Bụng",
         "name": "Russian Twist",
         "reps": "20",
         "rest": "45s - 1p",
@@ -1007,8 +827,6 @@
       },
       {
         "code": "AB03",
-        "difficulty": "Dễ",
-        "muscle": "Bụng",
         "name": "Leg Raise",
         "reps": "15",
         "rest": "45s - 1p",
@@ -1023,8 +841,6 @@
     "exercises": [
       {
         "code": "AB03",
-        "difficulty": "Dễ",
-        "muscle": "Bụng",
         "name": "Leg Raise",
         "reps": "15",
         "rest": "45s - 1p",
@@ -1033,8 +849,6 @@
       },
       {
         "code": "AB05",
-        "difficulty": "Dễ",
-        "muscle": "Bụng",
         "name": "Toe Touches",
         "reps": "15",
         "rest": "45s - 1p",
@@ -1043,8 +857,6 @@
       },
       {
         "code": "AB06",
-        "difficulty": "Dễ",
-        "muscle": "Bụng",
         "name": "Seated Knee Tucks",
         "reps": "15",
         "rest": "45s - 1p",
@@ -1059,8 +871,6 @@
     "exercises": [
       {
         "code": "AB01",
-        "difficulty": "Dễ",
-        "muscle": "Bụng",
         "name": "Alternate Heel Touchers",
         "reps": "15",
         "rest": "45s - 1p",
@@ -1069,8 +879,6 @@
       },
       {
         "code": "AB02",
-        "difficulty": "Dễ",
-        "muscle": "Bụng",
         "name": "Crunch",
         "reps": "15",
         "rest": "45s - 1p",
@@ -1079,8 +887,6 @@
       },
       {
         "code": "AB03",
-        "difficulty": "Dễ",
-        "muscle": "Bụng",
         "name": "Leg Raise",
         "reps": "15",
         "rest": "45s - 1p",
@@ -1095,8 +901,6 @@
     "exercises": [
       {
         "code": "CD01",
-        "difficulty": "Dễ",
-        "muscle": "Toàn thân",
         "name": "Cardio: Burpee",
         "reps": "20",
         "rest": "",
@@ -1105,8 +909,6 @@
       },
       {
         "code": "CD02",
-        "difficulty": "Dễ",
-        "muscle": "Toàn thân",
         "name": "Cardio: Battle Rope",
         "reps": "30s/set",
         "rest": "",
@@ -1115,8 +917,6 @@
       },
       {
         "code": "CD03",
-        "difficulty": "Dễ",
-        "muscle": "Toàn thân",
         "name": "Cardio: Jump Squat",
         "reps": "20",
         "rest": "",
@@ -1131,8 +931,6 @@
     "exercises": [
       {
         "code": "CD04",
-        "difficulty": "Dễ",
-        "muscle": "Toàn thân",
         "name": "Cardio: High Knee",
         "reps": "30s/set",
         "rest": "",
@@ -1141,8 +939,6 @@
       },
       {
         "code": "CD05",
-        "difficulty": "Dễ",
-        "muscle": "Toàn thân",
         "name": "Cardio: Split Jump Squat",
         "reps": "20",
         "rest": "",
@@ -1151,8 +947,6 @@
       },
       {
         "code": "CD06",
-        "difficulty": "Dễ",
-        "muscle": "Toàn thân",
         "name": "Cardio: Hop Over",
         "reps": "30s/set",
         "rest": "",
@@ -1167,8 +961,6 @@
     "exercises": [
       {
         "code": "CD06",
-        "difficulty": "Dễ",
-        "muscle": "Toàn thân",
         "name": "Cardio: Hop Over",
         "reps": "30s/set",
         "rest": "",
@@ -1177,8 +969,6 @@
       },
       {
         "code": "CD07",
-        "difficulty": "Dễ",
-        "muscle": "Toàn thân",
         "name": "Cardio: Mountain Climbers",
         "reps": "30s/set",
         "rest": "",
@@ -1187,8 +977,6 @@
       },
       {
         "code": "CD08",
-        "difficulty": "Dễ",
-        "muscle": "Toàn thân",
         "name": "Cardio: Forward Hops",
         "reps": "30s/set",
         "rest": "",
@@ -1202,8 +990,6 @@
     "exercises": [
       {
         "code": "CD09",
-        "difficulty": "Dễ",
-        "muscle": "Toàn thân",
         "name": "Cardio: Running On Treadmill",
         "reps": "10 phút",
         "rest": "",

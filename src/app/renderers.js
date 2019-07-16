@@ -19,6 +19,31 @@ const SITE_CONFIGS = {
   publicPath: process.env.PUBLIC_PATH,
 };
 
+function buildExerciseData(configs, index) {
+  const { code } = configs;
+  const { difficulty, muscle, name } = _.find(CONSTANTS.EXERCISES_DATABASE, { code });
+  return {
+    ...configs, difficulty, muscle, name, order: index + 1,
+  };
+}
+
+function buildDayExercises(dayExercises, index) {
+  const weekday = CONSTANTS.WEEKDAYS[index];
+
+  // Off day
+  if (_.isEmpty(dayExercises)) {
+    return { title: `${weekday}: ${CONSTANTS.OFF_DAY}` };
+  }
+
+  const { affectedMuscles, code } = dayExercises[0];
+  const flattenExercises = _.flatMap(dayExercises, 'exercises');
+
+  return {
+    exercises: _.map(flattenExercises, buildExerciseData),
+    title: `${weekday}: ${code} (${affectedMuscles})`,
+  };
+}
+
 /* eslint-disable import/prefer-default-export */
 
 export function renderWeeklySchedule({
@@ -32,21 +57,10 @@ export function renderWeeklySchedule({
       ({ code }) => _.includes(codes, code),
     );
 
-    // Off day
-    if (_.isEmpty(dayExercises)) {
-      return { title: `${CONSTANTS.WEEKDAYS[index]}: ${CONSTANTS.OFF_DAY}` };
-    }
-
-    const { code, muscles } = dayExercises[0];
-    const flattenExercises = _.flatMap(dayExercises, 'exercises');
-
-    return {
-      exercises: _.map(flattenExercises, (configs, idx) => ({ ...configs, order: idx + 1 })),
-      title: `${CONSTANTS.WEEKDAYS[index]}: ${code} (${muscles})`,
-    };
+    return buildDayExercises(dayExercises, index);
   });
 
-  window.renderingParams = {
+  window.RENDERING_PARAMS = {
     daySchedules, userInfo, dailyCodes, site: SITE_CONFIGS, weekdays: CONSTANTS.WEEKDAYS,
   };
 
