@@ -1,0 +1,35 @@
+<div class="bg-secondary font-weight-bold py-2 text-center text-white {{#unless exercises}}mb-3{{/unless}}">
+  {{title}}
+</div>
+{{#if exercises}}
+<div class="table-responsive">
+  <table class="table table-borderless table-sm text-center text-wrap">
+    <thead>
+      <tr class="bg-primary border border-primary font-weight-bold text-white">
+        <th class="align-middle" scope="col">Bài tập</th>
+        <th class="align-middle" scope="col">Nhóm cơ</th>
+        <th class="align-middle" scope="col">Độ khó</th>
+        <th class="align-middle" scope="col">Sets</th>
+        <th class="align-middle" scope="col">Reps</th>
+        <th class="align-middle" scope="col">Mức tạ</th>
+        <th class="align-middle" scope="col">Nghỉ</th>
+        <th class="align-middle recommended-weight" scope="col">Khối lượng<br />khuyến nghị</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each exercises}}
+      <tr>
+        <td class="align-middle border border-primary text-left">{{order}}. {{name}}</td>
+        <td class="align-middle border border-primary">{{muscle}}</td>
+        <td class="align-middle border border-primary">{{difficulty}}</td>
+        <td class="align-middle border border-primary">{{sets}}</td>
+        <td class="align-middle border border-primary">{{reps}}</td>
+        <td class="align-middle border border-primary">{{rpe}}</td>
+        <td class="align-middle border border-primary">{{rest}}</td>
+        <td class="align-middle border border-primary">{{recommended}}</td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>
+{{/if}}

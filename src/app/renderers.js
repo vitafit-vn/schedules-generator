@@ -7,6 +7,7 @@ import './configs/templates.handlebars';
 
 function registerPartials() {
   Handlebars.registerPartial('html_head', Handlebars.templates.html_head);
+  Handlebars.registerPartial('weekly_day_schedules', Handlebars.templates.weekly_day_schedules);
   Handlebars.registerPartial('weekly_header', Handlebars.templates.weekly_header);
   Handlebars.registerPartial('weekly_table', Handlebars.templates.weekly_table);
 }
