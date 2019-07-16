@@ -5,31 +5,49 @@
     "weekdays": [
       {
         "title": "Thứ hai",
-        "exercises": "UPPER-1\nCARDIO-1\nCARDIO-2"
+        "exercises": [
+          "UPPER-1",
+          "CARDIO-1",
+          "CARDIO-2"
+        ]
       },
       {
         "title": "Thứ ba",
-        "exercises": "LOWER-1"
+        "exercises": [
+          "LOWER-1"
+        ]
       },
       {
         "title": "Thứ tư",
-        "exercises": "NGHỈ"
+        "exercises": [
+          "OFF"
+        ]
       },
       {
         "title": "Thứ năm",
-        "exercises": "UPPER-2\nCARDIO-3\nCARDIO-4"
+        "exercises": [
+          "UPPER-2",
+          "CARDIO-3",
+          "CARDIO-4"
+        ]
       },
       {
         "title": "Thứ sáu",
-        "exercises": "LOWER-2"
+        "exercises": [
+          "LOWER-2"
+        ]
       },
       {
         "title": "Thứ bảy",
-        "exercises": "NGHỈ"
+        "exercises": [
+          "OFF"
+        ]
       },
       {
         "title": "Chủ nhật",
-        "exercises": "NGHỈ"
+        "exercises": [
+          "OFF"
+        ]
       }
     ]
   },
@@ -39,31 +57,45 @@
     "weekdays": [
       {
         "title": "Thứ hai",
-        "exercises": "UPPER-1"
+        "exercises": [
+          "UPPER-1"
+        ]
       },
       {
         "title": "Thứ ba",
-        "exercises": "LOWER-1"
+        "exercises": [
+          "LOWER-1"
+        ]
       },
       {
         "title": "Thứ tư",
-        "exercises": "NGHỈ"
+        "exercises": [
+          "OFF"
+        ]
       },
       {
         "title": "Thứ năm",
-        "exercises": "UPPER-2"
+        "exercises": [
+          "UPPER-2"
+        ]
       },
       {
         "title": "Thứ sáu",
-        "exercises": "LOWER-2"
+        "exercises": [
+          "LOWER-2"
+        ]
       },
       {
         "title": "Thứ bảy",
-        "exercises": "NGHỈ"
+        "exercises": [
+          "OFF"
+        ]
       },
       {
         "title": "Chủ nhật",
-        "exercises": "NGHỈ"
+        "exercises": [
+          "OFF"
+        ]
       }
     ]
   },
@@ -73,31 +105,49 @@
     "weekdays": [
       {
         "title": "Thứ hai",
-        "exercises": "UPPER-3\nCARDIO-3\nCARDIO-4"
+        "exercises": [
+          "UPPER-3",
+          "CARDIO-3",
+          "CARDIO-4"
+        ]
       },
       {
         "title": "Thứ ba",
-        "exercises": "LOWER-3"
+        "exercises": [
+          "LOWER-3"
+        ]
       },
       {
         "title": "Thứ tư",
-        "exercises": "NGHỈ"
+        "exercises": [
+          "OFF"
+        ]
       },
       {
         "title": "Thứ năm",
-        "exercises": "UPPER-4\nCARDIO-3\nCARDIO-4"
+        "exercises": [
+          "UPPER-4",
+          "CARDIO-3",
+          "CARDIO-4"
+        ]
       },
       {
         "title": "Thứ sáu",
-        "exercises": "LOWER-4"
+        "exercises": [
+          "LOWER-4"
+        ]
       },
       {
         "title": "Thứ bảy",
-        "exercises": "NGHỈ"
+        "exercises": [
+          "OFF"
+        ]
       },
       {
         "title": "Chủ nhật",
-        "exercises": "NGHỈ"
+        "exercises": [
+          "OFF"
+        ]
       }
     ]
   },
@@ -107,31 +157,45 @@
     "weekdays": [
       {
         "title": "Thứ hai",
-        "exercises": "UPPER-3"
+        "exercises": [
+          "UPPER-3"
+        ]
       },
       {
         "title": "Thứ ba",
-        "exercises": "LOWER-3"
+        "exercises": [
+          "LOWER-3"
+        ]
       },
       {
         "title": "Thứ tư",
-        "exercises": "NGHỈ"
+        "exercises": [
+          "OFF"
+        ]
       },
       {
         "title": "Thứ năm",
-        "exercises": "UPPER-4"
+        "exercises": [
+          "UPPER-4"
+        ]
       },
       {
         "title": "Thứ sáu",
-        "exercises": "LOWER-4"
+        "exercises": [
+          "LOWER-4"
+        ]
       },
       {
         "title": "Thứ bảy",
-        "exercises": "NGHỈ"
+        "exercises": [
+          "OFF"
+        ]
       },
       {
         "title": "Chủ nhật",
-        "exercises": "NGHỈ"
+        "exercises": [
+          "OFF"
+        ]
       }
     ]
   },
@@ -141,31 +205,48 @@
     "weekdays": [
       {
         "title": "Thứ hai",
-        "exercises": "UPPER-1"
+        "exercises": [
+          "UPPER-1"
+        ]
       },
       {
         "title": "Thứ ba",
-        "exercises": "LOWER-1"
+        "exercises": [
+          "LOWER-1"
+        ]
       },
       {
         "title": "Thứ tư",
-        "exercises": "NGHỈ"
+        "exercises": [
+          "OFF"
+        ]
       },
       {
         "title": "Thứ năm",
-        "exercises": "UPPER-2"
+        "exercises": [
+          "UPPER-2"
+        ]
       },
       {
         "title": "Thứ sáu",
-        "exercises": "LOWER-2"
+        "exercises": [
+          "LOWER-2"
+        ]
       },
       {
         "title": "Thứ bảy",
-        "exercises": "NGHỈ"
+        "exercises": [
+          "OFF"
+        ]
       },
       {
         "title": "Chủ nhật",
-        "exercises": "CARDIO-1\nCARDIO-2\nCARDIO-3\nCARDIO-4"
+        "exercises": [
+          "CARDIO-1",
+          "CARDIO-2",
+          "CARDIO-3",
+          "CARDIO-4"
+        ]
       }
     ]
   },
@@ -175,31 +256,48 @@
     "weekdays": [
       {
         "title": "Thứ hai",
-        "exercises": "UPPER-1"
+        "exercises": [
+          "UPPER-1"
+        ]
       },
       {
         "title": "Thứ ba",
-        "exercises": "LOWER-2"
+        "exercises": [
+          "LOWER-2"
+        ]
       },
       {
         "title": "Thứ tư",
-        "exercises": "NGHỈ"
+        "exercises": [
+          "OFF"
+        ]
       },
       {
         "title": "Thứ năm",
-        "exercises": "UPPER-2"
+        "exercises": [
+          "UPPER-2"
+        ]
       },
       {
         "title": "Thứ sáu",
-        "exercises": "LOWER-1"
+        "exercises": [
+          "LOWER-1"
+        ]
       },
       {
         "title": "Thứ bảy",
-        "exercises": "NGHỈ"
+        "exercises": [
+          "OFF"
+        ]
       },
       {
         "title": "Chủ nhật",
-        "exercises": "CARDIO-1\nCARDIO-2\nCARDIO-3\nCARDIO-4"
+        "exercises": [
+          "CARDIO-1",
+          "CARDIO-2",
+          "CARDIO-3",
+          "CARDIO-4"
+        ]
       }
     ]
   },
@@ -209,31 +307,48 @@
     "weekdays": [
       {
         "title": "Thứ hai",
-        "exercises": "UPPER-3"
+        "exercises": [
+          "UPPER-3"
+        ]
       },
       {
         "title": "Thứ ba",
-        "exercises": "LOWER-3"
+        "exercises": [
+          "LOWER-3"
+        ]
       },
       {
         "title": "Thứ tư",
-        "exercises": "NGHỈ"
+        "exercises": [
+          "OFF"
+        ]
       },
       {
         "title": "Thứ năm",
-        "exercises": "UPPER-4"
+        "exercises": [
+          "UPPER-4"
+        ]
       },
       {
         "title": "Thứ sáu",
-        "exercises": "LOWER-4"
+        "exercises": [
+          "LOWER-4"
+        ]
       },
       {
         "title": "Thứ bảy",
-        "exercises": "NGHỈ"
+        "exercises": [
+          "OFF"
+        ]
       },
       {
         "title": "Chủ nhật",
-        "exercises": "CARDIO-1\nCARDIO-2\nCARDIO-3\nCARDIO-4"
+        "exercises": [
+          "CARDIO-1",
+          "CARDIO-2",
+          "CARDIO-3",
+          "CARDIO-4"
+        ]
       }
     ]
   },
@@ -243,31 +358,48 @@
     "weekdays": [
       {
         "title": "Thứ hai",
-        "exercises": "UPPER-3"
+        "exercises": [
+          "UPPER-3"
+        ]
       },
       {
         "title": "Thứ ba",
-        "exercises": "LOWER-4"
+        "exercises": [
+          "LOWER-4"
+        ]
       },
       {
         "title": "Thứ tư",
-        "exercises": "NGHỈ"
+        "exercises": [
+          "OFF"
+        ]
       },
       {
         "title": "Thứ năm",
-        "exercises": "UPPER-4"
+        "exercises": [
+          "UPPER-4"
+        ]
       },
       {
         "title": "Thứ sáu",
-        "exercises": "LOWER-3"
+        "exercises": [
+          "LOWER-3"
+        ]
       },
       {
         "title": "Thứ bảy",
-        "exercises": "NGHỈ"
+        "exercises": [
+          "OFF"
+        ]
       },
       {
         "title": "Chủ nhật",
-        "exercises": "CARDIO-1\nCARDIO-2\nCARDIO-3\nCARDIO-4"
+        "exercises": [
+          "CARDIO-1",
+          "CARDIO-2",
+          "CARDIO-3",
+          "CARDIO-4"
+        ]
       }
     ]
   },
@@ -277,31 +409,45 @@
     "weekdays": [
       {
         "title": "Thứ hai",
-        "exercises": "PUSH-1"
+        "exercises": [
+          "PUSH-1"
+        ]
       },
       {
         "title": "Thứ ba",
-        "exercises": "PULL-1"
+        "exercises": [
+          "PULL-1"
+        ]
       },
       {
         "title": "Thứ tư",
-        "exercises": "NGHỈ"
+        "exercises": [
+          "OFF"
+        ]
       },
       {
         "title": "Thứ năm",
-        "exercises": "LOWER-1"
+        "exercises": [
+          "LOWER-1"
+        ]
       },
       {
         "title": "Thứ sáu",
-        "exercises": "PUSH-2"
+        "exercises": [
+          "PUSH-2"
+        ]
       },
       {
         "title": "Thứ bảy",
-        "exercises": "PULL-2"
+        "exercises": [
+          "PULL-2"
+        ]
       },
       {
         "title": "Chủ nhật",
-        "exercises": "NGHỈ"
+        "exercises": [
+          "OFF"
+        ]
       }
     ]
   },
@@ -311,31 +457,45 @@
     "weekdays": [
       {
         "title": "Thứ hai",
-        "exercises": "PUSH-3"
+        "exercises": [
+          "PUSH-3"
+        ]
       },
       {
         "title": "Thứ ba",
-        "exercises": "PULL-3"
+        "exercises": [
+          "PULL-3"
+        ]
       },
       {
         "title": "Thứ tư",
-        "exercises": "NGHỈ"
+        "exercises": [
+          "OFF"
+        ]
       },
       {
         "title": "Thứ năm",
-        "exercises": "LOWER-3"
+        "exercises": [
+          "LOWER-3"
+        ]
       },
       {
         "title": "Thứ sáu",
-        "exercises": "PUSH-4"
+        "exercises": [
+          "PUSH-4"
+        ]
       },
       {
         "title": "Thứ bảy",
-        "exercises": "PULL-4"
+        "exercises": [
+          "PULL-4"
+        ]
       },
       {
         "title": "Chủ nhật",
-        "exercises": "NGHỈ"
+        "exercises": [
+          "OFF"
+        ]
       }
     ]
   },
@@ -345,31 +505,45 @@
     "weekdays": [
       {
         "title": "Thứ hai",
-        "exercises": "UPPER-1"
+        "exercises": [
+          "UPPER-1"
+        ]
       },
       {
         "title": "Thứ ba",
-        "exercises": "LOWER-1"
+        "exercises": [
+          "LOWER-1"
+        ]
       },
       {
         "title": "Thứ tư",
-        "exercises": "NGHỈ"
+        "exercises": [
+          "OFF"
+        ]
       },
       {
         "title": "Thứ năm",
-        "exercises": "PUSH-1"
+        "exercises": [
+          "PUSH-1"
+        ]
       },
       {
         "title": "Thứ sáu",
-        "exercises": "PULL-1"
+        "exercises": [
+          "PULL-1"
+        ]
       },
       {
         "title": "Thứ bảy",
-        "exercises": "LOWER-1"
+        "exercises": [
+          "LOWER-1"
+        ]
       },
       {
         "title": "Chủ nhật",
-        "exercises": "NGHỈ"
+        "exercises": [
+          "OFF"
+        ]
       }
     ]
   },
@@ -379,31 +553,45 @@
     "weekdays": [
       {
         "title": "Thứ hai",
-        "exercises": "UPPER-3"
+        "exercises": [
+          "UPPER-3"
+        ]
       },
       {
         "title": "Thứ ba",
-        "exercises": "LOWER-3"
+        "exercises": [
+          "LOWER-3"
+        ]
       },
       {
         "title": "Thứ tư",
-        "exercises": "NGHỈ"
+        "exercises": [
+          "OFF"
+        ]
       },
       {
         "title": "Thứ năm",
-        "exercises": "PUSH-3"
+        "exercises": [
+          "PUSH-3"
+        ]
       },
       {
         "title": "Thứ sáu",
-        "exercises": "PULL-3"
+        "exercises": [
+          "PULL-3"
+        ]
       },
       {
         "title": "Thứ bảy",
-        "exercises": "LOWER-3"
+        "exercises": [
+          "LOWER-3"
+        ]
       },
       {
         "title": "Chủ nhật",
-        "exercises": "NGHỈ"
+        "exercises": [
+          "OFF"
+        ]
       }
     ]
   },
@@ -413,31 +601,45 @@
     "weekdays": [
       {
         "title": "Thứ hai",
-        "exercises": "LOWER-2"
+        "exercises": [
+          "LOWER-2"
+        ]
       },
       {
         "title": "Thứ ba",
-        "exercises": "PUSH-1"
+        "exercises": [
+          "PUSH-1"
+        ]
       },
       {
         "title": "Thứ tư",
-        "exercises": "NGHỈ"
+        "exercises": [
+          "OFF"
+        ]
       },
       {
         "title": "Thứ năm",
-        "exercises": "PULL-1"
+        "exercises": [
+          "PULL-1"
+        ]
       },
       {
         "title": "Thứ sáu",
-        "exercises": "LOWER-1"
+        "exercises": [
+          "LOWER-1"
+        ]
       },
       {
         "title": "Thứ bảy",
-        "exercises": "PUSH-2"
+        "exercises": [
+          "PUSH-2"
+        ]
       },
       {
         "title": "Chủ nhật",
-        "exercises": "NGHỈ"
+        "exercises": [
+          "OFF"
+        ]
       }
     ]
   },
@@ -447,31 +649,45 @@
     "weekdays": [
       {
         "title": "Thứ hai",
-        "exercises": "LOWER-4"
+        "exercises": [
+          "LOWER-4"
+        ]
       },
       {
         "title": "Thứ ba",
-        "exercises": "PUSH-3"
+        "exercises": [
+          "PUSH-3"
+        ]
       },
       {
         "title": "Thứ tư",
-        "exercises": "NGHỈ"
+        "exercises": [
+          "OFF"
+        ]
       },
       {
         "title": "Thứ năm",
-        "exercises": "PULL-3"
+        "exercises": [
+          "PULL-3"
+        ]
       },
       {
         "title": "Thứ sáu",
-        "exercises": "LOWER-3"
+        "exercises": [
+          "LOWER-3"
+        ]
       },
       {
         "title": "Thứ bảy",
-        "exercises": "PUSH-4"
+        "exercises": [
+          "PUSH-4"
+        ]
       },
       {
         "title": "Chủ nhật",
-        "exercises": "NGHỈ"
+        "exercises": [
+          "OFF"
+        ]
       }
     ]
   },
@@ -481,31 +697,45 @@
     "weekdays": [
       {
         "title": "Thứ hai",
-        "exercises": "UPPER-2"
+        "exercises": [
+          "UPPER-2"
+        ]
       },
       {
         "title": "Thứ ba",
-        "exercises": "LOWER-2"
+        "exercises": [
+          "LOWER-2"
+        ]
       },
       {
         "title": "Thứ tư",
-        "exercises": "NGHỈ"
+        "exercises": [
+          "OFF"
+        ]
       },
       {
         "title": "Thứ năm",
-        "exercises": "PUSH-2"
+        "exercises": [
+          "PUSH-2"
+        ]
       },
       {
         "title": "Thứ sáu",
-        "exercises": "PULL-2"
+        "exercises": [
+          "PULL-2"
+        ]
       },
       {
         "title": "Thứ bảy",
-        "exercises": "LOWER-2"
+        "exercises": [
+          "LOWER-2"
+        ]
       },
       {
         "title": "Chủ nhật",
-        "exercises": "NGHỈ"
+        "exercises": [
+          "OFF"
+        ]
       }
     ]
   },
@@ -515,31 +745,45 @@
     "weekdays": [
       {
         "title": "Thứ hai",
-        "exercises": "UPPER-4"
+        "exercises": [
+          "UPPER-4"
+        ]
       },
       {
         "title": "Thứ ba",
-        "exercises": "LOWER-4"
+        "exercises": [
+          "LOWER-4"
+        ]
       },
       {
         "title": "Thứ tư",
-        "exercises": "NGHỈ"
+        "exercises": [
+          "OFF"
+        ]
       },
       {
         "title": "Thứ năm",
-        "exercises": "PUSH-4"
+        "exercises": [
+          "PUSH-4"
+        ]
       },
       {
         "title": "Thứ sáu",
-        "exercises": "PULL-4"
+        "exercises": [
+          "PULL-4"
+        ]
       },
       {
         "title": "Thứ bảy",
-        "exercises": "LOWER-4"
+        "exercises": [
+          "LOWER-4"
+        ]
       },
       {
         "title": "Chủ nhật",
-        "exercises": "NGHỈ"
+        "exercises": [
+          "OFF"
+        ]
       }
     ]
   }

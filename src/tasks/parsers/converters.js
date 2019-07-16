@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import $ from 'lodash/fp';
 
 // Locals
 import CONSTANTS from '../../app/constants';
@@ -55,7 +56,8 @@ export function convertDailySchedulesRecords(records) {
 
 export function convertWeeklySchedulesRecords(records) {
   return _.map(records, row => {
-    const [code, variant, ...weekdays] = row;
-    return { code, variant, weekdays: mapWeekdaysWithTitles(weekdays) };
+    const [code, variant, ...rawWeekdays] = row;
+    const weekdays = mapWeekdaysWithTitles(_.map(rawWeekdays, $.split('\n')));
+    return { code, variant, weekdays };
   });
 }

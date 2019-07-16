@@ -22,7 +22,11 @@
         </tr>
         <tr>
           {{#each weekdays}}
-            <td><span style="white-space: pre-line;">{{exercises}}</span></td>
+            <td>
+              {{#each exercises}}
+                <p>{{this}}</p>
+              {{/each}}
+            </td>
           {{/each}}
         </tr>
       </table>

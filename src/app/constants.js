@@ -11,6 +11,8 @@ const DAILY_SCHEDULES = {
   INTERMEDIATE: DAILY_SCHEDULES_INTERMEDIATE,
 };
 
+const OFF_DAY = ['OFF'];
+
 const WEEKLY_CODES = $.flow($.map('code'), $.uniq)(WEEKLY_SCHEDULES);
 
 const WEEK_VARIANTS_BY_CODES = _.reduce(WEEKLY_SCHEDULES, (curr, next) => {
@@ -24,6 +26,7 @@ const WORKOUT_LEVELS = ['beginner', 'intermediate'];
 
 export default {
   DAILY_SCHEDULES,
+  OFF_DAY,
   WEEKDAYS,
   WEEKLY_CODES,
   WEEKLY_SCHEDULES,
