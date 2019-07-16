@@ -1,7 +1,7 @@
 import csv from 'csv';
 
 // Locals
-import { convertDailySchedulesRecords, convertWeeklySchedulesRecords } from './converters';
+import { convertDailySchedulesRecords, convertExercisesDatabase, convertWeeklySchedulesRecords } from './converters';
 
 function parseCsvData(csvData, converter) {
   const stringifiedCsvData = String(csvData);
@@ -23,7 +23,7 @@ export function parseDailySchedules(csvData) {
 }
 
 export function parseExercisesDatabase(csvData) {
-  return parseCsvData(csvData, convertDailySchedulesRecords);
+  return parseCsvData(csvData, convertExercisesDatabase);
 }
 
 export function parseWeeklySchedules(csvData) {
