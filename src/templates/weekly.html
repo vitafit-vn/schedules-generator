@@ -1,7 +1,7 @@
 <html>
 {{> htmlHead }}
 
-<body class="m-2 m-sm-4">
+<body class="mx-auto my-2 my-sm-4 px-2 px-sm-4 schedule-container">
   <div class="container-fluid">
     <div class="logo"></div>
     <div class="mt-3">
@@ -18,29 +18,32 @@
           <div>Cân nặng: <strong>{{userInfo.weigh}} kg</strong></div>
         </div>
       </div>
-      <table class="mt-3 table table-borderless table-responsive text-center text-wrap">
-        <thead>
-          <tr class="bg-primary border border-primary">
-            {{#each weekdays}}
-            <th class="align-middle font-weight-bold text-white" scope="col">
-              {{this}}
-            </th>
-            {{/each}}
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            {{#each dailyCodes}}
-            <td class="align-middle border border-primary">
-              {{#each this}}
-              <div>{{this}}</div>
+      <div class="table-responsive">
+        <table class="mt-3 table table-borderless text-center text-wrap">
+          <thead>
+            <tr class="bg-primary border border-primary">
+              {{#each weekdays}}
+              <th class="align-middle font-weight-bold text-white" scope="col">
+                {{this}}
+              </th>
               {{/each}}
-            </td>
-            {{/each}}
-          </tr>
-        </tbody>
-      </table>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              {{#each dailyCodes}}
+              <td class="align-middle border border-primary">
+                {{#each this}}
+                <div>{{this}}</div>
+                {{/each}}
+              </td>
+              {{/each}}
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
+  </div>
 </body>
 
 </html>

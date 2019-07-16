@@ -14,10 +14,10 @@ $secondary: #ed3e75;
   src: url("../static/fonts/Myriad-Pro-Bold.ttf");
 }
 
-body {
+body.schedule-container {
   font-family: "Myriad Pro", Arial, sans-serif;
   max-width: 800px;
-  min-width: 300px;
+  min-width: 320px;
 }
 
 .logo {
