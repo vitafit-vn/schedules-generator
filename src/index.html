@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<khuyến lang="en">
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -15,13 +15,13 @@
 <body>
   <div class="container">
     <h1>Công cụ tạo lịch tập</h1>
-    <form action="javascript: showSchedules();" id="user-data">
+    <form action="#" id="user-data">
       <div class="row">
         <div class="col">
           <span>Mã KH:</span>
         </div>
         <div class="col">
-          <input type="text" name="user_id">
+          <input type="text" name="user_id" />
         </div>
         <div class="col"></div>
         <div class="col"></div>
@@ -31,7 +31,7 @@
           <span>Họ tên:</span>
         </div>
         <div class="col">
-          <input type="text" name="full_name">
+          <input type="text" name="full_name" />
         </div>
         <div class="col">
           <span>Năm sinh:</span>
@@ -45,13 +45,13 @@
           <span>Chiều cao (cm):</span>
         </div>
         <div class="col">
-          <input type="text" name="height">
+          <input type="text" name="height" />
         </div>
         <div class="col">
           <span>Cân nặng (kg):</span>
         </div>
         <div class="col">
-          <input type="text" name="weight">
+          <input type="text" name="weight" />
         </div>
       </div>
       <div class="row">
@@ -72,7 +72,7 @@
           <select name="weekly_code" onchange="setupWeekVariantSelect()"></select>
         </div>
         <div class="col">
-          <span>Tuần:</span>
+          <span>Biến thể tuần:</span>
         </div>
         <div class="col">
           <select name="week_variant"></select>
@@ -83,32 +83,46 @@
           <span>Từ:</span>
         </div>
         <div class="col">
-          <input type="date" name="period_from">
+          <input type="date" name="period_from" />
         </div>
         <div class="col">
           <span>đến:</span>
         </div>
         <div class="col">
-          <input type="date" name="period_to">
-        </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <input type="submit" value="Tạo lịch">
-        </div>
-        <div class="col">
-          <input onclick="downloadSchedules()" type="button" value="Tải file HTML">
-        </div>
-        <div class="col">
-          <div class="loading-ring hidden">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-          </div>
+          <input type="date" name="period_to" />
         </div>
       </div>
     </form>
+    <form action="#" id="personalized-data">
+      <table class="mt-3 table table-hover table-sm table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Mã</th>
+            <th scope="col">Bài tập</th>
+            <th scope="col">RPE</th>
+            <th scope="col">Thời gian nghỉ</th>
+            <th scope="col">Mức tạ khuyến nghị</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </form>
+    <div class="row">
+      <div class="col">
+        <input onclick="showSchedules()" type="button" value="Tạo lịch" />
+      </div>
+      <div class="col">
+        <input onclick="downloadSchedules()" type="button" value="Tải file HTML" />
+      </div>
+      <div class="col">
+        <div class="loading-ring hidden">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+    </div>
   </div>
   <div class="mt-3 mx-auto" id="schedules-wrapper"></div>
 </body>

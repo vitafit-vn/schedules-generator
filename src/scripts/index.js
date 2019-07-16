@@ -20,7 +20,7 @@ async function performAsyncTask(callback) {
   }
 }
 
-function generateScheduleFromInputs() {
+function getUserInfo() {
   const userId = $('#user-data input[name=user_id]').val();
   const name = $('#user-data input[name=full_name]').val();
   const birthYear = $('#user-data select[name=birth_year]').val();
@@ -28,16 +28,13 @@ function generateScheduleFromInputs() {
   const weight = $('#user-data input[name=weight]').val();
   const periodFrom = $('#user-data input[name=period_from]').val();
   const periodTo = $('#user-data input[name=period_to]').val();
-  const workoutLevel = $('#user-data select[name=workout_level]').val();
-  const weeklyCode = $('#user-data select[name=weekly_code]').val();
-  const weekVariant = $('#user-data select[name=week_variant]').val();
 
   const mandatories = [userId, name, birthYear, height, weight, periodFrom, periodTo];
 
   if (_.compact(mandatories).length < mandatories.length)
     throw new Error('Thiếu thông tin của khách hàng!');
 
-  const userInfo = {
+  return {
     height,
     name,
     userId,
@@ -48,9 +45,36 @@ function generateScheduleFromInputs() {
       to: periodTo,
     }
   };
+}
 
-  const checksum = VSG.UTILS.computeChecksum(userId, weeklyCode, weekVariant, periodFrom, periodTo);
-  const schedule = VSG.UTILS.renderWeeklySchedule({ userInfo, weeklyCode, weekVariant, workoutLevel });
+function getPersonalizedData() {
+  const codes = _.map($('#personalized-data tbody th[scope="row"]').toArray(), 'dataset.code');
+  const rpes = _.map($('#personalized-data tbody input[name="rpe"]').toArray(), 'value');
+  const rests = _.map($('#personalized-data tbody input[name="rest"]').toArray(), 'value');
+  const recommendedWeights =
+    _.map($('#personalized-data tbody input[name="recommended_weight"]').toArray(), 'value');
+
+  const rows = _.zip(codes, rpes, rests, recommendedWeights);
+
+  return _.map(rows, ([code, rpe, rest, recommendedWeight]) => ({
+    code, rpe, rest, recommendedWeight,
+  }));
+}
+
+function generateScheduleFromInputs() {
+  const userInfo = getUserInfo();
+  const personalizedData = getPersonalizedData();
+  const workoutLevel = $('#user-data select[name=workout_level]').val();
+  const weeklyCode = $('#user-data select[name=weekly_code]').val();
+  const weekVariant = $('#user-data select[name=week_variant]').val();
+
+  const { periodFrom, periodTo, userId } = userInfo;
+  const checksum = VSG.UTILS.computeChecksum(userId, periodFrom, periodTo, weeklyCode, weekVariant, workoutLevel);
+
+  const schedule = VSG.UTILS.renderWeeklySchedule({
+    personalizedData, userInfo, weeklyCode, weekVariant, workoutLevel,
+  });
+
   return { checksum, schedule, userId };
 }
 

@@ -19,7 +19,50 @@ function setupBirthYearSelect() {
   $('#user-data select[name=birth_year]').html(birthYearOptions);
 }
 
+function setupPersonalizedTable() {
+  const weeklyCode = $('#user-data select[name=weekly_code]').val();
+  const weekVariant = $('#user-data select[name=week_variant]').val();
+  const workoutLevel = $('#user-data select[name=workout_level]').val();
+
+  if (_.isEmpty(weeklyCode) || _.isEmpty(weekVariant) || _.isEmpty(workoutLevel)) return;
+
+  const weeklyData = _.find(VSG.CONSTANTS.WEEKLY_SCHEDULES, { code: weeklyCode, variant: weekVariant });
+
+  console.debug(weeklyCode, weekVariant, workoutLevel);
+
+  const {
+    dailyCodes
+  } = weeklyData;
+
+  const exerciseCodes = _.flatMap(dailyCodes, (codes, index) => {
+    const dayExercises = _.filter(
+      VSG.CONSTANTS.DAILY_SCHEDULES[workoutLevel],
+      ({ code }) => _.includes(codes, code),
+    );
+
+    return _.flatMap(dayExercises, ({ exercises }) => _.map(exercises, 'code'));
+  });
+
+  const rows = _.map(_.uniq(exerciseCodes), code => {
+    const exercise = _.find(VSG.CONSTANTS.EXERCISES_DATABASE, { code });
+    const { name } = exercise;
+    return `
+      <tr>
+        <th data-code="${code}" scope="row">${code}</th>
+        <td>${name}</th>
+        <td><input type="text" name="rpe" /></th>
+        <td><input type="text" name="rest" /></th>
+        <td><input type="text" name="recommended_weight" /><span>(kg)</span></th>
+      </tr>
+    `;
+  });
+
+  $('#personalized-data table tbody').html(_.join(rows, '\n'));
+}
+
 function setupWorkoutLevelSelect() {
+  setupPersonalizedTable();
+
   const workoutLevelOptions = _.map(
     VSG.CONSTANTS.WORKOUT_LEVELS,
     level => `<option value="${level}">${_.capitalize(level)}</option>`,
@@ -36,6 +79,8 @@ function setupWeeklyCodeSelect() {
 }
 
 function setupWeekVariantSelect() {
+  setupPersonalizedTable();
+
   const weeklyCode = $('#user-data select[name=weekly_code]').val();
   const weekVariantOptions = _.map(
     VSG.CONSTANTS.WEEK_VARIANTS_BY_CODES[weeklyCode],
@@ -49,6 +94,7 @@ $(document).ready(() => {
   setupWeeklyCodeSelect();
   setupWeekVariantSelect();
   setupWorkoutLevelSelect();
-
+  
   setupFixtures();
+  setupPersonalizedTable();
 });

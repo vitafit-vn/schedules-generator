@@ -19,19 +19,21 @@ const SITE_CONFIGS = {
   publicPath: process.env.PUBLIC_PATH,
 };
 
-function buildExerciseData(configs, index) {
+function buildExerciseData(configs, personalizedData, index) {
   const { code } = configs;
 
   const {
     difficulty, muscle, name, videoUrl,
   } = _.find(CONSTANTS.EXERCISES_DATABASE, { code });
 
+  const { rpe, recommendedWeight, rest } = _.find(personalizedData, { code }) || {};
+
   return {
-    ...configs, difficulty, muscle, name, videoUrl, order: index + 1,
+    ...configs, difficulty, muscle, name, rpe, recommendedWeight, rest, videoUrl, order: index + 1,
   };
 }
 
-function buildDayExercises(dayExercises, index) {
+function buildDayExercises(dayExercises, personalizedData, index) {
   const weekday = CONSTANTS.WEEKDAYS[index];
 
   // Off day
@@ -43,7 +45,10 @@ function buildDayExercises(dayExercises, index) {
   const flattenExercises = _.flatMap(dayExercises, 'exercises');
 
   return {
-    exercises: _.map(flattenExercises, buildExerciseData),
+    exercises: _.map(
+      flattenExercises,
+      (configs, idx) => buildExerciseData(configs, personalizedData, idx),
+    ),
     title: `${weekday}: ${code} (${muscles})`,
   };
 }
@@ -51,7 +56,7 @@ function buildDayExercises(dayExercises, index) {
 /* eslint-disable import/prefer-default-export */
 
 export function renderWeeklySchedule({
-  userInfo, weeklyCode, weekVariant, workoutLevel,
+  personalizedData, userInfo, weeklyCode, weekVariant, workoutLevel,
 }) {
   const weeklyData = _.find(CONSTANTS.WEEKLY_SCHEDULES, { code: weeklyCode, variant: weekVariant });
   const { dailyCodes } = weeklyData;
@@ -61,11 +66,16 @@ export function renderWeeklySchedule({
       ({ code }) => _.includes(codes, code),
     );
 
-    return buildDayExercises(dayExercises, index);
+    return buildDayExercises(dayExercises, personalizedData, index);
   });
 
   window.RENDERING_PARAMS = {
-    daySchedules, userInfo, dailyCodes, site: SITE_CONFIGS, weekdays: CONSTANTS.WEEKDAYS,
+    daySchedules,
+    personalizedData,
+    userInfo,
+    dailyCodes,
+    site: SITE_CONFIGS,
+    weekdays: CONSTANTS.WEEKDAYS,
   };
 
   return Handlebars.templates.weekly_schedule({
