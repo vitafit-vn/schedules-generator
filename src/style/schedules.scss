@@ -1,3 +1,8 @@
+$primary: #4f86c6;
+$secondary: #ed3e75;
+
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
 @font-face {
   font-family: "Myriad Pro";
   src: url("../static/fonts/Myriad-Pro.ttf");
