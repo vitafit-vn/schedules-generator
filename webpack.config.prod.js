@@ -18,6 +18,7 @@ module.exports = merge(common, {
       canPrint: true,
     }),
     new webpack.EnvironmentPlugin({
+      PAGE_TITLE: 'VitaFit VN',
       PUBLIC_PATH: 'https://schedules.vitafit.vn',
     }),
   ],

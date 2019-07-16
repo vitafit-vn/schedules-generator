@@ -37,11 +37,11 @@ function generateScheduleFromInputs() {
     throw new Error('Thiếu thông tin của khách hàng!');
 
   const userInfo = {
-    birthYear,
     height,
     name,
     userId,
     weight,
+    age: new Date().getFullYear() - parseInt(birthYear),
     period: {
       from: periodFrom,
       to: periodTo,

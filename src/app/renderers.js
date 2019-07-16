@@ -9,8 +9,13 @@ function registerPartials() {
 
 registerPartials();
 
+const SITE_CONFIGS = {
+  pageTitle: process.env.PAGE_TITLE,
+  publicPath: process.env.PUBLIC_PATH,
+};
+
 /* eslint-disable import/prefer-default-export */
 
 export function renderWeeklySchedule({ userInfo, weekdays }) {
-  return Handlebars.templates.weekly({ userInfo, weekdays });
+  return Handlebars.templates.weekly({ userInfo, weekdays, site: SITE_CONFIGS });
 }
