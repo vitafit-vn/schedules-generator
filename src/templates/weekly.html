@@ -1,39 +1,37 @@
 <html>
 {{> htmlHead }}
 
-<body class="m-2 m-sm-5">
-  <div class="container-fluid schedule">
-    <div class="logo w-100"></div>
+<body class="m-2 m-sm-4">
+  <div class="container-fluid">
+    <div class="logo"></div>
     <div class="mt-3">
       <h4 class="font-weight-bolder text-center text-wrap text-uppercase">Chế độ tập luyện hàng tuần</h4>
       <h6 class="font-italic text-center text-wrap">Tuần từ {{userInfo.period.from}} đến {{userInfo.period.to}}</h6>
       <div class="mt-3 row">
         <div class="ml-auto">
-          <div class="info">Khách hàng: <strong>{{userInfo.name}}</strong></div>
-          <div class="info">Chiều cao: <strong>{{userInfo.height}} cm</strong></div>
+          <div>Khách hàng: <strong>{{userInfo.name}}</strong></div>
+          <div>Tuổi: <strong>{{userInfo.age}}</strong></div>
         </div>
         <div class="col-1"></div>
         <div class="mr-auto text-right">
-          <div class="info">Tuổi: <strong>{{userInfo.age}}</strong></div>
-          <div class="info">Cân nặng: <strong>{{userInfo.height}} cm</strong></div>
+          <div>Chiều cao: <strong>{{userInfo.height}} cm</strong></div>
+          <div>Cân nặng: <strong>{{userInfo.weigh}} kg</strong></div>
         </div>
       </div>
-      <table>
-        <tr>
-          {{#each weekdays}}
-          <td>{{title}}</td>
-          {{/each}}
-        </tr>
-        <tr>
-          {{#each weekdays}}
-          <td>
+      <div class="border-bottom border-primary border-right mt-3 row">
+        {{#each weekdays}}
+        <div class="border-left border-primary col px-0 text-center text-wrap">
+          <div class="bg-primary font-weight-bold col px-0 text-white">
+            {{title}}
+          </div>
+          <div>
             {{#each exercises}}
-            <p>{{this}}</p>
+            <span>{{this}}</span>
             {{/each}}
-          </td>
-          {{/each}}
-        </tr>
-      </table>
+          </div>
+        </div>
+        {{/each}}
+      </div>
     </div>
 </body>
 
