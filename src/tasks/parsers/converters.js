@@ -23,9 +23,9 @@ export function convertDailySchedulesRecords(records) {
     }
 
     // Next exercise in current daily schedule
-    const [, code, name, muscle, difficulty, sets, reps] = row;
+    const [, code, name, muscle, difficulty, sets, reps, rpe, rest] = row;
     const exercise = {
-      code, difficulty, muscle, name, reps, sets,
+      code, difficulty, muscle, name, reps, rest, rpe, sets,
     };
 
     currentExercises.push(exercise);

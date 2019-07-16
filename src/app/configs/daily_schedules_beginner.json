@@ -9,6 +9,8 @@
         "muscle": "Ngực",
         "name": "Dumbbell Bench Press",
         "reps": "5",
+        "rest": "",
+        "rpe": "",
         "sets": "5"
       },
       {
@@ -17,6 +19,8 @@
         "muscle": "Lưng - Xô",
         "name": "Dumbbell Row",
         "reps": "15",
+        "rest": "",
+        "rpe": "",
         "sets": "3"
       },
       {
@@ -25,6 +29,8 @@
         "muscle": "Vai",
         "name": "Dumbbell Shoulder Press",
         "reps": "8",
+        "rest": "",
+        "rpe": "",
         "sets": "4"
       },
       {
@@ -33,6 +39,8 @@
         "muscle": "Tay trước",
         "name": "Dumbbell Curl",
         "reps": "15",
+        "rest": "",
+        "rpe": "",
         "sets": "2"
       },
       {
@@ -41,6 +49,8 @@
         "muscle": "Tay sau",
         "name": "Triceps Rope Pushdown",
         "reps": "15",
+        "rest": "",
+        "rpe": "",
         "sets": "3"
       }
     ]
@@ -55,6 +65,8 @@
         "muscle": "Lưng - Xô",
         "name": "Barbell Row",
         "reps": "10",
+        "rest": "",
+        "rpe": "",
         "sets": "4"
       },
       {
@@ -63,6 +75,8 @@
         "muscle": "Ngực",
         "name": "Dumbbell Incline Bench Press",
         "reps": "8",
+        "rest": "",
+        "rpe": "",
         "sets": "4"
       },
       {
@@ -71,6 +85,8 @@
         "muscle": "Vai",
         "name": "Dumbbell Arnold Press",
         "reps": "15",
+        "rest": "",
+        "rpe": "",
         "sets": "4"
       },
       {
@@ -79,6 +95,8 @@
         "muscle": "Tay trước",
         "name": "Dumbbell Hammer Curl",
         "reps": "15",
+        "rest": "",
+        "rpe": "",
         "sets": "4"
       },
       {
@@ -87,6 +105,8 @@
         "muscle": "Tay sau",
         "name": "Tricep Kickback",
         "reps": "15",
+        "rest": "",
+        "rpe": "",
         "sets": "3"
       }
     ]
@@ -101,6 +121,8 @@
         "muscle": "Lưng - Xô",
         "name": "Conventional Block Pull",
         "reps": "8",
+        "rest": "",
+        "rpe": "",
         "sets": "4"
       },
       {
@@ -109,6 +131,8 @@
         "muscle": "Ngực",
         "name": "Dumbbell Chest Fly",
         "reps": "12",
+        "rest": "",
+        "rpe": "",
         "sets": "3"
       },
       {
@@ -117,6 +141,8 @@
         "muscle": "Vai",
         "name": "Barbell Overhead Press",
         "reps": "5",
+        "rest": "",
+        "rpe": "",
         "sets": "5"
       },
       {
@@ -125,6 +151,8 @@
         "muscle": "Vai",
         "name": "Dumbbell Lateral Raise",
         "reps": "15",
+        "rest": "",
+        "rpe": "",
         "sets": "3"
       },
       {
@@ -133,6 +161,8 @@
         "muscle": "Tay trước",
         "name": "Dumbbell Concentration Curl",
         "reps": "15",
+        "rest": "",
+        "rpe": "",
         "sets": "3"
       },
       {
@@ -141,6 +171,8 @@
         "muscle": "Tay sau",
         "name": "Triceps Rope Pushdown",
         "reps": "15",
+        "rest": "",
+        "rpe": "",
         "sets": "3"
       }
     ]
@@ -155,6 +187,8 @@
         "muscle": "Lưng - Xô",
         "name": "Barbell Row",
         "reps": "10",
+        "rest": "",
+        "rpe": "",
         "sets": "4"
       },
       {
@@ -163,6 +197,8 @@
         "muscle": "Ngực",
         "name": "Dumbbell Bench Press",
         "reps": "10",
+        "rest": "",
+        "rpe": "",
         "sets": "4"
       },
       {
@@ -171,6 +207,8 @@
         "muscle": "Vai",
         "name": "Dumbbell Shoulder Press",
         "reps": "15",
+        "rest": "",
+        "rpe": "",
         "sets": "3"
       },
       {
@@ -179,6 +217,8 @@
         "muscle": "Lưng - Xô",
         "name": "Lat Pulldown",
         "reps": "15",
+        "rest": "",
+        "rpe": "",
         "sets": "3"
       },
       {
@@ -187,6 +227,8 @@
         "muscle": "Lưng - Xô",
         "name": "Machine-assisted Pull-up",
         "reps": "15",
+        "rest": "",
+        "rpe": "",
         "sets": "3"
       },
       {
@@ -195,6 +237,8 @@
         "muscle": "Tay trước",
         "name": "Dumbbell Preacher Curl",
         "reps": "15",
+        "rest": "",
+        "rpe": "",
         "sets": "3"
       }
     ]
@@ -209,6 +253,8 @@
         "muscle": "Chân",
         "name": "Goblet Squat",
         "reps": "8",
+        "rest": "",
+        "rpe": "",
         "sets": "5"
       },
       {
@@ -217,6 +263,8 @@
         "muscle": "Chân",
         "name": "Dumbbell Lunge",
         "reps": "15",
+        "rest": "",
+        "rpe": "",
         "sets": "3"
       },
       {
@@ -225,6 +273,8 @@
         "muscle": "Chân",
         "name": "Leg Extension",
         "reps": "15",
+        "rest": "",
+        "rpe": "",
         "sets": "4"
       },
       {
@@ -233,6 +283,8 @@
         "muscle": "Chân",
         "name": "Lying Leg Curl",
         "reps": "15",
+        "rest": "",
+        "rpe": "",
         "sets": "3"
       }
     ]
@@ -247,6 +299,8 @@
         "muscle": "Chân",
         "name": "Dumbbell Front Squat",
         "reps": "10",
+        "rest": "",
+        "rpe": "",
         "sets": "4"
       },
       {
@@ -255,6 +309,8 @@
         "muscle": "Chân",
         "name": "Trap Bar Deadlift",
         "reps": "15",
+        "rest": "",
+        "rpe": "",
         "sets": "3"
       },
       {
@@ -263,6 +319,8 @@
         "muscle": "Chân",
         "name": "Dumbbell Lunge",
         "reps": "15",
+        "rest": "",
+        "rpe": "",
         "sets": "3"
       },
       {
@@ -271,6 +329,8 @@
         "muscle": "Chân",
         "name": "Leg Extension",
         "reps": "15",
+        "rest": "",
+        "rpe": "",
         "sets": "3"
       },
       {
@@ -279,6 +339,8 @@
         "muscle": "Chân",
         "name": "Lying Leg Curl",
         "reps": "15",
+        "rest": "",
+        "rpe": "",
         "sets": "3"
       }
     ]
@@ -293,6 +355,8 @@
         "muscle": "Chân",
         "name": "Barbell Back Squat",
         "reps": "5",
+        "rest": "",
+        "rpe": "",
         "sets": "5"
       },
       {
@@ -301,6 +365,8 @@
         "muscle": "Chân",
         "name": "Barbell Sumo Deadlift",
         "reps": "10",
+        "rest": "",
+        "rpe": "",
         "sets": "4"
       },
       {
@@ -309,6 +375,8 @@
         "muscle": "Mông",
         "name": "Barbell Hip Thrust",
         "reps": "10",
+        "rest": "",
+        "rpe": "",
         "sets": "4"
       },
       {
@@ -317,6 +385,8 @@
         "muscle": "Chân",
         "name": "Leg Press",
         "reps": "12",
+        "rest": "",
+        "rpe": "",
         "sets": "3"
       },
       {
@@ -325,6 +395,8 @@
         "muscle": "Chân",
         "name": "Lying Leg Curl",
         "reps": "15",
+        "rest": "",
+        "rpe": "",
         "sets": "3"
       }
     ]
@@ -339,6 +411,8 @@
         "muscle": "Chân",
         "name": "Barbell Sumo Deadlift",
         "reps": "6",
+        "rest": "",
+        "rpe": "",
         "sets": "4"
       },
       {
@@ -347,6 +421,8 @@
         "muscle": "Chân",
         "name": "Barbell Back Squat",
         "reps": "15",
+        "rest": "",
+        "rpe": "",
         "sets": "3"
       },
       {
@@ -355,6 +431,8 @@
         "muscle": "Mông",
         "name": "Barbell Hip Thrust",
         "reps": "10",
+        "rest": "",
+        "rpe": "",
         "sets": "4"
       },
       {
@@ -363,6 +441,8 @@
         "muscle": "Mông",
         "name": "Rope Pull Through",
         "reps": "12",
+        "rest": "",
+        "rpe": "",
         "sets": "4"
       },
       {
@@ -371,6 +451,8 @@
         "muscle": "Chân",
         "name": "Dumbbell Sumo Squat",
         "reps": "12",
+        "rest": "",
+        "rpe": "",
         "sets": "3"
       }
     ]
@@ -385,6 +467,8 @@
         "muscle": "Ngực",
         "name": "Dumbbell Bench Press",
         "reps": "10",
+        "rest": "",
+        "rpe": "",
         "sets": "4"
       },
       {
@@ -393,6 +477,8 @@
         "muscle": "Ngực",
         "name": "Dumbbell Chest Fly",
         "reps": "12",
+        "rest": "",
+        "rpe": "",
         "sets": "3"
       },
       {
@@ -401,6 +487,8 @@
         "muscle": "Vai",
         "name": "Dumbbell Arnold Press",
         "reps": "8",
+        "rest": "",
+        "rpe": "",
         "sets": "4"
       },
       {
@@ -409,6 +497,8 @@
         "muscle": "Vai",
         "name": "Dumbbell Lateral Raise",
         "reps": "15",
+        "rest": "",
+        "rpe": "",
         "sets": "3"
       },
       {
@@ -417,6 +507,8 @@
         "muscle": "Tay sau",
         "name": "Triceps Rope Pushdown",
         "reps": "15",
+        "rest": "",
+        "rpe": "",
         "sets": "3"
       }
     ]
@@ -431,6 +523,8 @@
         "muscle": "Vai",
         "name": "Barbell Overhead Press",
         "reps": "5",
+        "rest": "",
+        "rpe": "",
         "sets": "5"
       },
       {
@@ -439,6 +533,8 @@
         "muscle": "Ngực",
         "name": "Dumbbell Bench Press",
         "reps": "10",
+        "rest": "",
+        "rpe": "",
         "sets": "4"
       },
       {
@@ -447,6 +543,8 @@
         "muscle": "Vai",
         "name": "Dumbbell Front Raise",
         "reps": "10",
+        "rest": "",
+        "rpe": "",
         "sets": "3"
       },
       {
@@ -455,6 +553,8 @@
         "muscle": "Tay sau",
         "name": "Triceps Rope Pushdown",
         "reps": "15",
+        "rest": "",
+        "rpe": "",
         "sets": "3"
       },
       {
@@ -463,6 +563,8 @@
         "muscle": "Tay sau",
         "name": "Tricep Kickback",
         "reps": "15",
+        "rest": "",
+        "rpe": "",
         "sets": "2"
       }
     ]
@@ -477,6 +579,8 @@
         "muscle": "Ngực",
         "name": "Barbell Bench Press",
         "reps": "5",
+        "rest": "",
+        "rpe": "",
         "sets": "5"
       },
       {
@@ -485,6 +589,8 @@
         "muscle": "Vai",
         "name": "Dumbbell Hammer Shoulder Press",
         "reps": "8",
+        "rest": "",
+        "rpe": "",
         "sets": "4"
       },
       {
@@ -493,6 +599,8 @@
         "muscle": "Vai",
         "name": "Reverse Butterfly",
         "reps": "15",
+        "rest": "",
+        "rpe": "",
         "sets": "3"
       },
       {
@@ -501,6 +609,8 @@
         "muscle": "Vai",
         "name": "Dumbbell Arnold Press",
         "reps": "15",
+        "rest": "",
+        "rpe": "",
         "sets": "3"
       },
       {
@@ -509,6 +619,8 @@
         "muscle": "Tay sau",
         "name": "Triceps Rope Pushdown",
         "reps": "15",
+        "rest": "",
+        "rpe": "",
         "sets": "3"
       }
     ]
@@ -523,6 +635,8 @@
         "muscle": "Vai",
         "name": " Barbell overhead Press",
         "reps": "6",
+        "rest": "",
+        "rpe": "",
         "sets": "4"
       },
       {
@@ -531,6 +645,8 @@
         "muscle": "Ngực",
         "name": "Barbell Bench Press",
         "reps": "5",
+        "rest": "",
+        "rpe": "",
         "sets": "5"
       },
       {
@@ -539,6 +655,8 @@
         "muscle": "Ngực",
         "name": "Cable Chest Fly",
         "reps": "12",
+        "rest": "",
+        "rpe": "",
         "sets": "3"
       },
       {
@@ -547,6 +665,8 @@
         "muscle": "Vai",
         "name": "Dumbbell Lateral Raise",
         "reps": "15",
+        "rest": "",
+        "rpe": "",
         "sets": "3"
       },
       {
@@ -555,6 +675,8 @@
         "muscle": "Vai",
         "name": "Dumbbell Rear Delt Fly",
         "reps": "15",
+        "rest": "",
+        "rpe": "",
         "sets": "3"
       },
       {
@@ -563,6 +685,8 @@
         "muscle": "Tay sau",
         "name": "Dumbbell Skull Crusher",
         "reps": "15",
+        "rest": "",
+        "rpe": "",
         "sets": "3"
       }
     ]
@@ -577,6 +701,8 @@
         "muscle": "Lưng - Xô",
         "name": "Dumbbell Row",
         "reps": "8",
+        "rest": "",
+        "rpe": "",
         "sets": "3"
       },
       {
@@ -585,6 +711,8 @@
         "muscle": "Lưng - Xô",
         "name": "Lat Pulldown",
         "reps": "12",
+        "rest": "",
+        "rpe": "",
         "sets": "3"
       },
       {
@@ -593,6 +721,8 @@
         "muscle": "Lưng - Xô",
         "name": "Close Grip Pulldown",
         "reps": "12",
+        "rest": "",
+        "rpe": "",
         "sets": "3"
       },
       {
@@ -601,6 +731,8 @@
         "muscle": "Lưng - Xô",
         "name": "Machine-assisted Pull-up",
         "reps": "15",
+        "rest": "",
+        "rpe": "",
         "sets": "3"
       },
       {
@@ -609,6 +741,8 @@
         "muscle": "Tay trước",
         "name": "Dumbbell Curl",
         "reps": "8",
+        "rest": "",
+        "rpe": "",
         "sets": "4"
       }
     ]
@@ -623,6 +757,8 @@
         "muscle": "Lưng - Xô",
         "name": "Dumbbell Row",
         "reps": "8",
+        "rest": "",
+        "rpe": "",
         "sets": "4"
       },
       {
@@ -631,6 +767,8 @@
         "muscle": "Lưng - Xô",
         "name": "Lat Pulldown",
         "reps": "12",
+        "rest": "",
+        "rpe": "",
         "sets": "3"
       },
       {
@@ -639,6 +777,8 @@
         "muscle": "Lưng - Xô",
         "name": "Seated Cable Row",
         "reps": "12",
+        "rest": "",
+        "rpe": "",
         "sets": "3"
       },
       {
@@ -647,6 +787,8 @@
         "muscle": "Lưng - Xô",
         "name": "Incline Dumbbell Row",
         "reps": "15",
+        "rest": "",
+        "rpe": "",
         "sets": "3"
       },
       {
@@ -655,6 +797,8 @@
         "muscle": "Tay trước",
         "name": "Dumbbell Hammer Curl",
         "reps": "10",
+        "rest": "",
+        "rpe": "",
         "sets": "3"
       }
     ]
@@ -669,6 +813,8 @@
         "muscle": "Lưng - Xô",
         "name": "Barbell Conventional Deadlift",
         "reps": "5",
+        "rest": "",
+        "rpe": "",
         "sets": "5"
       },
       {
@@ -677,6 +823,8 @@
         "muscle": "Lưng - Xô",
         "name": "Barbell Row",
         "reps": "10",
+        "rest": "",
+        "rpe": "",
         "sets": "3"
       },
       {
@@ -685,6 +833,8 @@
         "muscle": "Lưng - Xô",
         "name": "Machine-assisted Pull-up",
         "reps": "15",
+        "rest": "",
+        "rpe": "",
         "sets": "3"
       },
       {
@@ -693,6 +843,8 @@
         "muscle": "Lưng - Xô",
         "name": "Lat Pulldown",
         "reps": "15",
+        "rest": "",
+        "rpe": "",
         "sets": "3"
       },
       {
@@ -701,6 +853,8 @@
         "muscle": "Lưng - Xô",
         "name": "Face Pull",
         "reps": "10",
+        "rest": "",
+        "rpe": "",
         "sets": "3"
       },
       {
@@ -709,6 +863,8 @@
         "muscle": "Tay trước",
         "name": "Dumbbell Curl",
         "reps": "15",
+        "rest": "",
+        "rpe": "",
         "sets": "3"
       }
     ]
@@ -723,6 +879,8 @@
         "muscle": "Lưng - Xô",
         "name": "Dumbbell Row",
         "reps": "6",
+        "rest": "",
+        "rpe": "",
         "sets": "4"
       },
       {
@@ -731,6 +889,8 @@
         "muscle": "Lưng - Xô",
         "name": "Straight Arm Pulldown",
         "reps": "12",
+        "rest": "",
+        "rpe": "",
         "sets": "4"
       },
       {
@@ -739,6 +899,8 @@
         "muscle": "Lưng - Xô",
         "name": "Lat Pulldown",
         "reps": "12",
+        "rest": "",
+        "rpe": "",
         "sets": "3"
       },
       {
@@ -747,6 +909,8 @@
         "muscle": "Lưng - Xô",
         "name": "Seated Cable Row",
         "reps": "12",
+        "rest": "",
+        "rpe": "",
         "sets": "3"
       },
       {
@@ -755,6 +919,8 @@
         "muscle": "Vai",
         "name": "Reverse Butterfly",
         "reps": "15",
+        "rest": "",
+        "rpe": "",
         "sets": "3"
       },
       {
@@ -763,6 +929,8 @@
         "muscle": "Tay trước",
         "name": "Barbell Curl",
         "reps": "12",
+        "rest": "",
+        "rpe": "",
         "sets": "3"
       }
     ]
@@ -777,6 +945,8 @@
         "muscle": "Mông",
         "name": "Rope Pull Through",
         "reps": "12",
+        "rest": "",
+        "rpe": "",
         "sets": "4"
       },
       {
@@ -785,6 +955,8 @@
         "muscle": "Chân",
         "name": "Walking Lunge",
         "reps": "12",
+        "rest": "",
+        "rpe": "",
         "sets": "4"
       },
       {
@@ -793,6 +965,8 @@
         "muscle": "Mông",
         "name": "Barbell Hip Thrust",
         "reps": "10",
+        "rest": "",
+        "rpe": "",
         "sets": "4"
       },
       {
@@ -801,6 +975,8 @@
         "muscle": "Mông",
         "name": "Cable Donkey Kick",
         "reps": "10",
+        "rest": "",
+        "rpe": "",
         "sets": "4"
       }
     ]
@@ -815,6 +991,8 @@
         "muscle": "Bụng",
         "name": "Crunch",
         "reps": "15",
+        "rest": "45s - 1p",
+        "rpe": "-",
         "sets": "3"
       },
       {
@@ -823,6 +1001,8 @@
         "muscle": "Bụng",
         "name": "Russian Twist",
         "reps": "20",
+        "rest": "45s - 1p",
+        "rpe": "-",
         "sets": "3"
       },
       {
@@ -831,6 +1011,8 @@
         "muscle": "Bụng",
         "name": "Leg Raise",
         "reps": "15",
+        "rest": "45s - 1p",
+        "rpe": "-",
         "sets": "3"
       }
     ]
@@ -845,6 +1027,8 @@
         "muscle": "Bụng",
         "name": "Leg Raise",
         "reps": "15",
+        "rest": "45s - 1p",
+        "rpe": "-",
         "sets": "3"
       },
       {
@@ -853,6 +1037,8 @@
         "muscle": "Bụng",
         "name": "Toe Touches",
         "reps": "15",
+        "rest": "45s - 1p",
+        "rpe": "-",
         "sets": "3"
       },
       {
@@ -861,12 +1047,15 @@
         "muscle": "Bụng",
         "name": "Seated Knee Tucks",
         "reps": "15",
+        "rest": "45s - 1p",
+        "rpe": "-",
         "sets": "3"
       }
     ]
   },
   {
-    "name": "ABS-3 (Bụng)",
+    "code": "ABS-3",
+    "muscles": "Bụng",
     "exercises": [
       {
         "code": "AB01",
@@ -874,6 +1063,8 @@
         "muscle": "Bụng",
         "name": "Alternate Heel Touchers",
         "reps": "15",
+        "rest": "45s - 1p",
+        "rpe": "-",
         "sets": "3"
       },
       {
@@ -882,6 +1073,8 @@
         "muscle": "Bụng",
         "name": "Crunch",
         "reps": "15",
+        "rest": "45s - 1p",
+        "rpe": "-",
         "sets": "3"
       },
       {
@@ -890,7 +1083,132 @@
         "muscle": "Bụng",
         "name": "Leg Raise",
         "reps": "15",
+        "rest": "45s - 1p",
+        "rpe": "-",
         "sets": "3"
+      }
+    ]
+  },
+  {
+    "code": "CARDIO-1",
+    "muscles": "Thể lực - Toàn thân",
+    "exercises": [
+      {
+        "code": "CD01",
+        "difficulty": "Dễ",
+        "muscle": "Toàn thân",
+        "name": "Burpee",
+        "reps": "20",
+        "rest": "",
+        "rpe": "",
+        "sets": "3"
+      },
+      {
+        "code": "CD02",
+        "difficulty": "Dễ",
+        "muscle": "Toàn thân",
+        "name": "Battle Rope",
+        "reps": "30s/set",
+        "rest": "",
+        "rpe": "",
+        "sets": "10"
+      },
+      {
+        "code": "CD03",
+        "difficulty": "Dễ",
+        "muscle": "Toàn thân",
+        "name": "Jump Squat",
+        "reps": "20",
+        "rest": "",
+        "rpe": "",
+        "sets": "3"
+      }
+    ]
+  },
+  {
+    "code": "CARDIO-2",
+    "muscles": "Thể lực - Toàn thân",
+    "exercises": [
+      {
+        "code": "CD04",
+        "difficulty": "Dễ",
+        "muscle": "Toàn thân",
+        "name": "High Knee",
+        "reps": "30s/set",
+        "rest": "",
+        "rpe": "",
+        "sets": "10"
+      },
+      {
+        "code": "CD05",
+        "difficulty": "Dễ",
+        "muscle": "Toàn thân",
+        "name": "Split Jump Squat",
+        "reps": "20",
+        "rest": "",
+        "rpe": "",
+        "sets": "3"
+      },
+      {
+        "code": "CD06",
+        "difficulty": "Dễ",
+        "muscle": "Toàn thân",
+        "name": "Hop Over",
+        "reps": "30s/set",
+        "rest": "",
+        "rpe": "",
+        "sets": "10"
+      }
+    ]
+  },
+  {
+    "code": "CARDIO-3",
+    "muscles": "Thể lực - Toàn thân",
+    "exercises": [
+      {
+        "code": "CD06",
+        "difficulty": "Dễ",
+        "muscle": "Toàn thân",
+        "name": "Hop Over",
+        "reps": "30s/set",
+        "rest": "",
+        "rpe": "",
+        "sets": "10"
+      },
+      {
+        "code": "CD07",
+        "difficulty": "Dễ",
+        "muscle": "Toàn thân",
+        "name": "Mountain Climbers",
+        "reps": "30s/set",
+        "rest": "",
+        "rpe": "",
+        "sets": "10"
+      },
+      {
+        "code": "CD08",
+        "difficulty": "Dễ",
+        "muscle": "Toàn thân",
+        "name": "Forward Hops",
+        "reps": "30s/set",
+        "rest": "",
+        "rpe": "",
+        "sets": "10"
+      }
+    ]
+  },
+  {
+    "name": "CARDIO-4 (Thể lực - Toàn thân)",
+    "exercises": [
+      {
+        "code": "CD09",
+        "difficulty": "Dễ",
+        "muscle": "Toàn thân",
+        "name": "Running On Treadmill",
+        "reps": "10 phút",
+        "rest": "",
+        "rpe": "",
+        "sets": "1"
       }
     ]
   }

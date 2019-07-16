@@ -344,6 +344,67 @@
     "variant": "first_half"
   },
   {
+    "code": "WS13",
+    "dailyCodes": [
+      [
+        "UPPER-3",
+        "CARDIO-1",
+        "CARDIO-2"
+      ],
+      [
+        "LOWER-4"
+      ],
+      [
+        "OFF"
+      ],
+      [
+        "UPPER-4",
+        "CARDIO-3",
+        "CARDIO-4"
+      ],
+      [
+        "LOWER-4"
+      ],
+      [
+        "OFF"
+      ],
+      [
+        ""
+      ]
+    ],
+    "variant": "first_half"
+  },
+  {
+    "code": "WS14",
+    "dailyCodes": [
+      [
+        "UPPER-1"
+      ],
+      [
+        "LOWER-1"
+      ],
+      [
+        "OFF"
+      ],
+      [
+        "FULL BODY"
+      ],
+      [
+        "CARDIO-1",
+        "CARDIO-2",
+        "CARDIO-3",
+        "CARDIO-4"
+      ],
+      [
+        "OFF"
+      ],
+      [
+        "OFF"
+      ]
+    ],
+    "variant": "first_half"
+  },
+  {
     "code": "WS09",
     "dailyCodes": [
       [
@@ -444,6 +505,36 @@
       ],
       [
         "LOWER-4"
+      ],
+      [
+        "OFF"
+      ]
+    ],
+    "variant": "second_half"
+  },
+  {
+    "code": "WS14",
+    "dailyCodes": [
+      [
+        "UPPER-2"
+      ],
+      [
+        "LOWER-2"
+      ],
+      [
+        "OFF"
+      ],
+      [
+        "FULL BODY"
+      ],
+      [
+        "CARDIO-1",
+        "CARDIO-2",
+        "CARDIO-3",
+        "CARDIO-4"
+      ],
+      [
+        "OFF"
       ],
       [
         "OFF"
