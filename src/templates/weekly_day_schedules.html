@@ -19,7 +19,13 @@
     <tbody>
       {{#each exercises}}
       <tr>
-        <td class="align-middle border border-primary text-left">{{order}}. {{name}}</td>
+        <td class="align-middle border border-primary text-left">
+          {{#if videoUrl}}
+            <a href="{{videoUrl}}" rel="noopener noreferrer" target="_blank">{{order}}. {{name}}</a>
+          {{else}}
+            {{order}}. {{name}}
+          {{/if}}
+        </td>
         <td class="align-middle border border-primary">{{muscle}}</td>
         <td class="align-middle border border-primary">{{difficulty}}</td>
         <td class="align-middle border border-primary">{{sets}}</td>

@@ -21,9 +21,13 @@ const SITE_CONFIGS = {
 
 function buildExerciseData(configs, index) {
   const { code } = configs;
-  const { difficulty, muscle, name } = _.find(CONSTANTS.EXERCISES_DATABASE, { code });
+
+  const {
+    difficulty, muscle, name, videoUrl,
+  } = _.find(CONSTANTS.EXERCISES_DATABASE, { code });
+
   return {
-    ...configs, difficulty, muscle, name, order: index + 1,
+    ...configs, difficulty, muscle, name, videoUrl, order: index + 1,
   };
 }
 
@@ -35,12 +39,12 @@ function buildDayExercises(dayExercises, index) {
     return { title: `${weekday}: ${CONSTANTS.OFF_DAY}` };
   }
 
-  const { affectedMuscles, code } = dayExercises[0];
+  const { code, muscles } = dayExercises[0];
   const flattenExercises = _.flatMap(dayExercises, 'exercises');
 
   return {
     exercises: _.map(flattenExercises, buildExerciseData),
-    title: `${weekday}: ${code} (${affectedMuscles})`,
+    title: `${weekday}: ${code} (${muscles})`,
   };
 }
 
