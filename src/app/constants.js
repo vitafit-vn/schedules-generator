@@ -13,7 +13,7 @@ const DAILY_SCHEDULES = {
   intermediate: DAILY_SCHEDULES_INTERMEDIATE,
 };
 
-const OFF_DAY = ['OFF'];
+const OFF_DAY = 'NGHỈ';
 
 const WEEKLY_CODES = $.flow($.map('code'), $.uniq)(WEEKLY_SCHEDULES);
 

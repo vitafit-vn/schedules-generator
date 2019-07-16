@@ -25,12 +25,24 @@ export function renderWeeklySchedule({
 }) {
   const weeklyData = _.find(CONSTANTS.WEEKLY_SCHEDULES, { code: weeklyCode, variant: weekVariant });
   const { dailyCodes } = weeklyData;
-  const daySchedules = _.map(dailyCodes, codes => {
+  const daySchedules = _.map(dailyCodes, (codes, index) => {
     const dayExercises = _.filter(
       CONSTANTS.DAILY_SCHEDULES[workoutLevel],
       ({ code }) => _.includes(codes, code),
     );
-    return _.flatMap(dayExercises, 'exercises');
+
+    // Off day
+    if (_.isEmpty(dayExercises)) {
+      return { title: `${CONSTANTS.WEEKDAYS[index]}: ${CONSTANTS.OFF_DAY}` };
+    }
+
+    const { code, muscles } = dayExercises[0];
+    const flattenExercises = _.flatMap(dayExercises, 'exercises');
+
+    return {
+      exercises: _.map(flattenExercises, (configs, idx) => ({ ...configs, order: idx + 1 })),
+      title: `${CONSTANTS.WEEKDAYS[index]}: ${code} (${muscles})`,
+    };
   });
 
   window.renderingParams = {
