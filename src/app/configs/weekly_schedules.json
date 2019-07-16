@@ -1,590 +1,546 @@
 [
   {
-    "byWeeks": [
+    "code": "WS01",
+    "variant": "first_half",
+    "weekdays": [
       {
-        "weekNumber": "week_1",
-        "weekDays": [
-          {
-            "title": "Thứ hai",
-            "exercises": "UPPER-1\nCARDIO-1\nCARDIO-2"
-          },
-          {
-            "title": "Thứ ba",
-            "exercises": "LOWER-1"
-          },
-          {
-            "title": "Thứ tư",
-            "exercises": "NGHỈ"
-          },
-          {
-            "title": "Thứ năm",
-            "exercises": "UPPER-2\nCARDIO-3\nCARDIO-4"
-          },
-          {
-            "title": "Thứ sáu",
-            "exercises": "LOWER-2"
-          },
-          {
-            "title": "Thứ bảy",
-            "exercises": "NGHỈ"
-          },
-          {
-            "title": "Chủ nhật",
-            "exercises": "NGHỈ"
-          }
-        ]
-      }
-    ],
-    "code": "WS01"
-  },
-  {
-    "byWeeks": [
-      {
-        "weekNumber": "week_1",
-        "weekDays": [
-          {
-            "title": "Thứ hai",
-            "exercises": "UPPER-1"
-          },
-          {
-            "title": "Thứ ba",
-            "exercises": "LOWER-1"
-          },
-          {
-            "title": "Thứ tư",
-            "exercises": "NGHỈ"
-          },
-          {
-            "title": "Thứ năm",
-            "exercises": "UPPER-2"
-          },
-          {
-            "title": "Thứ sáu",
-            "exercises": "LOWER-2"
-          },
-          {
-            "title": "Thứ bảy",
-            "exercises": "NGHỈ"
-          },
-          {
-            "title": "Chủ nhật",
-            "exercises": "NGHỈ"
-          }
-        ]
-      }
-    ],
-    "code": "WS02"
-  },
-  {
-    "byWeeks": [
-      {
-        "weekNumber": "week_1",
-        "weekDays": [
-          {
-            "title": "Thứ hai",
-            "exercises": "UPPER-3\nCARDIO-3\nCARDIO-4"
-          },
-          {
-            "title": "Thứ ba",
-            "exercises": "LOWER-3"
-          },
-          {
-            "title": "Thứ tư",
-            "exercises": "NGHỈ"
-          },
-          {
-            "title": "Thứ năm",
-            "exercises": "UPPER-4\nCARDIO-3\nCARDIO-4"
-          },
-          {
-            "title": "Thứ sáu",
-            "exercises": "LOWER-4"
-          },
-          {
-            "title": "Thứ bảy",
-            "exercises": "NGHỈ"
-          },
-          {
-            "title": "Chủ nhật",
-            "exercises": "NGHỈ"
-          }
-        ]
-      }
-    ],
-    "code": "WS03"
-  },
-  {
-    "byWeeks": [
-      {
-        "weekNumber": "week_1",
-        "weekDays": [
-          {
-            "title": "Thứ hai",
-            "exercises": "UPPER-3"
-          },
-          {
-            "title": "Thứ ba",
-            "exercises": "LOWER-3"
-          },
-          {
-            "title": "Thứ tư",
-            "exercises": "NGHỈ"
-          },
-          {
-            "title": "Thứ năm",
-            "exercises": "UPPER-4"
-          },
-          {
-            "title": "Thứ sáu",
-            "exercises": "LOWER-4"
-          },
-          {
-            "title": "Thứ bảy",
-            "exercises": "NGHỈ"
-          },
-          {
-            "title": "Chủ nhật",
-            "exercises": "NGHỈ"
-          }
-        ]
-      }
-    ],
-    "code": "WS04"
-  },
-  {
-    "byWeeks": [
-      {
-        "weekNumber": "week_1",
-        "weekDays": [
-          {
-            "title": "Thứ hai",
-            "exercises": "UPPER-1"
-          },
-          {
-            "title": "Thứ ba",
-            "exercises": "LOWER-1"
-          },
-          {
-            "title": "Thứ tư",
-            "exercises": "NGHỈ"
-          },
-          {
-            "title": "Thứ năm",
-            "exercises": "UPPER-2"
-          },
-          {
-            "title": "Thứ sáu",
-            "exercises": "LOWER-2"
-          },
-          {
-            "title": "Thứ bảy",
-            "exercises": "NGHỈ"
-          },
-          {
-            "title": "Chủ nhật",
-            "exercises": "CARDIO-1\nCARDIO-2\nCARDIO-3\nCARDIO-4"
-          }
-        ]
-      }
-    ],
-    "code": "WS05"
-  },
-  {
-    "byWeeks": [
-      {
-        "weekNumber": "week_1",
-        "weekDays": [
-          {
-            "title": "Thứ hai",
-            "exercises": "UPPER-1"
-          },
-          {
-            "title": "Thứ ba",
-            "exercises": "LOWER-2"
-          },
-          {
-            "title": "Thứ tư",
-            "exercises": "NGHỈ"
-          },
-          {
-            "title": "Thứ năm",
-            "exercises": "UPPER-2"
-          },
-          {
-            "title": "Thứ sáu",
-            "exercises": "LOWER-1"
-          },
-          {
-            "title": "Thứ bảy",
-            "exercises": "NGHỈ"
-          },
-          {
-            "title": "Chủ nhật",
-            "exercises": "CARDIO-1\nCARDIO-2\nCARDIO-3\nCARDIO-4"
-          }
-        ]
-      }
-    ],
-    "code": "WS06"
-  },
-  {
-    "byWeeks": [
-      {
-        "weekNumber": "week_1",
-        "weekDays": [
-          {
-            "title": "Thứ hai",
-            "exercises": "UPPER-3"
-          },
-          {
-            "title": "Thứ ba",
-            "exercises": "LOWER-3"
-          },
-          {
-            "title": "Thứ tư",
-            "exercises": "NGHỈ"
-          },
-          {
-            "title": "Thứ năm",
-            "exercises": "UPPER-4"
-          },
-          {
-            "title": "Thứ sáu",
-            "exercises": "LOWER-4"
-          },
-          {
-            "title": "Thứ bảy",
-            "exercises": "NGHỈ"
-          },
-          {
-            "title": "Chủ nhật",
-            "exercises": "CARDIO-1\nCARDIO-2\nCARDIO-3\nCARDIO-4"
-          }
-        ]
-      }
-    ],
-    "code": "WS07"
-  },
-  {
-    "byWeeks": [
-      {
-        "weekNumber": "week_1",
-        "weekDays": [
-          {
-            "title": "Thứ hai",
-            "exercises": "UPPER-3"
-          },
-          {
-            "title": "Thứ ba",
-            "exercises": "LOWER-4"
-          },
-          {
-            "title": "Thứ tư",
-            "exercises": "NGHỈ"
-          },
-          {
-            "title": "Thứ năm",
-            "exercises": "UPPER-4"
-          },
-          {
-            "title": "Thứ sáu",
-            "exercises": "LOWER-3"
-          },
-          {
-            "title": "Thứ bảy",
-            "exercises": "NGHỈ"
-          },
-          {
-            "title": "Chủ nhật",
-            "exercises": "CARDIO-1\nCARDIO-2\nCARDIO-3\nCARDIO-4"
-          }
-        ]
-      }
-    ],
-    "code": "WS08"
-  },
-  {
-    "byWeeks": [
-      {
-        "weekNumber": "week_1",
-        "weekDays": [
-          {
-            "title": "Thứ hai",
-            "exercises": "PUSH-1"
-          },
-          {
-            "title": "Thứ ba",
-            "exercises": "PULL-1"
-          },
-          {
-            "title": "Thứ tư",
-            "exercises": "NGHỈ"
-          },
-          {
-            "title": "Thứ năm",
-            "exercises": "LOWER-1"
-          },
-          {
-            "title": "Thứ sáu",
-            "exercises": "PUSH-2"
-          },
-          {
-            "title": "Thứ bảy",
-            "exercises": "PULL-2"
-          },
-          {
-            "title": "Chủ nhật",
-            "exercises": "NGHỈ"
-          }
-        ]
+        "title": "Thứ hai",
+        "exercises": "UPPER-1\nCARDIO-1\nCARDIO-2"
       },
       {
-        "weekNumber": "week_2",
-        "weekDays": [
-          {
-            "title": "Thứ hai",
-            "exercises": "LOWER-2"
-          },
-          {
-            "title": "Thứ ba",
-            "exercises": "PUSH-1"
-          },
-          {
-            "title": "Thứ tư",
-            "exercises": "NGHỈ"
-          },
-          {
-            "title": "Thứ năm",
-            "exercises": "PULL-1"
-          },
-          {
-            "title": "Thứ sáu",
-            "exercises": "LOWER-1"
-          },
-          {
-            "title": "Thứ bảy",
-            "exercises": "PUSH-2"
-          },
-          {
-            "title": "Chủ nhật",
-            "exercises": "NGHỈ"
-          }
-        ]
-      }
-    ],
-    "code": "WS09"
-  },
-  {
-    "byWeeks": [
-      {
-        "weekNumber": "week_1",
-        "weekDays": [
-          {
-            "title": "Thứ hai",
-            "exercises": "PUSH-3"
-          },
-          {
-            "title": "Thứ ba",
-            "exercises": "PULL-3"
-          },
-          {
-            "title": "Thứ tư",
-            "exercises": "NGHỈ"
-          },
-          {
-            "title": "Thứ năm",
-            "exercises": "LOWER-3"
-          },
-          {
-            "title": "Thứ sáu",
-            "exercises": "PUSH-4"
-          },
-          {
-            "title": "Thứ bảy",
-            "exercises": "PULL-4"
-          },
-          {
-            "title": "Chủ nhật",
-            "exercises": "NGHỈ"
-          }
-        ]
+        "title": "Thứ ba",
+        "exercises": "LOWER-1"
       },
       {
-        "weekNumber": "week_2",
-        "weekDays": [
-          {
-            "title": "Thứ hai",
-            "exercises": "LOWER-4"
-          },
-          {
-            "title": "Thứ ba",
-            "exercises": "PUSH-3"
-          },
-          {
-            "title": "Thứ tư",
-            "exercises": "NGHỈ"
-          },
-          {
-            "title": "Thứ năm",
-            "exercises": "PULL-3"
-          },
-          {
-            "title": "Thứ sáu",
-            "exercises": "LOWER-3"
-          },
-          {
-            "title": "Thứ bảy",
-            "exercises": "PUSH-4"
-          },
-          {
-            "title": "Chủ nhật",
-            "exercises": "NGHỈ"
-          }
-        ]
-      }
-    ],
-    "code": "WS10"
-  },
-  {
-    "byWeeks": [
-      {
-        "weekNumber": "week_1",
-        "weekDays": [
-          {
-            "title": "Thứ hai",
-            "exercises": "UPPER-1"
-          },
-          {
-            "title": "Thứ ba",
-            "exercises": "LOWER-1"
-          },
-          {
-            "title": "Thứ tư",
-            "exercises": "NGHỈ"
-          },
-          {
-            "title": "Thứ năm",
-            "exercises": "PUSH-1"
-          },
-          {
-            "title": "Thứ sáu",
-            "exercises": "PULL-1"
-          },
-          {
-            "title": "Thứ bảy",
-            "exercises": "LOWER-1"
-          },
-          {
-            "title": "Chủ nhật",
-            "exercises": "NGHỈ"
-          }
-        ]
+        "title": "Thứ tư",
+        "exercises": "NGHỈ"
       },
       {
-        "weekNumber": "week_2",
-        "weekDays": [
-          {
-            "title": "Thứ hai",
-            "exercises": "UPPER-2"
-          },
-          {
-            "title": "Thứ ba",
-            "exercises": "LOWER-2"
-          },
-          {
-            "title": "Thứ tư",
-            "exercises": "NGHỈ"
-          },
-          {
-            "title": "Thứ năm",
-            "exercises": "PUSH-2"
-          },
-          {
-            "title": "Thứ sáu",
-            "exercises": "PULL-2"
-          },
-          {
-            "title": "Thứ bảy",
-            "exercises": "LOWER-2"
-          },
-          {
-            "title": "Chủ nhật",
-            "exercises": "NGHỈ"
-          }
-        ]
-      }
-    ],
-    "code": "WS11"
-  },
-  {
-    "byWeeks": [
-      {
-        "weekNumber": "week_1",
-        "weekDays": [
-          {
-            "title": "Thứ hai",
-            "exercises": "UPPER-3"
-          },
-          {
-            "title": "Thứ ba",
-            "exercises": "LOWER-3"
-          },
-          {
-            "title": "Thứ tư",
-            "exercises": "NGHỈ"
-          },
-          {
-            "title": "Thứ năm",
-            "exercises": "PUSH-3"
-          },
-          {
-            "title": "Thứ sáu",
-            "exercises": "PULL-3"
-          },
-          {
-            "title": "Thứ bảy",
-            "exercises": "LOWER-3"
-          },
-          {
-            "title": "Chủ nhật",
-            "exercises": "NGHỈ"
-          }
-        ]
+        "title": "Thứ năm",
+        "exercises": "UPPER-2\nCARDIO-3\nCARDIO-4"
       },
       {
-        "weekNumber": "week_2",
-        "weekDays": [
-          {
-            "title": "Thứ hai",
-            "exercises": "UPPER-4"
-          },
-          {
-            "title": "Thứ ba",
-            "exercises": "LOWER-4"
-          },
-          {
-            "title": "Thứ tư",
-            "exercises": "NGHỈ"
-          },
-          {
-            "title": "Thứ năm",
-            "exercises": "PUSH-4"
-          },
-          {
-            "title": "Thứ sáu",
-            "exercises": "PULL-4"
-          },
-          {
-            "title": "Thứ bảy",
-            "exercises": "LOWER-4"
-          },
-          {
-            "title": "Chủ nhật",
-            "exercises": "NGHỈ"
-          }
-        ]
+        "title": "Thứ sáu",
+        "exercises": "LOWER-2"
+      },
+      {
+        "title": "Thứ bảy",
+        "exercises": "NGHỈ"
+      },
+      {
+        "title": "Chủ nhật",
+        "exercises": "NGHỈ"
       }
-    ],
-    "code": "WS12"
+    ]
+  },
+  {
+    "code": "WS02",
+    "variant": "first_half",
+    "weekdays": [
+      {
+        "title": "Thứ hai",
+        "exercises": "UPPER-1"
+      },
+      {
+        "title": "Thứ ba",
+        "exercises": "LOWER-1"
+      },
+      {
+        "title": "Thứ tư",
+        "exercises": "NGHỈ"
+      },
+      {
+        "title": "Thứ năm",
+        "exercises": "UPPER-2"
+      },
+      {
+        "title": "Thứ sáu",
+        "exercises": "LOWER-2"
+      },
+      {
+        "title": "Thứ bảy",
+        "exercises": "NGHỈ"
+      },
+      {
+        "title": "Chủ nhật",
+        "exercises": "NGHỈ"
+      }
+    ]
+  },
+  {
+    "code": "WS03",
+    "variant": "first_half",
+    "weekdays": [
+      {
+        "title": "Thứ hai",
+        "exercises": "UPPER-3\nCARDIO-3\nCARDIO-4"
+      },
+      {
+        "title": "Thứ ba",
+        "exercises": "LOWER-3"
+      },
+      {
+        "title": "Thứ tư",
+        "exercises": "NGHỈ"
+      },
+      {
+        "title": "Thứ năm",
+        "exercises": "UPPER-4\nCARDIO-3\nCARDIO-4"
+      },
+      {
+        "title": "Thứ sáu",
+        "exercises": "LOWER-4"
+      },
+      {
+        "title": "Thứ bảy",
+        "exercises": "NGHỈ"
+      },
+      {
+        "title": "Chủ nhật",
+        "exercises": "NGHỈ"
+      }
+    ]
+  },
+  {
+    "code": "WS04",
+    "variant": "first_half",
+    "weekdays": [
+      {
+        "title": "Thứ hai",
+        "exercises": "UPPER-3"
+      },
+      {
+        "title": "Thứ ba",
+        "exercises": "LOWER-3"
+      },
+      {
+        "title": "Thứ tư",
+        "exercises": "NGHỈ"
+      },
+      {
+        "title": "Thứ năm",
+        "exercises": "UPPER-4"
+      },
+      {
+        "title": "Thứ sáu",
+        "exercises": "LOWER-4"
+      },
+      {
+        "title": "Thứ bảy",
+        "exercises": "NGHỈ"
+      },
+      {
+        "title": "Chủ nhật",
+        "exercises": "NGHỈ"
+      }
+    ]
+  },
+  {
+    "code": "WS05",
+    "variant": "first_half",
+    "weekdays": [
+      {
+        "title": "Thứ hai",
+        "exercises": "UPPER-1"
+      },
+      {
+        "title": "Thứ ba",
+        "exercises": "LOWER-1"
+      },
+      {
+        "title": "Thứ tư",
+        "exercises": "NGHỈ"
+      },
+      {
+        "title": "Thứ năm",
+        "exercises": "UPPER-2"
+      },
+      {
+        "title": "Thứ sáu",
+        "exercises": "LOWER-2"
+      },
+      {
+        "title": "Thứ bảy",
+        "exercises": "NGHỈ"
+      },
+      {
+        "title": "Chủ nhật",
+        "exercises": "CARDIO-1\nCARDIO-2\nCARDIO-3\nCARDIO-4"
+      }
+    ]
+  },
+  {
+    "code": "WS06",
+    "variant": "first_half",
+    "weekdays": [
+      {
+        "title": "Thứ hai",
+        "exercises": "UPPER-1"
+      },
+      {
+        "title": "Thứ ba",
+        "exercises": "LOWER-2"
+      },
+      {
+        "title": "Thứ tư",
+        "exercises": "NGHỈ"
+      },
+      {
+        "title": "Thứ năm",
+        "exercises": "UPPER-2"
+      },
+      {
+        "title": "Thứ sáu",
+        "exercises": "LOWER-1"
+      },
+      {
+        "title": "Thứ bảy",
+        "exercises": "NGHỈ"
+      },
+      {
+        "title": "Chủ nhật",
+        "exercises": "CARDIO-1\nCARDIO-2\nCARDIO-3\nCARDIO-4"
+      }
+    ]
+  },
+  {
+    "code": "WS07",
+    "variant": "first_half",
+    "weekdays": [
+      {
+        "title": "Thứ hai",
+        "exercises": "UPPER-3"
+      },
+      {
+        "title": "Thứ ba",
+        "exercises": "LOWER-3"
+      },
+      {
+        "title": "Thứ tư",
+        "exercises": "NGHỈ"
+      },
+      {
+        "title": "Thứ năm",
+        "exercises": "UPPER-4"
+      },
+      {
+        "title": "Thứ sáu",
+        "exercises": "LOWER-4"
+      },
+      {
+        "title": "Thứ bảy",
+        "exercises": "NGHỈ"
+      },
+      {
+        "title": "Chủ nhật",
+        "exercises": "CARDIO-1\nCARDIO-2\nCARDIO-3\nCARDIO-4"
+      }
+    ]
+  },
+  {
+    "code": "WS08",
+    "variant": "first_half",
+    "weekdays": [
+      {
+        "title": "Thứ hai",
+        "exercises": "UPPER-3"
+      },
+      {
+        "title": "Thứ ba",
+        "exercises": "LOWER-4"
+      },
+      {
+        "title": "Thứ tư",
+        "exercises": "NGHỈ"
+      },
+      {
+        "title": "Thứ năm",
+        "exercises": "UPPER-4"
+      },
+      {
+        "title": "Thứ sáu",
+        "exercises": "LOWER-3"
+      },
+      {
+        "title": "Thứ bảy",
+        "exercises": "NGHỈ"
+      },
+      {
+        "title": "Chủ nhật",
+        "exercises": "CARDIO-1\nCARDIO-2\nCARDIO-3\nCARDIO-4"
+      }
+    ]
+  },
+  {
+    "code": "WS09",
+    "variant": "first_half",
+    "weekdays": [
+      {
+        "title": "Thứ hai",
+        "exercises": "PUSH-1"
+      },
+      {
+        "title": "Thứ ba",
+        "exercises": "PULL-1"
+      },
+      {
+        "title": "Thứ tư",
+        "exercises": "NGHỈ"
+      },
+      {
+        "title": "Thứ năm",
+        "exercises": "LOWER-1"
+      },
+      {
+        "title": "Thứ sáu",
+        "exercises": "PUSH-2"
+      },
+      {
+        "title": "Thứ bảy",
+        "exercises": "PULL-2"
+      },
+      {
+        "title": "Chủ nhật",
+        "exercises": "NGHỈ"
+      }
+    ]
+  },
+  {
+    "code": "WS10",
+    "variant": "first_half",
+    "weekdays": [
+      {
+        "title": "Thứ hai",
+        "exercises": "PUSH-3"
+      },
+      {
+        "title": "Thứ ba",
+        "exercises": "PULL-3"
+      },
+      {
+        "title": "Thứ tư",
+        "exercises": "NGHỈ"
+      },
+      {
+        "title": "Thứ năm",
+        "exercises": "LOWER-3"
+      },
+      {
+        "title": "Thứ sáu",
+        "exercises": "PUSH-4"
+      },
+      {
+        "title": "Thứ bảy",
+        "exercises": "PULL-4"
+      },
+      {
+        "title": "Chủ nhật",
+        "exercises": "NGHỈ"
+      }
+    ]
+  },
+  {
+    "code": "WS11",
+    "variant": "first_half",
+    "weekdays": [
+      {
+        "title": "Thứ hai",
+        "exercises": "UPPER-1"
+      },
+      {
+        "title": "Thứ ba",
+        "exercises": "LOWER-1"
+      },
+      {
+        "title": "Thứ tư",
+        "exercises": "NGHỈ"
+      },
+      {
+        "title": "Thứ năm",
+        "exercises": "PUSH-1"
+      },
+      {
+        "title": "Thứ sáu",
+        "exercises": "PULL-1"
+      },
+      {
+        "title": "Thứ bảy",
+        "exercises": "LOWER-1"
+      },
+      {
+        "title": "Chủ nhật",
+        "exercises": "NGHỈ"
+      }
+    ]
+  },
+  {
+    "code": "WS12",
+    "variant": "first_half",
+    "weekdays": [
+      {
+        "title": "Thứ hai",
+        "exercises": "UPPER-3"
+      },
+      {
+        "title": "Thứ ba",
+        "exercises": "LOWER-3"
+      },
+      {
+        "title": "Thứ tư",
+        "exercises": "NGHỈ"
+      },
+      {
+        "title": "Thứ năm",
+        "exercises": "PUSH-3"
+      },
+      {
+        "title": "Thứ sáu",
+        "exercises": "PULL-3"
+      },
+      {
+        "title": "Thứ bảy",
+        "exercises": "LOWER-3"
+      },
+      {
+        "title": "Chủ nhật",
+        "exercises": "NGHỈ"
+      }
+    ]
+  },
+  {
+    "code": "WS09",
+    "variant": "second_half",
+    "weekdays": [
+      {
+        "title": "Thứ hai",
+        "exercises": "LOWER-2"
+      },
+      {
+        "title": "Thứ ba",
+        "exercises": "PUSH-1"
+      },
+      {
+        "title": "Thứ tư",
+        "exercises": "NGHỈ"
+      },
+      {
+        "title": "Thứ năm",
+        "exercises": "PULL-1"
+      },
+      {
+        "title": "Thứ sáu",
+        "exercises": "LOWER-1"
+      },
+      {
+        "title": "Thứ bảy",
+        "exercises": "PUSH-2"
+      },
+      {
+        "title": "Chủ nhật",
+        "exercises": "NGHỈ"
+      }
+    ]
+  },
+  {
+    "code": "WS10",
+    "variant": "second_half",
+    "weekdays": [
+      {
+        "title": "Thứ hai",
+        "exercises": "LOWER-4"
+      },
+      {
+        "title": "Thứ ba",
+        "exercises": "PUSH-3"
+      },
+      {
+        "title": "Thứ tư",
+        "exercises": "NGHỈ"
+      },
+      {
+        "title": "Thứ năm",
+        "exercises": "PULL-3"
+      },
+      {
+        "title": "Thứ sáu",
+        "exercises": "LOWER-3"
+      },
+      {
+        "title": "Thứ bảy",
+        "exercises": "PUSH-4"
+      },
+      {
+        "title": "Chủ nhật",
+        "exercises": "NGHỈ"
+      }
+    ]
+  },
+  {
+    "code": "WS11",
+    "variant": "second_half",
+    "weekdays": [
+      {
+        "title": "Thứ hai",
+        "exercises": "UPPER-2"
+      },
+      {
+        "title": "Thứ ba",
+        "exercises": "LOWER-2"
+      },
+      {
+        "title": "Thứ tư",
+        "exercises": "NGHỈ"
+      },
+      {
+        "title": "Thứ năm",
+        "exercises": "PUSH-2"
+      },
+      {
+        "title": "Thứ sáu",
+        "exercises": "PULL-2"
+      },
+      {
+        "title": "Thứ bảy",
+        "exercises": "LOWER-2"
+      },
+      {
+        "title": "Chủ nhật",
+        "exercises": "NGHỈ"
+      }
+    ]
+  },
+  {
+    "code": "WS12",
+    "variant": "second_half",
+    "weekdays": [
+      {
+        "title": "Thứ hai",
+        "exercises": "UPPER-4"
+      },
+      {
+        "title": "Thứ ba",
+        "exercises": "LOWER-4"
+      },
+      {
+        "title": "Thứ tư",
+        "exercises": "NGHỈ"
+      },
+      {
+        "title": "Thứ năm",
+        "exercises": "PUSH-4"
+      },
+      {
+        "title": "Thứ sáu",
+        "exercises": "PULL-4"
+      },
+      {
+        "title": "Thứ bảy",
+        "exercises": "LOWER-4"
+      },
+      {
+        "title": "Chủ nhật",
+        "exercises": "NGHỈ"
+      }
+    ]
   }
 ]

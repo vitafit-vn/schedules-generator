@@ -11,8 +11,7 @@ registerPartials();
 
 /* eslint-disable import/prefer-default-export */
 
-export function renderWeeklySchedule(schedule, weekNumber, userInfo) {
-  const { code, byWeeks } = schedule;
-  const weekSchedule = _.find(byWeeks, { weekNumber });
-  return Handlebars.templates.weekly({ code, userInfo, ...weekSchedule });
+export function renderWeeklySchedule(weeklyData, userInfo) {
+  const { weekDays } = weeklyData;
+  return Handlebars.templates.weekly({ weekDays, userInfo });
 }

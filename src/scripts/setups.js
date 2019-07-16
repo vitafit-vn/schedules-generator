@@ -6,7 +6,9 @@ function setupFixtures() {
   $('#user-data input[name=weight]').val('54');
   $('#user-data select[name=workout_level]').val('beginner');
   $('#user-data select[name=weekly_code]').val('WS03');
-  $('#user-data select[name=week_number]').val('week_1');
+  $('#user-data select[name=week_variant]').val('first_half');
+  $('#user-data input[name=period_from]').val('2019-07-15');
+  $('#user-data input[name=period_to]').val('2019-07-21');
 }
 
 function setupBirthYearSelect() {
@@ -33,21 +35,19 @@ function setupWeeklyCodeSelect() {
   $('#user-data select[name=weekly_code]').html(weeklyCodeOptions);
 }
 
-function setupWeekNumberSelect() {
+function setupWeekVariantSelect() {
   const weeklyCode = $('#user-data select[name=weekly_code]').val();
-  const weekNumberOptions = _.map(VSG.CONSTANTS.WEEK_NUMBERS_BY_CODE[weeklyCode], weekNumber => {
-    const title = _.capitalize(weekNumber)
-      .split('_')
-      .join(' ');
-    return `<option value="${weekNumber}">${title}</option>`;
-  });
-  $('#user-data select[name=week_number]').html(weekNumberOptions);
+  const weekVariantOptions = _.map(
+    VSG.CONSTANTS.WEEK_VARIANTS_BY_CODES[weeklyCode],
+    variant => `<option value="${variant}">${variant}</option>`,
+  );
+  $('#user-data select[name=week_variant]').html(weekVariantOptions);
 }
 
 $(document).ready(() => {
   setupBirthYearSelect();
   setupWeeklyCodeSelect();
-  setupWeekNumberSelect();
+  setupWeekVariantSelect();
   setupWorkoutLevelSelect();
 
   setupFixtures();

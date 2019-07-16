@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import $$ from 'lodash/fp';
 
-import * as CONSTANTS from './constants';
+import CONSTANTS from './constants';
 import { renderWeeklySchedule } from './renderers';
 import { computeChecksum } from './utils';
 

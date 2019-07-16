@@ -1,10 +1,10 @@
 import _ from 'lodash';
 
 // Locals
-import { WEEKDAYS } from '../../app/constants';
+import CONSTANTS from '../../app/constants';
 
-function mapWeekDays(weekDays) {
-  const titles = _.slice(WEEKDAYS, 0, weekDays.length);
+function mapWeekDaysWithTitles(weekDays) {
+  const titles = _.slice(CONSTANTS.WEEKDAYS, 0, weekDays.length);
   const pairs = _.zip(titles, weekDays);
   return _.map(pairs, ([title, exercises]) => ({ title, exercises }));
 }
@@ -54,19 +54,8 @@ export function convertDailySchedulesRecords(records) {
 }
 
 export function convertWeeklySchedulesRecords(records) {
-  const schedulesMapping = {};
-
-  _.each(records, row => {
-    const [code, weekNumber, ...weekdays] = row;
-    schedulesMapping[code] = schedulesMapping[code] || {};
-    schedulesMapping[code][weekNumber] = mapWeekDays(weekdays);
-  });
-
-  const schedulesPairs = _.toPairs(schedulesMapping);
-
-  return _.map(schedulesPairs, ([code, schedulesByWeek]) => {
-    const weekPairs = _.toPairs(schedulesByWeek);
-    const byWeeks = _.map(weekPairs, ([weekNumber, weekDays]) => ({ weekNumber, weekDays }));
-    return { byWeeks, code };
+  return _.map(records, row => {
+    const [code, variant, ...weekdays] = row;
+    return { code, variant, weekdays: mapWeekDaysWithTitles(weekdays) };
   });
 }
