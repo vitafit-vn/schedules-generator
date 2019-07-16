@@ -2,11 +2,11 @@ import fs from 'fs';
 import _ from 'lodash';
 
 // Locals
-import { WORKOUT_LEVELS } from '../constants';
-import { parseDailySchedules, parseWeeklySchedules } from '../parsers';
+import { WORKOUT_LEVELS } from '../app/constants';
+import { parseDailySchedules, parseWeeklySchedules } from './parsers';
 
-const CONFIGS_DIR = './src/js/configs';
-const DATA_DIR = './src/js/data';
+const CONFIGS_DIR = './src/app/configs';
+const DATA_DIR = './src/tasks/data';
 
 function buildDailyScheduleConfigs() {
   _.each(WORKOUT_LEVELS, async level => {

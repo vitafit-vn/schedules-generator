@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
 // Locals
-import { WEEKDAYS } from '../constants';
+import { WEEKDAYS } from '../../app/constants';
 
 function mapWeekDays(weekDays) {
   const titles = _.slice(WEEKDAYS, 0, weekDays.length);

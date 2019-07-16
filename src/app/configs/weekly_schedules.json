@@ -1,6 +1,5 @@
 [
   {
-    "code": "WS01",
     "byWeeks": [
       {
         "weekNumber": "week_1",
@@ -26,7 +25,7 @@
             "exercises": "LOWER-2"
           },
           {
-            "title": "Thứ 7",
+            "title": "Thứ bảy",
             "exercises": "NGHỈ"
           },
           {
@@ -35,10 +34,10 @@
           }
         ]
       }
-    ]
+    ],
+    "code": "WS01"
   },
   {
-    "code": "WS02",
     "byWeeks": [
       {
         "weekNumber": "week_1",
@@ -64,7 +63,7 @@
             "exercises": "LOWER-2"
           },
           {
-            "title": "Thứ 7",
+            "title": "Thứ bảy",
             "exercises": "NGHỈ"
           },
           {
@@ -73,10 +72,10 @@
           }
         ]
       }
-    ]
+    ],
+    "code": "WS02"
   },
   {
-    "code": "WS03",
     "byWeeks": [
       {
         "weekNumber": "week_1",
@@ -102,7 +101,7 @@
             "exercises": "LOWER-4"
           },
           {
-            "title": "Thứ 7",
+            "title": "Thứ bảy",
             "exercises": "NGHỈ"
           },
           {
@@ -111,10 +110,10 @@
           }
         ]
       }
-    ]
+    ],
+    "code": "WS03"
   },
   {
-    "code": "WS04",
     "byWeeks": [
       {
         "weekNumber": "week_1",
@@ -140,7 +139,7 @@
             "exercises": "LOWER-4"
           },
           {
-            "title": "Thứ 7",
+            "title": "Thứ bảy",
             "exercises": "NGHỈ"
           },
           {
@@ -149,10 +148,10 @@
           }
         ]
       }
-    ]
+    ],
+    "code": "WS04"
   },
   {
-    "code": "WS05",
     "byWeeks": [
       {
         "weekNumber": "week_1",
@@ -178,7 +177,7 @@
             "exercises": "LOWER-2"
           },
           {
-            "title": "Thứ 7",
+            "title": "Thứ bảy",
             "exercises": "NGHỈ"
           },
           {
@@ -187,10 +186,10 @@
           }
         ]
       }
-    ]
+    ],
+    "code": "WS05"
   },
   {
-    "code": "WS06",
     "byWeeks": [
       {
         "weekNumber": "week_1",
@@ -216,7 +215,7 @@
             "exercises": "LOWER-1"
           },
           {
-            "title": "Thứ 7",
+            "title": "Thứ bảy",
             "exercises": "NGHỈ"
           },
           {
@@ -225,10 +224,10 @@
           }
         ]
       }
-    ]
+    ],
+    "code": "WS06"
   },
   {
-    "code": "WS07",
     "byWeeks": [
       {
         "weekNumber": "week_1",
@@ -254,7 +253,7 @@
             "exercises": "LOWER-4"
           },
           {
-            "title": "Thứ 7",
+            "title": "Thứ bảy",
             "exercises": "NGHỈ"
           },
           {
@@ -263,10 +262,10 @@
           }
         ]
       }
-    ]
+    ],
+    "code": "WS07"
   },
   {
-    "code": "WS08",
     "byWeeks": [
       {
         "weekNumber": "week_1",
@@ -292,7 +291,7 @@
             "exercises": "LOWER-3"
           },
           {
-            "title": "Thứ 7",
+            "title": "Thứ bảy",
             "exercises": "NGHỈ"
           },
           {
@@ -301,10 +300,10 @@
           }
         ]
       }
-    ]
+    ],
+    "code": "WS08"
   },
   {
-    "code": "WS09",
     "byWeeks": [
       {
         "weekNumber": "week_1",
@@ -330,7 +329,7 @@
             "exercises": "PUSH-2"
           },
           {
-            "title": "Thứ 7",
+            "title": "Thứ bảy",
             "exercises": "PULL-2"
           },
           {
@@ -363,7 +362,7 @@
             "exercises": "LOWER-1"
           },
           {
-            "title": "Thứ 7",
+            "title": "Thứ bảy",
             "exercises": "PUSH-2"
           },
           {
@@ -372,10 +371,10 @@
           }
         ]
       }
-    ]
+    ],
+    "code": "WS09"
   },
   {
-    "code": "WS10",
     "byWeeks": [
       {
         "weekNumber": "week_1",
@@ -401,7 +400,7 @@
             "exercises": "PUSH-4"
           },
           {
-            "title": "Thứ 7",
+            "title": "Thứ bảy",
             "exercises": "PULL-4"
           },
           {
@@ -434,7 +433,7 @@
             "exercises": "LOWER-3"
           },
           {
-            "title": "Thứ 7",
+            "title": "Thứ bảy",
             "exercises": "PUSH-4"
           },
           {
@@ -443,10 +442,10 @@
           }
         ]
       }
-    ]
+    ],
+    "code": "WS10"
   },
   {
-    "code": "WS11",
     "byWeeks": [
       {
         "weekNumber": "week_1",
@@ -472,7 +471,7 @@
             "exercises": "PULL-1"
           },
           {
-            "title": "Thứ 7",
+            "title": "Thứ bảy",
             "exercises": "LOWER-1"
           },
           {
@@ -505,7 +504,7 @@
             "exercises": "PULL-2"
           },
           {
-            "title": "Thứ 7",
+            "title": "Thứ bảy",
             "exercises": "LOWER-2"
           },
           {
@@ -514,10 +513,10 @@
           }
         ]
       }
-    ]
+    ],
+    "code": "WS11"
   },
   {
-    "code": "WS12",
     "byWeeks": [
       {
         "weekNumber": "week_1",
@@ -543,7 +542,7 @@
             "exercises": "PULL-3"
           },
           {
-            "title": "Thứ 7",
+            "title": "Thứ bảy",
             "exercises": "LOWER-3"
           },
           {
@@ -576,7 +575,7 @@
             "exercises": "PULL-4"
           },
           {
-            "title": "Thứ 7",
+            "title": "Thứ bảy",
             "exercises": "LOWER-4"
           },
           {
@@ -585,6 +584,7 @@
           }
         ]
       }
-    ]
+    ],
+    "code": "WS12"
   }
 ]

@@ -28,7 +28,7 @@ module.exports = {
     fs: 'empty',
   },
   entry: {
-    main: ['./src/js/app.js', './src/style/main.scss'],
+    main: ['./src/app/index.js', './src/style/main.scss'],
     schedules: ['./src/style/schedules.scss'],
   },
   output: {
