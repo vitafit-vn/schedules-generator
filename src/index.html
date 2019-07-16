@@ -13,59 +13,101 @@
 </head>
 
 <body>
-  <div>
+  <div class="container">
     <h1>Công cụ tạo lịch tập</h1>
-    <form id="user-data" action="javascript: showSchedules();">
-      <table>
-        <tr>
-          <td>Mã KH:</td>
-          <td><input type="text" name="user_id"></td>
-        </tr>
-        <tr>
-          <td>Họ tên:</td>
-          <td><input type="text" name="full_name"></td>
-          <td></td>
-          <td>Năm sinh:</td>
-          <td><select name="birth_year"></select></td>
-        </tr>
-        <tr>
-          <td>Chiều cao:</td>
-          <td><input type="text" name="height"></td>
-          <td>(cm)</td>
-          <td>Cân nặng:</td>
-          <td><input type="text" name="weight"></td>
-          <td>(kg)</td>
-        </tr>
-        <tr>
-          <td>Trình độ:</td>
-          <td><select name="workout_level" onchange="setupWorkoutLevelSelect()"></select></td>
-        </tr>
-        <tr>
-          <td>Preset lịch tuần:</td>
-          <td><select name="weekly_code" onchange="setupWeekVariantSelect()"></select></td>
-          <td></td>
-          <td>Tuần:</td>
-          <td><select name="week_variant"></select></td>
-        </tr>
-        <tr>
-          <td><input type="date" name="period_from"></td>
-          <td></td>
-          <td><input type="date" name="period_to"></td>
-        </tr>
-        <tr>
-          <td><input type="submit" value="Tạo lịch"></td>
-          <td><input onclick="downloadSchedules()" type="button" value="Tải file HTML"></td>
-          <td></td>
-          <td>
-            <div class="loading-ring hidden">
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-            </div>
-          </td>
-        </tr>
-      </table>
+    <form action="javascript: showSchedules();" id="user-data">
+      <div class="row">
+        <div class="col">
+          <span>Mã KH:</span>
+        </div>
+        <div class="col">
+          <input type="text" name="user_id">
+        </div>
+        <div class="col"></div>
+        <div class="col"></div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <span>Họ tên:</span>
+        </div>
+        <div class="col">
+          <input type="text" name="full_name">
+        </div>
+        <div class="col">
+          <span>Năm sinh:</span>
+        </div>
+        <div class="col">
+          <select name="birth_year"></select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <span>Chiều cao (cm):</span>
+        </div>
+        <div class="col">
+          <input type="text" name="height">
+        </div>
+        <div class="col">
+          <span>Cân nặng (kg):</span>
+        </div>
+        <div class="col">
+          <input type="text" name="weight">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <span>Trình độ:</span>
+        </div>
+        <div class="col">
+          <select name="workout_level" onchange="setupWorkoutLevelSelect()"></select>
+        </div>
+        <div class="col"></div>
+        <div class="col"></div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <span>Preset lịch tuần:</span>
+        </div>
+        <div class="col">
+          <select name="weekly_code" onchange="setupWeekVariantSelect()"></select>
+        </div>
+        <div class="col">
+          <span>Tuần:</span>
+        </div>
+        <div class="col">
+          <select name="week_variant"></select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <span>Từ:</span>
+        </div>
+        <div class="col">
+          <input type="date" name="period_from">
+        </div>
+        <div class="col">
+          <span>đến:</span>
+        </div>
+        <div class="col">
+          <input type="date" name="period_to">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <input type="submit" value="Tạo lịch">
+        </div>
+        <div class="col">
+          <input onclick="downloadSchedules()" type="button" value="Tải file HTML">
+        </div>
+        <div class="col">
+          <div class="loading-ring hidden">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+      </div>
     </form>
   </div>
   <div id="schedules-wrapper"></div>
