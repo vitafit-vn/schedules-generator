@@ -56,16 +56,6 @@
         </div>
         <div class="row">
           <div class="col">
-            <span>Trình độ:</span>
-          </div>
-          <div class="col">
-            <select name="workout_level" onchange="setupWorkoutLevelSelect()"></select>
-          </div>
-          <div class="col"></div>
-          <div class="col"></div>
-        </div>
-        <div class="row">
-          <div class="col">
             <span>Preset lịch tuần:</span>
           </div>
           <div class="col">
@@ -80,16 +70,16 @@
         </div>
         <div class="row">
           <div class="col">
-            <span>Từ:</span>
+            <span>Trình độ:</span>
           </div>
           <div class="col">
-            <input type="date" name="period_from" />
+            <select name="workout_level" onchange="setupWorkoutLevelSelect()"></select>
           </div>
           <div class="col">
-            <span>đến:</span>
+            <span>Tuần:</span>
           </div>
           <div class="col">
-            <input type="date" name="period_to" />
+            <input type="week" name="week_period" />
           </div>
         </div>
       </form>

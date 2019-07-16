@@ -7,8 +7,7 @@ function setupFixtures() {
   $('#user-data select[name=workout_level]').val('beginner');
   $('#user-data select[name=weekly_code]').val('WS03');
   $('#user-data select[name=week_variant]').val('first_half');
-  $('#user-data input[name=period_from]').val('2019-07-15');
-  $('#user-data input[name=period_to]').val('2019-07-21');
+  $('#user-data input[name=week_period]').val('2019-W29');
 }
 
 function setupBirthYearSelect() {

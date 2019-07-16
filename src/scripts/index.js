@@ -37,10 +37,9 @@ function getUserInfo() {
   const birthYear = $('#user-data select[name=birth_year]').val();
   const height = $('#user-data input[name=height]').val();
   const weight = $('#user-data input[name=weight]').val();
-  const periodFrom = $('#user-data input[name=period_from]').val();
-  const periodTo = $('#user-data input[name=period_to]').val();
+  const weekPeriod = $('#user-data input[name=week_period]').val();
 
-  const mandatories = [userId, name, birthYear, height, weight, periodFrom, periodTo];
+  const mandatories = [userId, name, birthYear, height, weight, weekPeriod];
 
   if (_.compact(mandatories).length < mandatories.length)
     throw new Error('Thiếu thông tin của khách hàng!');
@@ -49,12 +48,9 @@ function getUserInfo() {
     height,
     name,
     userId,
+    weekPeriod,
     weight,
     age: new Date().getFullYear() - parseInt(birthYear),
-    period: {
-      from: periodFrom,
-      to: periodTo,
-    }
   };
 }
 
@@ -79,8 +75,8 @@ function generateScheduleFromInputs() {
   const weeklyCode = $('#user-data select[name=weekly_code]').val();
   const weekVariant = $('#user-data select[name=week_variant]').val();
 
-  const { periodFrom, periodTo, userId } = userInfo;
-  const checksum = VSG.UTILS.computeChecksum(userId, periodFrom, periodTo, weeklyCode, weekVariant, workoutLevel);
+  const { weekPeriod, userId } = userInfo;
+  const checksum = VSG.UTILS.computeChecksum(userId, weekPeriod, weeklyCode, weekVariant, workoutLevel);
 
   const schedule = VSG.UTILS.renderWeeklySchedule({
     personalizedData, userInfo, weeklyCode, weekVariant, workoutLevel,
