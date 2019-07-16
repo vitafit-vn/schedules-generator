@@ -28,6 +28,7 @@ function generateScheduleFromInputs() {
   const weight = $('#user-data input[name=weight]').val();
   const periodFrom = $('#user-data input[name=period_from]').val();
   const periodTo = $('#user-data input[name=period_to]').val();
+  const workoutLevel = $('#user-data select[name=workout_level]').val();
   const weeklyCode = $('#user-data select[name=weekly_code]').val();
   const weekVariant = $('#user-data select[name=week_variant]').val();
 
@@ -47,11 +48,9 @@ function generateScheduleFromInputs() {
       to: periodTo,
     }
   };
-  const weeklyData = _.find(VSG.CONSTANTS.WEEKLY_SCHEDULES, { code: weeklyCode, variant: weekVariant });
-  const { weekdays } = weeklyData;
-  const schedule = VSG.UTILS.renderWeeklySchedule({ userInfo, weekdays });
 
-  const checksum = VSG.UTILS.computeChecksum(userId, height, weight);
+  const checksum = VSG.UTILS.computeChecksum(userId, weeklyCode, weekVariant, periodFrom, periodTo);
+  const schedule = VSG.UTILS.renderWeeklySchedule({ userInfo, weeklyCode, weekVariant, workoutLevel });
   return { checksum, schedule, userId };
 }
 

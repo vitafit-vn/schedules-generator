@@ -18,17 +18,19 @@
           <div>Cân nặng: <strong>{{userInfo.weigh}} kg</strong></div>
         </div>
       </div>
-      <div class="border-bottom border-primary border-right mt-3 row">
+      <div class="mt-3 row">
         {{#each weekdays}}
+        <div class="bg-primary font-weight-bold col px-0 text-center text-white text-wrap">
+          {{this}}
+        </div>
+        {{/each}}
+      </div>
+      <div class="border-bottom border-right border-primary row">
+        {{#each dailyCodes}}
         <div class="border-left border-primary col px-0 text-center text-wrap">
-          <div class="bg-primary font-weight-bold col px-0 text-white">
-            {{title}}
-          </div>
-          <div>
-            {{#each exercises}}
-            <span>{{this}}</span>
-            {{/each}}
-          </div>
+          {{#each this}}
+          <span>{{this}}</span>
+          {{/each}}
         </div>
         {{/each}}
       </div>

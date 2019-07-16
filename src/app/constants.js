@@ -6,9 +6,11 @@ import DAILY_SCHEDULES_BEGINNER from './configs/daily_schedules_beginner.json';
 import DAILY_SCHEDULES_INTERMEDIATE from './configs/daily_schedules_intermediate.json';
 import WEEKLY_SCHEDULES from './configs/weekly_schedules.json';
 
+const WORKOUT_LEVELS = ['beginner', 'intermediate'];
+
 const DAILY_SCHEDULES = {
-  BEGINNER: DAILY_SCHEDULES_BEGINNER,
-  INTERMEDIATE: DAILY_SCHEDULES_INTERMEDIATE,
+  beginner: DAILY_SCHEDULES_BEGINNER,
+  intermediate: DAILY_SCHEDULES_INTERMEDIATE,
 };
 
 const OFF_DAY = ['OFF'];
@@ -21,8 +23,6 @@ const WEEK_VARIANTS_BY_CODES = _.reduce(WEEKLY_SCHEDULES, (curr, next) => {
 }, {});
 
 const WEEKDAYS = ['Thứ hai', 'Thứ ba', 'Thứ tư', 'Thứ năm', 'Thứ sáu', 'Thứ bảy', 'Chủ nhật'];
-
-const WORKOUT_LEVELS = ['beginner', 'intermediate'];
 
 export default {
   DAILY_SCHEDULES,

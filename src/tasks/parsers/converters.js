@@ -1,14 +1,4 @@
 import _ from 'lodash';
-import $ from 'lodash/fp';
-
-// Locals
-import CONSTANTS from '../../app/constants';
-
-function mapWeekdaysWithTitles(weekdays) {
-  const titles = _.slice(CONSTANTS.WEEKDAYS, 0, weekdays.length);
-  const pairs = _.zip(titles, weekdays);
-  return _.map(pairs, ([title, exercises]) => ({ title, exercises }));
-}
 
 export function convertDailySchedulesRecords(records) {
   const dailySchedules = [];
@@ -35,12 +25,7 @@ export function convertDailySchedulesRecords(records) {
     // Next exercise in current daily schedule
     const [, code, name, muscle, difficulty, sets, reps] = row;
     const exercise = {
-      code,
-      difficulty,
-      muscle,
-      name,
-      reps,
-      sets,
+      code, difficulty, muscle, name, reps, sets,
     };
 
     currentExercises.push(exercise);
@@ -56,8 +41,8 @@ export function convertDailySchedulesRecords(records) {
 
 export function convertWeeklySchedulesRecords(records) {
   return _.map(records, row => {
-    const [code, variant, ...rawWeekdays] = row;
-    const weekdays = mapWeekdaysWithTitles(_.map(rawWeekdays, $.split('\n')));
-    return { code, variant, weekdays };
+    const [code, variant, ...rawDailyCodes] = row;
+    const dailyCodes = _.map(rawDailyCodes, codes => _.split(codes, '\n'));
+    return { code, dailyCodes, variant };
   });
 }
