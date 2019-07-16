@@ -32,25 +32,25 @@ function bulkInputPersonalizedData() {
 }
 
 function getUserInfo() {
-  const userId = $('#user-data input[name=user_id]').val();
-  const name = $('#user-data input[name=full_name]').val();
-  const birthYear = $('#user-data select[name=birth_year]').val();
-  const height = $('#user-data input[name=height]').val();
-  const weight = $('#user-data input[name=weight]').val();
-  const weekPeriod = $('#user-data input[name=week_period]').val();
-
-  const mandatories = [userId, name, birthYear, height, weight, weekPeriod];
-
-  if (_.compact(mandatories).length < mandatories.length)
-    throw new Error('Thiếu thông tin của khách hàng!');
+  const userId = $('#user-info input[name=user_id]').val();
+  const name = $('#user-info input[name=full_name]').val();
+  const birthYear = $('#user-info input[name=birth_year]').val();
+  const height = $('#user-info input[name=height]').val();
+  const weight = $('#user-info input[name=weight]').val();
+  const periodFrom = $('#user-info input[name=week_period]')[0].valueAsDate;
+  const periodTo = new Date(periodFrom);
+  periodTo.setDate(periodFrom.getDate() + 7);
 
   return {
     height,
     name,
     userId,
-    weekPeriod,
     weight,
     age: new Date().getFullYear() - parseInt(birthYear),
+    period: {
+      from: periodFrom.toLocaleDateString('vi'),
+      to: periodTo.toLocaleDateString('vi'),
+    }
   };
 }
 
@@ -71,9 +71,9 @@ function getPersonalizedData() {
 function generateScheduleFromInputs() {
   const userInfo = getUserInfo();
   const personalizedData = getPersonalizedData();
-  const workoutLevel = $('#user-data select[name=workout_level]').val();
-  const weeklyCode = $('#user-data select[name=weekly_code]').val();
-  const weekVariant = $('#user-data select[name=week_variant]').val();
+  const workoutLevel = $('#user-info select[name=workout_level]').val();
+  const weeklyCode = $('#user-info select[name=weekly_code]').val();
+  const weekVariant = $('#user-info select[name=week_variant]').val();
 
   const { weekPeriod, userId } = userInfo;
   const checksum = VSG.UTILS.computeChecksum(userId, weekPeriod, weeklyCode, weekVariant, workoutLevel);

@@ -1,37 +1,24 @@
 function setupFixtures() {
-  $('#user-data input[name=user_id]').val('KH0001');
-  $('#user-data input[name=full_name]').val('Chị Bảo');
-  $('#user-data select[name=birth_year]').val('1997');
-  $('#user-data input[name=height]').val('154');
-  $('#user-data input[name=weight]').val('54');
-  $('#user-data select[name=workout_level]').val('beginner');
-  $('#user-data select[name=weekly_code]').val('WS03');
-  $('#user-data select[name=week_variant]').val('first_half');
-  $('#user-data input[name=week_period]').val('2019-W29');
-}
-
-function setupBirthYearSelect() {
-  const birthYearOptions = _.map(
-    _.reverse(_.range(1950, 2005)),
-    year => `<option value="${year}">${year}</option>`,
-  );
-  $('#user-data select[name=birth_year]').html(birthYearOptions);
+  $('#user-info input[name=user_id]').val('KH0001');
+  $('#user-info input[name=full_name]').val('Chị Bảo');
+  $('#user-info input[name=birth_year]').val('1997');
+  $('#user-info input[name=height]').val('154');
+  $('#user-info input[name=weight]').val('54');
+  $('#user-info select[name=workout_level]').val('beginner');
+  $('#user-info select[name=weekly_code]').val('WS03');
+  $('#user-info select[name=week_variant]').val('first_half');
+  $('#user-info input[name=week_period]').val('2019-W29');
 }
 
 function setupPersonalizedTable() {
-  const weeklyCode = $('#user-data select[name=weekly_code]').val();
-  const weekVariant = $('#user-data select[name=week_variant]').val();
-  const workoutLevel = $('#user-data select[name=workout_level]').val();
+  const weeklyCode = $('#user-info select[name=weekly_code]').val();
+  const weekVariant = $('#user-info select[name=week_variant]').val();
+  const workoutLevel = $('#user-info select[name=workout_level]').val();
 
   if (_.isEmpty(weeklyCode) || _.isEmpty(weekVariant) || _.isEmpty(workoutLevel)) return;
 
   const weeklyData = _.find(VSG.CONSTANTS.WEEKLY_SCHEDULES, { code: weeklyCode, variant: weekVariant });
-
-  console.debug(weeklyCode, weekVariant, workoutLevel);
-
-  const {
-    dailyCodes
-  } = weeklyData;
+  const { dailyCodes } = weeklyData;
 
   const exerciseCodes = _.flatMap(dailyCodes, (codes, index) => {
     const dayExercises = _.filter(
@@ -66,7 +53,7 @@ function setupWorkoutLevelSelect() {
     VSG.CONSTANTS.WORKOUT_LEVELS,
     level => `<option value="${level}">${_.capitalize(level)}</option>`,
   );
-  $('#user-data select[name=workout_level]').html(workoutLevelOptions);
+  $('#user-info select[name=workout_level]').html(workoutLevelOptions);
 }
 
 function setupWeeklyCodeSelect() {
@@ -74,26 +61,25 @@ function setupWeeklyCodeSelect() {
     VSG.CONSTANTS.WEEKLY_CODES,
     code => `<option value="${code}">${code}</option>`,
   );
-  $('#user-data select[name=weekly_code]').html(weeklyCodeOptions);
+  $('#user-info select[name=weekly_code]').html(weeklyCodeOptions);
 }
 
 function setupWeekVariantSelect() {
   setupPersonalizedTable();
 
-  const weeklyCode = $('#user-data select[name=weekly_code]').val();
+  const weeklyCode = $('#user-info select[name=weekly_code]').val();
   const weekVariantOptions = _.map(
     VSG.CONSTANTS.WEEK_VARIANTS_BY_CODES[weeklyCode],
     variant => `<option value="${variant}">${variant}</option>`,
   );
-  $('#user-data select[name=week_variant]').html(weekVariantOptions);
+  $('#user-info select[name=week_variant]').html(weekVariantOptions);
 }
 
 $(document).ready(() => {
-  setupBirthYearSelect();
   setupWeeklyCodeSelect();
   setupWeekVariantSelect();
   setupWorkoutLevelSelect();
-  
+
   setupFixtures();
   setupPersonalizedTable();
 });
