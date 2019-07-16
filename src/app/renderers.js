@@ -28,7 +28,7 @@ export function renderWeeklySchedule({
       CONSTANTS.DAILY_SCHEDULES[workoutLevel],
       ({ code }) => _.includes(codes, code),
     );
-    return _.map(dayExercises, 'exercises');
+    return _.flatMap(dayExercises, 'exercises');
   });
 
   window.renderingParams = {
