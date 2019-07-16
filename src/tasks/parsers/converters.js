@@ -3,9 +3,9 @@ import _ from 'lodash';
 // Locals
 import CONSTANTS from '../../app/constants';
 
-function mapWeekDaysWithTitles(weekDays) {
-  const titles = _.slice(CONSTANTS.WEEKDAYS, 0, weekDays.length);
-  const pairs = _.zip(titles, weekDays);
+function mapWeekdaysWithTitles(weekdays) {
+  const titles = _.slice(CONSTANTS.WEEKDAYS, 0, weekdays.length);
+  const pairs = _.zip(titles, weekdays);
   return _.map(pairs, ([title, exercises]) => ({ title, exercises }));
 }
 
@@ -56,6 +56,6 @@ export function convertDailySchedulesRecords(records) {
 export function convertWeeklySchedulesRecords(records) {
   return _.map(records, row => {
     const [code, variant, ...weekdays] = row;
-    return { code, variant, weekdays: mapWeekDaysWithTitles(weekdays) };
+    return { code, variant, weekdays: mapWeekdaysWithTitles(weekdays) };
   });
 }

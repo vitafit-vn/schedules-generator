@@ -1,4 +1,4 @@
-import _ from 'lodash';
+// import _ from 'lodash';
 import Handlebars from 'handlebars/runtime';
 
 import './configs/templates.handlebars';
@@ -11,7 +11,6 @@ registerPartials();
 
 /* eslint-disable import/prefer-default-export */
 
-export function renderWeeklySchedule(weeklyData, userInfo) {
-  const { weekDays } = weeklyData;
-  return Handlebars.templates.weekly({ weekDays, userInfo });
+export function renderWeeklySchedule({ userInfo, weekdays }) {
+  return Handlebars.templates.weekly({ userInfo, weekdays });
 }

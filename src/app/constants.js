@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import $ from 'lodash/fp';
 
 // Locals
 import DAILY_SCHEDULES_BEGINNER from './configs/daily_schedules_beginner.json';
@@ -10,12 +11,11 @@ const DAILY_SCHEDULES = {
   INTERMEDIATE: DAILY_SCHEDULES_INTERMEDIATE,
 };
 
-const WEEKLY_CODES = _.uniq(_.map(WEEKLY_SCHEDULES, 'code'));
+const WEEKLY_CODES = $.flow($.map('code'), $.uniq)(WEEKLY_SCHEDULES);
+
 const WEEK_VARIANTS_BY_CODES = _.reduce(WEEKLY_SCHEDULES, (curr, next) => {
   const { code, variant } = next;
-  const currentVariants = curr[code] || [];
-  currentVariants.push(variant);
-  return { ...curr, [code]: _.uniq(currentVariants) };
+  return { ...curr, [code]: _.union(curr[code], [variant]) };
 }, {});
 
 const WEEKDAYS = ['Thứ hai', 'Thứ ba', 'Thứ tư', 'Thứ năm', 'Thứ sáu', 'Thứ bảy', 'Chủ nhật'];

@@ -47,8 +47,9 @@ function generateScheduleFromInputs() {
       to: periodTo,
     }
   };
-  const weeklyData = _.find(VSG.CONSTANTS.WEEKLY_SCHEDULES, { code: weeklyCode });
-  const schedule = VSG.UTILS.renderWeeklySchedule(weeklyData, weekVariant, userInfo);
+  const weeklyData = _.find(VSG.CONSTANTS.WEEKLY_SCHEDULES, { code: weeklyCode, variant: weekVariant });
+  const { weekdays } = weeklyData;
+  const schedule = VSG.UTILS.renderWeeklySchedule({ userInfo, weekdays });
 
   const checksum = VSG.UTILS.computeChecksum(userId, height, weight);
   return { checksum, schedule, userId };
