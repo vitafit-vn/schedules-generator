@@ -29,7 +29,9 @@ function generateScheduleFromInputs() {
   const periodFrom = $('#user-data input[name=period_from]').val();
   const periodTo = $('#user-data input[name=period_to]').val();
 
-  if (_.isEmpty(_.compact([userId, name, birthYear, height, weight, periodFrom, periodTo])))
+  const mandatories = [userId, name, birthYear, height, weight, periodFrom, periodTo];
+
+  if (_.compact(mandatories).length < mandatories.length)
     throw new Error('Thiếu thông tin của khách hàng!');
 
   const userInfo = {
