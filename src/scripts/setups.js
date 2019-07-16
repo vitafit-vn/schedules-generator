@@ -49,10 +49,10 @@ function setupPersonalizedTable() {
     return `
       <tr>
         <th data-code="${code}" scope="row">${code}</th>
-        <td>${name}</th>
-        <td><input type="text" name="rpe" /></th>
-        <td><input type="text" name="rest" /><span>s</span></th>
-        <td><input type="text" name="recommended_weight" /><span>kg</span></th>
+        <td>${name}</td>
+        <td><input type="text" name="rpe" /></td>
+        <td><input type="text" name="rest" /><span>s</span></td>
+        <td><input type="text" name="recommended_weight" /><span>kg</span></td>
       </tr>
     `;
   });

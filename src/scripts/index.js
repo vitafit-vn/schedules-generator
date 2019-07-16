@@ -20,6 +20,17 @@ async function performAsyncTask(callback) {
   }
 }
 
+function bulkInputPersonalizedData() {
+  const rpe = $('#personalized-data input[name="bulk_rpe"]').val();
+  $('#personalized-data input[name="rpe"]').val(rpe);
+  
+  const rest = $('#personalized-data input[name="bulk_rest"]').val();
+  $('#personalized-data input[name="rest"]').val(rest);
+
+  const recommendedWeight = $('#personalized-data input[name="bulk_recommended_weight"]').val();
+  $('#personalized-data input[name="recommended_weight"]').val(recommendedWeight);
+}
+
 function getUserInfo() {
   const userId = $('#user-data input[name=user_id]').val();
   const name = $('#user-data input[name=full_name]').val();

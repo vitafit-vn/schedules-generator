@@ -1,128 +1,135 @@
 <!DOCTYPE html>
 <khuyến lang="en">
 
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-    integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
-  <script type="text/javascript" src="scripts/setups.js"></script>
-  <script type="text/javascript" src="scripts/index.js"></script>
-  <title>VitaFit VN - Công cụ tạo lịch tập</title>
-</head>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="scripts/setups.js"></script>
+    <script type="text/javascript" src="scripts/index.js"></script>
+    <title>VitaFit VN - Công cụ tạo lịch tập</title>
+  </head>
 
-<body>
-  <div class="container">
-    <h1>Công cụ tạo lịch tập</h1>
-    <form action="#" id="user-data">
+  <body>
+    <div class="container">
+      <h1>Công cụ tạo lịch tập</h1>
+      <form action="#" id="user-data">
+        <div class="row">
+          <div class="col">
+            <span>Mã KH:</span>
+          </div>
+          <div class="col">
+            <input type="text" name="user_id" />
+          </div>
+          <div class="col"></div>
+          <div class="col"></div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <span>Họ tên:</span>
+          </div>
+          <div class="col">
+            <input type="text" name="full_name" />
+          </div>
+          <div class="col">
+            <span>Năm sinh:</span>
+          </div>
+          <div class="col">
+            <select name="birth_year"></select>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <span>Chiều cao (cm):</span>
+          </div>
+          <div class="col">
+            <input type="text" name="height" />
+          </div>
+          <div class="col">
+            <span>Cân nặng (kg):</span>
+          </div>
+          <div class="col">
+            <input type="text" name="weight" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <span>Trình độ:</span>
+          </div>
+          <div class="col">
+            <select name="workout_level" onchange="setupWorkoutLevelSelect()"></select>
+          </div>
+          <div class="col"></div>
+          <div class="col"></div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <span>Preset lịch tuần:</span>
+          </div>
+          <div class="col">
+            <select name="weekly_code" onchange="setupWeekVariantSelect()"></select>
+          </div>
+          <div class="col">
+            <span>Biến thể tuần:</span>
+          </div>
+          <div class="col">
+            <select name="week_variant"></select>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <span>Từ:</span>
+          </div>
+          <div class="col">
+            <input type="date" name="period_from" />
+          </div>
+          <div class="col">
+            <span>đến:</span>
+          </div>
+          <div class="col">
+            <input type="date" name="period_to" />
+          </div>
+        </div>
+      </form>
+      <form action="#" id="personalized-data">
+        <table class="mt-3 table table-hover table-sm table-striped">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">Mã</th>
+              <th scope="col">Bài tập</th>
+              <th scope="col">RPE</th>
+              <th scope="col">Thời gian nghỉ</th>
+              <th scope="col">Mức tạ khuyến nghị</th>
+            </tr>
+            <tr>
+              <td></td>
+              <td><input onclick="bulkInputPersonalizedData()" type="button" value="Thay toàn bộ" /></td>
+              <td><input type="text" name="bulk_rpe" /></td>
+              <td><input type="text" name="bulk_rest" /><span>s</span></td>
+              <td><input type="text" name="bulk_recommended_weight" /><span>kg</span></td>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </form>
       <div class="row">
         <div class="col">
-          <span>Mã KH:</span>
+          <input onclick="showSchedules()" type="button" value="Tạo lịch" />
         </div>
         <div class="col">
-          <input type="text" name="user_id" />
-        </div>
-        <div class="col"></div>
-        <div class="col"></div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <span>Họ tên:</span>
+          <input onclick="downloadSchedules()" type="button" value="Tải file HTML" />
         </div>
         <div class="col">
-          <input type="text" name="full_name" />
-        </div>
-        <div class="col">
-          <span>Năm sinh:</span>
-        </div>
-        <div class="col">
-          <select name="birth_year"></select>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <span>Chiều cao (cm):</span>
-        </div>
-        <div class="col">
-          <input type="text" name="height" />
-        </div>
-        <div class="col">
-          <span>Cân nặng (kg):</span>
-        </div>
-        <div class="col">
-          <input type="text" name="weight" />
-        </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <span>Trình độ:</span>
-        </div>
-        <div class="col">
-          <select name="workout_level" onchange="setupWorkoutLevelSelect()"></select>
-        </div>
-        <div class="col"></div>
-        <div class="col"></div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <span>Preset lịch tuần:</span>
-        </div>
-        <div class="col">
-          <select name="weekly_code" onchange="setupWeekVariantSelect()"></select>
-        </div>
-        <div class="col">
-          <span>Biến thể tuần:</span>
-        </div>
-        <div class="col">
-          <select name="week_variant"></select>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <span>Từ:</span>
-        </div>
-        <div class="col">
-          <input type="date" name="period_from" />
-        </div>
-        <div class="col">
-          <span>đến:</span>
-        </div>
-        <div class="col">
-          <input type="date" name="period_to" />
-        </div>
-      </div>
-    </form>
-    <form action="#" id="personalized-data">
-      <table class="mt-3 table table-hover table-sm table-striped">
-        <thead class="thead-dark">
-          <tr>
-            <th scope="col">Mã</th>
-            <th scope="col">Bài tập</th>
-            <th scope="col">RPE</th>
-            <th scope="col">Thời gian nghỉ</th>
-            <th scope="col">Mức tạ khuyến nghị</th>
-          </tr>
-        </thead>
-        <tbody></tbody>
-      </table>
-    </form>
-    <div class="row">
-      <div class="col">
-        <input onclick="showSchedules()" type="button" value="Tạo lịch" />
-      </div>
-      <div class="col">
-        <input onclick="downloadSchedules()" type="button" value="Tải file HTML" />
-      </div>
-      <div class="col">
-        <div class="loading-ring hidden">
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
+          <div class="loading-ring hidden">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="mt-3 mx-auto" id="schedules-wrapper"></div>
-</body>
+    <div class="mt-3 mx-auto" id="schedules-wrapper"></div>
+  </body>

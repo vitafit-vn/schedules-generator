@@ -30,7 +30,13 @@
         <td class="align-middle border border-primary">{{difficulty}}</td>
         <td class="align-middle border border-primary">{{sets}}</td>
         <td class="align-middle border border-primary">{{reps}}</td>
-        <td class="align-middle border border-primary">{{rpe}}</td>
+        <td class="align-middle border border-primary">
+          {{#if rpe}}
+            RPE-{{rpe}}
+          {{else}}
+            -
+          {{/if}}
+        </td>
         <td class="align-middle border border-primary">
           {{#if rest}}
             {{rest}}s
