@@ -6,7 +6,9 @@ import CONSTANTS from './constants';
 import './configs/templates.handlebars';
 
 function registerPartials() {
-  Handlebars.registerPartial('htmlHead', Handlebars.templates.html_head);
+  Handlebars.registerPartial('html_head', Handlebars.templates.html_head);
+  Handlebars.registerPartial('weekly_header', Handlebars.templates.weekly_header);
+  Handlebars.registerPartial('weekly_table', Handlebars.templates.weekly_table);
 }
 
 registerPartials();
@@ -35,7 +37,7 @@ export function renderWeeklySchedule({
     daySchedules, userInfo, dailyCodes, site: SITE_CONFIGS, weekdays: CONSTANTS.WEEKDAYS,
   };
 
-  return Handlebars.templates.weekly({
+  return Handlebars.templates.weekly_schedule({
     daySchedules, userInfo, dailyCodes, site: SITE_CONFIGS, weekdays: CONSTANTS.WEEKDAYS,
   });
 }
