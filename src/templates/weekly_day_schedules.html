@@ -31,8 +31,20 @@
         <td class="align-middle border border-primary">{{sets}}</td>
         <td class="align-middle border border-primary">{{reps}}</td>
         <td class="align-middle border border-primary">{{rpe}}</td>
-        <td class="align-middle border border-primary">{{rest}}</td>
-        <td class="align-middle border border-primary">{{recommendedWeight}} (kg)</td>
+        <td class="align-middle border border-primary">
+          {{#if rest}}
+            {{rest}}
+          {{else}}
+            -
+          {{/if}}
+        </td>
+        <td class="align-middle border border-primary">
+          {{#if recommendedWeight}}
+            {{recommendedWeight}}kg
+          {{else}}
+            -
+          {{/if}}
+        </td>
       </tr>
       {{/each}}
     </tbody>
