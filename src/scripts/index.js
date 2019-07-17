@@ -74,18 +74,33 @@ function generateScheduleFromInputs() {
 }
 
 async function onDownloadSchedules() {
-  const { checksum, userId, weeklySchedule } = await generateScheduleFromInputs();
+  const { checksum, dailySchedules, userId, weeklySchedule } = await generateScheduleFromInputs();
+  const prefix = `${userId}_${checksum.substring(checksum.length - 6)}`;
 
-  const scheduleBlob = new Blob([weeklySchedule], { type: 'text/html;charset=utf-8' });
-  const anchor = document.createElement('a', { id: 'schedules-downloader' });
-  anchor.href = URL.createObjectURL(scheduleBlob);
-  anchor.download = `${userId}_${checksum.substring(checksum.length - 6)}.html`;
-  anchor.click();
+  try {
+    const zip = new JSZip();
+    
+    zip.file(`${prefix}-weekly.html`, weeklySchedule);
+    _.each(dailySchedules, (dailySchedule, index) => {
+      if (_.isEmpty(dailySchedule)) return;
+      const weekday = VSG.CONSTANTS.WEEKDAYS[index];
+      zip.file(`${prefix}-daily-${weekday}.html`, dailySchedule);
+    });
+
+    const downloadContent = await zip.generateAsync({ type: 'blob' })
+    saveAs(downloadContent, `${prefix}.zip`);
+  } catch (error) {
+    console.error(error);
+  }
 }
 
 async function onShowSchedules() {
   const { checksum, dailySchedules, weeklySchedule, userId } = await generateScheduleFromInputs();
-  $('#schedules-wrapper').html(_.join([weeklySchedule, ...dailySchedules], '\n'));
+  const allSchedules = [
+    weeklySchedule,
+    ..._.reject(dailySchedules, _.isEmpty),
+  ];
+  $('#schedules-wrapper').html(_.join(allSchedules, '\n'));
 }
 
 function downloadSchedules() {
