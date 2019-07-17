@@ -19,6 +19,7 @@ registerPartials();
 const SITE_CONFIGS = {
   pageTitle: process.env.PAGE_TITLE,
   publicPath: process.env.PUBLIC_PATH,
+  vitafitHome: 'http://vitafit.vn',
 };
 
 function buildExerciseData(configs, personalizedData, index) {
