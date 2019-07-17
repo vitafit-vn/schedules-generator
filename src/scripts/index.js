@@ -20,10 +20,23 @@ async function performAsyncTask(callback) {
   }
 }
 
-function bulkInputPersonalizedData() {
+function clearPersonalizedRow(exerciseCode) {
+  if (_.isEmpty(exerciseCode)) {
+    $('#personalized-data input[name=bulk-rpe]').val('');
+    $('#personalized-data input[name=bulk-rest]').val('');
+    $('#personalized-data input[name=bulk-recommended-weight]').val('');
+    return;
+  }
+
+  $(`#personalized-data tr[data-code=${exerciseCode}] input[name=rpe]`).val('');
+  $(`#personalized-data tr[data-code=${exerciseCode}] input[name=rest]`).val('');
+  $(`#personalized-data tr[data-code=${exerciseCode}] input[name=recommended-weight]`).val('');
+}
+
+function cloneToPersonalizedRows() {
   const rpe = $('#personalized-data input[name=bulk-rpe]').val();
   $('#personalized-data input[name=rpe]').val(rpe);
-  
+
   const rest = $('#personalized-data input[name=bulk-rest]').val();
   $('#personalized-data input[name=rest]').val(rest);
 

@@ -1,8 +1,8 @@
 {{#rows}}
-<tr>
-  <th data-code="{{code}}" scope="row">{{code}}</th>
-  <td>{{name}}</td>
-  <td>
+<tr data-code="{{code}}">
+  <th class="align-middle" data-code="{{code}}" scope="row">{{code}}</th>
+  <td class="align-middle">{{name}}</td>
+  <td class="align-middle">
     <div class="input-group input-group-sm">
       <div class="input-group-prepend">
         <span class="input-group-text">RPE-</span>
@@ -10,7 +10,7 @@
       <input class="form-control" name="rpe" type="text" />
     </div>
   </td>
-  <td>
+  <td class="align-middle">
     <div class="input-group input-group-sm">
       <input class="form-control" name="rest" type="text" />
       <div class="input-group-append">
@@ -18,7 +18,7 @@
       </div>
     </div>
   </td>
-  <td>
+  <td class="align-middle">
     <div class="input-group input-group-sm">
       <input class="form-control" name="recommended-weight" type="text" />
       <div class="input-group-append">
@@ -26,6 +26,10 @@
       </div>
     </div>
   </td>
-  <td></td>
+  <td class="align-middle border-0 d-inline">
+    <button class="btn px-1" onclick="clearPersonalizedRow('{{code}}')" type="button">
+      <i class="fa fa-trash" aria-hidden="true"></i>
+    </button>
+  </td>
 </tr>
 {{/rows}}
