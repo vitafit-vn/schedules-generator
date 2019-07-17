@@ -1,3 +1,18 @@
+function asyncLoadPartial(elementId, partialUrl) {
+  return new Promise((resolve, reject) => {
+    $(elementId).load(partialUrl, (data, status, configs) => {
+      if (status === 'success') resolve(data);
+      else reject(new Error(configs.statusText));
+    });
+  });
+}
+
+async function loadPartials() {
+  await asyncLoadPartial('#nav-bar', '/partials/_nav_bar.html');
+  await asyncLoadPartial('#user-info', '/partials/_user_info.html');
+  await asyncLoadPartial('#personalized-table', '/partials/_personalized_table.html');
+}
+
 function setupFixtures() {
   $('#user-id').val('KH0001');
   $('#full-name').val('Chị Bảo');
@@ -11,7 +26,7 @@ function setupFixtures() {
 }
 
 function setupPersonalizedTable() {
-  $('#personalized-data tbody').empty();
+  $('#personalized-table tbody').empty();
 
   const weeklyCode = $('#weekly-code').val();
   const weekVariant = $('#week-variant').val();
@@ -37,7 +52,7 @@ function setupPersonalizedTable() {
     return { code, name };
   });
 
-  $('#personalized-data tbody').html(VSG.UTILS.renderPersonalizedRows(rows));
+  $('#personalized-table tbody').html(VSG.UTILS.renderPersonalizedRows(rows));
   $('#schedules-container').empty();
 }
 
@@ -47,7 +62,7 @@ function setupWorkoutLevelSelect() {
     level => `<option value="${level}">${_.capitalize(level)}</option>`,
   );
   $('#workout-level').html(workoutLevelOptions);
-  setupPersonalizedTable();
+  $('#workout-level').change(() => setupPersonalizedTable());
 }
 
 function setupWeeklyCodeSelect() {
@@ -56,6 +71,10 @@ function setupWeeklyCodeSelect() {
     code => `<option value="${code}">${code}</option>`,
   );
   $('#weekly-code').html(weeklyCodeOptions);
+  $('#weekly-code').change(() => {
+    setupWeekVariantSelect();
+    setupPersonalizedTable();
+  })
 }
 
 function setupWeekVariantSelect() {
@@ -65,14 +84,47 @@ function setupWeekVariantSelect() {
     variant => `<option value="${variant}">${variant}</option>`,
   );
   $('#week-variant').html(weekVariantOptions);
-  setupPersonalizedTable();
+  $('#week-variant').change(() => setupPersonalizedTable());
 }
 
-$(document).ready(() => {
-  setupWeeklyCodeSelect();
-  setupWeekVariantSelect();
-  setupWorkoutLevelSelect();
+function clearPersonalizedData(exerciseCode) {
+  // Clear all
+  if (_.isEmpty(exerciseCode)) {
+    $('#personalized-table input').val('');
+    return;
+  }
 
-  setupFixtures();
-  // setupPersonalizedTable();
+  $(`#personalized-table tr[data-code=${exerciseCode}] input`).val('');
+}
+
+function clonePersonalizedData() {
+  const rpe = $('#personalized-table input[name=bulk-rpe]').val();
+  $('#personalized-table input[name=rpe]').val(rpe);
+
+  const rest = $('#personalized-table input[name=bulk-rest]').val();
+  $('#personalized-table input[name=rest]').val(rest);
+
+  const recommendedWeight = $('#personalized-table input[name=bulk-recommended-weight]').val();
+  $('#personalized-table input[name=recommended-weight]').val(recommendedWeight);
+}
+
+function setupPersonalizedButtons() {
+  $('#clear-personalized-data').click(() => clearPersonalizedData());
+  $('#clone-personalized-data').click(() => clonePersonalizedData());
+}
+
+$(document).ready(async () => {
+  try {
+    await loadPartials();
+    setupFixtures();
+
+    setupWeeklyCodeSelect();
+    setupWeekVariantSelect();
+    setupWorkoutLevelSelect();
+    setupPersonalizedButtons();
+
+    setupPersonalizedTable();
+  } catch (error) {
+    console.warn(error);
+  }
 });

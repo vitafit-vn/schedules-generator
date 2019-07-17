@@ -20,30 +20,6 @@ async function performAsyncTask(callback) {
   }
 }
 
-function clearPersonalizedRow(exerciseCode) {
-  if (_.isEmpty(exerciseCode)) {
-    $('#personalized-data input[name=bulk-rpe]').val('');
-    $('#personalized-data input[name=bulk-rest]').val('');
-    $('#personalized-data input[name=bulk-recommended-weight]').val('');
-    return;
-  }
-
-  $(`#personalized-data tr[data-code=${exerciseCode}] input[name=rpe]`).val('');
-  $(`#personalized-data tr[data-code=${exerciseCode}] input[name=rest]`).val('');
-  $(`#personalized-data tr[data-code=${exerciseCode}] input[name=recommended-weight]`).val('');
-}
-
-function cloneToPersonalizedRows() {
-  const rpe = $('#personalized-data input[name=bulk-rpe]').val();
-  $('#personalized-data input[name=rpe]').val(rpe);
-
-  const rest = $('#personalized-data input[name=bulk-rest]').val();
-  $('#personalized-data input[name=rest]').val(rest);
-
-  const recommendedWeight = $('#personalized-data input[name=bulk-recommended-weight]').val();
-  $('#personalized-data input[name=recommended-weight]').val(recommendedWeight);
-}
-
 function getUserInfo() {
   const userId = $('#user-id').val();
   const name = $('#full-name').val();
@@ -61,10 +37,10 @@ function getUserInfo() {
 }
 
 function getPersonalizedData() {
-  const codes = _.map($('#personalized-data th[scope=row]').toArray(), 'dataset.code');
-  const rpes = _.map($('#personalized-data input[name=rpe]').toArray(), 'value');
-  const rests = _.map($('#personalized-data input[name=rest]').toArray(), 'value');
-  const recommendedWeights = _.map($('#personalized-data input[name=recommended-weight]').toArray(), 'value');
+  const codes = _.map($('#personalized-table th[scope=row]').toArray(), 'dataset.code');
+  const rpes = _.map($('#personalized-table input[name=rpe]').toArray(), 'value');
+  const rests = _.map($('#personalized-table input[name=rest]').toArray(), 'value');
+  const recommendedWeights = _.map($('#personalized-table input[name=recommended-weight]').toArray(), 'value');
 
   const rows = _.zip(codes, rpes, rests, recommendedWeights);
 

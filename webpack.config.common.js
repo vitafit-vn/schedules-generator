@@ -91,6 +91,11 @@ module.exports = {
     }),
     new CopyPlugin([
       {
+        from: './src/partials/',
+        to: './partials/',
+        test: /\.html$/,
+      },
+      {
         from: './src/scripts/',
         to: './scripts/',
         test: /\.js$/,
