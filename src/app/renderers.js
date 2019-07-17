@@ -59,7 +59,7 @@ export function renderPersonalizedRows(rows) {
 }
 
 export function renderWeeklySchedule({
-  personalizedData, userInfo, weekPeriod, weekVariant, weeklyCode, workoutLevel,
+  personalizedData, userInfo, weekStart, weekVariant, weeklyCode, workoutLevel,
 }) {
   const weeklyData = _.find(CONSTANTS.WEEKLY_SCHEDULES, { code: weeklyCode, variant: weekVariant });
   const { dailyCodes } = weeklyData;
@@ -86,7 +86,7 @@ export function renderWeeklySchedule({
     daySchedules,
     userInfo,
     site: SITE_CONFIGS,
-    subTitle: `Tuần từ ${weekPeriod.getDate()} đến ${weekPeriod.getDate()}`,
+    subTitle: `Tuần từ ${weekStart.getDate()} đến ${weekStart.getDate()}`,
     title: 'Chế độ tập luyện hàng tuần',
     weekdays: CONSTANTS.WEEKDAYS,
   });

@@ -37,13 +37,11 @@ function getUserInfo() {
   const birthYear = $('#birth-year').val();
   const height = $('#height').val();
   const weight = $('#weight').val();
-  const weekPeriod = $('#week-period')[0].valueAsDate;
 
   return {
     height,
     name,
     userId,
-    weekPeriod,
     weight,
     age: new Date().getFullYear() - parseInt(birthYear),
   };
@@ -68,12 +66,13 @@ function generateScheduleFromInputs() {
   const workoutLevel = $('#workout-level').val();
   const weeklyCode = $('#weekly-code').val();
   const weekVariant = $('#week-variant').val();
+  const weekStart = $('#week-period')[0].valueAsDate;
 
   const { weekPeriod, userId } = userInfo;
-  const checksum = VSG.UTILS.computeChecksum(userId, weekPeriod, weeklyCode, weekVariant, workoutLevel);
+  const checksum = VSG.UTILS.computeChecksum(userId, workoutLevel, weeklyCode, weekVariant, weekStart);
 
   const schedule = VSG.UTILS.renderWeeklySchedule({
-    personalizedData, userInfo, weeklyCode, weekVariant, workoutLevel,
+    personalizedData, userInfo, weekStart, weeklyCode, weekVariant, workoutLevel,
   });
 
   return { checksum, schedule, userId };
