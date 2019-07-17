@@ -7,6 +7,8 @@ import CONSTANTS from './constants';
 import './configs/templates.handlebars';
 
 function registerPartials() {
+  Handlebars.registerPartial('daily_exercises', Handlebars.templates.daily_exercises);
+  Handlebars.registerPartial('daily_schedule', Handlebars.templates.daily_schedule);
   Handlebars.registerPartial('html_head', Handlebars.templates.html_head);
   Handlebars.registerPartial('personalized_rows', Handlebars.templates.personalized_rows);
   Handlebars.registerPartial('schedules_header', Handlebars.templates.schedules_header);
@@ -26,13 +28,22 @@ function buildExerciseData(configs, personalizedData, index) {
   const { code } = configs;
 
   const {
-    difficulty, muscle, name, videoUrl,
+    difficulty, instructions, muscle, name, videoUrl,
   } = _.find(CONSTANTS.EXERCISES_DATABASE, { code });
 
   const { rpe, recommendedWeight, rest } = _.find(personalizedData, { code }) || {};
 
   return {
-    ...configs, difficulty, muscle, name, rpe, recommendedWeight, rest, videoUrl, order: index + 1,
+    ...configs,
+    difficulty,
+    instructions,
+    muscle,
+    name,
+    recommendedWeight,
+    rest,
+    rpe,
+    videoUrl,
+    order: index + 1,
   };
 }
 
@@ -74,12 +85,12 @@ export function renderDailySchedule({
     ({ code }) => _.includes(codes, code),
   );
 
-  const daySchedule = buildDayExercises({
-    date, dayExercises, personalizedData, index: dayIndex,
+  const dailyExercises = buildDayExercises({
+    date, dayExercises, dayIndex, personalizedData,
   });
 
   const params = {
-    daySchedule,
+    dailyExercises,
     userInfo,
     site: {
       ...SITE_CONFIGS,
@@ -91,7 +102,8 @@ export function renderDailySchedule({
 
   window.DAILY_RENDERING_PARAMS = window.DAILY_RENDERING_PARAMS || [];
   window.DAILY_RENDERING_PARAMS[dayIndex] = params;
-  return params;
+
+  return Handlebars.templates.daily_schedule(params);
 }
 
 export function renderWeeklySchedule({

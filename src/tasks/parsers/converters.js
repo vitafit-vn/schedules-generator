@@ -51,7 +51,9 @@ export function convertDailySchedulesRecords(records) {
 
 export function convertExercisesDatabase(records) {
   return _.map(records, row => {
-    const [code, name, muscle, difficulty, instructions, videoUrl] = row;
+    const [code, name, muscle, difficulty, rawInstructions, videoUrl] = row;
+    const instructions = _.split(_.trim(rawInstructions), '\n');
+
     return {
       code, difficulty, instructions, muscle, name, videoUrl,
     };

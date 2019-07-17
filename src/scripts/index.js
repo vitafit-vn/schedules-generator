@@ -108,8 +108,9 @@ async function onDownloadSchedules() {
 }
 
 async function onShowSchedules() {
-  const { checksum, weeklySchedule, userId } = await generateScheduleFromInputs();
-  $('#schedules-wrapper').html(weeklySchedule);
+  const { checksum, dailySchedules, weeklySchedule, userId } = await generateScheduleFromInputs();
+  // $('#schedules-wrapper').html(weeklySchedule);
+  $('#schedules-wrapper').html(dailySchedules[0]);
 }
 
 function downloadSchedules() {

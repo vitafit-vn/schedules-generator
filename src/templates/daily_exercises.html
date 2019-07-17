@@ -1,0 +1,71 @@
+<div class="bg-secondary font-weight-bold mt-3 py-2 text-center text-white">
+  {{title}}
+</div>
+{{#exercises}}
+<div class="table-responsive">
+  <table class="table table-borderless table-sm text-center text-wrap">
+    <thead>
+      <tr class="bg-primary border border-primary font-weight-bold text-white">
+        <th class="align-middle" scope="col">Bài tập</th>
+        <th class="align-middle" scope="col">Nhóm cơ</th>
+        <th class="align-middle" scope="col">Độ khó</th>
+        <th class="align-middle" scope="col">Sets</th>
+        <th class="align-middle" scope="col">Reps</th>
+        <th class="align-middle" scope="col">Mức tạ</th>
+        <th class="align-middle" scope="col">Nghỉ</th>
+        <th class="align-middle recommended-weight" scope="col">Khối lượng<br />khuyến nghị</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="align-middle border border-primary text-left">
+          {{order}}. {{name}}
+          {{#if videoUrl}}
+          <a href="{{videoUrl}}" rel="noopener noreferrer" target="_blank">
+            <i class="icon ion-logo-youtube"></i>
+          </a>
+          {{/if}}
+        </td>
+        <td class="align-middle border border-primary">{{muscle}}</td>
+        <td class="align-middle border border-primary">{{difficulty}}</td>
+        <td class="align-middle border border-primary">{{sets}}</td>
+        <td class="align-middle border border-primary">{{reps}}</td>
+        <td class="align-middle border border-primary">
+          {{#if rpe}}
+          RPE-{{rpe}}
+          {{else}}
+          -
+          {{/if}}
+        </td>
+        <td class="align-middle border border-primary">
+          {{#if rest}}
+          {{rest}}s
+          {{else}}
+          -
+          {{/if}}
+        </td>
+        <td class="align-middle border border-primary">
+          {{#if recommendedWeight}}
+          {{recommendedWeight}}kg
+          {{else}}
+          -
+          {{/if}}
+        </td>
+      </tr>
+      <tr>
+        <td class="border border-primary p-2 text-justify" colspan="8">
+          {{#instructions}}
+          <div>{{this}}</div>
+          {{/instructions}}
+          {{#if videoUrl}}
+          <div class="mt-2">
+            Tham khảo:
+            <a href="{{videoUrl}}" rel="noopener noreferrer" target="_blank">{{videoUrl}}</a>
+          </div>
+          {{/if}}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+{{/exercises}}
