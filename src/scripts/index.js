@@ -37,20 +37,15 @@ function getUserInfo() {
   const birthYear = $('#birth-year').val();
   const height = $('#height').val();
   const weight = $('#weight').val();
-  const periodFrom = $('#week-period')[0].valueAsDate;
-  const periodTo = new Date(periodFrom);
-  periodTo.setDate(periodFrom.getDate() + 7);
+  const weekPeriod = $('#week-period')[0].valueAsDate;
 
   return {
     height,
     name,
     userId,
+    weekPeriod,
     weight,
     age: new Date().getFullYear() - parseInt(birthYear),
-    period: {
-      from: periodFrom.toLocaleDateString('vi'),
-      to: periodTo.toLocaleDateString('vi'),
-    }
   };
 }
 

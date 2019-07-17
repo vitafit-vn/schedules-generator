@@ -8,8 +8,8 @@ import './configs/templates.handlebars';
 function registerPartials() {
   Handlebars.registerPartial('html_head', Handlebars.templates.html_head);
   Handlebars.registerPartial('personalized_rows', Handlebars.templates.personalized_rows);
+  Handlebars.registerPartial('schedules_header', Handlebars.templates.schedules_header);
   Handlebars.registerPartial('weekly_day_schedules', Handlebars.templates.weekly_day_schedules);
-  Handlebars.registerPartial('weekly_header', Handlebars.templates.weekly_header);
   Handlebars.registerPartial('weekly_table', Handlebars.templates.weekly_table);
 }
 
@@ -59,7 +59,7 @@ export function renderPersonalizedRows(rows) {
 }
 
 export function renderWeeklySchedule({
-  personalizedData, userInfo, weeklyCode, weekVariant, workoutLevel,
+  personalizedData, userInfo, weekPeriod, weekVariant, weeklyCode, workoutLevel,
 }) {
   const weeklyData = _.find(CONSTANTS.WEEKLY_SCHEDULES, { code: weeklyCode, variant: weekVariant });
   const { dailyCodes } = weeklyData;
@@ -82,6 +82,12 @@ export function renderWeeklySchedule({
   };
 
   return Handlebars.templates.weekly_schedule({
-    daySchedules, userInfo, dailyCodes, site: SITE_CONFIGS, weekdays: CONSTANTS.WEEKDAYS,
+    dailyCodes,
+    daySchedules,
+    userInfo,
+    site: SITE_CONFIGS,
+    subTitle: `Tuần từ ${weekPeriod.getDate()} đến ${weekPeriod.getDate()}`,
+    title: 'Chế độ tập luyện hàng tuần',
+    weekdays: CONSTANTS.WEEKDAYS,
   });
 }
