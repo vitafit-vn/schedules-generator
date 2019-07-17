@@ -17,7 +17,7 @@
 <body>
   <div id="nav-bar"></div>
   <div class="container">
-    <form action="javascript: showSchedules();">
+    <form action="#" id="schedules-form">
       <div class="row">
         <div class="col-3" id="user-info"></div>
         <div class="col table-responsive" id="personalized-table"></div>
@@ -33,7 +33,7 @@
           </button>
         </div>
         <div class="col-auto">
-          <button class="btn btn-primary" onclick="downloadSchedules()" type="button">
+          <button class="btn btn-primary" id="download-schedules" type="button">
             Tải file HTML
             <i class="fa fa-download ml-1 text-white"></i>
           </button>

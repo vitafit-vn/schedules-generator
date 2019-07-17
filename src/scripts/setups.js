@@ -108,9 +108,15 @@ function clonePersonalizedData() {
   $('#personalized-table input[name=recommended-weight]').val(recommendedWeight);
 }
 
-function setupPersonalizedButtons() {
+function setupOthers() {
   $('#clear-personalized-data').click(() => clearPersonalizedData());
   $('#clone-personalized-data').click(() => clonePersonalizedData());
+
+  $('#schedules-form').submit(event => {
+    showSchedules();
+    event.preventDefault();
+  });
+  $('#download-schedules').click(() => downloadSchedules());
 }
 
 $(document).ready(async () => {
@@ -121,7 +127,7 @@ $(document).ready(async () => {
     setupWeeklyCodeSelect();
     setupWeekVariantSelect();
     setupWorkoutLevelSelect();
-    setupPersonalizedButtons();
+    setupOthers();
 
     setupPersonalizedTable();
   } catch (error) {
