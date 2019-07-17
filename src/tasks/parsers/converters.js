@@ -1,5 +1,10 @@
 import _ from 'lodash';
 
+function extractScheduleCodeAndName(schedule) {
+  const [code, muscles] = schedule.split(/\s*[()]/);
+  return { code, muscles };
+}
+
 export function convertDailySchedulesRecords(records) {
   const dailySchedules = [];
   let currentSchedule;
@@ -12,8 +17,10 @@ export function convertDailySchedulesRecords(records) {
     if (!_.isEmpty(scheduleName)) {
       // Save current schedule
       if (!_.isEmpty(currentSchedule)) {
-        const [code, muscles] = currentSchedule.split(/\s*[()]/);
-        dailySchedules.push({ code, muscles, exercises: currentExercises });
+        dailySchedules.push({
+          ...extractScheduleCodeAndName(currentSchedule),
+          exercises: currentExercises,
+        });
       }
 
       // Move to next schedule
@@ -33,7 +40,10 @@ export function convertDailySchedulesRecords(records) {
 
   // Save last schedule
   if (!_.isEmpty(currentSchedule)) {
-    dailySchedules.push({ name: currentSchedule, exercises: currentExercises });
+    dailySchedules.push({
+      ...extractScheduleCodeAndName(currentSchedule),
+      exercises: currentExercises,
+    });
   }
 
   return dailySchedules;

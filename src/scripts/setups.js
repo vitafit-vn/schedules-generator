@@ -38,16 +38,16 @@ function setupPersonalizedTable() {
   });
 
   $('#personalized-data tbody').html(VSG.UTILS.renderPersonalizedRows(rows));
+  $('#schedule-container').empty();
 }
 
 function setupWorkoutLevelSelect() {
-  setupPersonalizedTable();
-
   const workoutLevelOptions = _.map(
     VSG.CONSTANTS.WORKOUT_LEVELS,
     level => `<option value="${level}">${_.capitalize(level)}</option>`,
   );
   $('#workout-level').html(workoutLevelOptions);
+  setupPersonalizedTable();
 }
 
 function setupWeeklyCodeSelect() {
@@ -59,14 +59,13 @@ function setupWeeklyCodeSelect() {
 }
 
 function setupWeekVariantSelect() {
-  setupPersonalizedTable();
-
   const weeklyCode = $('#weekly-code').val();
   const weekVariantOptions = _.map(
     VSG.CONSTANTS.WEEK_VARIANTS_BY_CODES[weeklyCode],
     variant => `<option value="${variant}">${variant}</option>`,
   );
   $('#week-variant').html(weekVariantOptions);
+  setupPersonalizedTable();
 }
 
 $(document).ready(() => {
@@ -75,5 +74,5 @@ $(document).ready(() => {
   setupWorkoutLevelSelect();
 
   setupFixtures();
-  setupPersonalizedTable();
+  // setupPersonalizedTable();
 });

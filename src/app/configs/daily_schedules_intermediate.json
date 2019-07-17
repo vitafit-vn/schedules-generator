@@ -516,7 +516,8 @@
     ]
   },
   {
-    "name": "PULL-4 (Lưng, Xô, Tay trước)",
+    "code": "PULL-4",
+    "muscles": "Lưng, Xô, Tay trước",
     "exercises": [
       {
         "code": "BL02",

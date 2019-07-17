@@ -263,6 +263,33 @@
     "variant": "first_half"
   },
   {
+    "code": "WS09",
+    "dailyCodes": [
+      [
+        "LOWER-2"
+      ],
+      [
+        "PUSH-1"
+      ],
+      [
+        "NGHỈ"
+      ],
+      [
+        "PULL-1"
+      ],
+      [
+        "LOWER-1"
+      ],
+      [
+        "PUSH-2"
+      ],
+      [
+        "NGHỈ"
+      ]
+    ],
+    "variant": "second_half"
+  },
+  {
     "code": "WS10",
     "dailyCodes": [
       [
@@ -288,6 +315,33 @@
       ]
     ],
     "variant": "first_half"
+  },
+  {
+    "code": "WS10",
+    "dailyCodes": [
+      [
+        "LOWER-4"
+      ],
+      [
+        "PUSH-3"
+      ],
+      [
+        "NGHỈ"
+      ],
+      [
+        "PULL-3"
+      ],
+      [
+        "LOWER-3"
+      ],
+      [
+        "PUSH-4"
+      ],
+      [
+        "NGHỈ"
+      ]
+    ],
+    "variant": "second_half"
   },
   {
     "code": "WS11",
@@ -317,6 +371,33 @@
     "variant": "first_half"
   },
   {
+    "code": "WS11",
+    "dailyCodes": [
+      [
+        "UPPER-2"
+      ],
+      [
+        "LOWER-2"
+      ],
+      [
+        "NGHỈ"
+      ],
+      [
+        "PUSH-2"
+      ],
+      [
+        "PULL-2"
+      ],
+      [
+        "LOWER-2"
+      ],
+      [
+        "NGHỈ"
+      ]
+    ],
+    "variant": "second_half"
+  },
+  {
     "code": "WS12",
     "dailyCodes": [
       [
@@ -342,6 +423,33 @@
       ]
     ],
     "variant": "first_half"
+  },
+  {
+    "code": "WS12",
+    "dailyCodes": [
+      [
+        "UPPER-4"
+      ],
+      [
+        "LOWER-4"
+      ],
+      [
+        "NGHỈ"
+      ],
+      [
+        "PUSH-4"
+      ],
+      [
+        "PULL-4"
+      ],
+      [
+        "LOWER-4"
+      ],
+      [
+        "NGHỈ"
+      ]
+    ],
+    "variant": "second_half"
   },
   {
     "code": "WS13",
@@ -387,7 +495,7 @@
         "NGHỈ"
       ],
       [
-        "FULL BODY"
+        "FULL-BODY-1"
       ],
       [
         "CARDIO-1",
@@ -405,114 +513,6 @@
     "variant": "first_half"
   },
   {
-    "code": "WS09",
-    "dailyCodes": [
-      [
-        "LOWER-2"
-      ],
-      [
-        "PUSH-1"
-      ],
-      [
-        "NGHỈ"
-      ],
-      [
-        "PULL-1"
-      ],
-      [
-        "LOWER-1"
-      ],
-      [
-        "PUSH-2"
-      ],
-      [
-        "NGHỈ"
-      ]
-    ],
-    "variant": "second_half"
-  },
-  {
-    "code": "WS10",
-    "dailyCodes": [
-      [
-        "LOWER-4"
-      ],
-      [
-        "PUSH-3"
-      ],
-      [
-        "NGHỈ"
-      ],
-      [
-        "PULL-3"
-      ],
-      [
-        "LOWER-3"
-      ],
-      [
-        "PUSH-4"
-      ],
-      [
-        "NGHỈ"
-      ]
-    ],
-    "variant": "second_half"
-  },
-  {
-    "code": "WS11",
-    "dailyCodes": [
-      [
-        "UPPER-2"
-      ],
-      [
-        "LOWER-2"
-      ],
-      [
-        "NGHỈ"
-      ],
-      [
-        "PUSH-2"
-      ],
-      [
-        "PULL-2"
-      ],
-      [
-        "LOWER-2"
-      ],
-      [
-        "NGHỈ"
-      ]
-    ],
-    "variant": "second_half"
-  },
-  {
-    "code": "WS12",
-    "dailyCodes": [
-      [
-        "UPPER-4"
-      ],
-      [
-        "LOWER-4"
-      ],
-      [
-        "NGHỈ"
-      ],
-      [
-        "PUSH-4"
-      ],
-      [
-        "PULL-4"
-      ],
-      [
-        "LOWER-4"
-      ],
-      [
-        "NGHỈ"
-      ]
-    ],
-    "variant": "second_half"
-  },
-  {
     "code": "WS14",
     "dailyCodes": [
       [
@@ -525,7 +525,67 @@
         "NGHỈ"
       ],
       [
-        "FULL BODY"
+        "FULL-BODY-2"
+      ],
+      [
+        "CARDIO-1",
+        "CARDIO-2",
+        "CARDIO-3",
+        "CARDIO-4"
+      ],
+      [
+        "NGHỈ"
+      ],
+      [
+        "NGHỈ"
+      ]
+    ],
+    "variant": "second_half"
+  },
+  {
+    "code": "WS15",
+    "dailyCodes": [
+      [
+        "UPPER-1"
+      ],
+      [
+        "LOWER-1"
+      ],
+      [
+        "NGHỈ"
+      ],
+      [
+        "FULL-BODY-3"
+      ],
+      [
+        "CARDIO-1",
+        "CARDIO-2",
+        "CARDIO-3",
+        "CARDIO-4"
+      ],
+      [
+        "NGHỈ"
+      ],
+      [
+        "NGHỈ"
+      ]
+    ],
+    "variant": "first_half"
+  },
+  {
+    "code": "WS15",
+    "dailyCodes": [
+      [
+        "UPPER-4"
+      ],
+      [
+        "LOWER-4"
+      ],
+      [
+        "NGHỈ"
+      ],
+      [
+        "FULL-BODY-4"
       ],
       [
         "CARDIO-1",
