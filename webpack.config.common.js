@@ -98,7 +98,7 @@ module.exports = {
     ]),
     new FaviconsPlugin({
       background: '#000',
-      logo: './src/static/images/favicon.png',
+      logo: './src/static/images/logo.png',
       prefix: 'static/favicons/',
       title: 'VitaFit VN',
     }),
