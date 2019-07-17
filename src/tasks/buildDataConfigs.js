@@ -9,7 +9,7 @@ const CONFIGS_DIR = './src/app/configs';
 const DATA_DIR = './src/tasks/data';
 
 function buildDailyScheduleConfigs() {
-  _.each(CONSTANTS.WORKOUT_LEVELS, async level => {
+  _.each([...CONSTANTS.WORKOUT_LEVELS, 'shared'], async level => {
     try {
       const csvData = fs.readFileSync(`${DATA_DIR}/daily_schedules/${level}.csv`, 'utf-8');
       const dailySchedules = await parseDailySchedules(csvData);
