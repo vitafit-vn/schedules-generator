@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import { DateTime } from 'luxon';
 import Handlebars from 'handlebars/runtime';
 
 // Locals
@@ -34,13 +35,15 @@ function buildExerciseData(configs, personalizedData, index) {
   };
 }
 
-function buildDayExercises(dayExercises, personalizedData, index) {
+function buildDayExercises({
+  dayExercises, index, personalizedData, weekStart,
+}) {
   const weekday = CONSTANTS.WEEKDAYS[index];
+  const date = weekStart.plus({ days: index });
+  const formttedDate = `${weekday}, ngày ${date.toFormat('dd/MM')}`;
 
   // Off day
-  if (_.isEmpty(dayExercises)) {
-    return { title: `${weekday}: ${CONSTANTS.OFF_DAY}` };
-  }
+  if (_.isEmpty(dayExercises)) return { title: `${formttedDate}: ${CONSTANTS.OFF_DAY}` };
 
   const { code, muscles } = dayExercises[0];
   const flattenExercises = _.flatMap(dayExercises, 'exercises');
@@ -50,7 +53,7 @@ function buildDayExercises(dayExercises, personalizedData, index) {
       flattenExercises,
       (configs, idx) => buildExerciseData(configs, personalizedData, idx),
     ),
-    title: `${weekday}: ${code} (${muscles})`,
+    title: `${formttedDate}: ${code} (${muscles})`,
   };
 }
 
@@ -59,35 +62,35 @@ export function renderPersonalizedRows(rows) {
 }
 
 export function renderWeeklySchedule({
-  personalizedData, userInfo, weekStart, weekVariant, weeklyCode, workoutLevel,
+  personalizedData, userInfo, weekPeriod, weekVariant, weeklyCode, workoutLevel,
 }) {
   const weeklyData = _.find(CONSTANTS.WEEKLY_SCHEDULES, { code: weeklyCode, variant: weekVariant });
   const { dailyCodes } = weeklyData;
+
+  const weekStart = DateTime.fromJSDate(weekPeriod);
+  const weekEnd = weekStart.plus({ days: 7 });
+
   const daySchedules = _.map(dailyCodes, (codes, index) => {
     const dayExercises = _.filter(
       CONSTANTS.DAILY_SCHEDULES[workoutLevel],
       ({ code }) => _.includes(codes, code),
     );
 
-    return buildDayExercises(dayExercises, personalizedData, index);
+    return buildDayExercises({
+      dayExercises, index, personalizedData, weekStart,
+    });
   });
 
-  window.RENDERING_PARAMS = {
-    daySchedules,
-    personalizedData,
-    userInfo,
+  const params = {
     dailyCodes,
+    daySchedules,
+    userInfo,
     site: SITE_CONFIGS,
+    subTitle: `Tuần từ ${weekStart.toFormat('dd/MM/yyyy')} đến ${weekEnd.toFormat('dd/MM/yyyy')}`,
+    title: 'Chế độ tập luyện hàng tuần',
     weekdays: CONSTANTS.WEEKDAYS,
   };
 
-  return Handlebars.templates.weekly_schedule({
-    dailyCodes,
-    daySchedules,
-    userInfo,
-    site: SITE_CONFIGS,
-    subTitle: `Tuần từ ${weekStart.getDate()} đến ${weekStart.getDate()}`,
-    title: 'Chế độ tập luyện hàng tuần',
-    weekdays: CONSTANTS.WEEKDAYS,
-  });
+  window.RENDERING_PARAMS = params;
+  return Handlebars.templates.weekly_schedule(params);
 }

@@ -66,13 +66,13 @@ function generateScheduleFromInputs() {
   const workoutLevel = $('#workout-level').val();
   const weeklyCode = $('#weekly-code').val();
   const weekVariant = $('#week-variant').val();
-  const weekStart = $('#week-period')[0].valueAsDate;
+  const weekPeriod = $('#week-period')[0].valueAsDate;
 
-  const { weekPeriod, userId } = userInfo;
-  const checksum = VSG.UTILS.computeChecksum(userId, workoutLevel, weeklyCode, weekVariant, weekStart);
+  const { userId } = userInfo;
+  const checksum = VSG.UTILS.computeChecksum(userId, workoutLevel, weeklyCode, weekVariant, weekPeriod);
 
   const schedule = VSG.UTILS.renderWeeklySchedule({
-    personalizedData, userInfo, weekStart, weeklyCode, weekVariant, workoutLevel,
+    personalizedData, userInfo, weekPeriod, weeklyCode, weekVariant, workoutLevel,
   });
 
   return { checksum, schedule, userId };
