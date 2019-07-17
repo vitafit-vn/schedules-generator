@@ -1,10 +1,10 @@
 function toggleLoading(loading) {
   if (!loading) {
-    $('.loading-ring').addClass('invisible');
+    $('#loading-spinner').addClass('d-none');
     return;
   }
 
-  $('.loading-ring').removeClass('invisible');
+  $('#loading-spinner').removeClass('d-none');
   $('#schedule-container').empty();
 }
 

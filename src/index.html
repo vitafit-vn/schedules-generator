@@ -16,13 +16,6 @@
 
 <body class="container mt-4">
   <h1>Công cụ tạo lịch tập</h1>
-  <a href="#" rel="noopener noreferrer" style="text-decoration: none;" target="_blank">
-    <i class="fa fa-2 fa-youtube-play" aria-hidden="true"></i>
-  </a>
-  <button class="btn btn-sm" onclick="" type="button">
-    <i class="fa fa-2 fa-trash" aria-hidden="true"></i>
-  </button>
-
   <form action="javascript: showSchedules();" id="user-info">
     <div class="row">
       <div class="col-3">
@@ -111,13 +104,15 @@
                   </div>
                 </div>
               </td>
-              <td class="align-middle d-inline">
-                <button class="btn px-1" onclick="clearPersonalizedRow()" type="button">
-                  <i class="fa fa-trash" aria-hidden="true"></i>
-                </button>
-                <button class="btn px-1" onclick="cloneToPersonalizedRows()" type="button">
-                  <i class="fa fa-clone" aria-hidden="true"></i>
-                </button>
+              <td class="align-middle">
+                <div class="d-flex">
+                  <button class="btn px-1" onclick="clearPersonalizedRow()" type="button">
+                    <i class="fa fa-trash text-danger" aria-hidden="true"></i>
+                  </button>
+                  <button class="btn px-1" onclick="cloneToPersonalizedRows()" type="button">
+                    <i class="fa fa-clone text-primary" aria-hidden="true"></i>
+                  </button>
+                </div>
               </td>
             </tr>
           </thead>
@@ -127,18 +122,19 @@
     </div>
     <div class="row">
       <div class="col-auto">
-        <button class="btn btn-primary" type="submit">Tạo lịch</button>
+        <button class="btn btn-primary" type="submit">
+          Tạo lịch
+          <i class="fa fa-file-text ml-1 text-white"></i>
+        </button>
       </div>
       <div class="col-auto">
-        <button class="btn btn-primary" onclick="downloadSchedules()" type="button">Tải file HTML</button>
+        <button class="btn btn-primary" onclick="downloadSchedules()" type="button">
+          Tải file HTML
+          <i class="fa fa-download ml-1 text-white"></i>
+        </button>
       </div>
-      <div class="col-auto">
-        <div class="align-middle invisible loading-ring mt-1">
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
+      <div class="align-items-center col-auto d-flex">
+        <i class="d-none fa fa-cog fa-2x fa-spin text-primary" id="loading-spinner"></i>
       </div>
     </div>
   </form>
