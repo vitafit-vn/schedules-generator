@@ -1,10 +1,10 @@
 function toggleLoading(loading) {
   if (!loading) {
-    $('.loading-ring').addClass('hidden');
+    $('.loading-ring').addClass('invisible');
     return;
   }
 
-  $('.loading-ring').removeClass('hidden');
+  $('.loading-ring').removeClass('invisible');
   $('#schedule-container').empty();
 }
 
@@ -21,23 +21,23 @@ async function performAsyncTask(callback) {
 }
 
 function bulkInputPersonalizedData() {
-  const rpe = $('#personalized-data input[name="bulk_rpe"]').val();
-  $('#personalized-data input[name="rpe"]').val(rpe);
+  const rpe = $('#personalized-data input[name=bulk-rpe]').val();
+  $('#personalized-data input[name=rpe]').val(rpe);
   
-  const rest = $('#personalized-data input[name="bulk_rest"]').val();
-  $('#personalized-data input[name="rest"]').val(rest);
+  const rest = $('#personalized-data input[name=bulk-rest]').val();
+  $('#personalized-data input[name=rest]').val(rest);
 
-  const recommendedWeight = $('#personalized-data input[name="bulk_recommended_weight"]').val();
-  $('#personalized-data input[name="recommended_weight"]').val(recommendedWeight);
+  const recommendedWeight = $('#personalized-data input[name=bulk-recommended-weight]').val();
+  $('#personalized-data input[name=recommended-weight]').val(recommendedWeight);
 }
 
 function getUserInfo() {
-  const userId = $('#user-info input[name=user_id]').val();
-  const name = $('#user-info input[name=full_name]').val();
-  const birthYear = $('#user-info input[name=birth_year]').val();
-  const height = $('#user-info input[name=height]').val();
-  const weight = $('#user-info input[name=weight]').val();
-  const periodFrom = $('#user-info input[name=week_period]')[0].valueAsDate;
+  const userId = $('#user-id').val();
+  const name = $('#full-name').val();
+  const birthYear = $('#birth-year').val();
+  const height = $('#height').val();
+  const weight = $('#weight').val();
+  const periodFrom = $('#week-period')[0].valueAsDate;
   const periodTo = new Date(periodFrom);
   periodTo.setDate(periodFrom.getDate() + 7);
 
@@ -55,11 +55,10 @@ function getUserInfo() {
 }
 
 function getPersonalizedData() {
-  const codes = _.map($('#personalized-data tbody th[scope="row"]').toArray(), 'dataset.code');
-  const rpes = _.map($('#personalized-data tbody input[name="rpe"]').toArray(), 'value');
-  const rests = _.map($('#personalized-data tbody input[name="rest"]').toArray(), 'value');
-  const recommendedWeights =
-    _.map($('#personalized-data tbody input[name="recommended_weight"]').toArray(), 'value');
+  const codes = _.map($('#personalized-data th[scope=row]').toArray(), 'dataset.code');
+  const rpes = _.map($('#personalized-data input[name=rpe]').toArray(), 'value');
+  const rests = _.map($('#personalized-data input[name=rest]').toArray(), 'value');
+  const recommendedWeights = _.map($('#personalized-data input[name=recommended-weight]').toArray(), 'value');
 
   const rows = _.zip(codes, rpes, rests, recommendedWeights);
 
@@ -71,9 +70,9 @@ function getPersonalizedData() {
 function generateScheduleFromInputs() {
   const userInfo = getUserInfo();
   const personalizedData = getPersonalizedData();
-  const workoutLevel = $('#user-info select[name=workout_level]').val();
-  const weeklyCode = $('#user-info select[name=weekly_code]').val();
-  const weekVariant = $('#user-info select[name=week_variant]').val();
+  const workoutLevel = $('#workout-level').val();
+  const weeklyCode = $('#weekly-code').val();
+  const weekVariant = $('#week-variant').val();
 
   const { weekPeriod, userId } = userInfo;
   const checksum = VSG.UTILS.computeChecksum(userId, weekPeriod, weeklyCode, weekVariant, workoutLevel);

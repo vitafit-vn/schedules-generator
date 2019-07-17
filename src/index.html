@@ -12,115 +12,91 @@
   <title>VitaFit VN - Công cụ tạo lịch tập</title>
 </head>
 
-<body>
-  <div class="container">
-    <h1>Công cụ tạo lịch tập</h1>
-    <form action="javascript: showSchedules();" id="user-info">
-      <div class="row">
-        <div class="col">
-          <span>Mã KH:</span>
-        </div>
-        <div class="col">
-          <input type="text" name="user_id" required />
-        </div>
-        <div class="col"></div>
-        <div class="col"></div>
+<body class="container">
+  <h1>Công cụ tạo lịch tập</h1>
+  <form action="javascript: showSchedules();" id="user-info">
+    <div class="row">
+      <div class="col-2 form-group">
+        <label for="user-id">Mã KH</label>
+        <input class="form-control" id="user-id" required type="text" />
       </div>
-      <div class="row">
-        <div class="col">
-          <span>Họ tên:</span>
-        </div>
-        <div class="col">
-          <input type="text" name="full_name" required />
-        </div>
-        <div class="col">
-          <span>Năm sinh:</span>
-        </div>
-        <div class="col">
-          <input type="number" name="birth_year" min="1950" max="2010" required />
-        </div>
+      <div class="col form-group">
+        <label for="full-name">Họ tên</label>
+        <input class="form-control" id="full-name" required type="text" />
       </div>
-      <div class="row">
-        <div class="col">
-          <span>Chiều cao (cm):</span>
-        </div>
-        <div class="col">
-          <input type="number" name="height" min="100" max="200" required />
-        </div>
-        <div class="col">
-          <span>Cân nặng (kg):</span>
-        </div>
-        <div class="col">
-          <input type="number" name="weight" min="30" max="100" required />
-        </div>
+      <div class="col-2 form-group">
+        <label for="birth-year">Năm sinh</label>
+        <input class="form-control" id="birth-year" max="2010" min="1950" required type="number" />
       </div>
-      <div class="row">
-        <div class="col">
-          <span>Preset lịch tuần:</span>
-        </div>
-        <div class="col">
-          <select name="weekly_code" onchange="setupWeekVariantSelect()"></select>
-        </div>
-        <div class="col">
-          <span>Biến thể tuần:</span>
-        </div>
-        <div class="col">
-          <select name="week_variant"></select>
-        </div>
+      <div class="col-2 form-group">
+        <label for="height">Chiều cao (cm)</label>
+        <input class="form-control" id="height" max="200" min="100" required type="number" />
       </div>
-      <div class="row">
-        <div class="col">
-          <span>Trình độ:</span>
-        </div>
-        <div class="col">
-          <select name="workout_level" onchange="setupWorkoutLevelSelect()"></select>
-        </div>
-        <div class="col">
-          <span>Tuần:</span>
-        </div>
-        <div class="col">
-          <input type="week" name="week_period" required />
-        </div>
+      <div class="col-2 form-group">
+        <label for="weight">Cân nặng (kg)</label>
+        <input class="form-control" id="weight" max="100" min="30" required type="number" />
       </div>
-      <div id="personalized-data">
-        <table class="mt-3 table table-hover table-sm table-striped">
-          <thead class="thead-dark">
-            <tr>
-              <th scope="col">Mã</th>
-              <th scope="col">Bài tập</th>
-              <th scope="col">RPE</th>
-              <th scope="col">Thời gian nghỉ</th>
-              <th scope="col">Mức tạ khuyến nghị</th>
-            </tr>
-            <tr>
-              <td></td>
-              <td><input onclick="bulkInputPersonalizedData()" type="button" value="Thay toàn bộ" /></td>
-              <td><input type="text" name="bulk_rpe" /></td>
-              <td><input type="text" name="bulk_rest" /><span>s</span></td>
-              <td><input type="text" name="bulk_recommended_weight" /><span>kg</span></td>
-            </tr>
-          </thead>
-          <tbody></tbody>
-        </table>
+    </div>
+    <div class="row">
+      <div class="col form-group">
+        <label for="weekly-code">Preset lịch tuần</label>
+        <select class="custom-select" id="weekly-code" onchange="setupWeekVariantSelect()" required></select>
       </div>
-      <div class="row">
-        <div class="col">
-          <input type="submit" value="Tạo lịch" />
-        </div>
-        <div class="col">
-          <input onclick="downloadSchedules()" type="button" value="Tải file HTML" />
-        </div>
-        <div class="col">
-          <div class="loading-ring hidden">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-          </div>
+      <div class="col form-group">
+        <label for="week-variant">Biến thể tuần</label>
+        <select class="custom-select" id="week-variant" required></select>
+      </div>
+      <div class="col form-group">
+        <label for="workout-level">Trình độ</label>
+        <select class="custom-select" id="workout-level" required></select>
+      </div>
+      <div class="col form-group">
+        <label for="week-period">Tuần</label>
+        <input class="form-control" id="week-period" required type="week"></input>
+      </div>
+    </div>
+    <table id="personalized-data" class="mt-3 table table-hover table-sm table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Mã</th>
+          <th scope="col">Bài tập</th>
+          <th scope="col">RPE</th>
+          <th scope="col">Thời gian nghỉ</th>
+          <th scope="col">Mức tạ khuyến nghị</th>
+          <th scope="col"></th>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td><input class="form-control" name="bulk-rpe" type="text" /></td>
+          <td><input class="form-control" name="bulk-rest" type="text" /></td>
+          <td><input class="form-control" name="bulk-recommended-weight" type="text" /></td>
+          <td>
+            <button class="btn btn-primary" onclick="bulkInputPersonalizedData()" type="button">
+              Thay toàn bộ
+            </button>
+          </td>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <div class="row">
+      <div class="col-auto">
+        <button class="btn btn-primary" type="submit">Tạo lịch</button>
+      </div>
+      <div class="col-auto">
+        <button class="btn btn-primary" onclick="downloadSchedules()" type="button">Tải file HTML</button>
+      </div>
+      <div class="col-auto">
+        <div class="align-middle invisible loading-ring mt-1">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
         </div>
       </div>
-    </form>
-  </div>
+    </div>
+  </form>
   <div class="mt-3 mx-auto" id="schedules-wrapper"></div>
 </body>
 
