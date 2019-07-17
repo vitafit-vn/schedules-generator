@@ -44,18 +44,17 @@ function buildDayExercises({
   const formattedDate = `${weekday}, ngày ${date.toFormat('dd/MM')}`;
 
   // Off day
-  if (_.isEmpty(dayExercises)) return { formattedDate, dayName: CONSTANTS.OFF_DAY };
+  if (_.isEmpty(dayExercises)) return { title: `${formattedDate}: ${CONSTANTS.OFF_DAY}` };
 
   const { code, muscles } = dayExercises[0];
   const flattenExercises = _.flatMap(dayExercises, 'exercises');
 
   return {
-    formattedDate,
     exercises: _.map(
       flattenExercises,
       (configs, idx) => buildExerciseData(configs, personalizedData, idx),
     ),
-    dayName: `${code} (${muscles})`,
+    title: `${formattedDate}: ${code} (${muscles})`,
   };
 }
 
