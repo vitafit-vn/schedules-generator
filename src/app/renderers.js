@@ -85,6 +85,8 @@ export function renderDailySchedule({
     ({ code }) => _.includes(codes, code),
   );
 
+  if (_.isEmpty(dayExercises)) return '';
+
   const dailyExercises = buildDayExercises({
     date, dayExercises, dayIndex, personalizedData,
   });
