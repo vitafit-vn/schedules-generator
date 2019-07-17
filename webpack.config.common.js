@@ -93,7 +93,7 @@ module.exports = {
       {
         from: './src/scripts/',
         to: './scripts/',
-        test: /\.png$/,
+        test: /\.js$/,
       },
     ]),
     new FaviconsPlugin({
