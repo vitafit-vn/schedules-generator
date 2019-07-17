@@ -34,19 +34,10 @@ function setupPersonalizedTable() {
   const rows = _.map(_.uniq(exerciseCodes), code => {
     const exercise = _.find(VSG.CONSTANTS.EXERCISES_DATABASE, { code });
     const { name } = exercise;
-    return `
-      <tr>
-        <th data-code="${code}" scope="row">${code}</th>
-        <td>${name}</td>
-        <td><input class="form-control" name="rpe" type="text" /></td>
-        <td><input class="form-control" name="rest" type="text" /></td>
-        <td><input class="form-control" name="recommended_weight" type="text" /></td>
-        <td></td>
-      </tr>
-    `;
+    return { code, name };
   });
 
-  $('#personalized-data tbody').html(_.join(rows, '\n'));
+  $('#personalized-data tbody').html(VSG.UTILS.renderPersonalizedRows(rows));
 }
 
 function setupWorkoutLevelSelect() {

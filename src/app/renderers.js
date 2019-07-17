@@ -7,6 +7,7 @@ import './configs/templates.handlebars';
 
 function registerPartials() {
   Handlebars.registerPartial('html_head', Handlebars.templates.html_head);
+  Handlebars.registerPartial('personalized_rows', Handlebars.templates.personalized_rows);
   Handlebars.registerPartial('weekly_day_schedules', Handlebars.templates.weekly_day_schedules);
   Handlebars.registerPartial('weekly_header', Handlebars.templates.weekly_header);
   Handlebars.registerPartial('weekly_table', Handlebars.templates.weekly_table);
@@ -53,7 +54,9 @@ function buildDayExercises(dayExercises, personalizedData, index) {
   };
 }
 
-/* eslint-disable import/prefer-default-export */
+export function renderPersonalizedRows(rows) {
+  return Handlebars.templates.personalized_rows({ rows });
+}
 
 export function renderWeeklySchedule({
   personalizedData, userInfo, weeklyCode, weekVariant, workoutLevel,

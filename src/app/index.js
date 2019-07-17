@@ -1,15 +1,12 @@
-import _ from 'lodash';
-import $$ from 'lodash/fp';
-
 import CONSTANTS from './constants';
-import { renderWeeklySchedule } from './renderers';
+import { renderPersonalizedRows, renderWeeklySchedule } from './renderers';
 import { computeChecksum } from './utils';
 
 const UTILS = {
   computeChecksum,
+  renderPersonalizedRows,
   renderWeeklySchedule,
 };
 
 const VSG = { CONSTANTS, UTILS };
-
-Object.assign(window, { VSG, _, $$ });
+Object.assign(window, { VSG });

@@ -1,0 +1,31 @@
+{{#each rows}}
+<tr>
+  <th data-code="{{code}}" scope="row">{{code}}</th>
+  <td>{{name}}</td>
+  <td>
+    <div class="input-group input-group-sm">
+      <div class="input-group-prepend">
+        <span class="input-group-text">RPE-</span>
+      </div>
+      <input class="form-control" name="rpe" type="text" />
+    </div>
+  </td>
+  <td>
+    <div class="input-group input-group-sm">
+      <input class="form-control" name="rest" type="text" />
+      <div class="input-group-append">
+        <span class="input-group-text">s</span>
+      </div>
+    </div>
+  </td>
+  <td>
+    <div class="input-group input-group-sm">
+      <input class="form-control" name="recommended-weight" type="text" />
+      <div class="input-group-append">
+        <span class="input-group-text">kg</span>
+      </div>
+    </div>
+  </td>
+  <td></td>
+</tr>
+{{/each}}
