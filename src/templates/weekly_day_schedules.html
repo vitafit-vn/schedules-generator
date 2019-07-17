@@ -1,3 +1,4 @@
+{{#daySchedules}}
 <div class="bg-secondary font-weight-bold py-2 text-center text-white {{#unless exercises}}mb-3{{/unless}}">
   {{title}}
 </div>
@@ -17,13 +18,14 @@
       </tr>
     </thead>
     <tbody>
-      {{#each exercises}}
+      {{#exercises}}
       <tr>
         <td class="align-middle border border-primary text-left">
+          {{order}}. {{name}}
           {{#if videoUrl}}
-            <a href="{{videoUrl}}" rel="noopener noreferrer" target="_blank">{{order}}. {{name}}</a>
-          {{else}}
-            {{order}}. {{name}}
+            <a href="{{videoUrl}}" rel="noopener noreferrer" target="_blank">
+              <i class="icon ion-logo-youtube"></i>
+            </a>
           {{/if}}
         </td>
         <td class="align-middle border border-primary">{{muscle}}</td>
@@ -52,8 +54,9 @@
           {{/if}}
         </td>
       </tr>
-      {{/each}}
+      {{/exercises}}
     </tbody>
   </table>
 </div>
 {{/if}}
+{{/daySchedules}}
