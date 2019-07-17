@@ -37,10 +37,9 @@ function buildExerciseData(configs, personalizedData, index) {
 }
 
 function buildDayExercises({
-  dayExercises, index, personalizedData, weekStart,
+  date, dayExercises, dayIndex, personalizedData,
 }) {
-  const weekday = CONSTANTS.WEEKDAYS[index];
-  const date = weekStart.plus({ days: index });
+  const weekday = CONSTANTS.WEEKDAYS[dayIndex];
   const formattedDate = `${weekday}, ngày ${date.toFormat('dd/MM')}`;
 
   // Off day
@@ -62,6 +61,39 @@ export function renderPersonalizedRows(rows) {
   return Handlebars.templates.personalized_rows({ rows });
 }
 
+export function renderDailySchedule({
+  dayIndex, personalizedData, userInfo, weekPeriod, weekVariant, weeklyCode, workoutLevel,
+}) {
+  const weeklyData = _.find(CONSTANTS.WEEKLY_SCHEDULES, { code: weeklyCode, variant: weekVariant });
+  const { dailyCodes } = weeklyData;
+  const codes = dailyCodes[dayIndex];
+  const date = DateTime.fromJSDate(weekPeriod).plus({ days: dayIndex });
+
+  const dayExercises = _.filter(
+    _.union(CONSTANTS.DAILY_SCHEDULES[workoutLevel], CONSTANTS.DAILY_SCHEDULES.shared),
+    ({ code }) => _.includes(codes, code),
+  );
+
+  const daySchedule = buildDayExercises({
+    date, dayExercises, personalizedData, index: dayIndex,
+  });
+
+  const params = {
+    daySchedule,
+    userInfo,
+    site: {
+      ...SITE_CONFIGS,
+      pageTitle: 'VitaFit VN - Chế độ tập luyện hàng ngày',
+    },
+    subTitle: `Ngày ${date.toFormat('dd/MM/yyyy')}`,
+    title: 'Chế độ tập luyện hàng ngày',
+  };
+
+  window.DAILY_RENDERING_PARAMS = window.DAILY_RENDERING_PARAMS || [];
+  window.DAILY_RENDERING_PARAMS[dayIndex] = params;
+  return params;
+}
+
 export function renderWeeklySchedule({
   personalizedData, userInfo, weekPeriod, weekVariant, weeklyCode, workoutLevel,
 }) {
@@ -69,7 +101,8 @@ export function renderWeeklySchedule({
   const { dailyCodes } = weeklyData;
 
   const weekStart = DateTime.fromJSDate(weekPeriod);
-  const weekEnd = weekStart.plus({ days: 7 });
+  const datesInWeek = _.map(_.range(CONSTANTS.WEEKDAYS.length), days => weekStart.plus({ days }));
+  const weekEnd = _.last(datesInWeek);
 
   const daySchedules = _.map(dailyCodes, (codes, index) => {
     const dayExercises = _.filter(
@@ -78,7 +111,7 @@ export function renderWeeklySchedule({
     );
 
     return buildDayExercises({
-      dayExercises, index, personalizedData, weekStart,
+      dayExercises, personalizedData, date: datesInWeek[index], dayIndex: index,
     });
   });
 
@@ -86,12 +119,15 @@ export function renderWeeklySchedule({
     dailyCodes,
     daySchedules,
     userInfo,
-    site: SITE_CONFIGS,
+    site: {
+      ...SITE_CONFIGS,
+      pageTitle: 'VitaFit VN - Chế độ tập luyện hàng tuần',
+    },
     subTitle: `Tuần từ ${weekStart.toFormat('dd/MM/yyyy')} đến ${weekEnd.toFormat('dd/MM/yyyy')}`,
     title: 'Chế độ tập luyện hàng tuần',
     weekdays: CONSTANTS.WEEKDAYS,
   };
 
-  window.RENDERING_PARAMS = params;
+  window.WEEKLY_RENDERING_PARAMS = params;
   return Handlebars.templates.weekly_schedule(params);
 }

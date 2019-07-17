@@ -5,7 +5,7 @@ function toggleLoading(loading) {
   }
 
   $('#loading-spinner').removeClass('d-none');
-  $('#schedule-container').empty();
+  $('#schedules-container').empty();
 }
 
 async function performAsyncTask(callback) {
@@ -83,18 +83,24 @@ function generateScheduleFromInputs() {
 
   const { userId } = userInfo;
   const checksum = VSG.UTILS.computeChecksum(userId, workoutLevel, weeklyCode, weekVariant, weekPeriod);
+  const renderingParams = {
+    personalizedData, userInfo, weekPeriod, weekVariant, weeklyCode, workoutLevel,
+  };
 
-  const schedule = VSG.UTILS.renderWeeklySchedule({
-    personalizedData, userInfo, weekPeriod, weeklyCode, weekVariant, workoutLevel,
-  });
+  const dailySchedules = _.map(
+    _.range(VSG.CONSTANTS.WEEKDAYS.length),
+    dayIndex => VSG.UTILS.renderDailySchedule({ ...renderingParams, dayIndex }),
+  );
 
-  return { checksum, schedule, userId };
+  const weeklySchedule = VSG.UTILS.renderWeeklySchedule(renderingParams);
+
+  return { checksum, dailySchedules, userId, weeklySchedule };
 }
 
 async function onDownloadSchedules() {
-  const { checksum, schedule, userId } = await generateScheduleFromInputs();
+  const { checksum, userId, weeklySchedule } = await generateScheduleFromInputs();
 
-  const scheduleBlob = new Blob([schedule], { type: 'text/html;charset=utf-8' });
+  const scheduleBlob = new Blob([weeklySchedule], { type: 'text/html;charset=utf-8' });
   const anchor = document.createElement('a', { id: 'schedules-downloader' });
   anchor.href = URL.createObjectURL(scheduleBlob);
   anchor.download = `${userId}_${checksum.substring(checksum.length - 6)}.html`;
@@ -102,8 +108,8 @@ async function onDownloadSchedules() {
 }
 
 async function onShowSchedules() {
-  const { checksum, schedule, userId } = await generateScheduleFromInputs();
-  $('#schedules-wrapper').html(schedule);
+  const { checksum, weeklySchedule, userId } = await generateScheduleFromInputs();
+  $('#schedules-wrapper').html(weeklySchedule);
 }
 
 function downloadSchedules() {

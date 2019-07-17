@@ -38,7 +38,7 @@ function setupPersonalizedTable() {
   });
 
   $('#personalized-data tbody').html(VSG.UTILS.renderPersonalizedRows(rows));
-  $('#schedule-container').empty();
+  $('#schedules-container').empty();
 }
 
 function setupWorkoutLevelSelect() {

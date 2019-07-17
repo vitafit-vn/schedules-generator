@@ -1,9 +1,10 @@
 import CONSTANTS from './constants';
-import { renderPersonalizedRows, renderWeeklySchedule } from './renderers';
+import { renderDailySchedule, renderPersonalizedRows, renderWeeklySchedule } from './renderers';
 import { computeChecksum } from './utils';
 
 const UTILS = {
   computeChecksum,
+  renderDailySchedule,
   renderPersonalizedRows,
   renderWeeklySchedule,
 };
