@@ -24,7 +24,7 @@ function setupPersonalizedTable() {
 
   const exerciseCodes = _.flatMap(dailyCodes, (codes, index) => {
     const dayExercises = _.filter(
-      VSG.CONSTANTS.DAILY_SCHEDULES[workoutLevel],
+      _.union(VSG.CONSTANTS.DAILY_SCHEDULES[workoutLevel], VSG.CONSTANTS.DAILY_SCHEDULES.shared),
       ({ code }) => _.includes(codes, code),
     );
 

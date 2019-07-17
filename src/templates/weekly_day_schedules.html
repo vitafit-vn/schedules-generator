@@ -1,6 +1,13 @@
 {{#daySchedules}}
-<div class="bg-secondary font-weight-bold py-2 text-center text-white {{#unless exercises}}mb-3{{/unless}}">
-  {{title}}
+<div class="bg-secondary font-weight-bold py-2 row mx-auto text-white {{#unless exercises}}mb-3{{/unless}}">
+  <div class="col-1"></div>
+  <div class="col">
+    {{formattedDate}}
+  </div>
+  <div class="col text-right">
+    {{dayName}}
+  </div>
+  <div class="col-1"></div>
 </div>
 {{#if exercises}}
 <div class="table-responsive">

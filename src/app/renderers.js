@@ -41,20 +41,21 @@ function buildDayExercises({
 }) {
   const weekday = CONSTANTS.WEEKDAYS[index];
   const date = weekStart.plus({ days: index });
-  const formttedDate = `${weekday}, ngày ${date.toFormat('dd/MM')}`;
+  const formattedDate = `${weekday}, ngày ${date.toFormat('dd/MM')}`;
 
   // Off day
-  if (_.isEmpty(dayExercises)) return { title: `${formttedDate}: ${CONSTANTS.OFF_DAY}` };
+  if (_.isEmpty(dayExercises)) return { formattedDate, dayName: CONSTANTS.OFF_DAY };
 
   const { code, muscles } = dayExercises[0];
   const flattenExercises = _.flatMap(dayExercises, 'exercises');
 
   return {
+    formattedDate,
     exercises: _.map(
       flattenExercises,
       (configs, idx) => buildExerciseData(configs, personalizedData, idx),
     ),
-    title: `${formttedDate}: ${code} (${muscles})`,
+    dayName: `${code} (${muscles})`,
   };
 }
 
@@ -73,7 +74,7 @@ export function renderWeeklySchedule({
 
   const daySchedules = _.map(dailyCodes, (codes, index) => {
     const dayExercises = _.filter(
-      CONSTANTS.DAILY_SCHEDULES[workoutLevel],
+      _.union(CONSTANTS.DAILY_SCHEDULES[workoutLevel], CONSTANTS.DAILY_SCHEDULES.shared),
       ({ code }) => _.includes(codes, code),
     );
 
