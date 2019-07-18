@@ -97,9 +97,14 @@ module.exports = {
         to: './scripts/',
         test: /\.js$/,
       },
+      {
+        from: './src/static/images',
+        to: './static/',
+        test: /\.js$/,
+      },
     ]),
     new FaviconsPlugin({
-      background: '#000',
+      background: '#0000',
       logo: './src/static/images/logo.png',
       prefix: 'static/favicons/',
       title: 'VitaFit VN',
