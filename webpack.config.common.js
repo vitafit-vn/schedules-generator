@@ -27,7 +27,7 @@ module.exports = {
   entry: {
     main: ['./src/app/index.js', './src/style/main.scss'],
     schedules: ['./src/style/schedules.scss'],
-    scripts: ['./src/scripts/'],
+    // scripts: ['./src/scripts/index.js', './src/scripts/setups.js'],
   },
   output: {
     filename: '[name].bundle.js',
@@ -49,11 +49,11 @@ module.exports = {
           },
         },
       },
-      {
-        test: /\.js$/,
-        include: /src\/scripts/,
-        loader: 'raw-loader',
-      },
+      // {
+      //   test: /\.js$/,
+      //   include: /src\/scripts/,
+      //   loader: 'raw-loader',
+      // },
       {
         test: /\.(sass|scss)$/,
         use: [
@@ -106,7 +106,7 @@ module.exports = {
       {
         from: './src/static/images',
         to: './static/',
-        test: /\.js$/,
+        test: /\.(png|jpg|gif)$/i,
       },
     ]),
     new FaviconsPlugin({
