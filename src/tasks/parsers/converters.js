@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import fp from 'lodash/fp';
 
 function extractScheduleCodeAndName(schedule) {
   const [code, muscles] = schedule.split(/\s*[()]/);
@@ -51,11 +52,19 @@ export function convertDailySchedulesRecords(records) {
 
 export function convertExercisesDatabase(records) {
   return _.map(records, row => {
-    const [code, name, muscle, difficulty, rawInstructions, videoUrl] = row;
-    const instructions = _.split(_.trim(rawInstructions), '\n');
+    const [code, name, muscle, difficulty, instructions, videoUrl] = row;
+    const convertedInstructions = fp.flow(
+      fp.trim,
+      fp.split('\n'),
+    )(instructions);
 
     return {
-      code, difficulty, instructions, muscle, name, videoUrl,
+      code,
+      difficulty,
+      muscle,
+      name,
+      videoUrl,
+      instructions: _.isEmpty(convertedInstructions) ? undefined : instructions,
     };
   });
 }

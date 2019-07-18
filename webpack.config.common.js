@@ -27,6 +27,7 @@ module.exports = {
   entry: {
     main: ['./src/app/index.js', './src/style/main.scss'],
     schedules: ['./src/style/schedules.scss'],
+    scripts: ['./src/scripts/'],
   },
   output: {
     filename: '[name].bundle.js',
@@ -39,7 +40,7 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
-        exclude: /node_modules/,
+        include: /src\/app/,
         use: {
           loader: 'babel-loader',
           options: {
@@ -47,6 +48,11 @@ module.exports = {
             presets: ['@babel/env'],
           },
         },
+      },
+      {
+        test: /\.js$/,
+        include: /src\/scripts/,
+        loader: 'raw-loader',
       },
       {
         test: /\.(sass|scss)$/,

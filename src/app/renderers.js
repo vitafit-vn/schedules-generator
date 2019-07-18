@@ -36,7 +36,6 @@ function buildExerciseData(configs, personalizedData, index) {
   return {
     ...configs,
     difficulty,
-    imageUrl: _.isEmpty(imageUrl) ? undefined : SITE_CONFIGS.publicPath + imageUrl,
     instructions,
     muscle,
     name,
@@ -44,6 +43,7 @@ function buildExerciseData(configs, personalizedData, index) {
     rest,
     rpe,
     videoUrl,
+    imageUrl: _.isEmpty(imageUrl) ? undefined : SITE_CONFIGS.publicPath + imageUrl,
     order: index + 1,
   };
 }
