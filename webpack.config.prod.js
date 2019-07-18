@@ -19,7 +19,7 @@ module.exports = merge(common, {
     }),
     new webpack.EnvironmentPlugin({
       PAGE_TITLE: 'VitaFit VN',
-      PUBLIC_PATH: 'https://schedules.vitafit.vn',
+      PUBLIC_PATH: 'https://tools.vitafit.vn',
     }),
   ],
 });

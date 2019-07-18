@@ -4,4 +4,8 @@ body {
 
 #schedules-wrapper {
   width: 800px;
+
+  body.schedules-container {
+    border: 1px lightgray solid;
+  }
 }

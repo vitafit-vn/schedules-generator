@@ -18,7 +18,14 @@
     </thead>
     <tbody>
       <tr>
-        <td class="align-middle border border-primary p-2 text-left">{{order}}. {{name}}</td>
+        <td class="align-middle border border-primary p-2 text-left">
+          {{order}}. {{name}}
+          {{#if videoUrl}}
+          <a href="{{videoUrl}}" rel="noopener noreferrer" target="_blank">
+            <i class="icon ion-logo-youtube ml-1 youtube-link"></i>
+          </a>
+          {{/if}}
+        </td>
         <td class="align-middle border border-primary p-2">{{muscle}}</td>
         <td class="align-middle border border-primary p-2">{{difficulty}}</td>
         <td class="align-middle border border-primary p-2">{{sets}}</td>
@@ -45,19 +52,22 @@
           {{/if}}
         </td>
       </tr>
+      {{#if imageUrl}}
+      <tr>
+        <td class="border border-primary p-2 text-justify" colspan="8">
+          <img class="img-fluid" src="{{imageUrl}}" />
+        </td>
+      </tr>
+      {{/if}}
+      {{#if instructions}}
       <tr>
         <td class="border border-primary p-2 text-justify" colspan="8">
           {{#instructions}}
           <div>{{this}}</div>
           {{/instructions}}
-          {{#if videoUrl}}
-          <div class="mt-2">
-            Tham khảo:
-            <a href="{{videoUrl}}" rel="noopener noreferrer" target="_blank">{{videoUrl}}</a>
-          </div>
-          {{/if}}
         </td>
       </tr>
+      {{/if}}
     </tbody>
   </table>
 </div>

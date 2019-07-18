@@ -7,6 +7,8 @@ import { parseDailySchedules, parseExercisesDatabase, parseWeeklySchedules } fro
 
 const CONFIGS_DIR = './src/app/configs';
 const DATA_DIR = './src/tasks/data';
+const IMAGES_SRC_DIR = './src/static';
+const IMAGES_PATH = '/static/exercises/';
 
 function buildDailyScheduleConfigs() {
   _.each([...CONSTANTS.WORKOUT_LEVELS, 'shared'], async level => {
@@ -26,7 +28,19 @@ function buildDailyScheduleConfigs() {
 async function buildExercisesDatabaseConfigs() {
   try {
     const csvData = fs.readFileSync(`${DATA_DIR}/exercises_database.csv`, 'utf-8');
-    const exercisesDatabase = await parseExercisesDatabase(csvData);
+    const allExercises = await parseExercisesDatabase(csvData);
+    const exerciseImages = fs.readdirSync(`${IMAGES_SRC_DIR}/images/exercises`);
+    const imagesMapping = _.fromPairs(_.map(exerciseImages, filename => {
+      const [code] = _.split(filename, '.');
+      return [code, IMAGES_PATH + filename];
+    }));
+
+    const exercisesDatabase = _.map(allExercises, exercise => {
+      const { code } = exercise;
+      const { [code]: imageUrl } = imagesMapping;
+      return { ...exercise, imageUrl };
+    });
+
     fs.writeFileSync(
       `${CONFIGS_DIR}/exercises_database.json`,
       JSON.stringify(exercisesDatabase, null, 2),

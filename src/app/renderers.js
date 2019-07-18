@@ -28,7 +28,7 @@ function buildExerciseData(configs, personalizedData, index) {
   const { code } = configs;
 
   const {
-    difficulty, instructions, muscle, name, videoUrl,
+    difficulty, instructions, muscle, name, imageUrl, videoUrl,
   } = _.find(CONSTANTS.EXERCISES_DATABASE, { code });
 
   const { rpe, recommendedWeight, rest } = _.find(personalizedData, { code }) || {};
@@ -36,6 +36,7 @@ function buildExerciseData(configs, personalizedData, index) {
   return {
     ...configs,
     difficulty,
+    imageUrl: _.isEmpty(imageUrl) ? undefined : SITE_CONFIGS.publicPath + imageUrl,
     instructions,
     muscle,
     name,
