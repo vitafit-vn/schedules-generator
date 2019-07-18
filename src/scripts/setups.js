@@ -8,7 +8,6 @@ function asyncLoadPartial(elementId, partialUrl) {
 }
 
 async function loadPartials() {
-  await asyncLoadPartial('#nav-bar', '/partials/_nav_bar.html');
   await asyncLoadPartial('#user-info', '/partials/_user_info.html');
   await asyncLoadPartial('#personalized-table', '/partials/_personalized_table.html');
 }
@@ -98,14 +97,14 @@ function clearPersonalizedData(exerciseCode) {
 }
 
 function clonePersonalizedData() {
-  const rpe = $('#personalized-table input[name=bulk-rpe]').val();
+  const rpe = $('#personalized-table input[name=bulk_rpe]').val();
   $('#personalized-table input[name=rpe]').val(rpe);
 
-  const rest = $('#personalized-table input[name=bulk-rest]').val();
+  const rest = $('#personalized-table input[name=bulk_rest]').val();
   $('#personalized-table input[name=rest]').val(rest);
 
-  const recommendedWeight = $('#personalized-table input[name=bulk-recommended-weight]').val();
-  $('#personalized-table input[name=recommended-weight]').val(recommendedWeight);
+  const recommendedWeight = $('#personalized-table input[name=bulk_recommended_weight]').val();
+  $('#personalized-table input[name=recommended_weight]').val(recommendedWeight);
 }
 
 function setupOthers() {
@@ -119,17 +118,28 @@ function setupOthers() {
   $('#download-schedules').click(() => downloadSchedules());
 }
 
+function populateDataFromUrl() {
+  const url = new URL(window.location.href);
+  const params = Qs.parse(url.search.replace(/^\?/, ''));
+  _.each(params, (value, key) => {
+    if (_.isArray(value)) return;
+    $(`#schedules-form *[name=${key}]`).val(value);
+  });
+  setupPersonalizedTable
+}
+
 $(document).ready(async () => {
   try {
     await loadPartials();
-    setupFixtures();
-
+    
     setupWeeklyCodeSelect();
     setupWeekVariantSelect();
     setupWorkoutLevelSelect();
     setupOthers();
-
+    populateDataFromUrl();
     setupPersonalizedTable();
+    
+    // setupFixtures();
   } catch (error) {
     console.warn(error);
   }

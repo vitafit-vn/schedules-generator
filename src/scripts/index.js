@@ -40,7 +40,7 @@ function getPersonalizedData() {
   const codes = _.map($('#personalized-table th[scope=row]').toArray(), 'dataset.code');
   const rpes = _.map($('#personalized-table input[name=rpe]').toArray(), 'value');
   const rests = _.map($('#personalized-table input[name=rest]').toArray(), 'value');
-  const recommendedWeights = _.map($('#personalized-table input[name=recommended-weight]').toArray(), 'value');
+  const recommendedWeights = _.map($('#personalized-table input[name=recommended_weight]').toArray(), 'value');
 
   const rows = _.zip(codes, rpes, rests, recommendedWeights);
 

@@ -19,7 +19,7 @@
     integrity="sha256-2YDIO5pt4Wix8peSXpmAOmux4MwHe54CANGsQT0yqfA=" crossorigin="anonymous"></script>
   <script type="application/javascript" src="scripts/setups.js"></script>
   <script type="application/javascript" src="scripts/index.js"></script>
-  <title>VitaFit VN - Công cụ Vận hành</title>
+  <title>VitaFit VN - Công cụ tạo lộ trình</title>
 </head>
 
 <body>
@@ -28,10 +28,35 @@
       <a class="navbar-brand" href="https://vitafit.vn">
         <img height="50px" src="/static/logo.png" />
       </a>
-      <h5 class="mb-0 text-light">Công cụ Vận hành</h5>
+      <h5 class="mb-0 text-light">Công cụ tạo lộ trình</h5>
     </div>
   </nav>
-  <div class="container"></div>
+  <div class="container">
+    <form action="#" id="schedules-form">
+      <div class="row">
+        <div class="col-3" id="user-info"></div>
+        <div class="col table-responsive" id="personalized-table"></div>
+      </div>
+      <div class="row">
+        <div class="align-items-center justify-content-end col d-flex">
+          <div class="d-none spinner-border text-primary" id="loading-spinner" role="status"></div>
+        </div>
+        <div class="col-auto">
+          <button class="btn btn-primary" type="submit">
+            Xem lịch
+            <i class="fa fa-file-text ml-1 text-white"></i>
+          </button>
+        </div>
+        <div class="col-auto">
+          <button class="btn btn-primary" id="download-schedules" type="button">
+            Tải file HTML
+            <i class="fa fa-download ml-1 text-white"></i>
+          </button>
+        </div>
+      </div>
+    </form>
+    <div class="mt-3 mx-auto" id="schedules-wrapper"></div>
+  </div>
 </body>
 
 </html>

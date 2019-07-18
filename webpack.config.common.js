@@ -1,3 +1,4 @@
+const _ = require('lodash');
 const glob = require('glob');
 const path = require('path');
 
@@ -6,21 +7,17 @@ const HtmlPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const FaviconsPlugin = require('favicons-webpack-plugin');
 
-function getNameFromDir(dir) {
-  const lastSlash = dir.lastIndexOf('/');
-  return dir.slice(lastSlash + 1);
-}
-
 function generateHTMLPlugins() {
-  return glob.sync('./src/*.html').map(
-    dir => new HtmlPlugin({
-      filename: getNameFromDir(dir), // Output
-      meta: {
-        version: `1.0.0-${Math.floor(Date.now() / 1000)}`,
-      },
+  return glob.sync('./src/*.html').map(dir => {
+    const filename = _.last(_.split(dir, '/'));
+    const version = `1.0.0-${Math.floor(Date.now() / 1000)}`;
+
+    return new HtmlPlugin({
+      filename,
+      meta: { version },
       template: dir, // Input
-    }),
-  );
+    });
+  });
 }
 
 module.exports = {
