@@ -112,8 +112,8 @@ function setupOthers() {
   $('#clone-personalized-data').click(() => clonePersonalizedData());
 
   $('#schedules-form').submit(event => {
+    // event.preventDefault();
     showSchedules();
-    event.preventDefault();
   });
   $('#download-schedules').click(() => downloadSchedules());
 }
@@ -121,11 +121,20 @@ function setupOthers() {
 function populateDataFromUrl() {
   const url = new URL(window.location.href);
   const params = Qs.parse(url.search.replace(/^\?/, ''));
+
+  // selects or single inputs
   _.each(params, (value, key) => {
     if (_.isArray(value)) return;
     $(`#schedules-form *[name=${key}]`).val(value);
   });
-  setupPersonalizedTable
+
+  setupPersonalizedTable();
+
+  // Personalized table inputs
+  _.each(params, (value, key) => {
+    if (!_.isArray(value)) return;
+    $(`#personalized-table input[name=${key}]`).val(idx => value[idx]);
+  });
 }
 
 $(document).ready(async () => {
@@ -137,7 +146,6 @@ $(document).ready(async () => {
     setupWorkoutLevelSelect();
     setupOthers();
     populateDataFromUrl();
-    setupPersonalizedTable();
     
     // setupFixtures();
   } catch (error) {

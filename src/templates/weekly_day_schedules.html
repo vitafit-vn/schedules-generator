@@ -20,7 +20,7 @@
     <tbody>
       {{#exercises}}
       <tr>
-        <td class="align-middle border border-primary text-left">
+        <td class="align-middle border border-primary p-2 text-left">
           {{order}}. {{name}}
           {{#if videoUrl}}
             <a href="{{videoUrl}}" rel="noopener noreferrer" target="_blank">
@@ -28,25 +28,25 @@
             </a>
           {{/if}}
         </td>
-        <td class="align-middle border border-primary">{{muscle}}</td>
-        <td class="align-middle border border-primary">{{difficulty}}</td>
-        <td class="align-middle border border-primary">{{sets}}</td>
-        <td class="align-middle border border-primary">{{reps}}</td>
-        <td class="align-middle border border-primary">
+        <td class="align-middle border border-primary p-2">{{muscle}}</td>
+        <td class="align-middle border border-primary p-2">{{difficulty}}</td>
+        <td class="align-middle border border-primary p-2">{{sets}}</td>
+        <td class="align-middle border border-primary p-2">{{reps}}</td>
+        <td class="align-middle border border-primary p-2">
           {{#if rpe}}
             RPE-{{rpe}}
           {{else}}
             -
           {{/if}}
         </td>
-        <td class="align-middle border border-primary">
+        <td class="align-middle border border-primary p-2">
           {{#if rest}}
             {{rest}}s
           {{else}}
             -
           {{/if}}
         </td>
-        <td class="align-middle border border-primary">
+        <td class="align-middle border border-primary p-2">
           {{#if recommendedWeight}}
             {{recommendedWeight}}kg
           {{else}}
