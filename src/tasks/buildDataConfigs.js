@@ -8,7 +8,7 @@ import { parseDailySchedules, parseExercisesDatabase, parseWeeklySchedules } fro
 const CONFIGS_DIR = './src/app/configs';
 const DATA_DIR = './src/tasks/data';
 const IMAGES_SRC_DIR = './src/static';
-const IMAGES_PATH = '/static/exercises/';
+const IMAGES_PATH = '/images/exercises/';
 
 function buildDailyScheduleConfigs() {
   _.each([...CONSTANTS.WORKOUT_LEVELS, 'shared'], async level => {

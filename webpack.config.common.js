@@ -70,7 +70,7 @@ module.exports = {
         loader: 'raw-loader',
       },
       {
-        test: /\.(png|jpg|gif|ttf)$/i,
+        test: /\.(png|jpg|gif)$/i,
         use: [
           {
             loader: 'url-loader',
@@ -78,7 +78,21 @@ module.exports = {
               fallback: 'file-loader',
               limit: 2 ** 13,
               name: '[name].[ext]',
-              outputPath: 'static',
+              outputPath: 'images',
+            },
+          },
+        ],
+      },
+      {
+        test: /\.(otf|ttf)$/i,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              fallback: 'file-loader',
+              limit: 2 ** 13,
+              name: '[name].[ext]',
+              outputPath: 'assets',
             },
           },
         ],
@@ -105,14 +119,14 @@ module.exports = {
       },
       {
         from: './src/static/images',
-        to: './static/',
+        to: './images/',
         test: /\.(png|jpg|gif)$/i,
       },
     ]),
     new FaviconsPlugin({
       background: '#0000',
       logo: './src/static/images/logo.png',
-      prefix: 'static/favicons/',
+      prefix: 'images/favicons/',
       title: 'VitaFit VN',
     }),
     ...generateHTMLPlugins(),
