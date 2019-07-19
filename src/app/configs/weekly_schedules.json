@@ -28,6 +28,8 @@
         "NGHỈ"
       ]
     ],
+    "description": "Chưa tập / Đã từng tập\nMuốn cardio",
+    "frequency": "4 buổi",
     "variant": "first_half"
   },
   {
@@ -55,6 +57,8 @@
         "NGHỈ"
       ]
     ],
+    "description": "Chưa tập / Đã từng tập",
+    "frequency": "4 buổi",
     "variant": "first_half"
   },
   {
@@ -86,6 +90,8 @@
         "NGHỈ"
       ]
     ],
+    "description": "Chưa tập / Đã từng tập\nMuốn cardio",
+    "frequency": "4 buổi",
     "variant": "first_half"
   },
   {
@@ -113,6 +119,8 @@
         "NGHỈ"
       ]
     ],
+    "description": "Đã từng tập",
+    "frequency": "4 buổi",
     "variant": "first_half"
   },
   {
@@ -143,6 +151,8 @@
         "CARDIO-4"
       ]
     ],
+    "description": "Chưa tập / Đã từng tập\nMuốn cardio\nThể trạng tốt",
+    "frequency": "5 buổi",
     "variant": "first_half"
   },
   {
@@ -173,6 +183,8 @@
         "CARDIO-4"
       ]
     ],
+    "description": "Chưa tập / Đã từng tập\nMuốn cardio\nThể trạng tốt",
+    "frequency": "5 buổi",
     "variant": "first_half"
   },
   {
@@ -203,6 +215,8 @@
         "CARDIO-4"
       ]
     ],
+    "description": "Đã từng tập\nMuốn cardio\nThể trạng tốt",
+    "frequency": "5 buổi",
     "variant": "first_half"
   },
   {
@@ -233,6 +247,8 @@
         "CARDIO-4"
       ]
     ],
+    "description": "Đã từng tập\nMuốn cardio\nThể trạng tốt",
+    "frequency": "5 buổi",
     "variant": "first_half"
   },
   {
@@ -260,6 +276,8 @@
         "NGHỈ"
       ]
     ],
+    "description": "Chưa tập / Đã từng tập\nThể trạng kém",
+    "frequency": "5 buổi",
     "variant": "first_half"
   },
   {
@@ -287,6 +305,8 @@
         "NGHỈ"
       ]
     ],
+    "description": "Chưa tập / Đã từng tập\nThể trạng kém",
+    "frequency": "5 buổi",
     "variant": "second_half"
   },
   {
@@ -314,6 +334,8 @@
         "NGHỈ"
       ]
     ],
+    "description": "Đã từng tập",
+    "frequency": "5 buổi",
     "variant": "first_half"
   },
   {
@@ -341,6 +363,8 @@
         "NGHỈ"
       ]
     ],
+    "description": "Đã từng tập",
+    "frequency": "5 buổi",
     "variant": "second_half"
   },
   {
@@ -368,6 +392,8 @@
         "NGHỈ"
       ]
     ],
+    "description": "Đã từng tập\nThể trạng bình thường",
+    "frequency": "5 buổi",
     "variant": "first_half"
   },
   {
@@ -395,6 +421,8 @@
         "NGHỈ"
       ]
     ],
+    "description": "Đã từng tập\nThể trạng bình thường",
+    "frequency": "5 buổi",
     "variant": "second_half"
   },
   {
@@ -422,6 +450,8 @@
         "NGHỈ"
       ]
     ],
+    "description": "Đã từng tập\nThể trạng tốt",
+    "frequency": "5 buổi",
     "variant": "first_half"
   },
   {
@@ -449,6 +479,8 @@
         "NGHỈ"
       ]
     ],
+    "description": "Đã từng tập\nThể trạng tốt",
+    "frequency": "5 buổi",
     "variant": "second_half"
   },
   {
@@ -480,6 +512,8 @@
         ""
       ]
     ],
+    "description": "Đã từng tập\nThể trạng rất tốt\nMuốn cardio",
+    "frequency": "5 buổi",
     "variant": "first_half"
   },
   {
@@ -510,6 +544,8 @@
         "NGHỈ"
       ]
     ],
+    "description": "Chưa tập/Đã từng tập\nMuốn cardio",
+    "frequency": "4 buổi",
     "variant": "first_half"
   },
   {
@@ -540,6 +576,8 @@
         "NGHỈ"
       ]
     ],
+    "description": "Chưa tập/Đã từng tập\nMuốn cardio",
+    "frequency": "4 buổi",
     "variant": "second_half"
   },
   {
@@ -570,6 +608,8 @@
         "NGHỈ"
       ]
     ],
+    "description": "Chưa tập/Đã từng tập\nMuốn cardio",
+    "frequency": "4 buổi",
     "variant": "first_half"
   },
   {
@@ -600,6 +640,8 @@
         "NGHỈ"
       ]
     ],
+    "description": "Chưa tập/Đã từng tập\nMuốn cardio",
+    "frequency": "4 buổi",
     "variant": "second_half"
   }
 ]

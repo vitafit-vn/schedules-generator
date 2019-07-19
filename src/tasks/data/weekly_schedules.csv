@@ -1,57 +1,79 @@
-WS01,first_half,"UPPER-1
+WS01,4 buổi,"Chưa tập / Đã từng tập
+Muốn cardio",first_half,"UPPER-1
 CARDIO-1
 CARDIO-2",LOWER-1,OFF,"UPPER-2
 CARDIO-3
 CARDIO-4",LOWER-2,OFF,OFF
-WS02,first_half,UPPER-1,LOWER-1,OFF,UPPER-2,LOWER-2,OFF,OFF
-WS03,first_half,"UPPER-3
+WS02,4 buổi,Chưa tập / Đã từng tập,first_half,UPPER-1,LOWER-1,OFF,UPPER-2,LOWER-2,OFF,OFF
+WS03,4 buổi,"Chưa tập / Đã từng tập
+Muốn cardio",first_half,"UPPER-3
 CARDIO-3
 CARDIO-4",LOWER-3,OFF,"UPPER-4
 CARDIO-3
 CARDIO-4",LOWER-4,OFF,OFF
-WS04,first_half,UPPER-3,LOWER-3,OFF,UPPER-4,LOWER-4,OFF,OFF
-WS05,first_half,UPPER-1,LOWER-1,OFF,UPPER-2,LOWER-2,OFF,"CARDIO-1
+WS04,4 buổi,Đã từng tập,first_half,UPPER-3,LOWER-3,OFF,UPPER-4,LOWER-4,OFF,OFF
+WS05,5 buổi,"Chưa tập / Đã từng tập
+Muốn cardio
+Thể trạng tốt",first_half,UPPER-1,LOWER-1,OFF,UPPER-2,LOWER-2,OFF,"CARDIO-1
 CARDIO-2
 CARDIO-3
 CARDIO-4"
-WS06,first_half,UPPER-1,LOWER-2,OFF,UPPER-2,LOWER-1,OFF,"CARDIO-1
+WS06,5 buổi,"Chưa tập / Đã từng tập
+Muốn cardio
+Thể trạng tốt",first_half,UPPER-1,LOWER-2,OFF,UPPER-2,LOWER-1,OFF,"CARDIO-1
 CARDIO-2
 CARDIO-3
 CARDIO-4"
-WS07,first_half,UPPER-3,LOWER-3,OFF,UPPER-4,LOWER-4,OFF,"CARDIO-1
+WS07,5 buổi,"Đã từng tập
+Muốn cardio
+Thể trạng tốt",first_half,UPPER-3,LOWER-3,OFF,UPPER-4,LOWER-4,OFF,"CARDIO-1
 CARDIO-2
 CARDIO-3
 CARDIO-4"
-WS08,first_half,UPPER-3,LOWER-4,OFF,UPPER-4,LOWER-3,OFF,"CARDIO-1
+WS08,5 buổi,"Đã từng tập
+Muốn cardio
+Thể trạng tốt",first_half,UPPER-3,LOWER-4,OFF,UPPER-4,LOWER-3,OFF,"CARDIO-1
 CARDIO-2
 CARDIO-3
 CARDIO-4"
-WS09,first_half,PUSH-1,PULL-1,OFF,LOWER-1,PUSH-2,PULL-2,OFF
-WS09,second_half,LOWER-2,PUSH-1,OFF,PULL-1,LOWER-1,PUSH-2,OFF
-WS10,first_half,PUSH-3,PULL-3,OFF,LOWER-3,PUSH-4,PULL-4,OFF
-WS10,second_half,LOWER-4,PUSH-3,OFF,PULL-3,LOWER-3,PUSH-4,OFF
-WS11,first_half,UPPER-1,LOWER-1,OFF,PUSH-1,PULL-1,LOWER-1,OFF
-WS11,second_half,UPPER-2,LOWER-2,OFF,PUSH-2,PULL-2,LOWER-2,OFF
-WS12,first_half,UPPER-3,LOWER-3,OFF,PUSH-3,PULL-3,LOWER-3,OFF
-WS12,second_half,UPPER-4,LOWER-4,OFF,PUSH-4,PULL-4,LOWER-4,OFF
-WS13,first_half,"UPPER-3
+WS09,5 buổi,"Chưa tập / Đã từng tập
+Thể trạng kém",first_half,PUSH-1,PULL-1,OFF,LOWER-1,PUSH-2,PULL-2,OFF
+WS09,5 buổi,"Chưa tập / Đã từng tập
+Thể trạng kém",second_half,LOWER-2,PUSH-1,OFF,PULL-1,LOWER-1,PUSH-2,OFF
+WS10,5 buổi,Đã từng tập,first_half,PUSH-3,PULL-3,OFF,LOWER-3,PUSH-4,PULL-4,OFF
+WS10,5 buổi,Đã từng tập,second_half,LOWER-4,PUSH-3,OFF,PULL-3,LOWER-3,PUSH-4,OFF
+WS11,5 buổi,"Đã từng tập
+Thể trạng bình thường",first_half,UPPER-1,LOWER-1,OFF,PUSH-1,PULL-1,LOWER-1,OFF
+WS11,5 buổi,"Đã từng tập
+Thể trạng bình thường",second_half,UPPER-2,LOWER-2,OFF,PUSH-2,PULL-2,LOWER-2,OFF
+WS12,5 buổi,"Đã từng tập
+Thể trạng tốt",first_half,UPPER-3,LOWER-3,OFF,PUSH-3,PULL-3,LOWER-3,OFF
+WS12,5 buổi,"Đã từng tập
+Thể trạng tốt",second_half,UPPER-4,LOWER-4,OFF,PUSH-4,PULL-4,LOWER-4,OFF
+WS13,5 buổi,"Đã từng tập
+Thể trạng rất tốt
+Muốn cardio",first_half,"UPPER-3
 CARDIO-1
 CARDIO-2",LOWER-4,OFF,"UPPER-4
 CARDIO-3
 CARDIO-4",LOWER-4,OFF,
-WS14,first_half,UPPER-1,LOWER-1,OFF,FULL-BODY-1,"CARDIO-1
+WS14,4 buổi,"Chưa tập/Đã từng tập
+Muốn cardio",first_half,UPPER-1,LOWER-1,OFF,FULL-BODY-1,"CARDIO-1
 CARDIO-2
 CARDIO-3
 CARDIO-4",OFF,OFF
-WS14,second_half,UPPER-2,LOWER-2,OFF,FULL-BODY-2,"CARDIO-1
+WS14,4 buổi,"Chưa tập/Đã từng tập
+Muốn cardio",second_half,UPPER-2,LOWER-2,OFF,FULL-BODY-2,"CARDIO-1
 CARDIO-2
 CARDIO-3
 CARDIO-4",OFF,OFF
-WS15,first_half,UPPER-1,LOWER-1,OFF,FULL-BODY-3,"CARDIO-1
+WS15,4 buổi,"Chưa tập/Đã từng tập
+Muốn cardio",first_half,UPPER-1,LOWER-1,OFF,FULL-BODY-3,"CARDIO-1
 CARDIO-2
 CARDIO-3
 CARDIO-4",OFF,OFF
-WS15,second_half,UPPER-4,LOWER-4,OFF,FULL-BODY-4,"CARDIO-1
+WS15,4 buổi,"Chưa tập/Đã từng tập
+Muốn cardio",second_half,UPPER-4,LOWER-4,OFF,FULL-BODY-4,"CARDIO-1
 CARDIO-2
 CARDIO-3
 CARDIO-4",OFF,OFF

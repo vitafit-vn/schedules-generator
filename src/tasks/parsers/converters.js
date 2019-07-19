@@ -71,8 +71,12 @@ export function convertExercisesDatabase(records) {
 
 export function convertWeeklySchedulesRecords(records) {
   return _.map(records, row => {
-    const [code, variant, ...rawDailyCodes] = row;
+    const [code, frequency, description, variant, ...rawDailyCodes] = row;
+
     const dailyCodes = _.map(rawDailyCodes, codes => _.map(_.split(codes, '\n'), _.partial(_.replace, _, 'OFF', 'NGHỈ')));
-    return { code, dailyCodes, variant };
+
+    return {
+      code, dailyCodes, description, frequency, variant,
+    };
   });
 }
