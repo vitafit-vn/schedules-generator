@@ -137,13 +137,14 @@ function populateDataFromUrl() {
 
 async function renderLayouts() {
   try {
-    await loadPartials();
+    // await loadPartials();
     
-    setupWeeklyCodeSelect();
-    setupWeekVariantSelect();
-    setupWorkoutLevelSelect();
-    setupOthers();
-    populateDataFromUrl();
+    // setupWeeklyCodeSelect();
+    // setupWeekVariantSelect();
+    // setupWorkoutLevelSelect();
+    // setupOthers();
+    // populateDataFromUrl();
+    VSG.VIEWS.renderHomePage();
   } catch (error) {
     console.warn(error);
   }

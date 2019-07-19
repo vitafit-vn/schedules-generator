@@ -2,6 +2,7 @@ import fp from 'lodash/fp';
 
 import CONSTANTS from './constants';
 import { renderDailySchedule, renderPersonalizedRows, renderWeeklySchedule } from './renderers';
+import { renderHomePage } from './views';
 import { computeChecksum } from './utils';
 
 const UTILS = {
@@ -11,5 +12,9 @@ const UTILS = {
   renderWeeklySchedule,
 };
 
-const VSG = { CONSTANTS, UTILS };
+const VIEWS = {
+  renderHomePage,
+};
+
+const VSG = { CONSTANTS, UTILS, VIEWS };
 Object.assign(window, { VSG, fp });

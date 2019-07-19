@@ -1,7 +1,8 @@
 import Preact from 'preact';
 
-export default class Home extends Preact.Component {
-  render() {
-    return <div className="container"></div>;
-  }
+// Locals
+import Home from './Home';
+
+export function renderHomePage() {
+  Preact.render(<Home />, document.body);
 }
