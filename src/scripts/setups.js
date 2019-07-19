@@ -135,7 +135,7 @@ function populateDataFromUrl() {
   });
 }
 
-$(document).ready(async () => {
+async function renderLayouts() {
   try {
     await loadPartials();
     
@@ -147,4 +147,4 @@ $(document).ready(async () => {
   } catch (error) {
     console.warn(error);
   }
-});
+};
