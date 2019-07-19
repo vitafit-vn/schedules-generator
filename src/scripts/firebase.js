@@ -37,15 +37,15 @@ function hideAuthButton() {
   renderLayouts();
 }
 
-$(document).ready(async () => {
-  initializeFirebase();
+// $(document).ready(async () => {
+//   initializeFirebase();
 
-  try {
-    await firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL)
-    firebase.auth().onAuthStateChanged(user => {
-      if (user == null) showAuthButton();
-      else hideAuthButton();
-    });
-  } catch (error) {
-  }
-});
+//   try {
+//     await firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL)
+//     firebase.auth().onAuthStateChanged(user => {
+//       if (user == null) showAuthButton();
+//       else hideAuthButton();
+//     });
+//   } catch (error) {
+//   }
+// });

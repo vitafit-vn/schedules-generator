@@ -1,6 +1,5 @@
 import _ from 'lodash';
 import PropTypes from 'prop-types';
-// import { Link } from 'preact-router';
 
 // Constants
 import { PAGES_CONFIG } from '../constants';
