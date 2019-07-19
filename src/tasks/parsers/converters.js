@@ -33,7 +33,12 @@ export function convertDailySchedulesRecords(records) {
     // Next exercise in current daily schedule
     const [, code, name, sets, reps, rpe, rest] = row;
     const exercise = {
-      code, name, reps, rest, rpe, sets,
+      code,
+      name,
+      reps,
+      rest,
+      rpe,
+      sets,
     };
 
     currentExercises.push(exercise);
@@ -55,7 +60,7 @@ export function convertExercisesDatabase(records) {
     const [code, name, muscle, difficulty, instructions, videoUrl] = row;
     const convertedInstructions = fp.flow(
       fp.trim,
-      fp.split('\n'),
+      fp.split('\n')
     )(instructions);
 
     return {
@@ -73,10 +78,17 @@ export function convertWeeklySchedulesRecords(records) {
   return _.map(records, row => {
     const [code, frequency, description, shortkeys, variant, ...rawDailyCodes] = row;
 
-    const dailyCodes = _.map(rawDailyCodes, codes => _.map(_.split(codes, '\n'), _.partial(_.replace, _, 'OFF', 'NGHỈ')));
+    const dailyCodes = _.map(rawDailyCodes, codes =>
+      _.map(_.split(codes, '\n'), _.partial(_.replace, _, 'OFF', 'NGHỈ'))
+    );
 
     return {
-      code, dailyCodes, description, frequency, shortkeys, variant,
+      code,
+      dailyCodes,
+      description,
+      frequency,
+      shortkeys,
+      variant,
     };
   });
 }

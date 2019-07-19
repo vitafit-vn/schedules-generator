@@ -17,10 +17,11 @@ const DAILY_SCHEDULES = {
 
 const OFF_DAY = 'NGHỈ';
 
-const WEEK_VARIANTS_BY_CODES = _.reduce(WEEKLY_SCHEDULES, (curr, next) => {
-  const { code, variant } = next;
-  return { ...curr, [code]: _.union(curr[code], [variant]) };
-}, {});
+const WEEK_VARIANTS_BY_CODES = _.reduce(
+  WEEKLY_SCHEDULES,
+  (curr, { code, variant }) => ({ ...curr, [code]: _.union(curr[code], [variant]) }),
+  {}
+);
 
 const WEEKDAYS = ['Thứ hai', 'Thứ ba', 'Thứ tư', 'Thứ năm', 'Thứ sáu', 'Thứ bảy', 'Chủ nhật'];
 

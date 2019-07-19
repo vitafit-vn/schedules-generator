@@ -1,11 +1,21 @@
 {
   "env": {
     "browser": true,
+    "es6": true,
     "node": true
   },
   "extends": [
     "eslint:recommended",
-    "airbnb-base"
+    "plugin:react/recommended",
+    "plugin:prettier/recommended",
+    "prettier/react",
+    "prettier/standard"
+  ],
+  "parser": "babel-eslint",
+  "plugins": [
+    "import",
+    "react",
+    "prettier"
   ],
   "rules": {
     "arrow-parens": [
@@ -19,6 +29,21 @@
           "warn"
         ]
       }
-    ]
+    ],
+    "prettier/prettier": [
+      "error",
+      {
+        "trailingComma": "es5",
+        "tabWidth": 2,
+        "singleQuote": true,
+        "printWidth": 120
+      }
+    ],
+    "react/react-in-jsx-scope": "off"
+  },
+  "settings": {
+    "react": {
+      "version": "16.3"
+    }
   }
 }

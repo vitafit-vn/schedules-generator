@@ -27,10 +27,7 @@ const SITE_CONFIGS = {
 function buildExerciseData(configs, personalizedData, index) {
   const { code } = configs;
 
-  const {
-    difficulty, instructions, muscle, name, imageUrl, videoUrl,
-  } = _.find(CONSTANTS.EXERCISES_DATABASE, { code });
-
+  const { difficulty, instructions, muscle, name, imageUrl, videoUrl } = _.find(CONSTANTS.EXERCISES_DATABASE, { code });
   const { rpe, recommendedWeight, rest } = _.find(personalizedData, { code }) || {};
 
   return {
@@ -48,9 +45,7 @@ function buildExerciseData(configs, personalizedData, index) {
   };
 }
 
-function buildDayExercises({
-  date, dayExercises, dayIndex, personalizedData,
-}) {
+function buildDayExercises({ date, dayExercises, dayIndex, personalizedData }) {
   const weekday = CONSTANTS.WEEKDAYS[dayIndex];
   const formattedDate = `${weekday}, ngày ${date.toFormat('dd/MM')}`;
 
@@ -61,10 +56,7 @@ function buildDayExercises({
   const flattenExercises = _.flatMap(dayExercises, 'exercises');
 
   return {
-    exercises: _.map(
-      flattenExercises,
-      (configs, idx) => buildExerciseData(configs, personalizedData, idx),
-    ),
+    exercises: _.map(flattenExercises, (configs, idx) => buildExerciseData(configs, personalizedData, idx)),
     title: `${formattedDate}: ${code} (${muscles})`,
   };
 }
@@ -74,7 +66,13 @@ export function renderPersonalizedRows(rows) {
 }
 
 export function renderDailySchedule({
-  dayIndex, personalizedData, userInfo, weekPeriod, weekVariant, weeklyCode, workoutLevel,
+  dayIndex,
+  personalizedData,
+  userInfo,
+  weekPeriod,
+  weekVariant,
+  weeklyCode,
+  workoutLevel,
 }) {
   const weeklyData = _.find(CONSTANTS.WEEKLY_SCHEDULES, { code: weeklyCode, variant: weekVariant });
   const { dailyCodes } = weeklyData;
@@ -83,13 +81,16 @@ export function renderDailySchedule({
 
   const dayExercises = _.filter(
     _.union(CONSTANTS.DAILY_SCHEDULES[workoutLevel], CONSTANTS.DAILY_SCHEDULES.shared),
-    ({ code }) => _.includes(codes, code),
+    ({ code }) => _.includes(codes, code)
   );
 
   if (_.isEmpty(dayExercises)) return '';
 
   const dailyExercises = buildDayExercises({
-    date, dayExercises, dayIndex, personalizedData,
+    date,
+    dayExercises,
+    dayIndex,
+    personalizedData,
   });
 
   const params = {
@@ -110,7 +111,12 @@ export function renderDailySchedule({
 }
 
 export function renderWeeklySchedule({
-  personalizedData, userInfo, weekPeriod, weekVariant, weeklyCode, workoutLevel,
+  personalizedData,
+  userInfo,
+  weekPeriod,
+  weekVariant,
+  weeklyCode,
+  workoutLevel,
 }) {
   const weeklyData = _.find(CONSTANTS.WEEKLY_SCHEDULES, { code: weeklyCode, variant: weekVariant });
   const { dailyCodes } = weeklyData;
@@ -122,11 +128,14 @@ export function renderWeeklySchedule({
   const daySchedules = _.map(dailyCodes, (codes, index) => {
     const dayExercises = _.filter(
       _.union(CONSTANTS.DAILY_SCHEDULES[workoutLevel], CONSTANTS.DAILY_SCHEDULES.shared),
-      ({ code }) => _.includes(codes, code),
+      ({ code }) => _.includes(codes, code)
     );
 
     return buildDayExercises({
-      dayExercises, personalizedData, date: datesInWeek[index], dayIndex: index,
+      dayExercises,
+      personalizedData,
+      date: datesInWeek[index],
+      dayIndex: index,
     });
   });
 

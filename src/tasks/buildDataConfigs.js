@@ -15,10 +15,7 @@ function buildDailyScheduleConfigs() {
     try {
       const csvData = fs.readFileSync(`${DATA_DIR}/daily_schedules/${level}.csv`, 'utf-8');
       const dailySchedules = await parseDailySchedules(csvData);
-      fs.writeFileSync(
-        `${CONFIGS_DIR}/daily_schedules_${level}.json`,
-        JSON.stringify(dailySchedules, null, 2),
-      );
+      fs.writeFileSync(`${CONFIGS_DIR}/daily_schedules_${level}.json`, JSON.stringify(dailySchedules, null, 2));
     } catch (error) {
       throw error;
     }
@@ -30,10 +27,12 @@ async function buildExercisesDatabaseConfigs() {
     const csvData = fs.readFileSync(`${DATA_DIR}/exercises_database.csv`, 'utf-8');
     const allExercises = await parseExercisesDatabase(csvData);
     const exerciseImages = fs.readdirSync(`${IMAGES_SRC_DIR}/images/exercises`);
-    const imagesMapping = _.fromPairs(_.map(exerciseImages, filename => {
-      const [code] = _.split(filename, '.');
-      return [code, IMAGES_PATH + filename];
-    }));
+    const imagesMapping = _.fromPairs(
+      _.map(exerciseImages, filename => {
+        const [code] = _.split(filename, '.');
+        return [code, IMAGES_PATH + filename];
+      })
+    );
 
     const exercisesDatabase = _.map(allExercises, exercise => {
       const { code } = exercise;
@@ -41,10 +40,7 @@ async function buildExercisesDatabaseConfigs() {
       return { ...exercise, imageUrl };
     });
 
-    fs.writeFileSync(
-      `${CONFIGS_DIR}/exercises_database.json`,
-      JSON.stringify(exercisesDatabase, null, 2),
-    );
+    fs.writeFileSync(`${CONFIGS_DIR}/exercises_database.json`, JSON.stringify(exercisesDatabase, null, 2));
   } catch (error) {
     throw error;
   }
@@ -54,10 +50,7 @@ async function buildWeeklyScheduleConfigs() {
   try {
     const csvData = fs.readFileSync(`${DATA_DIR}/weekly_schedules.csv`, 'utf-8');
     const weeklySchedules = await parseWeeklySchedules(csvData);
-    fs.writeFileSync(
-      `${CONFIGS_DIR}/weekly_schedules.json`,
-      JSON.stringify(weeklySchedules, null, 2),
-    );
+    fs.writeFileSync(`${CONFIGS_DIR}/weekly_schedules.json`, JSON.stringify(weeklySchedules, null, 2));
   } catch (error) {
     throw error;
   }
