@@ -1,3 +1,5 @@
+// ?user_id=KH0001&full_name=Chị+Bảo&birth_year=1997&height=154&weight=54&workout_level=beginner&weekly_code=WS03&week_variant=first_half&week_period=2019-W29&bulk_rpe=8&bulk_rest=30+-+45&bulk_recommended_weight=3+-+4&rpe=8&rest=30+-+45&recommended_weight=3+-+4&rpe=8&rest=30+-+45&recommended_weight=3+-+4&rpe=8&rest=30+-+45&recommended_weight=3+-+4&rpe=8&rest=30+-+45&recommended_weight=3+-+4&rpe=8&rest=30+-+45&recommended_weight=3+-+4&rpe=8&rest=30+-+45&recommended_weight=3+-+4&rpe=&rest=45+-+60&recommended_weight=&rpe=&rest=45+-+60&recommended_weight=&rpe=&rest=45+-+60&recommended_weight=&rpe=&rest=45+-+60&recommended_weight=&rpe=8&rest=30+-+45&recommended_weight=3+-+4&rpe=8&rest=30+-+45&recommended_weight=3+-+4&rpe=8&rest=30+-+45&recommended_weight=3+-+4&rpe=8&rest=30+-+45&recommended_weight=3+-+4&rpe=8&rest=30+-+45&recommended_weight=3+-+4&rpe=8&rest=30+-+45&recommended_weight=3+-+4&rpe=8&rest=30+-+45&recommended_weight=3+-+4&rpe=8&rest=30+-+45&recommended_weight=3+-+4&rpe=8&rest=30+-+45&recommended_weight=3+-+4&rpe=8&rest=30+-+45&recommended_weight=3+-+4&rpe=8&rest=30+-+45&recommended_weight=3+-+4&rpe=8&rest=30+-+45&recommended_weight=3+-+4&rpe=8&rest=30+-+45&recommended_weight=3+-+4#
+
 function asyncLoadPartial(elementId, partialUrl) {
   return new Promise((resolve, reject) => {
     $(elementId).load(partialUrl, (data, status, configs) => {
@@ -10,18 +12,6 @@ function asyncLoadPartial(elementId, partialUrl) {
 async function loadPartials() {
   await asyncLoadPartial('#user-info', '/partials/_user_info.html');
   await asyncLoadPartial('#personalized-table', '/partials/_personalized_table.html');
-}
-
-function setupFixtures() {
-  $('#user-id').val('KH0001');
-  $('#full-name').val('Chị Bảo');
-  $('#birth-year').val('1997');
-  $('#height').val('154');
-  $('#weight').val('54');
-  $('#workout-level').val('beginner');
-  $('#weekly-code').val('WS03');
-  $('#week-variant').val('first_half');
-  $('#week-period').val('2019-W29');
 }
 
 function setupPersonalizedTable() {
@@ -82,7 +72,11 @@ function setupWeekVariantSelect() {
   const weekVariantOptions = _.map(
     VSG.CONSTANTS.WEEK_VARIANTS_BY_CODES[weeklyCode],
     variant => {
-      const title = _.capitalize(_.join(_.split(variant, '_'), ' '));
+      const title = fp.flow(
+        fp.split('_'),
+        fp.join(' '),
+        fp.capitalize,
+      )(variant);
       return `<option value="${variant}">${title}</option>`;
     },
   );
@@ -150,8 +144,6 @@ $(document).ready(async () => {
     setupWorkoutLevelSelect();
     setupOthers();
     populateDataFromUrl();
-    
-    // setupFixtures();
   } catch (error) {
     console.warn(error);
   }

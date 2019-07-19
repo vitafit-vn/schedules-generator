@@ -1,3 +1,5 @@
+import fp from 'lodash/fp';
+
 import CONSTANTS from './constants';
 import { renderDailySchedule, renderPersonalizedRows, renderWeeklySchedule } from './renderers';
 import { computeChecksum } from './utils';
@@ -10,4 +12,4 @@ const UTILS = {
 };
 
 const VSG = { CONSTANTS, UTILS };
-Object.assign(window, { VSG });
+Object.assign(window, { VSG, fp });
