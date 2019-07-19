@@ -1,5 +1,4 @@
 import _ from 'lodash';
-import $ from 'lodash/fp';
 
 // Locals
 import DAILY_SCHEDULES_BEGINNER from './configs/daily_schedules_beginner.json';
