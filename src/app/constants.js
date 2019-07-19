@@ -25,6 +25,16 @@ const WEEK_VARIANTS_BY_CODES = _.reduce(
 
 const WEEKDAYS = ['Thứ hai', 'Thứ ba', 'Thứ tư', 'Thứ năm', 'Thứ sáu', 'Thứ bảy', 'Chủ nhật'];
 
+export {
+  DAILY_SCHEDULES,
+  EXERCISES_DATABASE,
+  OFF_DAY,
+  WEEKDAYS,
+  WEEKLY_SCHEDULES,
+  WEEK_VARIANTS_BY_CODES,
+  WORKOUT_LEVELS,
+};
+
 export default {
   DAILY_SCHEDULES,
   EXERCISES_DATABASE,
