@@ -18,11 +18,6 @@ const DAILY_SCHEDULES = {
 
 const OFF_DAY = 'NGHỈ';
 
-const WEEKLY_CODES = $.flow(
-  $.map(({ code, description, frequency }) => ({ code, description, frequency })),
-  $.uniq,
-)(WEEKLY_SCHEDULES);
-
 const WEEK_VARIANTS_BY_CODES = _.reduce(WEEKLY_SCHEDULES, (curr, next) => {
   const { code, variant } = next;
   return { ...curr, [code]: _.union(curr[code], [variant]) };
@@ -35,7 +30,6 @@ export default {
   EXERCISES_DATABASE,
   OFF_DAY,
   WEEKDAYS,
-  WEEKLY_CODES,
   WEEKLY_SCHEDULES,
   WEEK_VARIANTS_BY_CODES,
   WORKOUT_LEVELS,

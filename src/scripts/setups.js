@@ -66,9 +66,9 @@ function setupWorkoutLevelSelect() {
 
 function setupWeeklyCodeSelect() {
   const weeklyCodeOptions = _.map(
-    VSG.CONSTANTS.WEEKLY_CODES,
-    ({ code, description, frequency }) =>
-      `<option title="${description}" value="${code}">${code} (${frequency})</option>`,
+    VSG.CONSTANTS.WEEKLY_SCHEDULES,
+    ({ code, description, frequency, shortkeys }) =>
+      `<option title="${description}" value="${code}">${frequency} (${shortkeys})</option>`,
   );
   $('#weekly-code').html(weeklyCodeOptions);
   $('#weekly-code').change(() => {
@@ -81,7 +81,10 @@ function setupWeekVariantSelect() {
   const weeklyCode = $('#weekly-code').val();
   const weekVariantOptions = _.map(
     VSG.CONSTANTS.WEEK_VARIANTS_BY_CODES[weeklyCode],
-    variant => `<option value="${variant}">${variant}</option>`,
+    variant => {
+      const title = _.capitalize(_.join(_.split(variant, '_'), ' '));
+      return `<option value="${variant}">${title}</option>`;
+    },
   );
   $('#week-variant').html(weekVariantOptions);
   $('#week-variant').change(() => setupPersonalizedTable());
