@@ -144,7 +144,6 @@ async function renderLayouts() {
     // setupWorkoutLevelSelect();
     // setupOthers();
     // populateDataFromUrl();
-    VSG.VIEWS.renderHomePage();
   } catch (error) {
     console.warn(error);
   }

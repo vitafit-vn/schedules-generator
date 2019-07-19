@@ -1,8 +1,14 @@
-import Preact from 'preact';
+import Router from 'preact-router';
 
 // Locals
-import Home from './Home';
+import Home from './pages/Home';
+import Schedules from './pages/Schedules';
 
-export function renderHomePage() {
-  Preact.render(<Home />, document.body);
-}
+const App = () => (
+  <Router>
+    <Home path="/" />
+    <Schedules path="/schedules" />
+  </Router>
+);
+
+export default App;

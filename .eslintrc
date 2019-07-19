@@ -6,6 +6,7 @@
   },
   "extends": [
     "eslint:recommended",
+    "airbnb-base",
     "plugin:react/recommended",
     "plugin:prettier/recommended",
     "prettier/react",
@@ -22,6 +23,7 @@
       "error",
       "as-needed"
     ],
+    "class-methods-use-this": "off",
     "no-console": [
       "error",
       {
