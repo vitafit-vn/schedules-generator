@@ -67,7 +67,8 @@ function setupWorkoutLevelSelect() {
 function setupWeeklyCodeSelect() {
   const weeklyCodeOptions = _.map(
     VSG.CONSTANTS.WEEKLY_CODES,
-    code => `<option value="${code}">${code}</option>`,
+    ({ code, description, frequency }) =>
+      `<option title="${description}" value="${code}">${code} (${frequency})</option>`,
   );
   $('#weekly-code').html(weeklyCodeOptions);
   $('#weekly-code').change(() => {
