@@ -44,6 +44,11 @@
     "react/react-in-jsx-scope": "off"
   },
   "settings": {
+    "import/resolver": {
+      "webpack": {
+        "config": "webpack.config.common.js"
+      }
+    },
     "react": {
       "version": "16.3"
     }

@@ -27,7 +27,6 @@ module.exports = {
   entry: {
     main: ['./src/app/index.js', './src/style/main.scss'],
     schedules: ['./src/style/schedules.scss'],
-    // scripts: ['./src/scripts/index.js', './src/scripts/setups.js'],
   },
   output: {
     filename: '[name].bundle.js',
@@ -35,6 +34,9 @@ module.exports = {
   },
   optimization: {
     minimize: true,
+  },
+  resolve: {
+    modules: [path.resolve(__dirname, 'src'), './node_modules'],
   },
   module: {
     rules: [
@@ -49,11 +51,6 @@ module.exports = {
           },
         },
       },
-      // {
-      //   test: /\.js$/,
-      //   include: /src\/scripts/,
-      //   loader: 'raw-loader',
-      // },
       {
         test: /\.(sass|scss)$/,
         use: [
@@ -107,16 +104,6 @@ module.exports = {
       chunkFilename: '[id].css',
     }),
     new CopyPlugin([
-      {
-        from: './src/partials/',
-        to: './partials/',
-        test: /\.html$/,
-      },
-      {
-        from: './src/scripts/',
-        to: './scripts/',
-        test: /\.js$/,
-      },
       {
         from: './src/static/images',
         to: './images/',
