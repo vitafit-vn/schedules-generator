@@ -1,26 +1,74 @@
 import _ from 'lodash';
 import fp from 'lodash/fp';
 import Preact from 'preact';
+import PropTypes from 'prop-types';
 
 // Constants
 import { WEEK_VARIANTS_BY_CODES, WEEKLY_SCHEDULES, WORKOUT_LEVELS } from 'app/constants';
 
+const NumberInput = ({ id, label, suffix, ...restProps }) => {
+  if (_.isEmpty(suffix)) {
+    return (
+      <div className="form-group">
+        <label htmlFor={id}>{label}</label>
+        <input className="form-control" id={id} {...restProps} />
+      </div>
+    );
+  }
+
+  return (
+    <div className="form-group">
+      <label htmlFor={id}>{label}</label>
+      <div className="input-group">
+        <input className="form-control" id={id} {...restProps} />
+        <div className="input-group-append">
+          <span className="input-group-text">{suffix}</span>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+NumberInput.propTypes = {
+  id: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
+  suffix: PropTypes.string,
+};
+
+NumberInput.defaultProps = {
+  required: true,
+  type: 'number',
+};
+
 export default class CustomerInfo extends Preact.Component {
-  state = {
-    weeklyCode: WEEKLY_SCHEDULES[0].code,
-    weekVariant: 'first_half',
-    workoutLevel: WORKOUT_LEVELS[0],
-  };
+  constructor(props) {
+    super(props);
+
+    const { code: weeklyCode } = WEEKLY_SCHEDULES[0];
+    const weekVariant = WEEK_VARIANTS_BY_CODES[weeklyCode][0];
+    this.state = { weeklyCode, weekVariant, workoutLevel: WORKOUT_LEVELS[0] };
+  }
 
   onWeeklyCodesChange = event => {
     const weeklyCode = event.target.value;
-    this.setState({ weeklyCode });
+    const weekVariant = WEEK_VARIANTS_BY_CODES[weeklyCode][0];
+    this.setState({ weeklyCode, weekVariant });
   };
+
+  onWeekVariantChange = event => this.setState({ weekVariant: event.target.value });
+
+  onWorkoutLevelChange = event => this.setState({ workoutLevel: event.target.value });
 
   renderWorkoutLevels = () => (
     <div className="form-group">
       <label htmlFor="workout-level">{'Trình độ'}</label>
-      <select className="custom-select" id="workout-level" name="workout_level" required>
+      <select
+        className="custom-select"
+        id="workout-level"
+        name="workout_level"
+        onChange={this.onWorkoutLevelChange}
+        required
+      >
         {_.map(WORKOUT_LEVELS, level => (
           <option value={level}>{_.capitalize(level)}</option>
         ))}
@@ -60,7 +108,13 @@ export default class CustomerInfo extends Preact.Component {
     return (
       <div className="form-group">
         <label htmlFor="week-variant">{'Biến thể tuần'}</label>
-        <select className="custom-select" id="week-variant" name="week_variant" required>
+        <select
+          className="custom-select"
+          id="week-variant"
+          name="week_variant"
+          onChange={this.onWeekVariantChange}
+          required
+        >
           {_.map(options, ({ title, variant }) => (
             <option value={variant}>{title}</option>
           ))}
@@ -80,43 +134,13 @@ export default class CustomerInfo extends Preact.Component {
           <label htmlFor="full-name">{'Họ tên'}</label>
           <input className="form-control" id="full-name" name="full_name" required type="text" />
         </div>
-        <div className="form-group">
-          <label htmlFor="birth-year">{'Năm sinh'}</label>
-          <input
-            className="form-control"
-            id="birth-year"
-            max="2010"
-            min="1950"
-            name="birth_year"
-            required
-            type="number"
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="height">{'Chiều cao'}</label>
-          <div className="input-group">
-            <input className="form-control" id="height" max="200" min="100" name="height" required type="number" />
-            <div className="input-group-append">
-              <span className="input-group-text">{'cm'}</span>
-            </div>
-          </div>
-        </div>
-        <div className="form-group">
-          <label htmlFor="weight">{'Cân nặng'}</label>
-          <div className="input-group">
-            <input className="form-control" id="weight" max="100" min="30" name="weight" required type="number" />
-            <div className="input-group-append">
-              <span className="input-group-text">{'kg'}</span>
-            </div>
-          </div>
-        </div>
+        <NumberInput id="birth-year" label="Năm sinh" max="2010" min="1950" name="birth_year" />
+        <NumberInput id="height" label="Chiều cao" max="200" min="100" name="height" />
+        <NumberInput id="weight" label="Cân nặng" max="100" min="30" name="weight" />
         {this.renderWorkoutLevels()}
         {this.renderWeeklyCodes()}
         {this.renderWeekVariants()}
-        <div className="form-group">
-          <label htmlFor="week-period">{'Tuần'}</label>
-          <input className="form-control" id="week-period" name="week_period" required type="week"></input>
-        </div>
+        <NumberInput id="week-period" label="Tuần" name="week_period" type="week" />
       </div>
     );
   }
