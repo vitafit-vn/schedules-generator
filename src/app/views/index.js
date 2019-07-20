@@ -5,7 +5,7 @@ import Router from 'preact-router';
 import Home from './pages/Home';
 import Schedules from './pages/Schedules';
 
-import { GlobalData } from './contexts';
+import { GlobalDataContext } from './configs';
 
 export default class App extends Preact.Component {
   state = {
@@ -16,17 +16,17 @@ export default class App extends Preact.Component {
   onUpdateGlobalData = partial => this.setState(({ globalData }) => ({ ...globalData, ...partial }));
 
   onRouteChange = event => {
-    console.debug(event);
+    console.debug(event); // eslint-disable-line
   };
 
   render() {
     return (
-      <GlobalData.Provider value={this.state}>
+      <GlobalDataContext.Provider value={this.state}>
         <Router onChange={this.onRouteChange}>
           <Home default />
           <Schedules path="/schedules" />
         </Router>
-      </GlobalData.Provider>
+      </GlobalDataContext.Provider>
     );
   }
 }

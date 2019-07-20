@@ -3,7 +3,7 @@ import Preact from 'preact';
 import PropTypes from 'prop-types';
 
 // Constants
-import { PAGES_CONFIG } from 'app/views/constants';
+import { PAGES_CONFIG } from 'app/views/configs';
 
 export default class NavBar extends Preact.Component {
   static propTypes = {

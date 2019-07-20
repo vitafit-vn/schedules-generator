@@ -1,3 +1,5 @@
+import { createContext } from 'preact-context';
+
 const PAGES_CONFIG = [
   {
     key: 'home',
@@ -23,6 +25,8 @@ const PAGES_CONFIG = [
   },
 ];
 
+const GlobalDataContext = createContext({});
+
 /* eslint-disable import/prefer-default-export */
 
-export { PAGES_CONFIG };
+export { PAGES_CONFIG, GlobalDataContext };
