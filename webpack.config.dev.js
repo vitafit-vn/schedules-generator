@@ -10,6 +10,7 @@ module.exports = merge(common, {
       'Access-Control-Allow-Methods': 'GET',
       'Access-Control-Allow-Headers': 'X-Requested-With, Content-Type',
     },
+    historyApiFallback: true,
     open: true,
     port: 9000,
   },
