@@ -1,4 +1,9 @@
+import fp from 'lodash/fp';
+import { DateTime } from 'luxon';
 import Preact from 'preact';
+
+// Template renderers
+import { renderWeeklySchedule } from 'app/renderers';
 
 // Reusables
 import NavBar from 'app/views/reusables/NavBar';
@@ -39,7 +44,29 @@ export default class Schedules extends Preact.Component {
 
   onSubmit = event => {
     event.preventDefault();
-    console.debug(this.state);
+    const {
+      customerInfo: { birthYear, weekPeriod, ...restInfo },
+      personalizedData,
+    } = this.state;
+
+    const weekNumber = fp.flow(
+      fp.split('-'),
+      fp.last,
+      fp.replace(/^w/i, '')
+    )(weekPeriod);
+
+    const { year: yearsDiff } = DateTime.local()
+      .diff(DateTime.fromObject({ year: birthYear }))
+      .toObject();
+
+    const customerInfo = {
+      ...restInfo,
+      age: Math.floor(yearsDiff),
+      weekStart: DateTime.fromObject({ weekNumber }),
+    };
+
+    const weeklySchedule = renderWeeklySchedule({ customerInfo, personalizedData });
+    document.getElementById('schedules-wrapper').innerHTML = weeklySchedule;
   };
 
   render() {

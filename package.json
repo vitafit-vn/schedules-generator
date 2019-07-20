@@ -72,7 +72,6 @@
     "bootstrap": "^4.3.1",
     "csv": "^5.1.1",
     "handlebars": "^4.1.0",
-    "jquery": "^3.4.1",
     "lodash": "^4.17.11",
     "luxon": "^1.17.1",
     "preact": "^8.4.2",
