@@ -1,26 +1,28 @@
 import Preact from 'preact';
 
 // Locals
+import { SchedulesInput } from '../../contexts';
 import NavBar from '../../reusables/NavBar';
 import FormControls from './FormControls';
 import PersonalizedTable from './PersonalizedTable';
-import UserInfo from './UserInfo';
+import CustomerInfo from './CustomerInfo';
 
 export default class Schedules extends Preact.Component {
   render() {
     return (
-      <div>
+      <SchedulesInput.Provider>
         <NavBar page="schedules" title="Công cụ tạo lịch" />
         <div className="container">
           <form action="#" id="schedules-form">
             <div className="row">
-              <UserInfo />
+              <CustomerInfo />
               <PersonalizedTable />
             </div>
             <FormControls />
           </form>
         </div>
-      </div>
+        <div className="mt-3 mx-auto" id="schedules-wrapper"></div>
+      </SchedulesInput.Provider>
     );
   }
 }

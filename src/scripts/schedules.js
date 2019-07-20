@@ -21,16 +21,16 @@ async function performAsyncTask(callback) {
 }
 
 function getUserInfo() {
-  const userId = $('#user-id').val();
+  const customerId = $('#customer-id').val();
   const name = $('#full-name').val();
   const birthYear = $('#birth-year').val();
   const height = $('#height').val();
   const weight = $('#weight').val();
 
   return {
+    customerId,
     height,
     name,
-    userId,
     weight,
     age: new Date().getFullYear() - parseInt(birthYear),
   };
@@ -57,8 +57,8 @@ function generateScheduleFromInputs() {
   const weekVariant = $('#week-variant').val();
   const weekPeriod = $('#week-period')[0].valueAsDate;
 
-  const { userId } = userInfo;
-  const checksum = VSG.UTILS.computeChecksum(userId, workoutLevel, weeklyCode, weekVariant, weekPeriod);
+  const { customerId } = userInfo;
+  const checksum = VSG.UTILS.computeChecksum(customerId, workoutLevel, weeklyCode, weekVariant, weekPeriod);
   const renderingParams = {
     personalizedData, userInfo, weekPeriod, weekVariant, weeklyCode, workoutLevel,
   };
@@ -70,12 +70,12 @@ function generateScheduleFromInputs() {
 
   const weeklySchedule = VSG.UTILS.renderWeeklySchedule(renderingParams);
 
-  return { checksum, dailySchedules, userId, weeklySchedule };
+  return { checksum, dailySchedules, customerId, weeklySchedule };
 }
 
 async function onDownloadSchedules() {
-  const { checksum, dailySchedules, userId, weeklySchedule } = await generateScheduleFromInputs();
-  const prefix = `${userId}_${checksum.substring(checksum.length - 6)}`;
+  const { checksum, dailySchedules, customerId, weeklySchedule } = await generateScheduleFromInputs();
+  const prefix = `${customerId}_${checksum.substring(checksum.length - 6)}`;
 
   try {
     const zip = new JSZip();
@@ -95,7 +95,7 @@ async function onDownloadSchedules() {
 }
 
 async function onShowSchedules() {
-  const { checksum, dailySchedules, weeklySchedule, userId } = await generateScheduleFromInputs();
+  const { checksum, dailySchedules, weeklySchedule, customerId } = await generateScheduleFromInputs();
   const allSchedules = [
     weeklySchedule,
     ..._.reject(dailySchedules, _.isEmpty),

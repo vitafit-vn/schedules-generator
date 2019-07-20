@@ -5,7 +5,7 @@ import Preact from 'preact';
 // Constants
 import { WEEK_VARIANTS_BY_CODES, WEEKLY_SCHEDULES, WORKOUT_LEVELS } from '../../../constants';
 
-export default class UserInfo extends Preact.Component {
+export default class CustomerInfo extends Preact.Component {
   state = {
     weeklyCode: WEEKLY_SCHEDULES[0].code,
     weekVariant: 'first_half',
@@ -71,10 +71,10 @@ export default class UserInfo extends Preact.Component {
 
   render() {
     return (
-      <div className="col-3" id="user-info">
+      <div className="col-3" id="customer-info">
         <div className="form-group">
-          <label htmlFor="user-id">{'Mã KH'}</label>
-          <input className="form-control" id="user-id" name="user_id" required type="text" />
+          <label htmlFor="customer-id">{'Mã KH'}</label>
+          <input className="form-control" id="customer-id" name="customer_id" required type="text" />
         </div>
         <div className="form-group">
           <label htmlFor="full-name">{'Họ tên'}</label>

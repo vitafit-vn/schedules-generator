@@ -10,7 +10,7 @@ function asyncLoadPartial(elementId, partialUrl) {
 }
 
 async function loadPartials() {
-  await asyncLoadPartial('#user-info', '/partials/_user_info.html');
+  await asyncLoadPartial('#customer-info', '/partials/_user_info.html');
   await asyncLoadPartial('#personalized-table', '/partials/_personalized_table.html');
 }
 

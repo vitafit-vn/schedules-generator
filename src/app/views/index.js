@@ -4,11 +4,15 @@ import Router from 'preact-router';
 // import Home from './pages/Home';
 import Schedules from './pages/Schedules';
 
+import { UserAuth } from './contexts';
+
 const App = () => (
-  <Router>
-    <Schedules path="/" />
-    <Schedules path="/schedules" />
-  </Router>
+  <UserAuth.Provider>
+    <Router>
+      <Schedules path="/" />
+      <Schedules path="/schedules" />
+    </Router>
+  </UserAuth.Provider>
 );
 
 export default App;
