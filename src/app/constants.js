@@ -1,5 +1,3 @@
-import _ from 'lodash';
-
 // Locals
 import DAILY_SCHEDULES_BEGINNER from './configs/daily_schedules_beginner.json';
 import DAILY_SCHEDULES_INTERMEDIATE from './configs/daily_schedules_intermediate.json';
@@ -17,30 +15,6 @@ const DAILY_SCHEDULES = {
 
 const OFF_DAY = 'NGHỈ';
 
-const WEEK_VARIANTS_BY_CODES = _.reduce(
-  WEEKLY_SCHEDULES,
-  (curr, { code, variant }) => ({ ...curr, [code]: _.union(curr[code], [variant]) }),
-  {}
-);
-
 const WEEKDAYS = ['Thứ hai', 'Thứ ba', 'Thứ tư', 'Thứ năm', 'Thứ sáu', 'Thứ bảy', 'Chủ nhật'];
 
-export {
-  DAILY_SCHEDULES,
-  EXERCISES_DATABASE,
-  OFF_DAY,
-  WEEKDAYS,
-  WEEKLY_SCHEDULES,
-  WEEK_VARIANTS_BY_CODES,
-  WORKOUT_LEVELS,
-};
-
-export default {
-  DAILY_SCHEDULES,
-  EXERCISES_DATABASE,
-  OFF_DAY,
-  WEEKDAYS,
-  WEEKLY_SCHEDULES,
-  WEEK_VARIANTS_BY_CODES,
-  WORKOUT_LEVELS,
-};
+export { DAILY_SCHEDULES, EXERCISES_DATABASE, OFF_DAY, WEEKDAYS, WEEKLY_SCHEDULES, WORKOUT_LEVELS };

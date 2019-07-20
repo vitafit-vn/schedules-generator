@@ -12,7 +12,6 @@ import HeadCell from './HeadCell';
 export default class PersonalizedTable extends Preact.Component {
   static propTypes = {
     customerInfo: PropTypes.shape({
-      weekVariant: PropTypes.string,
       weeklyCode: PropTypes.string,
       workoutLevel: PropTypes.string,
     }).isRequired,
@@ -27,12 +26,23 @@ export default class PersonalizedTable extends Preact.Component {
     onUpdate: PropTypes.func.isRequired,
   };
 
-  get bodyRows() {
-    const { weeklyCode, weekVariant, workoutLevel } = this.props.customerInfo;
-    if (_.isEmpty(weeklyCode) || _.isEmpty(weekVariant) || _.isEmpty(workoutLevel)) return;
+  constructor(props) {
+    super(props);
+    this.state = { bodyRows: this.buildBodyRows(this.props.customerInfo) };
+  }
 
-    const weeklyData = _.find(WEEKLY_SCHEDULES, { code: weeklyCode, variant: weekVariant });
-    const { dailyCodes } = weeklyData;
+  componentWillReceiveProps(nextProps) {
+    const { customerInfo } = nextProps;
+
+    if (this.props.customerInfo !== customerInfo) {
+      this.setState({ bodyRows: this.buildBodyRows(customerInfo) });
+    }
+  }
+
+  buildBodyRows = ({ weeklyCode, workoutLevel }) => {
+    if (_.isEmpty(weeklyCode) || _.isEmpty(workoutLevel)) return;
+
+    const { dailyCodes } = _.find(WEEKLY_SCHEDULES, { code: weeklyCode });
 
     const exerciseCodes = _.flatMap(dailyCodes, codes => {
       const dayExercises = _.filter(_.union(DAILY_SCHEDULES[workoutLevel], DAILY_SCHEDULES.shared), ({ code }) =>
@@ -42,31 +52,60 @@ export default class PersonalizedTable extends Preact.Component {
       return _.flatMap(dayExercises, ({ exercises }) => _.map(exercises, 'code'));
     });
 
-    return _.map(_.uniq(exerciseCodes), code => {
+    const bodyRows = _.map(_.uniq(exerciseCodes), code => {
       const exercise = _.find(EXERCISES_DATABASE, { code });
       const { name } = exercise;
       return { code, name };
     });
-  }
 
-  onClearAll = () => {};
+    return bodyRows;
+  };
 
-  onCloneAll = () => {};
+  onClearAll = () =>
+    this.props.onUpdate({
+      bulkRecommendedWeight: undefined,
+      bulkRest: undefined,
+      bulkRpe: undefined,
+      recommendedWeight: {},
+      rest: {},
+      rpe: {},
+    });
 
-  onInputChange = (key, index) => event => {
+  onCloneAll = () => {
+    const { bulkRecommendedWeight, bulkRest, bulkRpe } = this.props.data;
+    const bulkSize = this.state.bodyRows.length;
+    const rowCodes = _.map(this.state.bodyRows, 'code');
+
+    const recommendedWeight = _.fromPairs(_.zip(rowCodes, Array(bulkSize).fill(bulkRecommendedWeight)));
+    const rest = _.fromPairs(_.zip(rowCodes, Array(bulkSize).fill(bulkRest)));
+    const rpe = _.fromPairs(_.zip(rowCodes, Array(bulkSize).fill(bulkRpe)));
+
+    this.props.onUpdate({ recommendedWeight, rest, rpe });
+  };
+
+  onClearRow = code => () => {
+    const { recommendedWeight: currentRecommendedWeight, rest: currentRest, rpe: currentRpe } = this.props.data;
+    const recommendedWeight = { ...currentRecommendedWeight, [code]: undefined };
+    const rest = { ...currentRest, [code]: undefined };
+    const rpe = { ...currentRpe, [code]: undefined };
+    this.props.onUpdate({ recommendedWeight, rest, rpe });
+  };
+
+  onInputChange = (key, code) => event => {
     const { value } = event.target;
 
-    if (index == null) {
+    // Bulk inputs
+    if (code == null) {
       this.props.onUpdate({ [key]: value });
       return;
     }
 
     const { [key]: currentBundle } = this.props.data;
-    this.props.onUpdate({ [key]: { ...currentBundle, [index]: value } });
+    this.props.onUpdate({ [key]: { ...currentBundle, [code]: value } });
   };
 
   renderHead = () => {
-    const { bulkRpe, bulkRest, bulkRecommendedWeight } = this.props.data;
+    const { bulkRecommendedWeight, bulkRest, bulkRpe } = this.props.data;
 
     return (
       <thead className="thead-dark">
@@ -104,29 +143,38 @@ export default class PersonalizedTable extends Preact.Component {
     );
   };
 
-  renderBodyRow = ({ code, name }, index) => (
-    <tr data-code={code}>
-      <th className="align-middle" data-code={code} scope="row">
-        {code}
-      </th>
-      <td className="align-middle">{name}</td>
-      <DataInput name="rpe" onChange={this.onInputChange('rpe', index)} prefix="RPE-" />
-      <DataInput name="rest" onChange={this.onInputChange('rest', index)} suffix="s" />
-      <DataInput name="recommended_weight" onChange={this.onInputChange('recommendedWeight', index)} suffix="kg" />
-      <td className="align-middle">
-        <button className="btn px-1" onClick={this.onClearRow} type="button">
-          <i className="fa fa-trash text-danger" aria-hidden="true"></i>
-        </button>
-      </td>
-    </tr>
-  );
+  renderBodyRow = ({ code, name }) => {
+    const { recommendedWeight, rest, rpe } = this.props.data;
+
+    return (
+      <tr data-code={code}>
+        <th className="align-middle" data-code={code} scope="row">
+          {code}
+        </th>
+        <td className="align-middle">{name}</td>
+        <DataInput name="rpe" onChange={this.onInputChange('rpe', code)} prefix="RPE-" value={rpe[code]} />
+        <DataInput name="rest" onChange={this.onInputChange('rest', code)} suffix="s" value={rest[code]} />
+        <DataInput
+          name="recommended_weight"
+          onChange={this.onInputChange('recommendedWeight', code)}
+          suffix="kg"
+          value={recommendedWeight[code]}
+        />
+        <td className="align-middle">
+          <button className="btn px-1" onClick={this.onClearRow(code)} type="button">
+            <i className="fa fa-trash text-danger" aria-hidden="true"></i>
+          </button>
+        </td>
+      </tr>
+    );
+  };
 
   render() {
     return (
       <div className="col table-responsive" id="personalized-table">
         <table className="table table-borderless table-hover table-sm table-striped">
           {this.renderHead()}
-          <tbody>{_.map(this.bodyRows, this.renderBodyRow)}</tbody>
+          <tbody>{_.map(this.state.bodyRows, this.renderBodyRow)}</tbody>
         </table>
       </div>
     );

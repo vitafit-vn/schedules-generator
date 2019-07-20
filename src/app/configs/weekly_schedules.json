@@ -30,8 +30,7 @@
     ],
     "description": "Chưa tập / Đã từng tập\nMuốn cardio",
     "frequency": "4 buổi",
-    "shortkeys": "U1C-L1-U2C-L2",
-    "variant": "first_half"
+    "shortkeys": "U1C-L1-U2C-L2"
   },
   {
     "code": "WS02",
@@ -60,8 +59,7 @@
     ],
     "description": "Chưa tập / Đã từng tập",
     "frequency": "4 buổi",
-    "shortkeys": "U1-L1-U2-L2",
-    "variant": "first_half"
+    "shortkeys": "U1-L1-U2-L2"
   },
   {
     "code": "WS03",
@@ -94,8 +92,7 @@
     ],
     "description": "Chưa tập / Đã từng tập\nMuốn cardio",
     "frequency": "4 buổi",
-    "shortkeys": "U3C-L3-U4C-L4",
-    "variant": "first_half"
+    "shortkeys": "U3C-L3-U4C-L4"
   },
   {
     "code": "WS04",
@@ -124,8 +121,7 @@
     ],
     "description": "Đã từng tập",
     "frequency": "4 buổi",
-    "shortkeys": "U3-L3-U4-L4",
-    "variant": "first_half"
+    "shortkeys": "U3-L3-U4-L4"
   },
   {
     "code": "WS05",
@@ -157,8 +153,7 @@
     ],
     "description": "Chưa tập / Đã từng tập\nMuốn cardio\nThể trạng tốt",
     "frequency": "5 buổi",
-    "shortkeys": "U1-L1-U2-L2-C",
-    "variant": "first_half"
+    "shortkeys": "U1-L1-U2-L2-C"
   },
   {
     "code": "WS06",
@@ -190,8 +185,7 @@
     ],
     "description": "Chưa tập / Đã từng tập\nMuốn cardio\nThể trạng tốt",
     "frequency": "5 buổi",
-    "shortkeys": "U1-L2-U2-L1-C",
-    "variant": "first_half"
+    "shortkeys": "U1-L2-U2-L1-C"
   },
   {
     "code": "WS07",
@@ -223,8 +217,7 @@
     ],
     "description": "Đã từng tập\nMuốn cardio\nThể trạng tốt",
     "frequency": "5 buổi",
-    "shortkeys": "U3-L3-U4-L4-C",
-    "variant": "first_half"
+    "shortkeys": "U3-L3-U4-L4-C"
   },
   {
     "code": "WS08",
@@ -256,8 +249,7 @@
     ],
     "description": "Đã từng tập\nMuốn cardio\nThể trạng tốt",
     "frequency": "5 buổi",
-    "shortkeys": "U3-L4-U4-L3-C",
-    "variant": "first_half"
+    "shortkeys": "U3-L4-U4-L3-C"
   },
   {
     "code": "WS09",
@@ -286,11 +278,10 @@
     ],
     "description": "Chưa tập / Đã từng tập\nThể trạng kém",
     "frequency": "5 buổi",
-    "shortkeys": "PS1-PL1-L1-PS2-PL2",
-    "variant": "first_half"
+    "shortkeys": "PS1-PL1-L1-PS2-PL2"
   },
   {
-    "code": "WS09",
+    "code": "WS10",
     "dailyCodes": [
       [
         "LOWER-2"
@@ -316,11 +307,10 @@
     ],
     "description": "Chưa tập / Đã từng tập\nThể trạng kém",
     "frequency": "5 buổi",
-    "shortkeys": "L2-PS1-PL1-L1-PS2",
-    "variant": "second_half"
+    "shortkeys": "L2-PS1-PL1-L1-PS2"
   },
   {
-    "code": "WS10",
+    "code": "WS11",
     "dailyCodes": [
       [
         "PUSH-3"
@@ -346,11 +336,10 @@
     ],
     "description": "Đã từng tập",
     "frequency": "5 buổi",
-    "shortkeys": "PS3-PL3-L3-PS4-PL4",
-    "variant": "first_half"
+    "shortkeys": "PS3-PL3-L3-PS4-PL4"
   },
   {
-    "code": "WS10",
+    "code": "WS12",
     "dailyCodes": [
       [
         "LOWER-4"
@@ -376,11 +365,10 @@
     ],
     "description": "Đã từng tập",
     "frequency": "5 buổi",
-    "shortkeys": "L4-PS3-PL3-L3-PS4",
-    "variant": "second_half"
+    "shortkeys": "L4-PS3-PL3-L3-PS4"
   },
   {
-    "code": "WS11",
+    "code": "WS13",
     "dailyCodes": [
       [
         "UPPER-1"
@@ -406,11 +394,10 @@
     ],
     "description": "Đã từng tập\nThể trạng bình thường",
     "frequency": "5 buổi",
-    "shortkeys": "U1-L1-PS1-PL1-L1",
-    "variant": "first_half"
+    "shortkeys": "U1-L1-PS1-PL1-L1"
   },
   {
-    "code": "WS11",
+    "code": "WS14",
     "dailyCodes": [
       [
         "UPPER-2"
@@ -436,11 +423,10 @@
     ],
     "description": "Đã từng tập\nThể trạng bình thường",
     "frequency": "5 buổi",
-    "shortkeys": "U2-L2-PS2-PL2-L2",
-    "variant": "second_half"
+    "shortkeys": "U2-L2-PS2-PL2-L2"
   },
   {
-    "code": "WS12",
+    "code": "WS15",
     "dailyCodes": [
       [
         "UPPER-3"
@@ -466,11 +452,10 @@
     ],
     "description": "Đã từng tập\nThể trạng tốt",
     "frequency": "5 buổi",
-    "shortkeys": "U3-L3-PS3-PL3-L3",
-    "variant": "first_half"
+    "shortkeys": "U3-L3-PS3-PL3-L3"
   },
   {
-    "code": "WS12",
+    "code": "WS16",
     "dailyCodes": [
       [
         "UPPER-4"
@@ -496,11 +481,10 @@
     ],
     "description": "Đã từng tập\nThể trạng tốt",
     "frequency": "5 buổi",
-    "shortkeys": "U4-L4-PS4-PL4-L4",
-    "variant": "second_half"
+    "shortkeys": "U4-L4-PS4-PL4-L4"
   },
   {
-    "code": "WS13",
+    "code": "WS17",
     "dailyCodes": [
       [
         "UPPER-3",
@@ -530,11 +514,10 @@
     ],
     "description": "Đã từng tập\nThể trạng rất tốt\nMuốn cardio",
     "frequency": "5 buổi",
-    "shortkeys": "U3C-L4-U4C-L4",
-    "variant": "first_half"
+    "shortkeys": "U3C-L4-U4C-L4"
   },
   {
-    "code": "WS14",
+    "code": "WS18",
     "dailyCodes": [
       [
         "UPPER-1"
@@ -563,11 +546,10 @@
     ],
     "description": "Chưa tập/Đã từng tập\nMuốn cardio",
     "frequency": "4 buổi",
-    "shortkeys": "U1-L1-F1-C",
-    "variant": "first_half"
+    "shortkeys": "U1-L1-F1-C"
   },
   {
-    "code": "WS14",
+    "code": "WS19",
     "dailyCodes": [
       [
         "UPPER-2"
@@ -596,11 +578,10 @@
     ],
     "description": "Chưa tập/Đã từng tập\nMuốn cardio",
     "frequency": "4 buổi",
-    "shortkeys": "U2-L2-F2-C",
-    "variant": "second_half"
+    "shortkeys": "U2-L2-F2-C"
   },
   {
-    "code": "WS15",
+    "code": "WS20",
     "dailyCodes": [
       [
         "UPPER-1"
@@ -629,11 +610,10 @@
     ],
     "description": "Chưa tập/Đã từng tập\nMuốn cardio",
     "frequency": "4 buổi",
-    "shortkeys": "U1-L1-F3-C",
-    "variant": "first_half"
+    "shortkeys": "U1-L1-F3-C"
   },
   {
-    "code": "WS15",
+    "code": "WS21",
     "dailyCodes": [
       [
         "UPPER-4"
@@ -662,7 +642,6 @@
     ],
     "description": "Chưa tập/Đã từng tập\nMuốn cardio",
     "frequency": "4 buổi",
-    "shortkeys": "U4-L4-F4-C",
-    "variant": "second_half"
+    "shortkeys": "U4-L4-F4-C"
   }
 ]

@@ -1,8 +1,10 @@
 import fs from 'fs';
 import _ from 'lodash';
 
+// Constants
+import { WORKOUT_LEVELS } from '../app/constants';
+
 // Locals
-import CONSTANTS from '../app/constants';
 import { parseDailySchedules, parseExercisesDatabase, parseWeeklySchedules } from './parsers';
 
 const CONFIGS_DIR = './src/app/configs';
@@ -11,7 +13,7 @@ const IMAGES_SRC_DIR = './src/static';
 const IMAGES_PATH = '/images/exercises/';
 
 function buildDailyScheduleConfigs() {
-  _.each([...CONSTANTS.WORKOUT_LEVELS, 'shared'], async level => {
+  _.each([...WORKOUT_LEVELS, 'shared'], async level => {
     try {
       const csvData = fs.readFileSync(`${DATA_DIR}/daily_schedules/${level}.csv`, 'utf-8');
       const dailySchedules = await parseDailySchedules(csvData);

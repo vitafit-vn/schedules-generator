@@ -10,7 +10,6 @@ function registerPartials() {
   Handlebars.registerPartial('daily_exercises', Handlebars.templates.daily_exercises);
   Handlebars.registerPartial('daily_schedule', Handlebars.templates.daily_schedule);
   Handlebars.registerPartial('html_head', Handlebars.templates.html_head);
-  Handlebars.registerPartial('personalized_rows', Handlebars.templates.personalized_rows);
   Handlebars.registerPartial('schedules_header', Handlebars.templates.schedules_header);
   Handlebars.registerPartial('weekly_day_schedules', Handlebars.templates.weekly_day_schedules);
   Handlebars.registerPartial('weekly_table', Handlebars.templates.weekly_table);
@@ -59,10 +58,6 @@ function buildDayExercises({ date, dayExercises, dayIndex, personalizedData }) {
     exercises: _.map(flattenExercises, (configs, idx) => buildExerciseData(configs, personalizedData, idx)),
     title: `${formattedDate}: ${code} (${muscles})`,
   };
-}
-
-export function renderPersonalizedRows(rows) {
-  return Handlebars.templates.personalized_rows({ rows });
 }
 
 export function renderDailySchedule({

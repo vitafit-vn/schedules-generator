@@ -14,7 +14,6 @@ export default class Schedules extends Preact.Component {
       customerId: 'KH0001',
       height: '154',
       name: 'Chị Bảo',
-      weekVariant: 'second_half',
       weeklyCode: 'WS09',
       weight: '54',
       workoutLevel: 'beginner',
