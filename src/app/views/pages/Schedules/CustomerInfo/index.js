@@ -46,12 +46,12 @@ export default class CustomerInfo extends Preact.Component {
     this.state = { birthYear, customerId, height, name, weekPeriod, weekVariant, weeklyCode, weight, workoutLevel };
   }
 
-  onInputChange = key => event => this.onUpdate({ [key]: event.target.value });
+  onInputChange = key => event => this.props.onUpdate({ [key]: event.target.value });
 
   onWeeklyCodesChange = event => {
     const weeklyCode = event.target.value;
     const weekVariant = WEEK_VARIANTS_BY_CODES[weeklyCode][0];
-    this.onUpdate({ weeklyCode, weekVariant });
+    this.props.onUpdate({ weeklyCode, weekVariant });
   };
 
   renderWorkoutLevels = selectedWorkoutLevel => (

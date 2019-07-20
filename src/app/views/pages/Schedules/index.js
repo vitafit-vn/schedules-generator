@@ -51,7 +51,11 @@ export default class Schedules extends Preact.Component {
           <form action="#" onSubmit={this.onSubmit}>
             <div className="row">
               <CustomerInfo data={customerInfo} onUpdate={this.onUpdateCustomerInfo} />
-              <PersonalizedTable data={personalizedData} onUpdate={this.onUpdatePersonalizedData} />
+              <PersonalizedTable
+                customerInfo={customerInfo}
+                data={personalizedData}
+                onUpdate={this.onUpdatePersonalizedData}
+              />
             </div>
             <FormControls onDownload={this.onDownload} />
           </form>
