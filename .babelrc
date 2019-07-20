@@ -10,7 +10,7 @@
       }
     ],
     "@babel/plugin-proposal-class-properties",
-    "lodash",
+    // "lodash",
     "transform-remove-console"
   ]
 }
