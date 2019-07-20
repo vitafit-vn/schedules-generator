@@ -9,6 +9,8 @@
         "pragma": "preact.h"
       }
     ],
-    "@babel/plugin-proposal-class-properties"
+    "@babel/plugin-proposal-class-properties",
+    "lodash",
+    "transform-remove-console"
   ]
 }
