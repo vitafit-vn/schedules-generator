@@ -83,9 +83,6 @@ export function renderDailySchedule({ customerInfo, dayIndex, personalizedData }
     title: 'Chế độ tập luyện hàng ngày',
   };
 
-  window.DAILY_RENDERING_PARAMS = window.DAILY_RENDERING_PARAMS || [];
-  window.DAILY_RENDERING_PARAMS[dayIndex] = params;
-
   return Handlebars.templates.daily_schedule(params);
 }
 
@@ -117,6 +114,5 @@ export function renderWeeklySchedule({ customerInfo, personalizedData }) {
     weekdays: WEEKDAYS,
   };
 
-  window.WEEKLY_RENDERING_PARAMS = params;
   return Handlebars.templates.weekly_schedule(params);
 }
