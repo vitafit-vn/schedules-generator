@@ -3,7 +3,7 @@ import fp from 'lodash/fp';
 import Preact from 'preact';
 
 // Constants
-import { WEEK_VARIANTS_BY_CODES, WEEKLY_SCHEDULES, WORKOUT_LEVELS } from '../../../constants';
+import { WEEK_VARIANTS_BY_CODES, WEEKLY_SCHEDULES, WORKOUT_LEVELS } from 'app/constants';
 
 export default class CustomerInfo extends Preact.Component {
   state = {

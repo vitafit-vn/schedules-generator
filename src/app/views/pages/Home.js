@@ -1,7 +1,7 @@
 import Preact from 'preact';
 
 // Locals
-import NavBar from '../reusables/NavBar';
+import NavBar from 'app/views/reusables/NavBar';
 
 export default class Home extends Preact.Component {
   render() {

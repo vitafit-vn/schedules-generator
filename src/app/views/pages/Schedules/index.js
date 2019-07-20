@@ -1,8 +1,9 @@
 import Preact from 'preact';
 
 // Locals
-import { SchedulesInput } from '../../contexts';
-import NavBar from '../../reusables/NavBar';
+import { SchedulesInput } from 'app/views/contexts';
+import NavBar from 'app/views/reusables/NavBar';
+
 import FormControls from './FormControls';
 import PersonalizedTable from './PersonalizedTable';
 import CustomerInfo from './CustomerInfo';

@@ -2,7 +2,7 @@ import _ from 'lodash';
 import PropTypes from 'prop-types';
 
 // Constants
-import { PAGES_CONFIG } from '../constants';
+import { PAGES_CONFIG } from 'app/views/constants';
 
 const NavBar = ({ page }) => (
   <nav className="bg-dark mb-3 navbar navbar-dark navbar-expand">
