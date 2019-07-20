@@ -1,25 +1,28 @@
 import Preact from 'preact';
+import PropTypes from 'prop-types';
 
 // Locals
 import DataInput from './DataInput';
 import HeadCell from './HeadCell';
 
 export default class PersonalizedTable extends Preact.Component {
-  state = {
-    bulkRpe: undefined,
-    bulkRest: undefined,
-    bulkRecommendedWeight: undefined,
+  static propTypes = {
+    data: PropTypes.shape({
+      bulkRecommendedWeight: PropTypes.string,
+      bulkRest: PropTypes.string,
+      bulkRpe: PropTypes.string,
+      recommendedWeight: PropTypes.arrayOf(PropTypes.string),
+      rest: PropTypes.arrayOf(PropTypes.string),
+      rpe: PropTypes.arrayOf(PropTypes.string),
+    }).isRequired,
+    onUpdate: PropTypes.func.isRequired,
   };
 
   onClearAll = () => {};
 
   onCloneAll = () => {};
 
-  onChangeBulkRpe = event => this.setState({ bulkRpe: event.target.value });
-
-  onChangeBulkRest = event => this.setState({ bulkRest: event.target.value });
-
-  onChangeBulkRecommendedWeight = event => this.setState({ bulkRecommendedWeight: event.target.value });
+  onInputChange = key => event => this.onUpdate({ [key]: event.target.value });
 
   renderHead = () => (
     <thead className="thead-dark">
@@ -34,9 +37,9 @@ export default class PersonalizedTable extends Preact.Component {
       <tr>
         <td></td>
         <td></td>
-        <DataInput name="bulk_rpe" onChange={this.onChangeBulkRpe} prefix="RPE-" />
-        <DataInput name="bulk_rest" onChange={this.onChangeBulkRest} suffix="s" />
-        <DataInput name="bulk_recommended_weight" onChange={this.onChangeBulkRecommendedWeight} suffix="kg" />
+        <DataInput name="bulk_rpe" onChange={this.onInputChange('bulkRpe')} prefix="RPE-" />
+        <DataInput name="bulk_rest" onChange={this.onInputChange('bulkRest')} suffix="s" />
+        <DataInput name="bulk_recommended_weight" onChange={this.onInputChange('bulkRecommendedWeight')} suffix="kg" />
         <td className="align-middle">
           <div className="d-flex">
             <button className="btn px-1" onClick={this.onClearAll} type="button">

@@ -46,15 +46,15 @@ export default class CustomerInfo extends Preact.Component {
     this.state = { birthYear, customerId, height, name, weekPeriod, weekVariant, weeklyCode, weight, workoutLevel };
   }
 
-  onInputChange = key => event => this.setState({ [key]: event.target.value }, () => console.debug(this.state));
+  onInputChange = key => event => this.onUpdate({ [key]: event.target.value });
 
   onWeeklyCodesChange = event => {
     const weeklyCode = event.target.value;
     const weekVariant = WEEK_VARIANTS_BY_CODES[weeklyCode][0];
-    this.setState({ weeklyCode, weekVariant });
+    this.onUpdate({ weeklyCode, weekVariant });
   };
 
-  renderWorkoutLevels = () => (
+  renderWorkoutLevels = selectedWorkoutLevel => (
     <div className="form-group">
       <label htmlFor="workout-level">{'Trình độ'}</label>
       <select
@@ -63,6 +63,7 @@ export default class CustomerInfo extends Preact.Component {
         name="workout_level"
         onChange={this.onInputChange('workoutLevel')}
         required
+        value={selectedWorkoutLevel}
       >
         {_.map(WORKOUT_LEVELS, level => (
           <option value={level}>{_.capitalize(level)}</option>
@@ -71,7 +72,7 @@ export default class CustomerInfo extends Preact.Component {
     </div>
   );
 
-  renderWeeklyCodes = () => (
+  renderWeeklyCodes = selectedWeeklyCode => (
     <div className="form-group">
       <label htmlFor="weekly-code">{'Preset lịch tuần'}</label>
       <select
@@ -80,6 +81,7 @@ export default class CustomerInfo extends Preact.Component {
         name="weekly_code"
         onChange={this.onWeeklyCodesChange}
         required
+        value={selectedWeeklyCode}
       >
         {_.map(WEEKLY_SCHEDULES, ({ code, description, frequency, shortkeys }) => (
           <option title={description} value={code}>{`${frequency} (${shortkeys})`}</option>
@@ -88,10 +90,8 @@ export default class CustomerInfo extends Preact.Component {
     </div>
   );
 
-  renderWeekVariants = () => {
-    const { weeklyCode } = this.state;
-
-    const options = _.map(WEEK_VARIANTS_BY_CODES[weeklyCode], variant => {
+  renderWeekVariants = (selectedWeeklyCode, selectedWeekVariant) => {
+    const options = _.map(WEEK_VARIANTS_BY_CODES[selectedWeeklyCode], variant => {
       const title = fp.flow(
         fp.split('_'),
         fp.join(' '),
@@ -109,6 +109,7 @@ export default class CustomerInfo extends Preact.Component {
           name="week_variant"
           onChange={this.onInputChange('weekVariant')}
           required
+          value={selectedWeekVariant}
         >
           {_.map(options, ({ title, variant }) => (
             <option value={variant}>{title}</option>
@@ -119,7 +120,23 @@ export default class CustomerInfo extends Preact.Component {
   };
 
   render() {
-    const { birthYear, customerId, height, name, weekPeriod, weight } = this.state;
+    const {
+      birthYear,
+      customerId,
+      height,
+      name,
+      weekPeriod,
+      weekVariant,
+      weeklyCode,
+      weight,
+      workoutLevel,
+    } = this.props.data;
+
+    const selectedWorkoutLevel = workoutLevel || WORKOUT_LEVELS[0];
+    const selectedWeeklyCode = weeklyCode || WEEKLY_SCHEDULES[0].code;
+
+    const availableVariants = WEEK_VARIANTS_BY_CODES[selectedWeeklyCode];
+    const selectedWeekVariant = _.includes(availableVariants, weekVariant) ? weekVariant : availableVariants[0];
 
     return (
       <div className="col-3" id="customer-info">
@@ -176,9 +193,9 @@ export default class CustomerInfo extends Preact.Component {
           onChange={this.onInputChange('weight')}
           value={weight}
         />
-        {this.renderWorkoutLevels()}
-        {this.renderWeeklyCodes()}
-        {this.renderWeekVariants()}
+        {this.renderWorkoutLevels(selectedWorkoutLevel)}
+        {this.renderWeeklyCodes(selectedWeeklyCode)}
+        {this.renderWeekVariants(selectedWeeklyCode, selectedWeekVariant)}
         <NumberInput
           id="week-period"
           label="Tuần"

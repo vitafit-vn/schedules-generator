@@ -1,18 +1,32 @@
+import Preact from 'preact';
 import Router from 'preact-router';
 
 // Locals
 import Home from './pages/Home';
 import Schedules from './pages/Schedules';
 
-import { UserAuth } from './contexts';
+import { GlobalData } from './contexts';
 
-const App = () => (
-  <UserAuth.Provider>
-    <Router>
-      <Home path="/" />
-      <Schedules path="/schedules" />
-    </Router>
-  </UserAuth.Provider>
-);
+export default class App extends Preact.Component {
+  state = {
+    globalData: {},
+    updateGlobalData: this.onUpdateGlobalData,
+  };
 
-export default App;
+  onUpdateGlobalData = partial => this.setState(({ globalData }) => ({ ...globalData, ...partial }));
+
+  onRouteChange = event => {
+    console.debug(event);
+  };
+
+  render() {
+    return (
+      <GlobalData.Provider value={this.state}>
+        <Router onChange={this.onRouteChange}>
+          <Home default />
+          <Schedules path="/schedules" />
+        </Router>
+      </GlobalData.Provider>
+    );
+  }
+}

@@ -1,8 +1,5 @@
 import Preact from 'preact';
 
-// Contexts
-import { SchedulesInput } from 'app/views/contexts';
-
 // Reusables
 import NavBar from 'app/views/reusables/NavBar';
 
@@ -13,55 +10,54 @@ import CustomerInfo from './CustomerInfo';
 export default class Schedules extends Preact.Component {
   state = {
     customerInfo: {
-      birthYear: undefined,
+      birthYear: '1997',
       customerId: 'KH0001',
-      height: undefined,
-      name: undefined,
-      weekVariant: undefined,
-      weeklyCode: undefined,
-      weight: undefined,
-      workoutLevel: undefined,
+      height: '154',
+      name: 'Chị Bảo',
+      weekVariant: 'second_half',
+      weeklyCode: 'WS09',
+      weight: '54',
+      workoutLevel: 'beginner',
+      weekPeriod: '2019-W30',
     },
-    personalizedData: {},
-    updateCustomerInfo: this.onUpdateCustomerInfo,
-    updatePersonalizedData: this.onUpdatePersonalizedData,
+    personalizedData: {
+      bulkRecommendedWeight: '3 - 4',
+      bulkRest: '30 - 45',
+      bulkRpe: '8',
+      recommendedWeight: [],
+      rest: [],
+      rpe: [],
+    },
   };
 
-  onUpdateCustomerInfo = customerInfo => this.setState({ customerInfo });
+  onUpdateCustomerInfo = partial => this.setState(({ customerInfo }) => ({ ...customerInfo, ...partial }));
 
-  onUpdatePersonalizedData = personalizedData => this.setState({ personalizedData });
+  onUpdatePersonalizedData = partial => this.setState(({ personalizedData }) => ({ ...personalizedData, ...partial }));
 
   onDownload = () => {};
 
   onSubmit = event => {
     event.preventDefault();
-    // const url = new URL(event.target.action);
-    // console.debug('onSubmit', qs.parse(_.replace(url.search, /^\?/, '')));
+    console.debug(this.state);
   };
 
   render() {
+    const { customerInfo, personalizedData } = this.state;
+
     return (
-      <SchedulesInput.Provider value={this.state}>
+      <div>
         <NavBar page="schedules" title="Công cụ tạo lịch" />
         <div className="container">
           <form action="#" onSubmit={this.onSubmit}>
-            {/* <div className="row">
-              <CustomerInfo />
-              <PersonalizedTable />
-            </div> */}
-            <SchedulesInput.Consumer>
-              {({ customerInfo, personalizedData, updateCustomerInfo, updatePersonalizedData }) => (
-                <div className="row">
-                  <CustomerInfo data={customerInfo} onUpdate={updateCustomerInfo} />
-                  <PersonalizedTable data={personalizedData} onUpdate={updatePersonalizedData} />
-                </div>
-              )}
-            </SchedulesInput.Consumer>
+            <div className="row">
+              <CustomerInfo data={customerInfo} onUpdate={this.onUpdateCustomerInfo} />
+              <PersonalizedTable data={personalizedData} onUpdate={this.onUpdatePersonalizedData} />
+            </div>
             <FormControls onDownload={this.onDownload} />
           </form>
         </div>
         <div className="mt-3 mx-auto" id="schedules-wrapper"></div>
-      </SchedulesInput.Provider>
+      </div>
     );
   }
 }
