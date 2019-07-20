@@ -20,9 +20,9 @@ export default class PersonalizedTable extends Preact.Component {
       bulkRecommendedWeight: PropTypes.string,
       bulkRest: PropTypes.string,
       bulkRpe: PropTypes.string,
-      recommendedWeight: PropTypes.arrayOf(PropTypes.string),
-      rest: PropTypes.arrayOf(PropTypes.string),
-      rpe: PropTypes.arrayOf(PropTypes.string),
+      recommendedWeight: PropTypes.objectOf(PropTypes.string),
+      rest: PropTypes.objectOf(PropTypes.string),
+      rpe: PropTypes.objectOf(PropTypes.string),
     }).isRequired,
     onUpdate: PropTypes.func.isRequired,
   };
@@ -62,8 +62,7 @@ export default class PersonalizedTable extends Preact.Component {
     }
 
     const { [key]: currentBundle } = this.props.data;
-    const updatedBundle = [..._.slice(currentBundle, 0, index), value, _.slice(currentBundle, index + 1)];
-    this.props.onUpdate({ [key]: updatedBundle });
+    this.props.onUpdate({ [key]: { ...currentBundle, [index]: value } });
   };
 
   renderHead = () => {

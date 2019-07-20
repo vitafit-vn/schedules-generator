@@ -24,15 +24,17 @@ export default class Schedules extends Preact.Component {
       bulkRecommendedWeight: '3 - 4',
       bulkRest: '30 - 45',
       bulkRpe: '8',
-      recommendedWeight: [],
-      rest: [],
-      rpe: [],
+      recommendedWeight: {},
+      rest: {},
+      rpe: {},
     },
   };
 
-  onUpdateCustomerInfo = partial => this.setState(({ customerInfo }) => ({ ...customerInfo, ...partial }));
+  onUpdateCustomerInfo = partial =>
+    this.setState(({ customerInfo }) => ({ customerInfo: { ...customerInfo, ...partial } }));
 
-  onUpdatePersonalizedData = partial => this.setState(({ personalizedData }) => ({ ...personalizedData, ...partial }));
+  onUpdatePersonalizedData = partial =>
+    this.setState(({ personalizedData }) => ({ personalizedData: { ...personalizedData, ...partial } }));
 
   onDownload = () => {};
 
