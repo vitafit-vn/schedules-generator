@@ -1,15 +1,16 @@
+import _ from 'lodash';
 import PropTypes from 'prop-types';
 
-const DataInput = ({ name, prefix, suffix }) => (
+const DataInput = ({ name, prefix, suffix, ...restProps }) => (
   <td className="align-middle">
     <div className="input-group input-group-sm">
-      {prefix && (
+      {!_.isEmpty(prefix) && (
         <div className="input-group-prepend">
           <span className="input-group-text">{prefix}</span>
         </div>
       )}
-      <input className="form-control" name={name} type="text" />
-      {!suffix && (
+      <input className="form-control" name={name} type="text" {...restProps} />
+      {!_.isEmpty(suffix) && (
         <div className="input-group-append">
           <span className="input-group-text">{suffix}</span>
         </div>
