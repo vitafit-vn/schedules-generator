@@ -4,7 +4,7 @@ import _ from 'lodash';
 import Preact from 'preact';
 
 // Constants
-import { WEEKDAYS } from 'app/constants';
+import { WEEKDAYS, WEEKLY_SCHEDULES, WORKOUT_LEVELS } from 'app/constants';
 
 // Template renderers
 import { renderDailySchedule, renderWeeklySchedule } from 'app/renderers';
@@ -44,9 +44,9 @@ export default class Schedules extends Preact.Component {
       customerId: undefined,
       height: undefined,
       name: undefined,
-      weeklyCode: undefined,
+      weeklyCode: WEEKLY_SCHEDULES[0].code,
       weight: undefined,
-      workoutLevel: undefined,
+      workoutLevel: WORKOUT_LEVELS[0],
       weekPeriod: undefined,
     },
     personalizedData: {
