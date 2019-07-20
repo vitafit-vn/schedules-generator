@@ -1,10 +1,16 @@
 import { createContext } from 'preact-context';
 
 const SchedulesInput = createContext({
-  birthYear: undefined,
-  customerId: undefined,
-  height: undefined,
-  name: undefined,
+  customerInfo: {
+    birthYear: undefined,
+    customerId: 'KH0001',
+    height: undefined,
+    name: undefined,
+    weekVariant: undefined,
+    weeklyCode: undefined,
+    weight: undefined,
+    workoutLevel: undefined,
+  },
   personalizedData: {
     bulkRecommendedWeight: undefined,
     bulkRest: undefined,
@@ -13,12 +19,10 @@ const SchedulesInput = createContext({
     rest: [],
     rpe: [],
   },
-  weekVariant: undefined,
-  weeklyCode: undefined,
-  weight: undefined,
-  workoutLevel: undefined,
+  // updateCustomerInfo: () => {},
+  // updatePersonalizedData: () => {},
 });
 
-const UserAuth = createContext({ userData: undefined });
+const UserAuth = createContext({ userData: { avatarUrl: 'https://tools.vitafit.vn/images/logo.png' } });
 
 export { SchedulesInput, UserAuth };
