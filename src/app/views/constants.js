@@ -9,16 +9,18 @@ const PAGES_CONFIG = [
     label: 'Lịch tập',
     path: '/schedules',
   },
-  // {
-  //   key: 'meals',
-  //   label: 'Thực đơn',
-  //   path: '/meals',
-  // },
-  // {
-  //   key: 'sales',
-  //   label: 'Sales kit',
-  //   path: '/sales',
-  // },
+  {
+    disabled: true,
+    key: 'meals',
+    label: 'Thực đơn',
+    path: '/meals',
+  },
+  {
+    disabled: true,
+    key: 'sales',
+    label: 'Sales kit',
+    path: '/sales',
+  },
 ];
 
 /* eslint-disable import/prefer-default-export */
