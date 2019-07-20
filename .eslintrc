@@ -41,6 +41,7 @@
         "printWidth": 120
       }
     ],
+    "react/jsx-key": "off",
     "react/react-in-jsx-scope": "off"
   },
   "settings": {
