@@ -13,7 +13,7 @@
     "lint:js": "eslint src/app/**/*.js",
     "lint:styles": "stylelint \"src/**/*.scss\"",
     "prebuild": "yarn build:data-configs && yarn build:templates",
-    "start": "webpack --config webpack.config.prod.js && http-server ./dist -o",
+    "start": "webpack --config webpack.config.prod.js && http-server ./dist -o -P http://0.0.0.0:8080?",
     "start:dev": "webpack-dev-server --config webpack.config.dev.js",
     "sync-s3": "aws s3 sync ./dist s3://tools.vitafit.vn --profile vitafitvn && aws cloudfront create-invalidation --distribution-id E1O3X5N9XVWYK6 --paths \"/*\" --profile vitafitvn",
     "watch:data-configs": "watch 'yarn build:data-configs' src/templates",
