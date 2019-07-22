@@ -34,6 +34,8 @@ const HtmlHead = ({ site }) => {
       <link rel="icon" type="image/png" sizes="32x32" href={`${faviconPrefix}/favicon-32x32.png`} />
       <link rel="icon" type="image/png" sizes="16x16" href={`${faviconPrefix}/favicon-16x16.png`} />
       <link rel="shortcut icon" href={`${faviconPrefix}/favicon.ico`} />
+      <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet" />
+      <link rel="stylesheet" type="text/css" href={`${publicPath}/schedules.css`} />
       <title>{pageTitle}</title>
     </head>
   );

@@ -57,11 +57,11 @@ export function convertDailySchedulesRecords(records) {
 
 export function convertExercisesDatabase(records) {
   return _.map(records, row => {
-    const [code, name, muscle, difficulty, instructions, videoUrl] = row;
-    const convertedInstructions = fp.flow(
+    const [code, name, muscle, difficulty, rawInstructions, videoUrl] = row;
+    const instructions = fp.flow(
       fp.trim,
       fp.split('\n')
-    )(instructions);
+    )(rawInstructions);
 
     return {
       code,
@@ -69,7 +69,7 @@ export function convertExercisesDatabase(records) {
       muscle,
       name,
       videoUrl,
-      instructions: _.isEmpty(convertedInstructions) ? undefined : instructions,
+      instructions: _.isEmpty(instructions) ? undefined : instructions,
     };
   });
 }

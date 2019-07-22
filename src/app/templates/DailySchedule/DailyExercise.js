@@ -22,7 +22,9 @@ const DailyExercise = ({ exercises, title }) => (
           <tr>
             <td className="border border-primary p-2 text-justify" colSpan="8">
               <h5>{'Hướng dẫn:'}</h5>
-              <div>{instructions}</div>
+              {_.map(instructions, instruction => (
+                <div>{instruction}</div>
+              ))}
             </td>
           </tr>
         )}
