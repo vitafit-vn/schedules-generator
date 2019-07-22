@@ -2,8 +2,8 @@ import _ from 'lodash';
 import PropTypes from 'prop-types';
 
 // Locals
-import HtmlHead from '../HtmlHead';
-import ScheduleHeader from '../ScheduleHeader';
+import HtmlHead from '../reusables/HtmlHead';
+import ScheduleHeader from '../reusables/ScheduleHeader';
 import DaySchedule from './DaySchedule';
 import WeeklyTable from './WeeklyTable';
 

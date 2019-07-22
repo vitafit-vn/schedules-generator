@@ -5,7 +5,8 @@ import renderToString from 'preact-render-to-string';
 import { DAILY_SCHEDULES, EXERCISES_DATABASE, OFF_DAY, WEEKDAYS, WEEKLY_SCHEDULES } from 'app/constants';
 
 // Templates
-import WeeklySchedule from 'app/templates/WeeklySchedule';
+import DailySchedule from './DailySchedule';
+import WeeklySchedule from './WeeklySchedule';
 
 const SITE_CONFIGS = {
   pageTitle: process.env.PAGE_TITLE,
@@ -73,7 +74,7 @@ export function renderDailySchedule({ customerInfo, dayIndex, personalizedData }
     title: 'Chế độ tập luyện hàng ngày',
   };
 
-  return renderingProps;
+  return renderToString(<DailySchedule {...renderingProps} />);
 }
 
 export function renderWeeklySchedule({ customerInfo, personalizedData }) {

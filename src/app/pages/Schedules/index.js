@@ -96,8 +96,8 @@ export default class Schedules extends Component {
   onShowSchedules = event => {
     event.preventDefault();
 
-    const { /* dailySchedules, */ weeklySchedule } = this.renderSchedulesHTML();
-    document.getElementById('schedules-wrapper').innerHTML = [weeklySchedule /* , ...dailySchedules */].join('\n');
+    const { dailySchedules, weeklySchedule } = this.renderSchedulesHTML();
+    document.getElementById('schedules-wrapper').innerHTML = [weeklySchedule, ...dailySchedules].join('\n');
   };
 
   render() {
