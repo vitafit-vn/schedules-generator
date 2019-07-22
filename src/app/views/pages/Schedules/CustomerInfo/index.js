@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import Preact from 'preact';
+import { Component } from 'preact';
 import PropTypes from 'prop-types';
 
 // Constants
@@ -8,13 +8,14 @@ import { WEEKLY_SCHEDULES, WORKOUT_LEVELS } from 'app/constants';
 // Locals
 import NumberInput from './NumberInput';
 
-export default class CustomerInfo extends Preact.Component {
+export default class CustomerInfo extends Component {
   static propTypes = {
     data: PropTypes.shape({
       birthYear: PropTypes.number,
       customerId: PropTypes.string,
       height: PropTypes.number,
       name: PropTypes.string,
+      weekPeriod: PropTypes.string,
       weeklyCode: PropTypes.string,
       weight: PropTypes.number,
       workoutLevel: PropTypes.string,

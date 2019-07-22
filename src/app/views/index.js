@@ -1,4 +1,4 @@
-import Preact from 'preact';
+import { Component } from 'preact';
 import Router from 'preact-router';
 
 // Locals
@@ -7,7 +7,7 @@ import Schedules from './pages/Schedules';
 
 import { GlobalDataContext } from './configs';
 
-export default class App extends Preact.Component {
+export default class App extends Component {
   state = {
     globalData: {},
     updateGlobalData: this.onUpdateGlobalData,

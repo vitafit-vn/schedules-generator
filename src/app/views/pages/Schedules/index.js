@@ -1,7 +1,7 @@
 import { saveAs } from 'file-saver';
 import JSZip from 'jszip';
 import _ from 'lodash';
-import Preact from 'preact';
+import { Component } from 'preact';
 
 // Constants
 import { WEEKDAYS, WEEKLY_SCHEDULES, WORKOUT_LEVELS } from 'app/constants';
@@ -19,7 +19,7 @@ import FormControls from './FormControls';
 import PersonalizedTable from './PersonalizedTable';
 import CustomerInfo from './CustomerInfo';
 
-export default class Schedules extends Preact.Component {
+export default class Schedules extends Component {
   state = {
     // customerInfo: {
     //   birthYear: '1997',

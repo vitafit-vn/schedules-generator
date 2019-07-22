@@ -1,11 +1,11 @@
 import _ from 'lodash';
-import Preact from 'preact';
+import { Component } from 'preact';
 import PropTypes from 'prop-types';
 
 // Constants
 import { PAGES_CONFIG } from 'app/views/configs';
 
-export default class NavBar extends Preact.Component {
+export default class NavBar extends Component {
   static propTypes = {
     page: PropTypes.string.isRequired,
   };

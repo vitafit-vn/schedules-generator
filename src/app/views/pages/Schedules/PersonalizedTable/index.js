@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import Preact from 'preact';
+import { Component } from 'preact';
 import PropTypes from 'prop-types';
 
 // Constants
@@ -9,7 +9,7 @@ import { DAILY_SCHEDULES, EXERCISES_DATABASE, WEEKLY_SCHEDULES } from 'app/const
 import DataInput from './DataInput';
 import HeadCell from './HeadCell';
 
-export default class PersonalizedTable extends Preact.Component {
+export default class PersonalizedTable extends Component {
   static propTypes = {
     customerInfo: PropTypes.shape({
       weeklyCode: PropTypes.string,
