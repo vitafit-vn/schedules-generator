@@ -39,7 +39,7 @@ export default class Schedules extends Component {
       rest: {},
       rpe: {},
     },
-    ...require('app/data/fixtures/schedules_input.json'), // eslint-disable-line
+    // ...require('app/data/fixtures/schedules_input.json'), // eslint-disable-line
   };
 
   renderSchedulesHTML = () => {
