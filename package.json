@@ -1,8 +1,8 @@
 {
-  "name": "schedules-generator",
+  "name": "vitafit-tools",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "git@github.com:vitafit-vn/schedules-generator.git",
+  "repository": "git@github.com:vitafit-vn/tools.vitafit.vn.git",
   "author": "Ethan Nguyen <thanhnx.605@gmail.com>",
   "license": "MIT",
   "scripts": {
