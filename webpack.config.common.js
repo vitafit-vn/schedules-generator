@@ -1,24 +1,9 @@
-const _ = require('lodash');
-const glob = require('glob');
 const path = require('path');
 
 const CopyPlugin = require('copy-webpack-plugin');
-const HtmlPlugin = require('html-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const FaviconsPlugin = require('favicons-webpack-plugin');
-
-function generateHTMLPlugins() {
-  return glob.sync('./src/*.html').map(dir => {
-    const filename = _.last(_.split(dir, '/'));
-    const version = `1.0.0-${Math.floor(Date.now() / 1000)}`;
-
-    return new HtmlPlugin({
-      filename,
-      meta: { version },
-      template: dir, // Input
-    });
-  });
-}
 
 module.exports = {
   node: {
@@ -116,7 +101,10 @@ module.exports = {
       prefix: 'images/favicons/',
       title: 'VitaFit VN',
     }),
-    ...generateHTMLPlugins(),
+    new HtmlWebpackPlugin({
+      meta: { version: `1.0.0-${Math.floor(Date.now() / 1000)}` },
+      template: './src/index.html',
+    }),
   ],
   stats: {
     colors: true,
