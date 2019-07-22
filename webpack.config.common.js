@@ -1,4 +1,4 @@
-const path = require('path');
+const path = require('path'); // eslint-disable-line
 
 const CopyPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -27,13 +27,9 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
-        include: /src\/app/,
+        exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
-          options: {
-            plugins: ['@babel/transform-runtime'],
-            presets: ['@babel/env'],
-          },
         },
       },
       {

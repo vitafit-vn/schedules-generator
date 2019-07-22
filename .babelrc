@@ -10,7 +10,14 @@
       }
     ],
     "@babel/plugin-proposal-class-properties",
-    // "lodash",
-    "transform-remove-console"
-  ]
+    "@babel/transform-runtime",
+  ],
+  "env": {
+    "production": {
+      "plugins": [
+        "lodash",
+        "transform-remove-console",
+      ]
+    }
+  }
 }

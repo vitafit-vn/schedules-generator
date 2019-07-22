@@ -21,24 +21,6 @@ import CustomerInfo from './CustomerInfo';
 
 export default class Schedules extends Component {
   state = {
-    // customerInfo: {
-    //   birthYear: '1997',
-    //   customerId: 'KH0001',
-    //   height: '154',
-    //   name: 'Chị Bảo',
-    //   weeklyCode: 'WS09',
-    //   weight: '54',
-    //   workoutLevel: 'beginner',
-    //   weekPeriod: '2019-W30',
-    // },
-    // personalizedData: {
-    //   bulkRecommendedWeight: '3 - 4',
-    //   bulkRest: '30 - 45',
-    //   bulkRpe: '8',
-    //   recommendedWeight: {},
-    //   rest: {},
-    //   rpe: {},
-    // },
     customerInfo: {
       birthYear: undefined,
       customerId: undefined,
@@ -57,6 +39,7 @@ export default class Schedules extends Component {
       rest: {},
       rpe: {},
     },
+    ...require('app/data/fixtures/schedules_input.json'), // eslint-disable-line
   };
 
   renderSchedulesHTML = () => {

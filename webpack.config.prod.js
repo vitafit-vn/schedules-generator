@@ -9,6 +9,14 @@ const common = require('./webpack.config.common.js');
 
 module.exports = merge(common, {
   mode: 'production',
+  // module: {
+  //   loaders: {
+  //     query: {
+  //       plugins: ['lodash'],
+  //       presets: ['@babel/env'],
+  //     },
+  //   },
+  // },
   plugins: [
     new CleanWebpackPlugin(),
     new OptimizeCssAssetsPlugin({
