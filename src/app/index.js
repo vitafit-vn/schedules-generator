@@ -1,5 +1,5 @@
 import preact from 'preact';
-import App from './views';
+import App from './pages';
 
 /* eslint-disable */
 

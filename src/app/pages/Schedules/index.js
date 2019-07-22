@@ -7,10 +7,10 @@ import { Component } from 'preact';
 import { WEEKDAYS, WEEKLY_SCHEDULES, WORKOUT_LEVELS } from 'app/constants';
 
 // Template renderers
-import { renderDailySchedule, renderWeeklySchedule } from 'app/renderers';
+import { renderDailySchedule, renderWeeklySchedule } from 'app/handlebars';
 
 // Reusables
-import NavBar from 'app/views/reusables/NavBar';
+import NavBar from 'app/components/NavBar';
 
 // Utils
 import { calculateAge, computeChecksum, convertWeekPeriod } from 'app/utils';

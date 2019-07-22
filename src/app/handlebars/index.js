@@ -2,8 +2,8 @@ import _ from 'lodash';
 import Handlebars from 'handlebars/runtime';
 
 // Locals
-import { DAILY_SCHEDULES, EXERCISES_DATABASE, OFF_DAY, WEEKDAYS, WEEKLY_SCHEDULES } from './constants';
-import './configs/templates.handlebars';
+import { DAILY_SCHEDULES, EXERCISES_DATABASE, OFF_DAY, WEEKDAYS, WEEKLY_SCHEDULES } from '../constants';
+import './templates.handlebars';
 
 function registerPartials() {
   Handlebars.registerPartial('daily_exercises', Handlebars.templates.daily_exercises);

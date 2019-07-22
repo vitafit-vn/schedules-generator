@@ -2,8 +2,30 @@ import _ from 'lodash';
 import { Component } from 'preact';
 import PropTypes from 'prop-types';
 
-// Constants
-import { PAGES_CONFIG } from 'app/views/configs';
+const PAGES_CONFIG = [
+  {
+    key: 'home',
+    label: 'Trang chủ',
+    path: '/',
+  },
+  {
+    key: 'schedules',
+    label: 'Lịch tập',
+    path: '/schedules',
+  },
+  {
+    disabled: true,
+    key: 'meals',
+    label: 'Thực đơn',
+    path: '/meals',
+  },
+  {
+    disabled: true,
+    key: 'sales',
+    label: 'Sales kit',
+    path: '/sales',
+  },
+];
 
 export default class NavBar extends Component {
   static propTypes = {

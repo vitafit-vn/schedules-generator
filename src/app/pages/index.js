@@ -2,10 +2,10 @@ import { Component } from 'preact';
 import Router from 'preact-router';
 
 // Locals
-import Home from './pages/Home';
-import Schedules from './pages/Schedules';
+import { GlobalDataContext } from '../contexts';
 
-import { GlobalDataContext } from './configs';
+import Home from './Home';
+import Schedules from './Schedules';
 
 export default class App extends Component {
   state = {

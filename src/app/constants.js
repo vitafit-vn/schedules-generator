@@ -1,9 +1,9 @@
-// Locals
-import DAILY_SCHEDULES_BEGINNER from './configs/daily_schedules_beginner.json';
-import DAILY_SCHEDULES_INTERMEDIATE from './configs/daily_schedules_intermediate.json';
-import DAILY_SCHEDULES_SHARED from './configs/daily_schedules_shared.json';
-import EXERCISES_DATABASE from './configs/exercises_database.json';
-import WEEKLY_SCHEDULES from './configs/weekly_schedules.json';
+// Data
+import DAILY_SCHEDULES_BEGINNER from './data/daily_schedules_beginner.json';
+import DAILY_SCHEDULES_INTERMEDIATE from './data/daily_schedules_intermediate.json';
+import DAILY_SCHEDULES_SHARED from './data/daily_schedules_shared.json';
+import EXERCISES_DATABASE from './data/exercises_database.json';
+import WEEKLY_SCHEDULES from './data/weekly_schedules.json';
 
 const WORKOUT_LEVELS = ['beginner', 'intermediate'];
 
