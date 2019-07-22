@@ -5,7 +5,10 @@ import App from './views';
 
 import * as CONSTANTS from './constants';
 
-const VSG = { ...CONSTANTS };
+const VSG = {
+  ...CONSTANTS,
+};
+
 Object.assign(window, {
   VSG,
   preact,
