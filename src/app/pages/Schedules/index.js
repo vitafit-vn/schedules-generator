@@ -7,7 +7,7 @@ import { Component } from 'preact';
 import { WEEKDAYS, WEEKLY_SCHEDULES, WORKOUT_LEVELS } from 'app/constants';
 
 // Template renderers
-import { renderDailySchedule, renderWeeklySchedule } from 'app/handlebars';
+import { renderDailySchedule, renderWeeklySchedule } from 'app/templates';
 
 // Reusables
 import NavBar from 'app/components/NavBar';
@@ -96,8 +96,8 @@ export default class Schedules extends Component {
   onShowSchedules = event => {
     event.preventDefault();
 
-    const { dailySchedules, weeklySchedule } = this.renderSchedulesHTML();
-    document.getElementById('schedules-wrapper').innerHTML = [weeklySchedule, ...dailySchedules].join('\n');
+    const { /* dailySchedules, */ weeklySchedule } = this.renderSchedulesHTML();
+    document.getElementById('schedules-wrapper').innerHTML = [weeklySchedule /* , ...dailySchedules */].join('\n');
   };
 
   render() {

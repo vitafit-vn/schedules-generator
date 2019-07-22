@@ -7,7 +7,7 @@ import { WORKOUT_LEVELS } from '../app/constants';
 // Locals
 import { parseDailySchedules, parseExercisesDatabase, parseWeeklySchedules } from './parsers';
 
-const CONFIGS_DIR = './src/app/configs';
+const CONFIGS_DIR = './src/app/data';
 const DATA_DIR = './src/tasks/data';
 const IMAGES_SRC_DIR = './src/static';
 const IMAGES_PATH = '/images/exercises/';

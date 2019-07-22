@@ -8,7 +8,7 @@ export default class Home extends Component {
     return (
       <div>
         <NavBar page="home" />
-        <div className="container">
+        {/* <div className="container">
           <button className="btn btn-primary d-none" id="google-auth">
             {'Đăng nhập'}
             <div
@@ -17,7 +17,7 @@ export default class Home extends Component {
               role="status"
             ></div>
           </button>
-        </div>
+        </div> */}
       </div>
     );
   }

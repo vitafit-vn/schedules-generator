@@ -92,9 +92,9 @@ module.exports = {
       },
     ]),
     new FaviconsPlugin({
-      background: '#0000',
+      background: '#fff',
       logo: './src/static/images/logo.png',
-      prefix: 'images/favicons/',
+      prefix: '/images/favicons/',
       title: 'VitaFit VN',
     }),
     new HtmlWebpackPlugin({
