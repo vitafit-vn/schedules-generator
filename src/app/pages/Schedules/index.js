@@ -93,6 +93,8 @@ export default class Schedules extends Component {
     }
   };
 
+  onEmailSchedules = () => {};
+
   onShowSchedules = event => {
     event.preventDefault();
 
@@ -116,7 +118,7 @@ export default class Schedules extends Component {
                 onUpdate={this.onUpdatePersonalizedData}
               />
             </div>
-            <FormControls onDownload={this.onDownloadSchedules} />
+            <FormControls onDownload={this.onDownloadSchedules} onEmail={this.onEmailSchedules} />
           </form>
         </div>
         <div className="mt-3 mx-auto" id="schedules-wrapper"></div>
