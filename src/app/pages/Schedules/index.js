@@ -35,6 +35,7 @@ export default class Schedules extends Component {
 
     const customerInfo = {
       ...restInfo,
+      customerId,
       weeklyCode,
       workoutLevel,
       age: calculateAge(birthYear),
