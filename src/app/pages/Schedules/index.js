@@ -1,10 +1,8 @@
-import { saveAs } from 'file-saver';
-import JSZip from 'jszip';
 import _ from 'lodash';
 import { Component } from 'preact';
 
 // Constants
-import { WEEKDAYS, WEEKLY_SCHEDULES, WORKOUT_LEVELS } from 'app/constants';
+import { WEEKDAYS } from 'app/constants';
 
 // Template renderers
 import { renderDailySchedule, renderWeeklySchedule } from 'app/templates';
@@ -13,33 +11,18 @@ import { renderDailySchedule, renderWeeklySchedule } from 'app/templates';
 import NavBar from 'app/components/NavBar';
 
 // Utils
-import { axios, calculateAge, computeChecksum, convertWeekPeriod } from 'app/utils';
+import { axios, calculateAge, computeChecksum, convertWeekPeriod, zipAndSave } from 'app/utils';
 
 import FormControls from './FormControls';
 import PersonalizedTable from './PersonalizedTable';
 import CustomerInfo from './CustomerInfo';
+import defaultState from './defaultState';
 
 export default class Schedules extends Component {
   state = {
-    customerInfo: {
-      birthYear: undefined,
-      customerId: undefined,
-      height: undefined,
-      name: undefined,
-      weeklyCode: WEEKLY_SCHEDULES[0].code,
-      weight: undefined,
-      workoutLevel: WORKOUT_LEVELS[0],
-      weekPeriod: undefined,
-    },
-    personalizedData: {
-      bulkRecommendedWeight: undefined,
-      bulkRest: undefined,
-      bulkRpe: undefined,
-      recommendedWeight: {},
-      rest: {},
-      rpe: {},
-    },
-    ...require('app/data/fixtures/schedules_input.json'), // eslint-disable-line
+    ...defaultState,
+    errorMessage: undefined,
+    loading: false,
   };
 
   renderSchedulesHTML = () => {
@@ -75,21 +58,21 @@ export default class Schedules extends Component {
   onDownloadSchedules = async () => {
     const { checksum, customerInfo, dailySchedules, weeklySchedule } = this.renderSchedulesHTML();
     const prefix = `${customerInfo.customerId}_${checksum.substring(checksum.length - 6)}`;
+    const dailyFiles = _.map(dailySchedules, (content, index) => {
+      if (_.isEmpty(content)) return undefined;
+
+      return {
+        content,
+        fileName: `${prefix}-daily-${WEEKDAYS[index]}.html`,
+      };
+    });
+
+    const allFiles = [{ content: weeklySchedule, fileName: `${prefix}-weekly.html` }, ..._.compact(dailyFiles)];
 
     try {
-      const zip = new JSZip();
-
-      zip.file(`${prefix}-weekly.html`, weeklySchedule);
-      _.each(dailySchedules, (dailySchedule, index) => {
-        if (_.isEmpty(dailySchedule)) return;
-        const weekday = WEEKDAYS[index];
-        zip.file(`${prefix}-daily-${weekday}.html`, dailySchedule);
-      });
-
-      const downloadContent = await zip.generateAsync({ type: 'blob' });
-      saveAs(downloadContent, `${prefix}.zip`);
+      await zipAndSave(allFiles, `${prefix}.zip`);
     } catch (error) {
-      console.warn(error);
+      this.setState({ errorMessage: error.message });
     }
   };
 
@@ -97,12 +80,15 @@ export default class Schedules extends Component {
     const { customerInfo, weeklySchedule: htmlBody } = this.renderSchedulesHTML();
     const { email: toAddress = 'success@simulator.amazonses.com', name } = customerInfo;
 
+    this.setState({ errorMessage: undefined, loading: true });
+
     try {
       const subject = `[VitaFit VN] Gửi ${name} lịch tập tuần`;
-      const data = await axios.sendHlvOnlineEmail({ htmlBody, subject, toAddress });
-      console.debug(data);
+      await axios.sendHlvOnlineEmail({ htmlBody, subject, toAddress });
+      this.setState({ loading: false });
     } catch (error) {
       console.warn(error);
+      this.setState({ errorMessage: error.message, loading: false });
     }
   };
 
@@ -114,7 +100,7 @@ export default class Schedules extends Component {
   };
 
   render() {
-    const { customerInfo, personalizedData } = this.state;
+    const { customerInfo, errorMessage, loading, personalizedData } = this.state;
 
     return (
       <div>
@@ -129,7 +115,12 @@ export default class Schedules extends Component {
                 onUpdate={this.onUpdatePersonalizedData}
               />
             </div>
-            <FormControls onDownload={this.onDownloadSchedules} onEmail={this.onEmailSchedules} />
+            <FormControls
+              errorMessage={errorMessage}
+              loading={loading}
+              onDownload={this.onDownloadSchedules}
+              onEmail={this.onEmailSchedules}
+            />
           </form>
         </div>
         <div className="mt-3 mx-auto" id="schedules-wrapper"></div>

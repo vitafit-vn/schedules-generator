@@ -1,3 +1,5 @@
+import { saveAs } from 'file-saver';
+import JSZip from 'jszip';
 import _ from 'lodash';
 import fp from 'lodash/fp';
 import { DateTime } from 'luxon';
@@ -27,6 +29,13 @@ export function convertWeekPeriod(weekPeriod) {
   )(weekPeriod);
 
   return DateTime.fromObject({ weekNumber });
+}
+
+export async function zipAndSave(files, zipFileName) {
+  const zip = new JSZip();
+  _.each(files, ({ content, fileName }) => zip.file(fileName, content));
+  const downloadContent = await zip.generateAsync({ type: 'blob' });
+  saveAs(downloadContent, zipFileName);
 }
 
 export { axios };
