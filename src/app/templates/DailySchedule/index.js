@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 // Locals
 import HtmlHead from '../reusables/HtmlHead';
 import ScheduleHeader from '../reusables/ScheduleHeader';
+import ScheduleNotes from '../reusables/ScheduleNotes';
 import DailyExercise from './DailyExercise';
 
 const DailySchedule = ({ dailyExercises, site, subTitle, title, userInfo }) => {
@@ -15,6 +16,7 @@ const DailySchedule = ({ dailyExercises, site, subTitle, title, userInfo }) => {
         <div className="container-fluid schedules-container">
           <ScheduleHeader site={site} subTitle={subTitle} title={title} userInfo={userInfo} />
           <DailyExercise exercises={exercises} title={dayTitle} />
+          <ScheduleNotes />
         </div>
       </body>
     </html>

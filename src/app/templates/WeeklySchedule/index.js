@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 // Locals
 import HtmlHead from '../reusables/HtmlHead';
 import ScheduleHeader from '../reusables/ScheduleHeader';
+import ScheduleNotes from '../reusables/ScheduleNotes';
 import DaySchedule from './DaySchedule';
 import WeeklyTable from './WeeklyTable';
 
@@ -17,6 +18,7 @@ const WeeklySchedule = ({ dailyCodes, daySchedules, site, subTitle, title, userI
         {_.map(daySchedules, ({ exercises, title: dayTitle }) => (
           <DaySchedule exercises={exercises} title={dayTitle} />
         ))}
+        <ScheduleNotes />
       </div>
     </body>
   </html>
