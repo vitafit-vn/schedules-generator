@@ -3,6 +3,8 @@ import fp from 'lodash/fp';
 import { DateTime } from 'luxon';
 import shajs from 'sha.js';
 
+import * as axios from './axios';
+
 export function calculateAge(birthYear) {
   const { years: diffs } = DateTime.local()
     .diff(DateTime.fromObject({ year: birthYear }), 'years')
@@ -26,3 +28,5 @@ export function convertWeekPeriod(weekPeriod) {
 
   return DateTime.fromObject({ weekNumber });
 }
+
+export { axios };

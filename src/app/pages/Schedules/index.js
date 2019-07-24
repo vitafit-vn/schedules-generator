@@ -13,7 +13,7 @@ import { renderDailySchedule, renderWeeklySchedule } from 'app/templates';
 import NavBar from 'app/components/NavBar';
 
 // Utils
-import { calculateAge, computeChecksum, convertWeekPeriod } from 'app/utils';
+import { axios, calculateAge, computeChecksum, convertWeekPeriod } from 'app/utils';
 
 import FormControls from './FormControls';
 import PersonalizedTable from './PersonalizedTable';
@@ -39,7 +39,7 @@ export default class Schedules extends Component {
       rest: {},
       rpe: {},
     },
-    // ...require('app/data/fixtures/schedules_input.json'), // eslint-disable-line
+    ...require('app/data/fixtures/schedules_input.json'), // eslint-disable-line
   };
 
   renderSchedulesHTML = () => {
@@ -63,7 +63,7 @@ export default class Schedules extends Component {
     );
     const weeklySchedule = renderWeeklySchedule({ customerInfo, personalizedData });
 
-    return { checksum, customerId, dailySchedules, weeklySchedule };
+    return { checksum, customerInfo, dailySchedules, weeklySchedule };
   };
 
   onUpdateCustomerInfo = partial =>
@@ -73,8 +73,8 @@ export default class Schedules extends Component {
     this.setState(({ personalizedData }) => ({ personalizedData: { ...personalizedData, ...partial } }));
 
   onDownloadSchedules = async () => {
-    const { checksum, customerId, dailySchedules, weeklySchedule } = this.renderSchedulesHTML();
-    const prefix = `${customerId}_${checksum.substring(checksum.length - 6)}`;
+    const { checksum, customerInfo, dailySchedules, weeklySchedule } = this.renderSchedulesHTML();
+    const prefix = `${customerInfo.customerId}_${checksum.substring(checksum.length - 6)}`;
 
     try {
       const zip = new JSZip();
@@ -93,7 +93,18 @@ export default class Schedules extends Component {
     }
   };
 
-  onEmailSchedules = () => {};
+  onEmailSchedules = async () => {
+    const { customerInfo, weeklySchedule: htmlBody } = this.renderSchedulesHTML();
+    const { email: toAddress = 'success@simulator.amazonses.com', name } = customerInfo;
+
+    try {
+      const subject = `[VitaFit VN] Gửi ${name} lịch tập tuần`;
+      const data = await axios.sendHlvOnlineEmail({ htmlBody, subject, toAddress });
+      console.debug(data);
+    } catch (error) {
+      console.warn(error);
+    }
+  };
 
   onShowSchedules = event => {
     event.preventDefault();
