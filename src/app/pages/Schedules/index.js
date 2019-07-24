@@ -93,7 +93,7 @@ export default class Schedules extends Component {
     }
   };
 
-  onShowSchedules = event => {
+  onPreviewSchedules = event => {
     event.preventDefault();
 
     const { dailySchedules, weeklySchedule } = this.renderSchedulesHTML();
@@ -107,7 +107,7 @@ export default class Schedules extends Component {
       <div>
         <NavBar page="schedules" title="Công cụ tạo lịch" />
         <div className="container">
-          <form action="#" onSubmit={this.onShowSchedules}>
+          <form action="#" onSubmit={this.onPreviewSchedules}>
             <div className="row">
               <CustomerInfo data={customerInfo} onUpdate={this.onUpdateCustomerInfo} />
               <PersonalizedTable
@@ -121,6 +121,7 @@ export default class Schedules extends Component {
               loading={loading}
               onDownload={this.onDownloadSchedules}
               onEmail={this.onEmailSchedules}
+              onPreview={this.onPreviewSchedules}
             />
           </form>
         </div>

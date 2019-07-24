@@ -15,13 +15,13 @@ const FormControls = ({ errorMessage, loading, onDownload, onEmail }) => (
       </div>
     )}
     <div className="col-auto">
-      <TextButton icon="file-text" label="Xem lịch" type="submit" />
+      <TextButton icon="file-text" label="Xem trước" type="submit" />
     </div>
     <div className="col-auto">
-      <TextButton icon="paper-plane" label="Gửi email" onClick={onEmail} />
+      <TextButton icon="paper-plane" label="Gửi email" onClick={onEmail} type="submit" />
     </div>
     <div className="col-auto">
-      <TextButton icon="file-text" label="Tải file HTML" onClick={onDownload} />
+      <TextButton icon="download" label="Tải file HTML" onClick={onDownload} type="submit" />
     </div>
   </div>
 );
@@ -31,6 +31,7 @@ FormControls.propTypes = {
   loading: PropTypes.bool,
   onDownload: PropTypes.func.isRequired,
   onEmail: PropTypes.func.isRequired,
+  onPreview: PropTypes.func.isRequired,
 };
 
 export default FormControls;
