@@ -60,7 +60,8 @@ export function convertExercisesDatabase(records) {
     const [code, name, muscle, difficulty, rawInstructions, videoUrl] = row;
     const instructions = fp.flow(
       fp.trim,
-      fp.split('\n')
+      fp.split('\n'),
+      fp.compact
     )(rawInstructions);
 
     return {
