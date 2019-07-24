@@ -79,7 +79,7 @@ export default class Schedules extends Component {
 
   onEmailSchedules = async () => {
     const { customerInfo, weeklySchedule: htmlBody } = this.renderSchedulesHTML();
-    const { email: toAddress = 'success@simulator.amazonses.com', name } = customerInfo;
+    const { email: toAddress, name } = customerInfo;
 
     this.setState({ errorMessage: undefined, loading: true });
 

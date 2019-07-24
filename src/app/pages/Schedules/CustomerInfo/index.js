@@ -7,6 +7,7 @@ import { WEEKLY_SCHEDULES, WORKOUT_LEVELS } from 'app/constants';
 
 // Locals
 import NumberInput from './NumberInput';
+import TextInput from './TextInput';
 
 export default class CustomerInfo extends Component {
   static propTypes = {
@@ -15,6 +16,7 @@ export default class CustomerInfo extends Component {
       customerId: PropTypes.string,
       height: PropTypes.number,
       name: PropTypes.string,
+      email: PropTypes.string,
       weekPeriod: PropTypes.string,
       weeklyCode: PropTypes.string,
       weight: PropTypes.number,
@@ -82,37 +84,39 @@ export default class CustomerInfo extends Component {
   );
 
   render() {
-    const { birthYear, customerId, height, name, weekPeriod, weeklyCode, weight, workoutLevel } = this.props.data;
+    const {
+      birthYear,
+      customerId,
+      email,
+      height,
+      name,
+      weekPeriod,
+      weeklyCode,
+      weight,
+      workoutLevel,
+    } = this.props.data;
 
     const selectedWorkoutLevel = workoutLevel || WORKOUT_LEVELS[0];
     const selectedWeeklyCode = weeklyCode || WEEKLY_SCHEDULES[0].code;
 
     return (
       <div className="col-3" id="customer-info">
-        <div className="form-group">
-          <label htmlFor="customer-id">{'Mã KH'}</label>
-          <input
-            className="form-control"
-            id="customer-id"
-            name="customer_id"
-            onChange={this.onInputChange('customerId')}
-            required
-            type="text"
-            value={customerId}
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="full-name">{'Họ tên'}</label>
-          <input
-            className="form-control"
-            id="full-name"
-            name="full_name"
-            onChange={this.onInputChange('name')}
-            required
-            type="text"
-            value={name}
-          />
-        </div>
+        <TextInput
+          id="customer-id"
+          label="Mã KH"
+          name="customer_id"
+          onChange={this.onInputChange('customerId')}
+          value={customerId}
+        />
+        <TextInput id="full-name" label="Tên gọi" name="full_name" onChange={this.onInputChange('name')} value={name} />
+        <TextInput
+          id="email"
+          label="Email"
+          name="email"
+          onChange={this.onInputChange('email')}
+          type="email"
+          value={email}
+        />
         <NumberInput
           id="birth-year"
           label="Năm
@@ -127,8 +131,8 @@ export default class CustomerInfo extends Component {
           id="height"
           label="Chiều
           cao"
-          max="200"
-          min="100"
+          max={200}
+          min={100}
           name="height"
           onChange={this.onInputChange('height')}
           value={height}
@@ -136,8 +140,8 @@ export default class CustomerInfo extends Component {
         <NumberInput
           id="weight"
           label="Cân nặng"
-          max="100"
-          min="30"
+          max={100}
+          min={30}
           name="weight"
           onChange={this.onInputChange('weight')}
           value={weight}

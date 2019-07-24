@@ -9,7 +9,7 @@ const axiosInstance = axios.create({
 
 function sendHtmlEmail({ htmlBody, sourceKey, subject, toAddress }) {
   const data = JSON.stringify({ htmlBody, sourceKey, subject, toAddress });
-  return axiosInstance.post('/sendEmails', data);
+  return axiosInstance.post('/sendEmail', data);
 }
 
 export function sendHlvOnlineEmail({ htmlBody, subject, toAddress }) {

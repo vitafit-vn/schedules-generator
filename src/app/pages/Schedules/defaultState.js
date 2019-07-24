@@ -6,6 +6,7 @@ export default {
     birthYear: undefined,
     customerId: undefined,
     height: undefined,
+    email: undefined,
     name: undefined,
     weeklyCode: WEEKLY_SCHEDULES[0].code,
     weight: undefined,
