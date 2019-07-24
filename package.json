@@ -9,7 +9,7 @@
     "build": "BABEL_ENV=production webpack --config webpack.config.prod.js",
     "build:data-configs": "babel-node ./src/tasks/buildDataConfigs.js",
     "build:templates": "cd ./src/app/handlebars && handlebars templates -f templates.handlebars --min --extension html -c handlebars/runtime",
-    "deploy-s3": "yarn build && aws s3 sync ./dist s3://tools.vitafit.vn --profile vitafitvn && aws cloudfront create-invalidation --distribution-id E1O3X5N9XVWYK6 --paths \"/*\" --profile vitafitvn",
+    "deploy:s3": "yarn build && aws s3 sync ./dist s3://tools.vitafit.vn --profile vitafit && aws cloudfront create-invalidation --distribution-id E1O3X5N9XVWYK6 --paths \"/*\" --profile vitafit",
     "lint:html": "pa11y-ci ./src/**/*.html",
     "lint:js": "eslint src/app/**/*.js",
     "lint:styles": "stylelint \"src/**/*.scss\"",
