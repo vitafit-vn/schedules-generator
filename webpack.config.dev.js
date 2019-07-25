@@ -17,6 +17,7 @@ module.exports = merge(common, {
   plugins: [
     new webpack.EnvironmentPlugin({
       PUBLIC_PATH: 'http://localhost:9000',
+      // PUBLIC_PATH: 'https://tools.vitafit.vn',
     }),
   ],
 });

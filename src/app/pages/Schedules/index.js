@@ -19,11 +19,7 @@ import CustomerInfo from './CustomerInfo';
 import defaultState from './defaultState';
 
 export default class Schedules extends Component {
-  state = {
-    ...defaultState,
-    errorMessage: undefined,
-    loading: false,
-  };
+  state = defaultState;
 
   renderSchedulesHTML = () => {
     const {
@@ -73,7 +69,7 @@ export default class Schedules extends Component {
     try {
       await zipAndSave(allFiles, `${prefix}.zip`);
     } catch (error) {
-      this.setState({ errorMessage: error.message });
+      alert(error.message); // eslint-disable-line no-alert
     }
   };
 
@@ -81,15 +77,11 @@ export default class Schedules extends Component {
     const { customerInfo, weeklySchedule: htmlBody } = this.renderSchedulesHTML();
     const { email: toAddress, name } = customerInfo;
 
-    this.setState({ errorMessage: undefined, loading: true });
-
     try {
       const subject = `[VitaFit VN] Gửi ${name} lịch tập tuần`;
       await axios.sendHlvOnlineEmail({ htmlBody, subject, toAddress });
-      this.setState({ loading: false });
     } catch (error) {
       console.warn(error);
-      this.setState({ errorMessage: error.message, loading: false });
     }
   };
 
@@ -101,7 +93,7 @@ export default class Schedules extends Component {
   };
 
   render() {
-    const { customerInfo, errorMessage, loading, personalizedData } = this.state;
+    const { customerInfo, personalizedData } = this.state;
 
     return (
       <div>
@@ -117,8 +109,6 @@ export default class Schedules extends Component {
               />
             </div>
             <FormControls
-              errorMessage={errorMessage}
-              loading={loading}
               onDownload={this.onDownloadSchedules}
               onEmail={this.onEmailSchedules}
               onPreview={this.onPreviewSchedules}
