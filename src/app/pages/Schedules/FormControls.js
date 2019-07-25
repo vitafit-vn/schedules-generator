@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 // Components
 import TextButton from 'app/components/TextButton';
 
-const FormControls = ({ errorMessage, loading, onDownload, onEmail }) => (
+const FormControls = ({ errorMessage, loading, onDownload /* , onEmail */ }) => (
   <div className="row">
     <div className="align-items-center col d-flex justify-content-end">
       <div className={`${loading ? '' : 'd-none'} spinner-border text-primary`} role="status"></div>
@@ -17,9 +17,9 @@ const FormControls = ({ errorMessage, loading, onDownload, onEmail }) => (
     <div className="col-auto">
       <TextButton icon="file-text" label="Xem trước" type="submit" />
     </div>
-    <div className="col-auto">
+    {/* <div className="col-auto">
       <TextButton icon="paper-plane" label="Gửi email" onClick={onEmail} />
-    </div>
+    </div> */}
     <div className="col-auto">
       <TextButton icon="download" label="Tải file HTML" onClick={onDownload} />
     </div>

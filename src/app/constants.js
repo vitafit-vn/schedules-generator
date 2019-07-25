@@ -17,7 +17,4 @@ const OFF_DAY = 'NGHỈ';
 
 const WEEKDAYS = ['Thứ hai', 'Thứ ba', 'Thứ tư', 'Thứ năm', 'Thứ sáu', 'Thứ bảy', 'Chủ nhật'];
 
-// const BASE_URL = 'https://4ju8elyjv7.execute-api.us-east-1.amazonaws.com/production';
-const BASE_URL = 'https://u03zcg5h97.execute-api.us-east-1.amazonaws.com/dev';
-
-export { BASE_URL, DAILY_SCHEDULES, EXERCISES_DATABASE, OFF_DAY, WEEKDAYS, WEEKLY_SCHEDULES, WORKOUT_LEVELS };
+export { DAILY_SCHEDULES, EXERCISES_DATABASE, OFF_DAY, WEEKDAYS, WEEKLY_SCHEDULES, WORKOUT_LEVELS };

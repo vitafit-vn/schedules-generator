@@ -1,10 +1,7 @@
 import axios from 'axios';
 
-// Constants
-import { BASE_URL } from 'app/constants';
-
 const axiosInstance = axios.create({
-  baseURL: BASE_URL,
+  baseURL: 'https://4ju8elyjv7.execute-api.us-east-1.amazonaws.com/production',
 });
 
 function sendHtmlEmail({ htmlBody, sourceKey, subject, toAddress }) {
