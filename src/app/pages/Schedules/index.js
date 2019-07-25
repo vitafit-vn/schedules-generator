@@ -125,7 +125,7 @@ export default class Schedules extends Component {
             />
           </form>
         </div>
-        <div className="container-fluid mt-3 mx-auto" id="schedules-wrapper"></div>
+        <div className="mt-3 mx-auto" id="schedules-wrapper"></div>
       </div>
     );
   }

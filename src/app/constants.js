@@ -17,4 +17,6 @@ const OFF_DAY = 'NGHỈ';
 
 const WEEKDAYS = ['Thứ hai', 'Thứ ba', 'Thứ tư', 'Thứ năm', 'Thứ sáu', 'Thứ bảy', 'Chủ nhật'];
 
-export { DAILY_SCHEDULES, EXERCISES_DATABASE, OFF_DAY, WEEKDAYS, WEEKLY_SCHEDULES, WORKOUT_LEVELS };
+const HOME_PAGE = 'http://www.vitafit.vn';
+
+export { DAILY_SCHEDULES, EXERCISES_DATABASE, HOME_PAGE, OFF_DAY, WEEKDAYS, WEEKLY_SCHEDULES, WORKOUT_LEVELS };

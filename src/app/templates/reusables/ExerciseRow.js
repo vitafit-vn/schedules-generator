@@ -39,7 +39,7 @@ const ExerciseRow = ({ difficulty, muscle, name, order, recommendedWeight, reps,
           {name}
           <YoutubeLink name={name} url={videoUrl} />
         </h5>
-        <ul className="container-fluid m-0 p-0">
+        <ul className="m-0 p-0">
           {_.map(rows, ({ label, value }) => (
             <li className="list-inline-item mr-4">
               {`${label}: `}

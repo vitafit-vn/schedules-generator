@@ -1,41 +1,37 @@
+import _ from 'lodash';
 import PropTypes from 'prop-types';
 
-const ScheduleHeader = ({ subTitle, title, userInfo }) => (
-  <div>
-    <div className="text-center">
-      <a href={process.env.PUBLIC_PATH} rel="noopener noreferrer" target="_blank">
-        <img height="100" src={`${process.env.PUBLIC_PATH}/images/logo.png`} />
-      </a>
-    </div>
-    <div className="mt-3">
-      <h4 className="font-weight-bolder text-center text-wrap text-uppercase">{title}</h4>
-      <h6 className="font-italic text-center text-wrap">{subTitle}</h6>
-      <div className="mt-3 row">
-        <div className="ml-auto">
-          <div>
-            {'Khách hàng: '}
-            <strong>{userInfo.name}</strong>
-          </div>
-          <div>
-            {'Tuổi: '}
-            <strong>{userInfo.age}</strong>
-          </div>
-        </div>
-        <div className="col-1"></div>
-        <div className="mr-auto text-right">
-          <div>
-            {'Chiều cao: '}
-            <strong>{userInfo.height} cm</strong>
-          </div>
-          <div>
-            {'Cân nặng: '}
-            <strong>{userInfo.weigh} kg</strong>
-          </div>
-        </div>
+// Locals
+import CompanyBrand from './CompanyBrand';
+
+const ScheduleHeader = ({ subTitle, title, userInfo }) => {
+  const { age, height, name, weight } = userInfo;
+
+  const rows = [
+    { label: 'Khách hàng', value: name },
+    { label: 'Tuổi', value: age },
+    { label: 'Chiều cao', value: `${height}cm` },
+    { label: 'Cân nặng', value: `${weight}kg` },
+  ];
+
+  return (
+    <div className="text-center text-wrap">
+      <CompanyBrand />
+      <div className="mt-5">
+        <h4 className="font-weight-bolder text-uppercase">{title}</h4>
+        <h6 className="font-italic">{subTitle}</h6>
+        <ul className="m-0 mt-3 p-0">
+          {_.map(rows, ({ label, value }) => (
+            <li className="list-inline-item mr-3">
+              {`${label}: `}
+              <strong>{value}</strong>
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
-  </div>
-);
+  );
+};
 
 ScheduleHeader.propTypes = {
   subTitle: PropTypes.string.isRequired,
@@ -43,7 +39,7 @@ ScheduleHeader.propTypes = {
   userInfo: PropTypes.shape({
     age: PropTypes.string.isRequired,
     height: PropTypes.string.isRequired,
-    weigh: PropTypes.string.isRequired,
+    weight: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
   }).isRequired,
 };
