@@ -129,7 +129,6 @@ export default class EmailComposer extends Component {
             </div>
           </div>
         </form>
-        <p>{this.state.errorMessage}</p>
         <div id="email-preview"></div>
       </ModalContainer>
     );
