@@ -10,8 +10,8 @@ const ExerciseRow = ({ difficulty, muscle, name, order, recommendedWeight, reps,
           <img
             alt={`${name} video url`}
             className="mb-1 ml-1"
-            src="/images/youtube-logo.png"
-            srcSet="/images/youtube-logo.svg"
+            src={`${process.env.PUBLIC_PATH}/images/youtube-logo.png`}
+            srcSet={`${process.env.PUBLIC_PATH}/images/youtube-logo.svg`}
             width={20}
           />
         </a>

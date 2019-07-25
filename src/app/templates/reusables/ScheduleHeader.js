@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
 
-const ScheduleHeader = ({ site, subTitle, title, userInfo }) => (
+const ScheduleHeader = ({ subTitle, title, userInfo }) => (
   <div>
     <div className="text-center">
-      <a href={site.publicPath} rel="noopener noreferrer" target="_blank">
-        <img height="100" src={`${site.publicPath}/images/logo.png`} />
+      <a href={process.env.PUBLIC_PATH} rel="noopener noreferrer" target="_blank">
+        <img height="100" src={`${process.env.PUBLIC_PATH}/images/logo.png`} />
       </a>
     </div>
     <div className="mt-3">
@@ -38,9 +38,6 @@ const ScheduleHeader = ({ site, subTitle, title, userInfo }) => (
 );
 
 ScheduleHeader.propTypes = {
-  site: PropTypes.shape({
-    publicPath: PropTypes.string.isRequired,
-  }).isRequired,
   subTitle: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   userInfo: PropTypes.shape({
