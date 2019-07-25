@@ -171,7 +171,7 @@ export default class PersonalizedTable extends Component {
 
   render() {
     return (
-      <div className="col table-responsive" id="personalized-table">
+      <div className="col table-responsive">
         <table className="table table-borderless table-hover table-sm table-striped">
           {this.renderHead()}
           <tbody>{_.map(this.state.bodyRows, this.renderBodyRow)}</tbody>

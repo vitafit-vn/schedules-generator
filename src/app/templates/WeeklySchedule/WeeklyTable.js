@@ -1,32 +1,25 @@
 import _ from 'lodash';
 import PropTypes from 'prop-types';
 
-const WeeklyTable = ({ dailyCodes, weekdays }) => (
-  <div className="table-responsive">
-    <table className="mt-3 table table-borderless table-sm text-center text-wrap">
-      <thead>
-        <tr className="bg-primary border border-primary">
-          {_.map(weekdays, weekday => (
-            <th className="align-middle font-weight-bold text-white" scope="col">
-              {weekday}
-            </th>
-          ))}
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          {_.map(dailyCodes, codes => (
-            <td className="align-middle border border-primary">
-              {_.map(codes, code => (
-                <div>{code}</div>
-              ))}
-            </td>
-          ))}
-        </tr>
-      </tbody>
-    </table>
-  </div>
-);
+const renderRow = ([weekday, codes], idx) => {
+  const borderClass = idx > 0 ? 'border-top-0' : '';
+
+  return (
+    <div className="row text-center">
+      <div className="align-items-center bg-primary col-4 d-flex font-weight-bold justify-content-center text-white">
+        {weekday}
+      </div>
+      <div className={`align-items-center border border-primary ${borderClass} col d-flex justify-content-center`}>
+        {codes.join(', ')}
+      </div>
+    </div>
+  );
+};
+
+const WeeklyTable = ({ dailyCodes, weekdays }) => {
+  const rows = _.zip(weekdays, dailyCodes);
+  return <div className="container my-3">{_.map(rows, renderRow)}</div>;
+};
 
 WeeklyTable.propTypes = {
   dailyCodes: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.string)).isRequired,
