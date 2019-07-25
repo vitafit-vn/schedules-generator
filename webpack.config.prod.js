@@ -18,7 +18,6 @@ module.exports = merge(common, {
       cssProcessorOptions: { discardComments: { removeAll: true } },
     }),
     new webpack.EnvironmentPlugin({
-      PAGE_TITLE: 'VitaFit VN',
       PUBLIC_PATH: 'https://tools.vitafit.vn',
     }),
   ],

@@ -8,12 +8,12 @@ import ScheduleNotes from '../reusables/ScheduleNotes';
 import DaySchedule from './DaySchedule';
 import WeeklyTable from './WeeklyTable';
 
-const WeeklySchedule = ({ dailyCodes, daySchedules, site, subTitle, title, userInfo, weekdays }) => (
+const WeeklySchedule = ({ dailyCodes, daySchedules, pageTitle, subTitle, title, userInfo, weekdays }) => (
   <html>
-    <HtmlHead site={site} />
+    <HtmlHead pageTitle={pageTitle} />
     <body className="mx-auto my-2 my-sm-4 px-2 px-sm-4">
       <div className="container-fluid schedules-container">
-        <ScheduleHeader site={site} subTitle={subTitle} title={title} userInfo={userInfo} />
+        <ScheduleHeader subTitle={subTitle} title={title} userInfo={userInfo} />
         <WeeklyTable dailyCodes={dailyCodes} weekdays={weekdays} />
         {_.map(daySchedules, ({ exercises, title: dayTitle }) => (
           <DaySchedule exercises={exercises} title={dayTitle} />
@@ -32,10 +32,7 @@ WeeklySchedule.propTypes = {
       title: PropTypes.string.isRequired,
     })
   ).isRequired,
-  site: PropTypes.shape({
-    pageTitle: PropTypes.string.isRequired,
-    publicPath: PropTypes.string.isRequired,
-  }).isRequired,
+  pageTitle: PropTypes.string.isRequired,
   subTitle: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   userInfo: PropTypes.objectOf(PropTypes.string).isRequired,

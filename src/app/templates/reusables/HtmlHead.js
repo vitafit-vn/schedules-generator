@@ -13,9 +13,8 @@ const APPLE_TOUCH_ICON_SIZES = [
   '180x180',
 ];
 
-const HtmlHead = ({ site }) => {
-  const { pageTitle, publicPath } = site;
-  const faviconPrefix = `${publicPath}/images/favicons`;
+const HtmlHead = ({ pageTitle }) => {
+  const faviconPrefix = `${process.env.PUBLIC_PATH}/images/favicons`;
 
   return (
     <head>
@@ -34,17 +33,14 @@ const HtmlHead = ({ site }) => {
       <link rel="icon" type="image/png" sizes="32x32" href={`${faviconPrefix}/favicon-32x32.png`} />
       <link rel="icon" type="image/png" sizes="16x16" href={`${faviconPrefix}/favicon-16x16.png`} />
       <link rel="shortcut icon" href={`${faviconPrefix}/favicon.ico`} />
-      <link rel="stylesheet" type="text/css" href={`${publicPath}/schedules.css`} />
+      <link rel="stylesheet" type="text/css" href={`${process.env.PUBLIC_PATH}/schedules.css`} />
       <title>{pageTitle}</title>
     </head>
   );
 };
 
 HtmlHead.propTypes = {
-  site: PropTypes.shape({
-    pageTitle: PropTypes.string.isRequired,
-    publicPath: PropTypes.string.isRequired,
-  }).isRequired,
+  pageTitle: PropTypes.string.isRequired,
 };
 
 export default HtmlHead;

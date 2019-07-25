@@ -16,12 +16,6 @@ function registerPartials() {
 
 registerPartials();
 
-const SITE_CONFIGS = {
-  pageTitle: process.env.PAGE_TITLE,
-  publicPath: process.env.PUBLIC_PATH,
-  vitafitHome: 'http://vitafit.vn',
-};
-
 function buildExerciseData(configs, personalizedData, index) {
   const { code } = configs;
 
@@ -35,7 +29,7 @@ function buildExerciseData(configs, personalizedData, index) {
     muscle,
     name,
     videoUrl,
-    imageUrl: _.isEmpty(imageUrl) ? undefined : SITE_CONFIGS.publicPath + imageUrl,
+    imageUrl: _.isEmpty(imageUrl) ? undefined : process.env.publicPath + imageUrl,
     order: index + 1,
     recommendedWeight: recommendedWeight[code],
     rest: rest[code],
@@ -76,8 +70,8 @@ export function renderDailySchedule({ customerInfo, dayIndex, personalizedData }
     dailyExercises,
     userInfo,
     site: {
-      ...SITE_CONFIGS,
       pageTitle: 'VitaFit VN - Chế độ tập luyện hàng ngày',
+      publicPath: process.env.PUBLIC_PATH,
     },
     subTitle: `Ngày ${date.toFormat('dd/MM/yyyy')}`,
     title: 'Chế độ tập luyện hàng ngày',
@@ -106,8 +100,8 @@ export function renderWeeklySchedule({ customerInfo, personalizedData }) {
     daySchedules,
     userInfo,
     site: {
-      ...SITE_CONFIGS,
       pageTitle: 'VitaFit VN - Chế độ tập luyện hàng tuần',
+      publicPath: process.env.PUBLIC_PATH,
     },
     subTitle: `Tuần từ ${weekStart.toFormat('dd/MM/yyyy')} đến ${weekEnd.toFormat('dd/MM/yyyy')}`,
     title: 'Chế độ tập luyện hàng tuần',

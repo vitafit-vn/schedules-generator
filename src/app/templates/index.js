@@ -9,11 +9,6 @@ import { DAILY_SCHEDULES, EXERCISES_DATABASE, OFF_DAY, WEEKDAYS, WEEKLY_SCHEDULE
 import DailySchedule from './DailySchedule';
 import WeeklySchedule from './WeeklySchedule';
 
-const SITE_CONFIGS = {
-  pageTitle: process.env.PAGE_TITLE,
-  publicPath: process.env.PUBLIC_PATH,
-};
-
 function buildExerciseData(configs, personalizedData, index) {
   const { code } = configs;
 
@@ -68,10 +63,7 @@ export function renderDailySchedule({ customerInfo, dayIndex, personalizedData }
   const renderingProps = {
     dailyExercises,
     userInfo,
-    site: {
-      ...SITE_CONFIGS,
-      pageTitle: 'VitaFit VN - Chế độ tập luyện hàng ngày',
-    },
+    pageTitle: 'VitaFit VN - Chế độ tập luyện hàng ngày',
     subTitle: `Ngày ${date.toFormat('dd/MM/yyyy')}`,
     title: 'Chế độ tập luyện hàng ngày',
   };
@@ -98,10 +90,7 @@ export function renderWeeklySchedule({ customerInfo, personalizedData }) {
     dailyCodes,
     daySchedules,
     userInfo,
-    site: {
-      ...SITE_CONFIGS,
-      pageTitle: 'VitaFit VN - Chế độ tập luyện hàng tuần',
-    },
+    pageTitle: 'VitaFit VN - Chế độ tập luyện hàng tuần',
     subTitle: `Tuần từ ${weekStart.toFormat('dd/MM/yyyy')} đến ${weekEnd.toFormat('dd/MM/yyyy')}`,
     title: 'Chế độ tập luyện hàng tuần',
     weekdays: WEEKDAYS,
