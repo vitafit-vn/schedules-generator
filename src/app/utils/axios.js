@@ -1,8 +1,11 @@
 import axios from 'axios';
 
-const axiosInstance = axios.create({
-  baseURL: 'https://4ju8elyjv7.execute-api.us-east-1.amazonaws.com/production',
-});
+const baseURL =
+  process.env.NODE_ENV === 'production'
+    ? 'https://4ju8elyjv7.execute-api.us-east-1.amazonaws.com/production'
+    : 'https://u03zcg5h97.execute-api.us-east-1.amazonaws.com/dev';
+
+const axiosInstance = axios.create({ baseURL });
 
 function sendHtmlEmail({ htmlBody, sourceKey, subject, toAddress }) {
   const data = JSON.stringify({ htmlBody, sourceKey, subject, toAddress });
