@@ -1,8 +1,6 @@
 import _ from 'lodash';
+import fp from 'lodash/fp';
 import { Component } from 'preact';
-
-// Constants
-import { WEEKDAYS } from 'app/constants';
 
 // Template renderers
 import { renderSchedulesHTML } from 'app/templates';
@@ -11,7 +9,7 @@ import { renderSchedulesHTML } from 'app/templates';
 import NavBar from 'app/components/NavBar';
 
 // Utils
-import { axios, zipAndSave } from 'app/utils';
+import { zipAndSave } from 'app/utils';
 
 import CustomerInfo from './CustomerInfo';
 import EmailComposer from './EmailComposer';
@@ -28,19 +26,21 @@ export default class Schedules extends Component {
   onUpdatePersonalizedData = partial =>
     this.setState(({ personalizedData }) => ({ personalizedData: { ...personalizedData, ...partial } }));
 
+  onRenderSchedulesHTML = () => renderSchedulesHTML(this.state);
+
   onDownloadSchedules = async () => {
     const { checksum, dailySchedules, weeklySchedule } = renderSchedulesHTML(this.state);
     const prefix = `${this.state.customerInfo.customerId}_${checksum.substring(checksum.length - 6)}`;
-    const dailyFiles = _.map(dailySchedules, (content, index) => {
-      if (_.isEmpty(content)) return undefined;
+    const dailyFiles = _.map(dailySchedules, ({ html, weekday }) => {
+      if (_.isEmpty(html)) return undefined;
 
       return {
-        content,
-        fileName: `${prefix}-daily-${WEEKDAYS[index]}.html`,
+        content: html,
+        fileName: `${prefix}-daily-${weekday}.html`,
       };
     });
 
-    const allFiles = [{ content: weeklySchedule, fileName: `${prefix}-weekly.html` }, ..._.compact(dailyFiles)];
+    const allFiles = [{ content: weeklySchedule.html, fileName: `${prefix}-weekly.html` }, ..._.compact(dailyFiles)];
 
     try {
       await zipAndSave(allFiles, `${prefix}.zip`);
@@ -49,22 +49,17 @@ export default class Schedules extends Component {
     }
   };
 
-  onEmailSchedules = async ({ email: toAddress, htmlBody, scheduleName }) => {
-    const { name } = this.state.customerInfo;
-
-    try {
-      const subject = `[VitaFit VN] Gửi ${name} lịch tập ${scheduleName}`;
-      await axios.sendHlvOnlineEmail({ htmlBody, subject, toAddress });
-    } catch (error) {
-      console.warn(error);
-    }
-  };
-
   onPreviewSchedules = event => {
     event.preventDefault();
 
     const { dailySchedules, weeklySchedule } = renderSchedulesHTML(this.state);
-    document.getElementById('schedules-wrapper').innerHTML = [weeklySchedule, ...dailySchedules].join('\n');
+
+    const schedulesHtml = fp.flow(
+      fp.map('html'),
+      fp.join('\n')
+    )([weeklySchedule, ...dailySchedules]);
+
+    window.$('#schedules-wrapper').html(schedulesHtml);
   };
 
   render() {
@@ -86,8 +81,8 @@ export default class Schedules extends Component {
             <FormControls onDownload={this.onDownloadSchedules} />
           </form>
           <EmailComposer
-            onRenderSchedulesHTML={() => renderSchedulesHTML(this.state)}
-            onSendEmail={this.onEmailSchedules}
+            customerName={this.state.customerInfo.name}
+            onRenderSchedulesHTML={this.onRenderSchedulesHTML}
           />
         </div>
         <div className="mt-3 mx-auto" id="schedules-wrapper"></div>

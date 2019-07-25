@@ -62,16 +62,21 @@ export function renderDailySchedule({ customerInfo, dayIndex, personalizedData }
   if (_.isEmpty(dayExercises)) return '';
 
   const dailyExercises = buildDayExercises({ date, dayExercises, dayIndex, personalizedData });
+  const subTitle = `Ngày ${date.toFormat('dd/MM/yyyy')}`;
 
   const renderingProps = {
     dailyExercises,
+    subTitle,
     userInfo,
     pageTitle: 'VitaFit VN - Chế độ tập luyện hàng ngày',
-    subTitle: `Ngày ${date.toFormat('dd/MM/yyyy')}`,
     title: 'Chế độ tập luyện hàng ngày',
   };
 
-  return renderToString(<DailySchedule {...renderingProps} />);
+  return {
+    html: renderToString(<DailySchedule {...renderingProps} />),
+    name: subTitle,
+    weekday: WEEKDAYS[dayIndex],
+  };
 }
 
 export function renderWeeklySchedule({ customerInfo, personalizedData }) {
@@ -89,17 +94,22 @@ export function renderWeeklySchedule({ customerInfo, personalizedData }) {
     return buildDayExercises({ dayExercises, personalizedData, date: datesInWeek[index], dayIndex: index });
   });
 
+  const subTitle = `Tuần từ ${weekStart.toFormat('dd/MM/yyyy')} đến ${weekEnd.toFormat('dd/MM/yyyy')}`;
+
   const renderingProps = {
     dailyCodes,
     daySchedules,
+    subTitle,
     userInfo,
     pageTitle: 'VitaFit VN - Chế độ tập luyện hàng tuần',
-    subTitle: `Tuần từ ${weekStart.toFormat('dd/MM/yyyy')} đến ${weekEnd.toFormat('dd/MM/yyyy')}`,
     title: 'Chế độ tập luyện hàng tuần',
     weekdays: WEEKDAYS,
   };
 
-  return renderToString(<WeeklySchedule {...renderingProps} />);
+  return {
+    html: renderToString(<WeeklySchedule {...renderingProps} />),
+    name: subTitle,
+  };
 }
 
 export function renderSchedulesHTML({ customerInfo: originalInfo, personalizedData }) {
@@ -116,7 +126,7 @@ export function renderSchedulesHTML({ customerInfo: originalInfo, personalizedDa
     weekStart: convertWeekPeriod(weekPeriod),
   };
 
-  const dailySchedules = _.map(_.range(WEEKDAYS.length), dayIndex =>
+  const dailySchedules = _.map(WEEKDAYS, (weekday, dayIndex) =>
     renderDailySchedule({ customerInfo, dayIndex, personalizedData })
   );
   const weeklySchedule = renderWeeklySchedule({ customerInfo, personalizedData });
