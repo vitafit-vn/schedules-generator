@@ -20,7 +20,7 @@ const ScheduleHeader = ({ subTitle, title, userInfo }) => {
       <div className="mt-5">
         <h4 className="font-weight-bolder text-uppercase">{title}</h4>
         <h6 className="font-italic">{subTitle}</h6>
-        <ul className="m-0 mt-3 p-0">
+        <ul className="m-0 p-0">
           {_.map(rows, ({ label, value }) => (
             <li className="list-inline-item mr-3">
               {`${label}: `}
