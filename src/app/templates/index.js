@@ -1,4 +1,4 @@
-import inlineCss from 'inline-css';
+// import inlineCss from 'inline-css';
 import _ from 'lodash';
 import renderToString from 'preact-render-to-string';
 
@@ -8,11 +8,6 @@ import { DAILY_SCHEDULES, EXERCISES_DATABASE, OFF_DAY, WEEKDAYS, WEEKLY_SCHEDULE
 // Templates
 import DailySchedule from './DailySchedule';
 import WeeklySchedule from './WeeklySchedule';
-
-const INLINE_CSS_OPTIONS = {
-  removeHtmlSelectors: true,
-  url: process.env.PUBLIC_PATH,
-};
 
 const SITE_CONFIGS = {
   pageTitle: process.env.PAGE_TITLE,
@@ -80,8 +75,7 @@ export async function renderDailySchedule({ customerInfo, dayIndex, personalized
     title: 'Chế độ tập luyện hàng ngày',
   };
 
-  const htmlString = renderToString(<DailySchedule {...renderingProps} />);
-  return inlineCss(htmlString, INLINE_CSS_OPTIONS);
+  return renderToString(<DailySchedule {...renderingProps} />);
 }
 
 export function renderWeeklySchedule({ customerInfo, personalizedData }) {
@@ -112,6 +106,5 @@ export function renderWeeklySchedule({ customerInfo, personalizedData }) {
     weekdays: WEEKDAYS,
   };
 
-  const htmlString = renderToString(<WeeklySchedule {...renderingProps} />);
-  return inlineCss(htmlString, INLINE_CSS_OPTIONS);
+  return renderToString(<WeeklySchedule {...renderingProps} />);
 }
