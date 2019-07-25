@@ -18,10 +18,10 @@ const FormControls = ({ errorMessage, loading, onDownload, onEmail }) => (
       <TextButton icon="file-text" label="Xem trước" type="submit" />
     </div>
     <div className="col-auto">
-      <TextButton icon="paper-plane" label="Gửi email" onClick={onEmail} type="submit" />
+      <TextButton icon="paper-plane" label="Gửi email" onClick={onEmail} />
     </div>
     <div className="col-auto">
-      <TextButton icon="download" label="Tải file HTML" onClick={onDownload} type="submit" />
+      <TextButton icon="download" label="Tải file HTML" onClick={onDownload} />
     </div>
   </div>
 );

@@ -48,7 +48,7 @@ module.exports = {
         loader: 'raw-loader',
       },
       {
-        test: /\.(png|jpg|gif)$/i,
+        test: /\.(png|jpg|gif|svg)$/i,
         use: [
           {
             loader: 'url-loader',
@@ -88,7 +88,7 @@ module.exports = {
       {
         from: './src/static/images',
         to: './images/',
-        test: /\.(png|jpg|gif)$/i,
+        test: /\.(png|jpg|gif|svg)$/i,
       },
     ]),
     new FaviconsPlugin({

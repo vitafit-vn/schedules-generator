@@ -24,7 +24,13 @@
           {{order}}. {{name}}
           {{#if videoUrl}}
             <a href="{{videoUrl}}" rel="noopener noreferrer" target="_blank">
-              <i class="icon ion-logo-youtube ml-1 youtube-link"></i>
+              <img
+                alt="{{name}} video url"
+                class="mb-1 ml-1"
+                src="/images/youtube-logo.png"
+                srcset="/images/youtube-logo.svg"
+                width="20px"
+              />
             </a>
           {{/if}}
         </td>

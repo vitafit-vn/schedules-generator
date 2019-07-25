@@ -23,11 +23,12 @@ function buildExerciseData(configs, personalizedData, index) {
   return {
     ...configs,
     difficulty,
+    imageUrl,
     instructions,
     muscle,
     name,
     videoUrl,
-    imageUrl: _.isEmpty(imageUrl) ? undefined : SITE_CONFIGS.publicPath + imageUrl,
+    // imageUrl: _.isEmpty(imageUrl) ? undefined : SITE_CONFIGS.publicPath + imageUrl,
     order: index + 1,
     recommendedWeight: recommendedWeight[code],
     rest: rest[code],
@@ -51,7 +52,7 @@ function buildDayExercises({ date, dayExercises, dayIndex, personalizedData }) {
   };
 }
 
-export async function renderDailySchedule({ customerInfo, dayIndex, personalizedData }) {
+export function renderDailySchedule({ customerInfo, dayIndex, personalizedData }) {
   const { weekStart, weeklyCode, workoutLevel, ...userInfo } = customerInfo;
   const { dailyCodes } = _.find(WEEKLY_SCHEDULES, { code: weeklyCode });
   const codes = dailyCodes[dayIndex];

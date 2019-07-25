@@ -7,8 +7,13 @@ const ExerciseRow = ({ difficulty, muscle, name, order, recommendedWeight, reps,
       {`${order}. ${name}`}
       {!_.isEmpty(videoUrl) && (
         <a href={videoUrl} rel="noopener noreferrer" target="_blank">
-          {/* <i className="icon ion-logo-youtube ml-1 youtube-color"></i> */}
-          <ion-icon className="youtube-color" name="logo-youtube"></ion-icon>
+          <img
+            alt={`${name} video url`}
+            className="mb-1 ml-1"
+            src="/images/youtube-logo.png"
+            srcSet="/images/youtube-logo.svg"
+            width={20}
+          />
         </a>
       )}
     </td>
