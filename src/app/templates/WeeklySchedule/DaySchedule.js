@@ -10,7 +10,7 @@ const DaySchedule = ({ exercises, title }) => {
 
   return (
     <div>
-      <div className={`bg-secondary font-weight-bold py-2 text-center text-white ${marginClass}`}>{title}</div>
+      <div className={`bg-secondary font-weight-bold p-2 text-center text-white ${marginClass}`}>{title}</div>
       {!_.isEmpty(exercises) && (
         <ExerciseTable>
           {_.map(exercises, exercise => (

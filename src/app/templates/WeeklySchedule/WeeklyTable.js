@@ -18,7 +18,7 @@ const renderRow = ([weekday, codes], idx) => {
 
 const WeeklyTable = ({ dailyCodes, weekdays }) => {
   const rows = _.zip(weekdays, dailyCodes);
-  return <div className="container my-3">{_.map(rows, renderRow)}</div>;
+  return <div className="container-fluid my-3">{_.map(rows, renderRow)}</div>;
 };
 
 WeeklyTable.propTypes = {

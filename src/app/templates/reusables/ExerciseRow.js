@@ -1,33 +1,45 @@
 import _ from 'lodash';
 import PropTypes from 'prop-types';
 
-const ExerciseRow = ({ difficulty, muscle, name, order, recommendedWeight, reps, rest, rpe, sets, videoUrl }) => (
-  <tr>
-    <td className="align-middle border border-primary p-2 text-left">
-      {`${order}. ${name}`}
-      {!_.isEmpty(videoUrl) && (
-        <a href={videoUrl} rel="noopener noreferrer" target="_blank">
-          <img
-            alt={`${name} video url`}
-            className="mb-1 ml-1"
-            src={`${process.env.PUBLIC_PATH}/images/youtube-logo.png`}
-            srcSet={`${process.env.PUBLIC_PATH}/images/youtube-logo.svg`}
-            width={20}
-          />
-        </a>
-      )}
-    </td>
-    <td className="align-middle border border-primary p-2">{muscle}</td>
-    <td className="align-middle border border-primary p-2">{difficulty}</td>
-    <td className="align-middle border border-primary p-2">{sets}</td>
-    <td className="align-middle border border-primary p-2">{reps}</td>
-    <td className="align-middle border border-primary p-2">{_.isEmpty(rpe) ? '-' : `RPE-${rpe}`}</td>
-    <td className="align-middle border border-primary p-2">{_.isEmpty(rest) ? '-' : `${rest}s`}</td>
-    <td className="align-middle border border-primary p-2">
-      {_.isEmpty(recommendedWeight) ? '-' : `${recommendedWeight}kg`}
-    </td>
-  </tr>
-);
+// Locals
+import YoutubeLink from './YoutubeLink';
+
+const ExerciseRow = ({ difficulty, muscle, name, order, recommendedWeight, reps, rest, rpe, sets, videoUrl }) => {
+  const weights = _.compact([
+    _.isEmpty(recommendedWeight) ? '-' : `${recommendedWeight}kg`,
+    _.isEmpty(rpe) ? undefined : `(RPE-${rpe})`,
+  ]);
+
+  const rows = [
+    { label: 'Nhóm cơ', value: `${muscle} (${difficulty})` },
+    { label: 'Mức tạ', value: _.isEmpty(weights) ? '-' : _.join(weights, ' ') },
+    { label: 'Số lượng', value: `${sets} sets x ${reps} reps` },
+    { label: 'Nghỉ', value: _.isEmpty(rest) ? '-' : `${rest}s` },
+  ];
+
+  return (
+    <tr>
+      <th className="align-middle border border-primary p-3" scope="row">
+        {order}
+      </th>
+      <td className="align-middle border border-primary p-3 text-left">
+        <h5>
+          {name}
+          <YoutubeLink name={name} url={videoUrl} />
+        </h5>
+        <ul className="container-fluid mb-0">
+          {_.map(rows, ({ label, value }) => (
+            <li>
+              <strong>{label}</strong>
+              {': '}
+              {value}
+            </li>
+          ))}
+        </ul>
+      </td>
+    </tr>
+  );
+};
 
 ExerciseRow.propTypes = {
   difficulty: PropTypes.string.isRequired,

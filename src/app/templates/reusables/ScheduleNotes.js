@@ -10,7 +10,7 @@ const NOTES = [
 ];
 
 const ScheduleNotes = () => (
-  <div className="mt-2">
+  <div>
     <h5 className="font-weight-bold">{'Lưu ý:'}</h5>
     <ul>
       {_.map(NOTES, note => (

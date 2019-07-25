@@ -12,7 +12,7 @@ const WeeklySchedule = ({ dailyCodes, daySchedules, pageTitle, subTitle, title, 
   <html>
     <HtmlHead pageTitle={pageTitle} />
     <body className="mx-auto my-2 my-sm-4 px-2 px-sm-4">
-      <div className="container-fluid schedules-container">
+      <div className="container-fluid px-0 schedules-container">
         <ScheduleHeader subTitle={subTitle} title={title} userInfo={userInfo} />
         <WeeklyTable dailyCodes={dailyCodes} weekdays={weekdays} />
         {_.map(daySchedules, ({ exercises, title: dayTitle }) => (
