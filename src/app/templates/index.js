@@ -5,7 +5,10 @@ import renderToString from 'preact-render-to-string';
 // Constants
 import { DAILY_SCHEDULES, EXERCISES_DATABASE, OFF_DAY, WEEKDAYS, WEEKLY_SCHEDULES } from 'app/constants';
 
-// Templates
+// Utils
+import { calculateAge, computeChecksum, convertWeekPeriod } from 'app/utils';
+
+// Locals
 import DailySchedule from './DailySchedule';
 import WeeklySchedule from './WeeklySchedule';
 
@@ -97,4 +100,26 @@ export function renderWeeklySchedule({ customerInfo, personalizedData }) {
   };
 
   return renderToString(<WeeklySchedule {...renderingProps} />);
+}
+
+export function renderSchedulesHTML({ customerInfo: originalInfo, personalizedData }) {
+  const { birthYear, customerId, weeklyCode, weekPeriod, workoutLevel, ...restInfo } = originalInfo;
+
+  const checksum = computeChecksum(customerId, workoutLevel, weeklyCode, weekPeriod);
+
+  const customerInfo = {
+    ...restInfo,
+    customerId,
+    weeklyCode,
+    workoutLevel,
+    age: calculateAge(birthYear),
+    weekStart: convertWeekPeriod(weekPeriod),
+  };
+
+  const dailySchedules = _.map(_.range(WEEKDAYS.length), dayIndex =>
+    renderDailySchedule({ customerInfo, dayIndex, personalizedData })
+  );
+  const weeklySchedule = renderWeeklySchedule({ customerInfo, personalizedData });
+
+  return { checksum, dailySchedules, weeklySchedule };
 }

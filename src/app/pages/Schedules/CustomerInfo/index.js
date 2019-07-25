@@ -16,7 +16,6 @@ export default class CustomerInfo extends Component {
       customerId: PropTypes.string,
       height: PropTypes.number,
       name: PropTypes.string,
-      email: PropTypes.string,
       weekPeriod: PropTypes.string,
       weeklyCode: PropTypes.string,
       weight: PropTypes.number,
@@ -84,17 +83,7 @@ export default class CustomerInfo extends Component {
   );
 
   render() {
-    const {
-      birthYear,
-      customerId,
-      email,
-      height,
-      name,
-      weekPeriod,
-      weeklyCode,
-      weight,
-      workoutLevel,
-    } = this.props.data;
+    const { birthYear, customerId, height, name, weekPeriod, weeklyCode, weight, workoutLevel } = this.props.data;
 
     const selectedWorkoutLevel = workoutLevel || WORKOUT_LEVELS[0];
     const selectedWeeklyCode = weeklyCode || WEEKLY_SCHEDULES[0].code;
@@ -109,14 +98,6 @@ export default class CustomerInfo extends Component {
           value={customerId}
         />
         <TextInput id="full-name" label="Tên gọi" name="full_name" onChange={this.onInputChange('name')} value={name} />
-        <TextInput
-          id="email"
-          label="Email"
-          name="email"
-          onChange={this.onInputChange('email')}
-          type="email"
-          value={email}
-        />
         <NumberInput
           id="birth-year"
           label="Năm
