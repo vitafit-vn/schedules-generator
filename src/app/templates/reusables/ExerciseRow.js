@@ -4,18 +4,30 @@ import PropTypes from 'prop-types';
 // Locals
 import YoutubeLink from './YoutubeLink';
 
-const ExerciseRow = ({ difficulty, muscle, name, order, recommendedWeight, reps, rest, rpe, sets, videoUrl }) => {
-  const weights = _.compact([
-    _.isEmpty(recommendedWeight) ? '-' : `${recommendedWeight}kg`,
-    _.isEmpty(rpe) ? undefined : `(RPE-${rpe})`,
-  ]);
+function buildSetReps({ reps, sets }) {
+  const suffix = isNaN(reps) ? '' : ' reps'; // eslint-disable-line no-restricted-globals
+  return `${sets} sets x ${reps}${suffix}`;
+}
 
-  const rows = [
+function buildWeightValue({ recommendedWeight, rpe }) {
+  if (!_.isEmpty(recommendedWeight) && !_.isEmpty(rpe)) {
+    return `${recommendedWeight}kg (RPE-${rpe})`;
+  }
+
+  if (!_.isEmpty(recommendedWeight)) return `${recommendedWeight}kg`;
+  if (!_.isEmpty(rpe)) return `RPE-${rpe}`;
+  return undefined;
+}
+
+const ExerciseRow = ({ difficulty, muscle, name, order, recommendedWeight, reps, rest, rpe, sets, videoUrl }) => {
+  const weight = buildWeightValue({ recommendedWeight, rpe });
+
+  const rows = _.compact([
     { label: 'Nhóm cơ', value: `${muscle} (${difficulty})` },
-    { label: 'Mức tạ', value: _.isEmpty(weights) ? '-' : _.join(weights, ' ') },
-    { label: 'Số lượng', value: `${sets} sets x ${reps} reps` },
+    weight != null && { label: 'Mức tạ', value: buildWeightValue({ recommendedWeight, rpe }) },
+    { label: 'Số lượng', value: buildSetReps({ reps, sets }) },
     { label: 'Nghỉ', value: _.isEmpty(rest) ? '-' : `${rest}s` },
-  ];
+  ]);
 
   return (
     <tr>
