@@ -1,3 +1,4 @@
+import inlineCss from 'inline-css';
 import _ from 'lodash';
 import renderToString from 'preact-render-to-string';
 
@@ -7,6 +8,11 @@ import { DAILY_SCHEDULES, EXERCISES_DATABASE, OFF_DAY, WEEKDAYS, WEEKLY_SCHEDULE
 // Templates
 import DailySchedule from './DailySchedule';
 import WeeklySchedule from './WeeklySchedule';
+
+const INLINE_CSS_OPTIONS = {
+  removeHtmlSelectors: true,
+  url: process.env.PUBLIC_PATH,
+};
 
 const SITE_CONFIGS = {
   pageTitle: process.env.PAGE_TITLE,
@@ -50,7 +56,7 @@ function buildDayExercises({ date, dayExercises, dayIndex, personalizedData }) {
   };
 }
 
-export function renderDailySchedule({ customerInfo, dayIndex, personalizedData }) {
+export async function renderDailySchedule({ customerInfo, dayIndex, personalizedData }) {
   const { weekStart, weeklyCode, workoutLevel, ...userInfo } = customerInfo;
   const { dailyCodes } = _.find(WEEKLY_SCHEDULES, { code: weeklyCode });
   const codes = dailyCodes[dayIndex];
@@ -74,7 +80,8 @@ export function renderDailySchedule({ customerInfo, dayIndex, personalizedData }
     title: 'Chế độ tập luyện hàng ngày',
   };
 
-  return renderToString(<DailySchedule {...renderingProps} />);
+  const htmlString = renderToString(<DailySchedule {...renderingProps} />);
+  return inlineCss(htmlString, INLINE_CSS_OPTIONS);
 }
 
 export function renderWeeklySchedule({ customerInfo, personalizedData }) {
@@ -105,5 +112,6 @@ export function renderWeeklySchedule({ customerInfo, personalizedData }) {
     weekdays: WEEKDAYS,
   };
 
-  return renderToString(<WeeklySchedule {...renderingProps} />);
+  const htmlString = renderToString(<WeeklySchedule {...renderingProps} />);
+  return inlineCss(htmlString, INLINE_CSS_OPTIONS);
 }

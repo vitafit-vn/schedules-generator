@@ -4,10 +4,11 @@ import PropTypes from 'prop-types';
 const ExerciseRow = ({ difficulty, muscle, name, order, recommendedWeight, reps, rest, rpe, sets, videoUrl }) => (
   <tr>
     <td className="align-middle border border-primary p-2 text-left">
-      {`${order}. ${name}`}.
+      {`${order}. ${name}`}
       {!_.isEmpty(videoUrl) && (
         <a href={videoUrl} rel="noopener noreferrer" target="_blank">
-          <i className="icon ion-logo-youtube ml-1 youtube-link"></i>
+          {/* <i className="icon ion-logo-youtube ml-1 youtube-color"></i> */}
+          <ion-icon className="youtube-color" name="logo-youtube"></ion-icon>
         </a>
       )}
     </td>
