@@ -71,7 +71,7 @@ export default class EmailComposer extends Component {
 
   onModalShown = () => {
     const { dailySchedules, weeklySchedule } = this.props.onRenderSchedulesHTML();
-    const allSchedules = _.reject([weeklySchedule, ...dailySchedules], ({ html }) => _.isEmpty(html));
+    const allSchedules = [weeklySchedule, ...dailySchedules];
     const scheduleNames = _.map(allSchedules, 'name');
     const selectedSchedule = scheduleNames[0];
 

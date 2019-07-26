@@ -1,7 +1,6 @@
-import _ from 'lodash';
-import fp from 'lodash/fp';
-import { Component } from 'preact';
 import clipboardCopy from 'clipboard-copy';
+import _ from 'lodash';
+import { Component } from 'preact';
 
 // Template renderers
 import { renderSchedulesHTML } from 'app/templates';
@@ -16,6 +15,7 @@ import CustomerInfo from './CustomerInfo';
 import EmailComposer from './EmailComposer';
 import FormControls from './FormControls';
 import PersonalizedTable from './PersonalizedTable';
+import SchedulesAccordion from './SchedulesAccordion';
 import defaultState from './defaultState';
 
 export default class Schedules extends Component {
@@ -49,16 +49,14 @@ export default class Schedules extends Component {
 
     const { checksum, dailySchedules, weeklySchedule } = renderSchedulesHTML(this.state);
     const prefix = `${this.state.customerInfo.customerId}_${checksum.substring(checksum.length - 6)}`;
-    const dailyFiles = _.map(dailySchedules, ({ html, weekday }) => {
-      if (_.isEmpty(html)) return undefined;
 
-      return {
+    const allFiles = [
+      { content: weeklySchedule.html, fileName: `${prefix}-weekly.html` },
+      ..._.map(dailySchedules, ({ html, weekday }) => ({
         content: html,
         fileName: `${prefix}-daily-${weekday}.html`,
-      };
-    });
-
-    const allFiles = [{ content: weeklySchedule.html, fileName: `${prefix}-weekly.html` }, ..._.compact(dailyFiles)];
+      })),
+    ];
 
     try {
       await zipAndSave(allFiles, `${prefix}.zip`);
@@ -78,16 +76,18 @@ export default class Schedules extends Component {
 
     const { dailySchedules, weeklySchedule } = renderSchedulesHTML(this.state);
 
-    const schedulesHtml = fp.flow(
-      fp.map('html'),
-      fp.join('\n')
-    )([weeklySchedule, ...dailySchedules]);
+    this.setState({ allSchedules: [weeklySchedule, ...dailySchedules] });
 
-    window.$('#schedules-wrapper').html(schedulesHtml);
+    // const schedulesHtml = fp.flow(
+    //   fp.map('html'),
+    //   fp.join('\n')
+    // )([weeklySchedule, ...dailySchedules]);
+
+    // window.$('#schedules-preview').html(schedulesHtml);
   };
 
   render() {
-    const { customerInfo, personalizedData } = this.state;
+    const { allSchedules, customerInfo, personalizedData } = this.state;
 
     return (
       <div>
@@ -110,7 +110,9 @@ export default class Schedules extends Component {
           </form>
           <EmailComposer customerInfo={customerInfo} onRenderSchedulesHTML={this.onRenderSchedulesHTML} />
         </div>
-        <div className="mt-3 mx-auto" id="schedules-wrapper"></div>
+        <div className="my-3 mx-auto" id="schedules-preview">
+          <SchedulesAccordion schedules={allSchedules} />
+        </div>
       </div>
     );
   }

@@ -1,4 +1,3 @@
-// import inlineCss from 'inline-css';
 import _ from 'lodash';
 import renderToString from 'preact-render-to-string';
 
@@ -58,7 +57,8 @@ export function renderDailySchedule({ customerInfo, dayIndex, personalizedData }
   const allSchedules = _.union(DAILY_SCHEDULES[workoutLevel], DAILY_SCHEDULES.shared);
   const dayExercises = _.filter(allSchedules, ({ code }) => _.includes(codes, code));
 
-  if (_.isEmpty(dayExercises)) return '';
+  // Off day
+  if (_.isEmpty(dayExercises)) return undefined;
 
   const dailyExercises = buildDayExercises({ date, dayExercises, dayIndex, personalizedData });
   const subTitle = `Ngày ${date.toFormat('dd/MM/yyyy')}`;
@@ -125,9 +125,10 @@ export function renderSchedulesHTML({ customerInfo: originalInfo, personalizedDa
     weekStart: convertWeekPeriod(weekPeriod),
   };
 
-  const dailySchedules = _.map(WEEKDAYS, (weekday, dayIndex) =>
+  const allDailySchedules = _.map(WEEKDAYS, (weekday, dayIndex) =>
     renderDailySchedule({ customerInfo, dayIndex, personalizedData })
   );
+  const dailySchedules = _.compact(allDailySchedules);
   const weeklySchedule = renderWeeklySchedule({ customerInfo, personalizedData });
 
   return { checksum, dailySchedules, weeklySchedule };
