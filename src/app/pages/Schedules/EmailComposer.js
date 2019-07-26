@@ -15,7 +15,7 @@ const INPUT_CONFIGS = {
 
 export default class EmailComposer extends Component {
   static propTypes = {
-    customerName: PropTypes.string,
+    customerInfo: PropTypes.object,
     onRenderSchedulesHTML: PropTypes.func.isRequired,
   };
 
@@ -49,12 +49,12 @@ export default class EmailComposer extends Component {
   };
 
   onModalShown = () => {
-    const { customerName, onRenderSchedulesHTML } = this.props;
+    const { customerInfo, onRenderSchedulesHTML } = this.props;
     const { dailySchedules, weeklySchedule } = onRenderSchedulesHTML();
     const allSchedules = _.reject([weeklySchedule, ...dailySchedules], ({ html }) => _.isEmpty(html));
     const scheduleNames = _.map(allSchedules, 'name');
     const selectedSchedule = scheduleNames[0];
-    const subject = `[VitaFit VN] Gửi ${customerName} lịch tập ${selectedSchedule}`;
+    const subject = `[VitaFit VN] Gửi ${customerInfo.fullName} lịch tập ${selectedSchedule}`;
 
     this.setState({ allSchedules, scheduleNames, selectedSchedule, subject });
   };
@@ -69,9 +69,8 @@ export default class EmailComposer extends Component {
 
     try {
       this.setState({ loading: true });
-      // await axios.sendHlvOnlineEmail({ htmlBody, subject, toAddress });
-      // this.setState({ loading: false });
-      setTimeout(() => this.setState({ errorMessage: 'Test message!', loading: false }), 1000);
+      await axios.sendHlvOnlineEmail({ htmlBody, subject, toAddress });
+      this.setState({ loading: false });
     } catch (error) {
       console.warn(error);
       this.setState({ errorMessage: error.message, loading: false });

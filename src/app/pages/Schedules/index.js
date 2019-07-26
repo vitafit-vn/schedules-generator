@@ -20,6 +20,10 @@ import defaultState from './defaultState';
 export default class Schedules extends Component {
   state = defaultState;
 
+  get formValid() {
+    return window.$('#schedules-form')[0].reportValidity();
+  }
+
   onUpdateCustomerInfo = partial =>
     this.setState(({ customerInfo }) => ({ customerInfo: { ...customerInfo, ...partial } }));
 
@@ -29,6 +33,8 @@ export default class Schedules extends Component {
   onRenderSchedulesHTML = () => renderSchedulesHTML(this.state);
 
   onDownloadSchedules = async () => {
+    if (!this.formValid) return;
+
     const { checksum, dailySchedules, weeklySchedule } = renderSchedulesHTML(this.state);
     const prefix = `${this.state.customerInfo.customerId}_${checksum.substring(checksum.length - 6)}`;
     const dailyFiles = _.map(dailySchedules, ({ html, weekday }) => {
@@ -49,8 +55,14 @@ export default class Schedules extends Component {
     }
   };
 
+  onOpenEmailComposer = () => {
+    if (!this.formValid) return;
+    window.$('#email-composer-modal').modal('show');
+  };
+
   onPreviewSchedules = event => {
     event.preventDefault();
+    if (!this.formValid) return;
 
     const { dailySchedules, weeklySchedule } = renderSchedulesHTML(this.state);
 
@@ -69,7 +81,7 @@ export default class Schedules extends Component {
       <div>
         <NavBar page="schedules" title="Công cụ tạo lịch" />
         <div className="container">
-          <form action="#" onSubmit={this.onPreviewSchedules}>
+          <form action="#" id="schedules-form" onSubmit={this.onPreviewSchedules}>
             <div className="row">
               <CustomerInfo data={customerInfo} onUpdate={this.onUpdateCustomerInfo} />
               <PersonalizedTable
@@ -78,12 +90,9 @@ export default class Schedules extends Component {
                 onUpdate={this.onUpdatePersonalizedData}
               />
             </div>
-            <FormControls onDownload={this.onDownloadSchedules} />
+            <FormControls onComposeEmail={this.onOpenEmailComposer} onDownload={this.onDownloadSchedules} />
           </form>
-          <EmailComposer
-            customerName={this.state.customerInfo.fullName}
-            onRenderSchedulesHTML={this.onRenderSchedulesHTML}
-          />
+          <EmailComposer customerInfo={customerInfo} onRenderSchedulesHTML={this.onRenderSchedulesHTML} />
         </div>
         <div className="mt-3 mx-auto" id="schedules-wrapper"></div>
       </div>
