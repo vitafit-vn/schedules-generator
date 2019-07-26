@@ -9,7 +9,7 @@ import { renderSchedulesHTML } from 'app/templates';
 import NavBar from 'app/components/NavBar';
 
 // Utils
-import { zipAndSave } from 'app/utils';
+import { buildPermalink, parsePermalink, zipAndSave } from 'app/utils';
 
 import CustomerInfo from './CustomerInfo';
 import EmailComposer from './EmailComposer';
@@ -18,7 +18,20 @@ import PersonalizedTable from './PersonalizedTable';
 import defaultState from './defaultState';
 
 export default class Schedules extends Component {
-  state = defaultState;
+  state = {
+    ...defaultState,
+    ...parsePermalink(),
+  };
+
+  // constructor(props) {
+  //   super(props);
+
+  //   console.debug('on construct', parsePermalink());
+  // }
+
+  // componentDidMount() {
+  //   console.debug('did mount', parsePermalink());
+  // }
 
   get formValid() {
     return window.$('#schedules-form')[0].reportValidity();
@@ -31,6 +44,12 @@ export default class Schedules extends Component {
     this.setState(({ personalizedData }) => ({ personalizedData: { ...personalizedData, ...partial } }));
 
   onRenderSchedulesHTML = () => renderSchedulesHTML(this.state);
+
+  onCreatePermalink = () => {
+    const { customerInfo, personalizedData } = this.state;
+    const permalink = buildPermalink('schedules', { customerInfo, personalizedData });
+    console.debug(permalink);
+  };
 
   onDownloadSchedules = async () => {
     if (!this.formValid) return;
@@ -90,7 +109,11 @@ export default class Schedules extends Component {
                 onUpdate={this.onUpdatePersonalizedData}
               />
             </div>
-            <FormControls onComposeEmail={this.onOpenEmailComposer} onDownload={this.onDownloadSchedules} />
+            <FormControls
+              onComposeEmail={this.onOpenEmailComposer}
+              onCreatePermalink={this.onCreatePermalink}
+              onDownload={this.onDownloadSchedules}
+            />
           </form>
           <EmailComposer customerInfo={customerInfo} onRenderSchedulesHTML={this.onRenderSchedulesHTML} />
         </div>

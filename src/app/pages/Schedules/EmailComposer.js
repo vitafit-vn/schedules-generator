@@ -85,7 +85,7 @@ export default class EmailComposer extends Component {
   };
 
   renderSendButton = () => (
-    <TextButton label="Gửi" icon="paper-plane" loading={this.state.loading} onClick={this.onSendEmail} />
+    <TextButton icon="paper-plane" label="Gửi" loading={this.state.loading} onClick={this.onSendEmail} />
   );
 
   renderScheduleSelector = () => {

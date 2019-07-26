@@ -2,7 +2,7 @@ import _ from 'lodash';
 import PropTypes from 'prop-types';
 
 const TextButton = ({ background, disabled, icon, label, loading, ...restProps }) => {
-  const iconMargin = _.isEmpty(label) ? '' : 'ml-1';
+  const iconMargin = _.isEmpty(label) ? '' : 'ml-2';
 
   return (
     <button className={`btn btn-${background}`} {...restProps} disabled={loading || disabled}>

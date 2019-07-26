@@ -14,7 +14,21 @@ const INPUT_CONFIGS = {
   fullName: { label: 'Tên gọi' },
   height: { label: 'Chiều cao', max: 200, min: 100, step: 0.1, suffix: 'cm', type: 'number' },
   weekPeriod: { label: 'Tuần', type: 'week' },
+  weeklyCode: {
+    label: 'Preset lịch tuần',
+    selectData: _.map(WEEKLY_SCHEDULES, ({ code: value, description: title, frequency, shortkeys }) => ({
+      title,
+      value,
+      label: `${frequency} (${shortkeys})`,
+    })),
+    type: 'select',
+  },
   weight: { label: 'Cân nặng', max: 100, min: 30, step: 0.1, suffix: 'kg', type: 'number' },
+  workoutLevel: {
+    label: 'Trình độ',
+    selectData: _.map(WORKOUT_LEVELS, value => ({ value, label: _.capitalize(value) })),
+    type: 'select',
+  },
 };
 
 export default class CustomerInfo extends Component {
@@ -54,45 +68,11 @@ export default class CustomerInfo extends Component {
 
   onInputChange = key => event => this.props.onUpdate({ [key]: event.target.value });
 
-  renderInput = id => {
-    const { [id]: value } = this.props.data;
+  renderInput = (id, currentValue) => {
+    const value = currentValue || this.props.data[id];
     const { [id]: props } = INPUT_CONFIGS;
     return <FormInput {...props} id={id} onChange={this.onInputChange(id)} required value={value} />;
   };
-
-  renderWorkoutLevels = selectedWorkoutLevel => (
-    <div className="form-group">
-      <label htmlFor="workout-level">{'Trình độ'}</label>
-      <select
-        className="custom-select"
-        id="workoutLevel"
-        onChange={this.onInputChange('workoutLevel')}
-        required
-        value={selectedWorkoutLevel}
-      >
-        {_.map(WORKOUT_LEVELS, level => (
-          <option value={level}>{_.capitalize(level)}</option>
-        ))}
-      </select>
-    </div>
-  );
-
-  renderWeeklyCodes = selectedWeeklyCode => (
-    <div className="form-group">
-      <label htmlFor="weekly-code">{'Preset lịch tuần'}</label>
-      <select
-        className="custom-select"
-        id="weeklyCode"
-        onChange={this.onInputChange('weeklyCode')}
-        required
-        value={selectedWeeklyCode}
-      >
-        {_.map(WEEKLY_SCHEDULES, ({ code, description, frequency, shortkeys }) => (
-          <option title={description} value={code}>{`${frequency} (${shortkeys})`}</option>
-        ))}
-      </select>
-    </div>
-  );
 
   render() {
     const { weeklyCode, workoutLevel } = this.props.data;
@@ -106,8 +86,8 @@ export default class CustomerInfo extends Component {
         {this.renderInput('birthYear')}
         {this.renderInput('height')}
         {this.renderInput('weight')}
-        {this.renderWorkoutLevels(selectedWorkoutLevel)}
-        {this.renderWeeklyCodes(selectedWeeklyCode)}
+        {this.renderInput('workoutLevel', selectedWorkoutLevel)}
+        {this.renderInput('weeklyCode', selectedWeeklyCode)}
         {this.renderInput('weekPeriod')}
       </div>
     );
