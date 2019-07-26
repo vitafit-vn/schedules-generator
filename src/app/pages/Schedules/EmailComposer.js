@@ -3,7 +3,7 @@ import { Component } from 'preact';
 import PropTypes from 'prop-types';
 
 // Components
-import { FormInput, ModalContainer, TextButton } from 'app/components';
+import { Alert, FormInput, ModalContainer, TextButton } from 'app/components';
 
 // Utils
 import { axios } from 'app/utils';
@@ -20,9 +20,9 @@ export default class EmailComposer extends Component {
   };
 
   state = {
+    alertMessage: undefined,
     allSchedules: [],
     email: undefined,
-    errorMessage: undefined,
     loading: false,
     scheduleNames: [],
     selectedSchedule: undefined,
@@ -59,7 +59,7 @@ export default class EmailComposer extends Component {
     this.setState({ allSchedules, scheduleNames, selectedSchedule, subject });
   };
 
-  onInputChange = key => event => this.setState({ [key]: event.target.value, errorMessage: undefined });
+  onInputChange = key => event => this.setState({ [key]: event.target.value, alertMessage: undefined });
 
   onSendEmail = async event => {
     event.preventDefault();
@@ -70,18 +70,37 @@ export default class EmailComposer extends Component {
 
     try {
       this.setState({ loading: true });
-      await axios.sendHlvOnlineEmail({ htmlBody, subject, toAddress });
-      this.setState({ loading: false });
+      // await axios.sendHlvOnlineEmail({ htmlBody, subject, toAddress });
+      // this.setState({ alertMessage: { message: 'Gửi email thành công!', type: 'success' }, loading: false });
+
+      setTimeout(
+        () => this.setState({ alertMessage: { message: 'Gửi email thành công!', type: 'success' }, loading: false }),
+        1000
+      );
     } catch (error) {
       console.warn(error);
-      this.setState({ errorMessage: error.message, loading: false });
+      const { message } = error;
+      this.setState({ alertMessage: { message, type: 'danger' }, loading: false });
     }
+  };
+
+  renderAlert = () => {
+    const { alertMessage } = this.state;
+    if (alertMessage == null) return null;
+
+    const { message, type } = alertMessage;
+
+    return (
+      <Alert id="email-composer-alert" type={type}>
+        {message}
+      </Alert>
+    );
   };
 
   renderInput = id => {
     const { [id]: value } = this.state;
     const { [id]: props } = INPUT_CONFIGS;
-    return <FormInput {...props} id={`emailComposer-${id}`} onChange={this.onInputChange(id)} value={value} />;
+    return <FormInput {...props} id={`email-composer-${id}`} onChange={this.onInputChange(id)} value={value} />;
   };
 
   renderSendButton = () => (
@@ -93,13 +112,13 @@ export default class EmailComposer extends Component {
 
     return (
       <div className="form-group row">
-        <label className="col-2 col-form-label pr-0" htmlFor="emailComposer.scheduleSelect">
+        <label className="col-2 col-form-label pr-0" htmlFor="email-composer.scheduleSelect">
           {'Lịch tập'}
         </label>
         <div className="col">
           <select
             className="custom-select"
-            id="emailComposer.scheduleSelect"
+            id="email-composer.scheduleSelect"
             onChange={this.onInputChange('selectedSchedule')}
             required
             value={selectedSchedule}
@@ -116,11 +135,11 @@ export default class EmailComposer extends Component {
   render() {
     return (
       <ModalContainer id="email-composer-modal" renderPrimaryButton={this.renderSendButton} title="Gửi email lịch tập">
-        <form action="#" onSubmit={this.onSendEmail}>
+        <form action="#">
+          {this.renderAlert()}
           {this.renderInput('email')}
           {this.renderInput('subject')}
           {this.renderScheduleSelector()}
-          <div className="text-center text-danger">{this.state.errorMessage}</div>
         </form>
         <div className="mt-3" id="email-preview"></div>
       </ModalContainer>
