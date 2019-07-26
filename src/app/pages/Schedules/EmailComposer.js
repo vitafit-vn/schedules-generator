@@ -10,7 +10,7 @@ import { axios } from 'app/utils';
 
 const INPUT_CONFIGS = {
   email: { inline: true, label: 'Email', required: true, type: 'email' },
-  subject: { inline: true, label: 'Tiêu đề', required: true, type: 'subject' },
+  subject: { inline: true, label: 'Tiêu đề', required: true },
 };
 
 export default class EmailComposer extends Component {
@@ -63,6 +63,7 @@ export default class EmailComposer extends Component {
 
   onSendEmail = async event => {
     event.preventDefault();
+    if (!window.$('#email-composer-modal form')[0].reportValidity()) return;
 
     const { allSchedules, email: toAddress, selectedSchedule, subject } = this.state;
     const { html: htmlBody } = _.find(allSchedules, { name: selectedSchedule });
@@ -83,8 +84,12 @@ export default class EmailComposer extends Component {
     return <FormInput {...props} id={`emailComposer-${id}`} onChange={this.onInputChange(id)} value={value} />;
   };
 
+  renderSendButton = () => (
+    <TextButton label="Gửi" icon="paper-plane" loading={this.state.loading} onClick={this.onSendEmail} />
+  );
+
   renderScheduleSelector = () => {
-    const { loading, scheduleNames, selectedSchedule } = this.state;
+    const { scheduleNames, selectedSchedule } = this.state;
 
     return (
       <div className="form-group row">
@@ -104,16 +109,13 @@ export default class EmailComposer extends Component {
             ))}
           </select>
         </div>
-        <div className="col-auto d-flex justify-content-end">
-          <TextButton icon="paper-plane" loading={loading} type="submit" />
-        </div>
       </div>
     );
   };
 
   render() {
     return (
-      <ModalContainer id="email-composer-modal" title="Gửi email lịch tập">
+      <ModalContainer id="email-composer-modal" renderPrimaryButton={this.renderSendButton} title="Gửi email lịch tập">
         <form action="#" onSubmit={this.onSendEmail}>
           {this.renderInput('email')}
           {this.renderInput('subject')}
