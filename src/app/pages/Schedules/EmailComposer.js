@@ -3,10 +3,15 @@ import { Component } from 'preact';
 import PropTypes from 'prop-types';
 
 // Components
-import { ModalContainer, TextButton } from 'app/components';
+import { ModalContainer, TextButton, TextInput } from 'app/components';
 
 // Utils
 import { axios } from 'app/utils';
+
+const INPUT_CONFIGS = {
+  email: { inline: true, label: 'Email', required: true, type: 'email' },
+  subject: { inline: true, label: 'Tiêu đề', required: true, type: 'subject' },
+};
 
 export default class EmailComposer extends Component {
   static propTypes = {
@@ -73,54 +78,24 @@ export default class EmailComposer extends Component {
     }
   };
 
-  renderEmailInput = () => (
-    <div className="form-group row">
-      <label className="col-2 col-form-label" htmlFor="email-composer-email">
-        {'Email'}
-      </label>
-      <div className="col">
-        <input
-          className="form-control"
-          id="email-composer-email"
-          name="email"
-          onChange={this.onInputChange('email')}
-          type="email"
-          value={this.state.email}
-        />
-      </div>
-    </div>
-  );
-
-  renderSubjectInput = () => (
-    <div className="form-group row">
-      <label className="col-2 col-form-label" htmlFor="email-composer-subject">
-        {'Tiêu đề'}
-      </label>
-      <div className="col">
-        <input
-          className="form-control"
-          id="email-composer-subject"
-          name="email"
-          onChange={this.onInputChange('subject')}
-          value={this.state.subject}
-        />
-      </div>
-    </div>
-  );
+  renderTextInput = id => {
+    const { [id]: value } = this.state;
+    const { [id]: props } = INPUT_CONFIGS;
+    return <TextInput {...props} id={`emailComposer-${id}`} onChange={this.onInputChange(id)} value={value} />;
+  };
 
   renderScheduleSelector = () => {
     const { loading, scheduleNames, selectedSchedule } = this.state;
 
     return (
       <div className="form-group row">
-        <label className="col-2 col-form-label pr-0" htmlFor="email-composer-selected-schedule">
+        <label className="col-2 col-form-label pr-0" htmlFor="emailComposer.scheduleSelect">
           {'Lịch tập'}
         </label>
         <div className="col">
           <select
             className="custom-select"
-            id="email-composer-selected-schedule"
-            name="schedule_name"
+            id="emailComposer.scheduleSelect"
             onChange={this.onInputChange('selectedSchedule')}
             required
             value={selectedSchedule}
@@ -141,8 +116,8 @@ export default class EmailComposer extends Component {
     return (
       <ModalContainer id="email-composer-modal" title="Gửi email lịch tập">
         <form action="#" onSubmit={this.onSendEmail}>
-          {this.renderEmailInput()}
-          {this.renderSubjectInput()}
+          {this.renderTextInput('email')}
+          {this.renderTextInput('subject')}
           {this.renderScheduleSelector()}
           <div className="text-center text-danger">{this.state.errorMessage}</div>
         </form>

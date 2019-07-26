@@ -3,21 +3,18 @@ import { Component } from 'preact';
 import PropTypes from 'prop-types';
 
 // Components
-import { TextInput } from 'app/components';
+import { FormInput } from 'app/components';
 
 // Constants
 import { WEEKLY_SCHEDULES, WORKOUT_LEVELS } from 'app/constants';
 
-// Locals
-import NumberInput from './NumberInput';
-
 const INPUT_CONFIGS = {
-  birthYear: { InputComponent: NumberInput, label: 'Năm sinh', max: 2010, min: 1950 },
-  customerId: { InputComponent: TextInput, label: 'Mã KH' },
-  fullName: { InputComponent: TextInput, label: 'Tên gọi' },
-  height: { InputComponent: NumberInput, label: 'Chiều cao', max: 200, min: 100, step: 0.1 },
-  weekPeriod: { InputComponent: NumberInput, label: 'Tuần', type: 'week' },
-  weight: { InputComponent: NumberInput, label: 'Cân nặng', max: 100, min: 30, step: 0.1 },
+  birthYear: { label: 'Năm sinh', max: 2010, min: 1950, type: 'number' },
+  customerId: { label: 'Mã KH' },
+  fullName: { label: 'Tên gọi' },
+  height: { label: 'Chiều cao', max: 200, min: 100, step: 0.1, suffix: 'cm', type: 'number' },
+  weekPeriod: { label: 'Tuần', type: 'week' },
+  weight: { label: 'Cân nặng', max: 100, min: 30, step: 0.1, suffix: 'kg', type: 'number' },
 };
 
 export default class CustomerInfo extends Component {
@@ -59,8 +56,8 @@ export default class CustomerInfo extends Component {
 
   renderInput = id => {
     const { [id]: value } = this.props.data;
-    const { InputComponent, ...props } = INPUT_CONFIGS[id];
-    return <InputComponent {...props} id={id} onChange={this.onInputChange(id)} value={value} />;
+    const { [id]: props } = INPUT_CONFIGS;
+    return <FormInput {...props} id={id} onChange={this.onInputChange(id)} required value={value} />;
   };
 
   renderWorkoutLevels = selectedWorkoutLevel => (
