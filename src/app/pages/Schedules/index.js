@@ -1,6 +1,7 @@
 import _ from 'lodash';
 import fp from 'lodash/fp';
 import { Component } from 'preact';
+import clipboardCopy from 'clipboard-copy';
 
 // Template renderers
 import { renderSchedulesHTML } from 'app/templates';
@@ -38,7 +39,7 @@ export default class Schedules extends Component {
   onCreatePermalink = () => {
     const { customerInfo, personalizedData } = this.state;
     const permalink = buildPermalink('schedules', { customerInfo, personalizedData });
-    console.debug(permalink);
+    clipboardCopy(permalink);
   };
 
   onDownloadSchedules = async () => {
