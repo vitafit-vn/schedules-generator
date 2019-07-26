@@ -122,15 +122,16 @@ export default class PersonalizedTable extends Component {
           <td></td>
           <td></td>
           <td className="align-middle">
-            <FormInput onChange={this.onInputChange('bulkRpe')} prefix="RPE-" value={bulkRpe} />
+            <FormInput onChange={this.onInputChange('bulkRpe')} prefix="RPE-" small value={bulkRpe} />
           </td>
           <td className="align-middle">
-            <FormInput onChange={this.onInputChange('bulkRest')} suffix="s" value={bulkRest} />
+            <FormInput onChange={this.onInputChange('bulkRest')} suffix="s" small value={bulkRest} />
           </td>
           <td className="align-middle">
             <FormInput
               onChange={this.onInputChange('bulkRecommendedWeight')}
               suffix="kg"
+              small
               value={bulkRecommendedWeight}
             />
           </td>
@@ -162,13 +163,18 @@ export default class PersonalizedTable extends Component {
         </th>
         <td className="align-middle">{name}</td>
         <td className="align-middle">
-          <FormInput onChange={this.onInputChange('rpe', code)} prefix="RPE-" value={rpe} />
+          <FormInput onChange={this.onInputChange('rpe', code)} prefix="RPE-" small value={rpe} />
         </td>
         <td className="align-middle">
-          <FormInput onChange={this.onInputChange('rest', code)} suffix="s" value={rest} />
+          <FormInput onChange={this.onInputChange('rest', code)} suffix="s" small value={rest} />
         </td>
         <td className="align-middle">
-          <FormInput onChange={this.onInputChange('recommendedWeight', code)} suffix="kg" value={recommendedWeight} />
+          <FormInput
+            onChange={this.onInputChange('recommendedWeight', code)}
+            suffix="kg"
+            small
+            value={recommendedWeight}
+          />
         </td>
         <td className="align-middle">
           <button className="btn px-1" onClick={this.onClearRow(code)} type="button">
