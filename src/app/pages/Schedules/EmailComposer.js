@@ -8,10 +8,37 @@ import { Alert, FormInput, ModalContainer, TextButton } from 'app/components';
 // Utils
 import { axios } from 'app/utils';
 
+const DEFAULT_STATE = {
+  alertMessage: undefined,
+  allSchedules: [],
+  email: undefined,
+  loading: false,
+  scheduleNames: [],
+  selectedSchedule: undefined,
+  subject: undefined,
+};
+
 const INPUT_CONFIGS = {
   email: { inline: true, label: 'Email', required: true, type: 'email' },
   subject: { inline: true, label: 'Tiêu đề', required: true },
 };
+
+function buildAlertMessage(error, successMessage) {
+  if (error == null) {
+    return { message: successMessage, type: 'success' };
+  }
+
+  const data = _.get(error, 'response.data');
+
+  const message = (
+    <div>
+      <div>{error.message}</div>
+      {!_.isEmpty(data) && <div>{JSON.stringify(data, null, 2)}</div>}
+    </div>
+  );
+
+  return { message, type: 'danger' };
+}
 
 export default class EmailComposer extends Component {
   static propTypes = {
@@ -19,19 +46,12 @@ export default class EmailComposer extends Component {
     onRenderSchedulesHTML: PropTypes.func.isRequired,
   };
 
-  state = {
-    alertMessage: undefined,
-    allSchedules: [],
-    email: undefined,
-    loading: false,
-    scheduleNames: [],
-    selectedSchedule: undefined,
-    subject: undefined,
-  };
+  state = DEFAULT_STATE;
 
   componentDidMount() {
     window.$('#email-composer-modal').on('show.bs.modal', this.onModalShown);
     window.$('#email-composer-modal').on('hide.bs.modal', this.onModalHidden);
+    window.$('#email-composer-alert').on('closed.bs.alert', () => this.setState({ alertMessage: undefined }));
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -40,23 +60,22 @@ export default class EmailComposer extends Component {
     if (selectedSchedule !== prevState.selectedSchedule && !_.isEmpty(selectedSchedule)) {
       const schedule = _.find(allSchedules, { name: selectedSchedule });
       window.$('#email-preview').html(schedule.html);
+      this.setState({ subject: `[VitaFit VN] Gửi ${this.props.customerInfo.fullName} lịch tập ${selectedSchedule}` });
     }
   }
 
   onModalHidden = () => {
-    this.setState({ email: undefined, selectedSchedule: undefined });
+    this.setState(DEFAULT_STATE); // Clear state
     window.$('#email-preview').empty();
   };
 
   onModalShown = () => {
-    const { customerInfo, onRenderSchedulesHTML } = this.props;
-    const { dailySchedules, weeklySchedule } = onRenderSchedulesHTML();
+    const { dailySchedules, weeklySchedule } = this.props.onRenderSchedulesHTML();
     const allSchedules = _.reject([weeklySchedule, ...dailySchedules], ({ html }) => _.isEmpty(html));
     const scheduleNames = _.map(allSchedules, 'name');
     const selectedSchedule = scheduleNames[0];
-    const subject = `[VitaFit VN] Gửi ${customerInfo.fullName} lịch tập ${selectedSchedule}`;
 
-    this.setState({ allSchedules, scheduleNames, selectedSchedule, subject });
+    this.setState({ allSchedules, scheduleNames, selectedSchedule });
   };
 
   onInputChange = key => event => this.setState({ [key]: event.target.value, alertMessage: undefined });
@@ -70,17 +89,11 @@ export default class EmailComposer extends Component {
 
     try {
       this.setState({ loading: true });
-      // await axios.sendHlvOnlineEmail({ htmlBody, subject, toAddress });
-      // this.setState({ alertMessage: { message: 'Gửi email thành công!', type: 'success' }, loading: false });
-
-      setTimeout(
-        () => this.setState({ alertMessage: { message: 'Gửi email thành công!', type: 'success' }, loading: false }),
-        1000
-      );
+      await axios.sendHlvOnlineEmail({ htmlBody, subject, toAddress });
+      this.setState({ alertMessage: buildAlertMessage(undefined, 'Gửi email thành công!'), loading: false });
     } catch (error) {
-      console.warn(error);
-      const { message } = error;
-      this.setState({ alertMessage: { message, type: 'danger' }, loading: false });
+      console.warn({ ...error });
+      this.setState({ alertMessage: buildAlertMessage(error), loading: false });
     }
   };
 
@@ -138,8 +151,8 @@ export default class EmailComposer extends Component {
         <form action="#">
           {this.renderAlert()}
           {this.renderInput('email')}
-          {this.renderInput('subject')}
           {this.renderScheduleSelector()}
+          {this.renderInput('subject')}
         </form>
         <div className="mt-3" id="email-preview"></div>
       </ModalContainer>
