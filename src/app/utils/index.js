@@ -3,15 +3,15 @@ import JSZip from 'jszip';
 import _ from 'lodash';
 import fp from 'lodash/fp';
 import { DateTime } from 'luxon';
-import qs from 'qs';
+import LZString from 'lz-string';
 import shajs from 'sha.js';
 
 import * as axios from './axios';
 
 export function buildPermalink(service, data) {
-  const stringified = qs.stringify(data);
-  const base64 = window.btoa(stringified);
-  return `${process.env.PUBLIC_PATH}/${service}?${base64}`;
+  const stringified = JSON.stringify(data);
+  const compressed = LZString.compressToEncodedURIComponent(stringified);
+  return `${process.env.PUBLIC_PATH}/${service}?${compressed}`;
 }
 
 export function calculateAge(birthYear) {
@@ -42,8 +42,8 @@ export function parsePermalink() {
   try {
     const url = new URL(window.location.href);
     const base64 = _.replace(url.search, /^\?/, '');
-    const decoded = window.atob(base64);
-    return qs.parse(decoded);
+    const decompressed = LZString.decompressFromEncodedURIComponent(base64);
+    return JSON.parse(decompressed);
   } catch (error) {
     return {};
   }

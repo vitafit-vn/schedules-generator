@@ -1,8 +1,6 @@
 // Constants
 import { WEEKLY_SCHEDULES, WORKOUT_LEVELS } from 'app/constants';
 
-// const fixtures = process.env.NODE_ENV === 'development' ? require('app/data/fixtures/schedules_input.json') : {};
-
 export default {
   customerInfo: {
     birthYear: undefined,

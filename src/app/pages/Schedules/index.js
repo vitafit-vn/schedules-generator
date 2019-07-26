@@ -23,16 +23,6 @@ export default class Schedules extends Component {
     ...parsePermalink(),
   };
 
-  // constructor(props) {
-  //   super(props);
-
-  //   console.debug('on construct', parsePermalink());
-  // }
-
-  // componentDidMount() {
-  //   console.debug('did mount', parsePermalink());
-  // }
-
   get formValid() {
     return window.$('#schedules-form')[0].reportValidity();
   }
