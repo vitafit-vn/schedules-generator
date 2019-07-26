@@ -26,7 +26,6 @@ function buildExerciseData(configs, personalizedData, index) {
     muscle,
     name,
     videoUrl,
-    // imageUrl: _.isEmpty(imageUrl) ? undefined : SITE_CONFIGS.publicPath + imageUrl,
     order: index + 1,
     recommendedWeight: recommendedWeight[code],
     rest: rest[code],

@@ -5,10 +5,10 @@ import PropTypes from 'prop-types';
 import CompanyBrand from './CompanyBrand';
 
 const ScheduleHeader = ({ subTitle, title, userInfo }) => {
-  const { age, height, name, weight } = userInfo;
+  const { age, height, fullName, weight } = userInfo;
 
   const rows = [
-    { label: 'Khách hàng', value: name },
+    { label: 'Khách hàng', value: fullName },
     { label: 'Tuổi', value: age },
     { label: 'Chiều cao', value: `${height}cm` },
     { label: 'Cân nặng', value: `${weight}kg` },
@@ -38,9 +38,9 @@ ScheduleHeader.propTypes = {
   title: PropTypes.string.isRequired,
   userInfo: PropTypes.shape({
     age: PropTypes.string.isRequired,
+    fullName: PropTypes.string.isRequired,
     height: PropTypes.string.isRequired,
     weight: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
   }).isRequired,
 };
 

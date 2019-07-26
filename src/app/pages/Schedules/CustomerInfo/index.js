@@ -2,20 +2,31 @@ import _ from 'lodash';
 import { Component } from 'preact';
 import PropTypes from 'prop-types';
 
+// Components
+import { TextInput } from 'app/components';
+
 // Constants
 import { WEEKLY_SCHEDULES, WORKOUT_LEVELS } from 'app/constants';
 
 // Locals
 import NumberInput from './NumberInput';
-import TextInput from './TextInput';
+
+const INPUT_CONFIGS = {
+  birthYear: { InputComponent: NumberInput, label: 'Năm sinh', max: 2010, min: 1950 },
+  customerId: { InputComponent: TextInput, label: 'Mã KH' },
+  fullName: { InputComponent: TextInput, label: 'Tên gọi' },
+  height: { InputComponent: NumberInput, label: 'Chiều cao', max: 200, min: 100, step: 0.1 },
+  weekPeriod: { InputComponent: NumberInput, label: 'Tuần', type: 'week' },
+  weight: { InputComponent: NumberInput, label: 'Cân nặng', max: 100, min: 30, step: 0.1 },
+};
 
 export default class CustomerInfo extends Component {
   static propTypes = {
     data: PropTypes.shape({
       birthYear: PropTypes.number,
       customerId: PropTypes.string,
+      fullName: PropTypes.string,
       height: PropTypes.number,
-      name: PropTypes.string,
       weekPeriod: PropTypes.string,
       weeklyCode: PropTypes.string,
       weight: PropTypes.number,
@@ -30,8 +41,8 @@ export default class CustomerInfo extends Component {
     const {
       birthYear,
       customerId,
+      fullName,
       height,
-      name,
       weekPeriod,
       weeklyCode: presetWeeklyCode,
       weight,
@@ -41,18 +52,23 @@ export default class CustomerInfo extends Component {
     const weeklyCode = presetWeeklyCode || WEEKLY_SCHEDULES[0].code;
     const workoutLevel = presetWorkoutLevel || WORKOUT_LEVELS[0];
 
-    this.state = { birthYear, customerId, height, name, weekPeriod, weeklyCode, weight, workoutLevel };
+    this.state = { birthYear, customerId, fullName, height, weekPeriod, weeklyCode, weight, workoutLevel };
   }
 
   onInputChange = key => event => this.props.onUpdate({ [key]: event.target.value });
+
+  renderInput = id => {
+    const { [id]: value } = this.props.data;
+    const { InputComponent, ...props } = INPUT_CONFIGS[id];
+    return <InputComponent {...props} id={id} onChange={this.onInputChange(id)} value={value} />;
+  };
 
   renderWorkoutLevels = selectedWorkoutLevel => (
     <div className="form-group">
       <label htmlFor="workout-level">{'Trình độ'}</label>
       <select
         className="custom-select"
-        id="workout-level"
-        name="workout_level"
+        id="workoutLevel"
         onChange={this.onInputChange('workoutLevel')}
         required
         value={selectedWorkoutLevel}
@@ -69,8 +85,7 @@ export default class CustomerInfo extends Component {
       <label htmlFor="weekly-code">{'Preset lịch tuần'}</label>
       <select
         className="custom-select"
-        id="weekly-code"
-        name="weekly_code"
+        id="weeklyCode"
         onChange={this.onInputChange('weeklyCode')}
         required
         value={selectedWeeklyCode}
@@ -83,60 +98,20 @@ export default class CustomerInfo extends Component {
   );
 
   render() {
-    const { birthYear, customerId, height, name, weekPeriod, weeklyCode, weight, workoutLevel } = this.props.data;
-
+    const { weeklyCode, workoutLevel } = this.props.data;
     const selectedWorkoutLevel = workoutLevel || WORKOUT_LEVELS[0];
     const selectedWeeklyCode = weeklyCode || WEEKLY_SCHEDULES[0].code;
 
     return (
-      <div className="col-3" id="customer-info">
-        <TextInput
-          id="customer-id"
-          label="Mã KH"
-          name="customer_id"
-          onChange={this.onInputChange('customerId')}
-          value={customerId}
-        />
-        <TextInput id="full-name" label="Tên gọi" name="full_name" onChange={this.onInputChange('name')} value={name} />
-        <NumberInput
-          id="birth-year"
-          label="Năm
-          sinh"
-          max="2010"
-          min="1950"
-          name="birth_year"
-          onChange={this.onInputChange('birthYear')}
-          value={birthYear}
-        />
-        <NumberInput
-          id="height"
-          label="Chiều
-          cao"
-          max={200}
-          min={100}
-          name="height"
-          onChange={this.onInputChange('height')}
-          value={height}
-        />
-        <NumberInput
-          id="weight"
-          label="Cân nặng"
-          max={100}
-          min={30}
-          name="weight"
-          onChange={this.onInputChange('weight')}
-          value={weight}
-        />
+      <div className="col-3">
+        {this.renderInput('customerId')}
+        {this.renderInput('fullName')}
+        {this.renderInput('birthYear')}
+        {this.renderInput('height')}
+        {this.renderInput('weight')}
         {this.renderWorkoutLevels(selectedWorkoutLevel)}
         {this.renderWeeklyCodes(selectedWeeklyCode)}
-        <NumberInput
-          id="week-period"
-          label="Tuần"
-          name="week_period"
-          type="week"
-          onChange={this.onInputChange('weekPeriod')}
-          value={weekPeriod}
-        />
+        {this.renderInput('weekPeriod')}
       </div>
     );
   }

@@ -81,7 +81,7 @@ export default class Schedules extends Component {
             <FormControls onDownload={this.onDownloadSchedules} />
           </form>
           <EmailComposer
-            customerName={this.state.customerInfo.name}
+            customerName={this.state.customerInfo.fullName}
             onRenderSchedulesHTML={this.onRenderSchedulesHTML}
           />
         </div>

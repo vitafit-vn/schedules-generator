@@ -13,7 +13,6 @@ TextInput.propTypes = {
 };
 
 TextInput.defaultProps = {
-  required: true,
   type: 'text',
 };
 

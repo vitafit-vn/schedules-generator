@@ -2,12 +2,12 @@
   "customerInfo": {
     "birthYear": "1997",
     "customerId": "KH0001",
+    "fullName": "Chị Bảo",
     "height": "154",
-    "name": "Chị Bảo",
+    "weekPeriod": "2019-W30",
     "weeklyCode": "WS07",
     "weight": "54",
-    "workoutLevel": "beginner",
-    "weekPeriod": "2019-W30"
+    "workoutLevel": "beginner"
   },
   "personalizedData": {
     "bulkRecommendedWeight": "3 - 4",

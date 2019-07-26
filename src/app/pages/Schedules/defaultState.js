@@ -7,12 +7,12 @@ export default {
   customerInfo: {
     birthYear: undefined,
     customerId: undefined,
+    fullName: undefined,
     height: undefined,
-    name: undefined,
+    weekPeriod: undefined,
     weeklyCode: WEEKLY_SCHEDULES[0].code,
     weight: undefined,
     workoutLevel: WORKOUT_LEVELS[0],
-    weekPeriod: undefined,
   },
   personalizedData: {
     bulkRecommendedWeight: undefined,
