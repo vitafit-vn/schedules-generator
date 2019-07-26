@@ -3,7 +3,7 @@ import { Component } from 'preact';
 import PropTypes from 'prop-types';
 
 // Components
-import { ModalContainer, TextButton, TextInput } from 'app/components';
+import { FormInput, ModalContainer, TextButton } from 'app/components';
 
 // Utils
 import { axios } from 'app/utils';
@@ -78,10 +78,10 @@ export default class EmailComposer extends Component {
     }
   };
 
-  renderTextInput = id => {
+  renderInput = id => {
     const { [id]: value } = this.state;
     const { [id]: props } = INPUT_CONFIGS;
-    return <TextInput {...props} id={`emailComposer-${id}`} onChange={this.onInputChange(id)} value={value} />;
+    return <FormInput {...props} id={`emailComposer-${id}`} onChange={this.onInputChange(id)} value={value} />;
   };
 
   renderScheduleSelector = () => {
@@ -116,8 +116,8 @@ export default class EmailComposer extends Component {
     return (
       <ModalContainer id="email-composer-modal" title="Gửi email lịch tập">
         <form action="#" onSubmit={this.onSendEmail}>
-          {this.renderTextInput('email')}
-          {this.renderTextInput('subject')}
+          {this.renderInput('email')}
+          {this.renderInput('subject')}
           {this.renderScheduleSelector()}
           <div className="text-center text-danger">{this.state.errorMessage}</div>
         </form>

@@ -33,6 +33,7 @@ FormInput.propTypes = {
 };
 
 FormInput.defaultProps = {
+  ...InputControl.defaultProps,
   inline: false,
   inlineLabelWidth: 2,
   type: 'text',

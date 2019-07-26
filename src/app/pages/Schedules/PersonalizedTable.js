@@ -2,12 +2,11 @@ import _ from 'lodash';
 import { Component } from 'preact';
 import PropTypes from 'prop-types';
 
+// Components
+import { FormInput } from 'app/components';
+
 // Constants
 import { DAILY_SCHEDULES, EXERCISES_DATABASE, WEEKLY_SCHEDULES } from 'app/constants';
-
-// Locals
-import DataInput from './DataInput';
-import HeadCell from './HeadCell';
 
 export default class PersonalizedTable extends Component {
   static propTypes = {
@@ -110,24 +109,31 @@ export default class PersonalizedTable extends Component {
     return (
       <thead className="thead-dark">
         <tr>
-          <HeadCell label="Mã" />
-          <HeadCell label="Bài tập" />
-          <HeadCell label="Mức tạ" />
-          <HeadCell label="Thời gian nghỉ" />
-          <HeadCell label="Khối lượng khuyến nghị" />
-          <HeadCell />
+          {/* eslint-disable prettier/prettier */}
+          <th className="align-middle text-wrap" scope="col">{'Mã'}</th>
+          <th className="align-middle text-wrap" scope="col">{'Bài tập'}</th>
+          <th className="align-middle text-wrap" scope="col">{'Mức tạ'}</th>
+          <th className="align-middle text-wrap" scope="col">{'Thời gian nghỉ'}</th>
+          <th className="align-middle text-wrap" scope="col">{'Khối lượng khuyến nghị'}</th>
+          <th className="align-middle text-wrap" scope="col"></th>
+          {/* eslint-enable prettier/prettier */}
         </tr>
         <tr>
           <td></td>
           <td></td>
-          <DataInput name="bulk_rpe" onChange={this.onInputChange('bulkRpe')} prefix="RPE-" value={bulkRpe} />
-          <DataInput name="bulk_rest" onChange={this.onInputChange('bulkRest')} suffix="s" value={bulkRest} />
-          <DataInput
-            name="bulk_recommended_weight"
-            onChange={this.onInputChange('bulkRecommendedWeight')}
-            suffix="kg"
-            value={bulkRecommendedWeight}
-          />
+          <td className="align-middle">
+            <FormInput onChange={this.onInputChange('bulkRpe')} prefix="RPE-" value={bulkRpe} />
+          </td>
+          <td className="align-middle">
+            <FormInput onChange={this.onInputChange('bulkRest')} suffix="s" value={bulkRest} />
+          </td>
+          <td className="align-middle">
+            <FormInput
+              onChange={this.onInputChange('bulkRecommendedWeight')}
+              suffix="kg"
+              value={bulkRecommendedWeight}
+            />
+          </td>
           <td className="align-middle">
             <div className="d-flex">
               <button className="btn px-1" onClick={this.onClearAll} type="button">
@@ -144,7 +150,10 @@ export default class PersonalizedTable extends Component {
   };
 
   renderBodyRow = ({ code, name }) => {
-    const { recommendedWeight, rest, rpe } = this.props.data;
+    const { recommendedWeight: allRecommendedWeight, rest: allRest, rpe: allRpe } = this.props.data;
+    const { [code]: recommendedWeight } = allRecommendedWeight;
+    const { [code]: rest } = allRest;
+    const { [code]: rpe } = allRpe;
 
     return (
       <tr data-code={code}>
@@ -152,14 +161,15 @@ export default class PersonalizedTable extends Component {
           {code}
         </th>
         <td className="align-middle">{name}</td>
-        <DataInput name="rpe" onChange={this.onInputChange('rpe', code)} prefix="RPE-" value={rpe[code]} />
-        <DataInput name="rest" onChange={this.onInputChange('rest', code)} suffix="s" value={rest[code]} />
-        <DataInput
-          name="recommended_weight"
-          onChange={this.onInputChange('recommendedWeight', code)}
-          suffix="kg"
-          value={recommendedWeight[code]}
-        />
+        <td className="align-middle">
+          <FormInput onChange={this.onInputChange('rpe', code)} prefix="RPE-" value={rpe} />
+        </td>
+        <td className="align-middle">
+          <FormInput onChange={this.onInputChange('rest', code)} suffix="s" value={rest} />
+        </td>
+        <td className="align-middle">
+          <FormInput onChange={this.onInputChange('recommendedWeight', code)} suffix="kg" value={recommendedWeight} />
+        </td>
         <td className="align-middle">
           <button className="btn px-1" onClick={this.onClearRow(code)} type="button">
             <i className="fa fa-trash text-danger" aria-hidden="true"></i>
