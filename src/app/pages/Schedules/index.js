@@ -7,7 +7,7 @@ import clipboardCopy from 'clipboard-copy';
 import { renderSchedulesHTML } from 'app/templates';
 
 // Reusables
-import NavBar from 'app/components/NavBar';
+import { NavBar } from 'app/components';
 
 // Utils
 import { buildPermalink, parsePermalink, zipAndSave } from 'app/utils';
