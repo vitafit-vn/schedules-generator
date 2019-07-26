@@ -11,11 +11,11 @@ const AccordionCard = ({ children, heading, index, parentId, peakAt }) => {
 
   return (
     <div className="card">
-      <div className="card-header" id={`schedule-heading-${index}`}>
+      <div className="bg-primary card-header" id={`schedule-heading-${index}`}>
         <button
           aria-controls={`schedule-collapse-${index}`}
           aria-expanded={ariaExpanded}
-          className={`btn btn-link ${headingCollapsed} mb-0`}
+          className={`btn btn-link ${headingCollapsed} mb-0 text-left text-white w-100`}
           data-target={`#schedule-collapse-${index}`}
           data-toggle="collapse"
           type="button"
@@ -29,7 +29,7 @@ const AccordionCard = ({ children, heading, index, parentId, peakAt }) => {
         data-parent={`#${parentId}`}
         id={`schedule-collapse-${index}`}
       >
-        {children}
+        <div className="card-body">{children}</div>
       </div>
     </div>
   );

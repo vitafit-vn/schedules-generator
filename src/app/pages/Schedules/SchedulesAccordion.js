@@ -11,7 +11,7 @@ const SchedulesAccordion = ({ schedules }) => {
     <div className="accordion" id="schedule-accordion">
       {_.map(schedules, ({ html, name }, index) => (
         <AccordionCard heading={name} index={index} parentId="schedule-accordion">
-          <div className="card-body" dangerouslySetInnerHTML={{ __html: html }}></div>
+          <div dangerouslySetInnerHTML={{ __html: html }}></div>
         </AccordionCard>
       ))}
     </div>
