@@ -3,7 +3,7 @@ import { Component } from 'preact';
 import PropTypes from 'prop-types';
 
 // Components
-import { FormInput } from 'app/components';
+import InputControl from 'app/components/FormInput/InputControl';
 
 // Constants
 import { DAILY_SCHEDULES, EXERCISES_DATABASE, WEEKLY_SCHEDULES } from 'app/constants';
@@ -122,13 +122,13 @@ export default class PersonalizedTable extends Component {
           <td></td>
           <td></td>
           <td className="align-middle">
-            <FormInput onChange={this.onInputChange('bulkRpe')} prefix="RPE-" small value={bulkRpe} />
+            <InputControl onChange={this.onInputChange('bulkRpe')} prefix="RPE-" small value={bulkRpe} />
           </td>
           <td className="align-middle">
-            <FormInput onChange={this.onInputChange('bulkRest')} suffix="s" small value={bulkRest} />
+            <InputControl onChange={this.onInputChange('bulkRest')} suffix="s" small value={bulkRest} />
           </td>
           <td className="align-middle">
-            <FormInput
+            <InputControl
               onChange={this.onInputChange('bulkRecommendedWeight')}
               suffix="kg"
               small
@@ -163,13 +163,13 @@ export default class PersonalizedTable extends Component {
         </th>
         <td className="align-middle">{name}</td>
         <td className="align-middle">
-          <FormInput onChange={this.onInputChange('rpe', code)} prefix="RPE-" small value={rpe} />
+          <InputControl onChange={this.onInputChange('rpe', code)} prefix="RPE-" small value={rpe} />
         </td>
         <td className="align-middle">
-          <FormInput onChange={this.onInputChange('rest', code)} suffix="s" small value={rest} />
+          <InputControl onChange={this.onInputChange('rest', code)} suffix="s" small value={rest} />
         </td>
         <td className="align-middle">
-          <FormInput
+          <InputControl
             onChange={this.onInputChange('recommendedWeight', code)}
             suffix="kg"
             small
