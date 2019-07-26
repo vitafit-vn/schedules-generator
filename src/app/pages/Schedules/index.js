@@ -25,7 +25,7 @@ export default class Schedules extends Component {
   };
 
   get formValid() {
-    return window.$('#schedules-form')[0].reportValidity();
+    return this.schedulesForm.reportValidity();
   }
 
   onUpdateCustomerInfo = partial =>
@@ -33,6 +33,8 @@ export default class Schedules extends Component {
 
   onUpdatePersonalizedData = partial =>
     this.setState(({ personalizedData }) => ({ personalizedData: { ...personalizedData, ...partial } }));
+
+  onFormRef = ref => (this.schedulesForm = ref); // eslint-disable-line no-return-assign
 
   onRenderSchedulesHTML = () => renderSchedulesHTML(this.state);
 
@@ -91,7 +93,7 @@ export default class Schedules extends Component {
       <div>
         <NavBar page="schedules" title="Công cụ tạo lịch" />
         <div className="container">
-          <form action="#" id="schedules-form" onSubmit={this.onPreviewSchedules}>
+          <form action="#" onSubmit={this.onPreviewSchedules} ref={this.onFormRef}>
             <div className="row">
               <CustomerInfo data={customerInfo} onUpdate={this.onUpdateCustomerInfo} />
               <PersonalizedTable

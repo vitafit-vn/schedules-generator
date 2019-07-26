@@ -59,14 +59,14 @@ export default class EmailComposer extends Component {
 
     if (selectedSchedule !== prevState.selectedSchedule && !_.isEmpty(selectedSchedule)) {
       const schedule = _.find(allSchedules, { name: selectedSchedule });
-      window.$('#email-preview').html(schedule.html);
+      window.$('#email-composer-preview').html(schedule.html);
       this.setState({ subject: `[VitaFit VN] Gửi ${this.props.customerInfo.fullName} lịch tập ${selectedSchedule}` });
     }
   }
 
   onModalHidden = () => {
     this.setState(DEFAULT_STATE); // Clear state
-    window.$('#email-preview').empty();
+    window.$('#email-composer-preview').empty();
   };
 
   onModalShown = () => {
@@ -116,6 +116,14 @@ export default class EmailComposer extends Component {
     return <FormInput {...props} id={`email-composer-${id}`} onChange={this.onInputChange(id)} value={value} />;
   };
 
+  renderEmailPreview = () => {
+    const { allSchedules, selectedSchedule } = this.state;
+    if (selectedSchedule == null) return;
+
+    const schedule = _.find(allSchedules, { name: selectedSchedule });
+    return <div className="mt-3 mx-auto" dangerouslySetInnerHTML={{ __html: schedule.html }} />;
+  };
+
   renderSendButton = () => (
     <TextButton icon="paper-plane" label="Gửi" loading={this.state.loading} onClick={this.onSendEmail} />
   );
@@ -125,13 +133,13 @@ export default class EmailComposer extends Component {
 
     return (
       <div className="form-group row">
-        <label className="col-2 col-form-label pr-0" htmlFor="email-composer.scheduleSelect">
+        <label className="col-2 col-form-label pr-0" htmlFor="email-composer-scheduleSelect">
           {'Lịch tập'}
         </label>
         <div className="col">
           <select
             className="custom-select"
-            id="email-composer.scheduleSelect"
+            id="email-composer-scheduleSelect"
             onChange={this.onInputChange('selectedSchedule')}
             required
             value={selectedSchedule}
@@ -154,7 +162,7 @@ export default class EmailComposer extends Component {
           {this.renderScheduleSelector()}
           {this.renderInput('subject')}
         </form>
-        <div className="mt-3" id="email-preview"></div>
+        {this.renderEmailPreview()}
       </ModalContainer>
     );
   }
