@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import InputControl from './InputControl';
 import SelectControl from './SelectControl';
 
-const FormInput = ({ id, inline, inlineLabelWidth, label, selectData, type, ...restProps }) => {
+const FormInput = ({ id, inline, inlineLabelClass, label, selectData, type, ...restProps }) => {
   const controlElement =
     type === 'select' && !_.isEmpty(selectData) ? (
       <SelectControl id={id} selectData={selectData} {...restProps} />
@@ -14,9 +14,11 @@ const FormInput = ({ id, inline, inlineLabelWidth, label, selectData, type, ...r
     );
 
   if (inline) {
+    const labelClassName = _.compact(['col-2', 'col-form-label', inlineLabelClass]).join(' ');
+
     return (
       <div className="form-group row">
-        <label className={`col-${inlineLabelWidth} col-form-label`} htmlFor={id}>
+        <label className={labelClassName} htmlFor={id}>
           {label}
         </label>
         <div className="col">{controlElement}</div>
@@ -36,14 +38,14 @@ FormInput.propTypes = {
   ...InputControl.propTypes,
   ...SelectControl.propTypes,
   inline: PropTypes.bool,
-  inlineLabelWidth: PropTypes.number,
+  inlineLabelClass: PropTypes.number,
   label: PropTypes.string.isRequired,
 };
 
 FormInput.defaultProps = {
   ...InputControl.defaultProps,
   inline: false,
-  inlineLabelWidth: 2,
+  inlineLabelClass: 2,
   type: 'text',
 };
 

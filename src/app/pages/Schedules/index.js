@@ -47,16 +47,13 @@ export default class Schedules extends Component {
   onDownloadSchedules = async () => {
     if (!this.formValid) return;
 
-    const { checksum, dailySchedules, weeklySchedule } = renderSchedulesHTML(this.state);
+    const { allSchedules, checksum } = renderSchedulesHTML(this.state);
     const prefix = `${this.state.customerInfo.customerId}_${checksum.substring(checksum.length - 6)}`;
 
-    const allFiles = [
-      { content: weeklySchedule.html, fileName: `${prefix}-weekly.html` },
-      ..._.map(dailySchedules, ({ html, weekday }) => ({
-        content: html,
-        fileName: `${prefix}-daily-${weekday}.html`,
-      })),
-    ];
+    const allFiles = _.map(allSchedules, ({ name, toHtml }) => ({
+      content: toHtml(),
+      fileName: `${prefix}-${name}.html`,
+    }));
 
     try {
       await zipAndSave(allFiles, `${prefix}.zip`);
@@ -74,16 +71,8 @@ export default class Schedules extends Component {
     event.preventDefault();
     if (!this.formValid) return;
 
-    const { dailySchedules, weeklySchedule } = renderSchedulesHTML(this.state);
-
-    this.setState({ allSchedules: [weeklySchedule, ...dailySchedules] });
-
-    // const schedulesHtml = fp.flow(
-    //   fp.map('html'),
-    //   fp.join('\n')
-    // )([weeklySchedule, ...dailySchedules]);
-
-    // window.$('#schedules-preview').html(schedulesHtml);
+    const { allSchedules } = renderSchedulesHTML(this.state);
+    this.setState({ allSchedules });
   };
 
   render() {

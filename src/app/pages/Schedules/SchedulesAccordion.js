@@ -9,9 +9,9 @@ const SchedulesAccordion = ({ schedules }) => {
 
   return (
     <div className="accordion" id="schedule-accordion">
-      {_.map(schedules, ({ html, name }, index) => (
+      {_.map(schedules, ({ jsxElement, name }, index) => (
         <AccordionCard heading={name} index={index} parentId="schedule-accordion">
-          <div dangerouslySetInnerHTML={{ __html: html }}></div>
+          {jsxElement}
         </AccordionCard>
       ))}
     </div>
@@ -21,7 +21,7 @@ const SchedulesAccordion = ({ schedules }) => {
 SchedulesAccordion.propTypes = {
   schedules: PropTypes.arrayOf(
     PropTypes.shape({
-      html: PropTypes.string.isRequired,
+      jsxElement: PropTypes.element.isRequired,
       name: PropTypes.string.isRequired,
     })
   ),

@@ -71,10 +71,12 @@ export function renderDailySchedule({ customerInfo, dayIndex, personalizedData }
     title: 'Chế độ tập luyện hàng ngày',
   };
 
+  const jsxElement = <DailySchedule {...renderingProps} />;
+
   return {
-    html: renderToString(<DailySchedule {...renderingProps} />),
+    jsxElement,
     name: subTitle,
-    weekday: WEEKDAYS[dayIndex],
+    toHtml: () => renderToString(jsxElement),
   };
 }
 
@@ -105,9 +107,12 @@ export function renderWeeklySchedule({ customerInfo, personalizedData }) {
     weekdays: WEEKDAYS,
   };
 
+  const jsxElement = <WeeklySchedule {...renderingProps} />;
+
   return {
-    html: renderToString(<WeeklySchedule {...renderingProps} />),
+    jsxElement,
     name: subTitle,
+    toHtml: () => renderToString(jsxElement),
   };
 }
 
@@ -125,11 +130,11 @@ export function renderSchedulesHTML({ customerInfo: originalInfo, personalizedDa
     weekStart: convertWeekPeriod(weekPeriod),
   };
 
-  const allDailySchedules = _.map(WEEKDAYS, (weekday, dayIndex) =>
+  const dailySchedules = _.map(WEEKDAYS, (weekday, dayIndex) =>
     renderDailySchedule({ customerInfo, dayIndex, personalizedData })
   );
-  const dailySchedules = _.compact(allDailySchedules);
   const weeklySchedule = renderWeeklySchedule({ customerInfo, personalizedData });
+  const allSchedules = [weeklySchedule, ..._.compact(dailySchedules)];
 
-  return { checksum, dailySchedules, weeklySchedule };
+  return { allSchedules, checksum };
 }

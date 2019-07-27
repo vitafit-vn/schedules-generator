@@ -26,7 +26,13 @@ const INPUT_IDS = {
 
 const INPUT_CONFIGS = {
   [INPUT_IDS.EMAIL]: { inline: true, label: 'Email', required: true, type: 'email' },
-  [INPUT_IDS.SELECTED_SCHEDULE]: { inline: true, label: 'Lịch tập', required: true, type: 'select' },
+  [INPUT_IDS.SELECTED_SCHEDULE]: {
+    inline: true,
+    inlineLabelClass: 'pr-0',
+    label: 'Lịch tập',
+    required: true,
+    type: 'select',
+  },
   [INPUT_IDS.SUBJECT]: { inline: true, label: 'Tiêu đề', required: true },
 };
 
@@ -62,11 +68,9 @@ export default class EmailComposer extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    const { allSchedules, selectedSchedule } = this.state;
+    const { selectedSchedule } = this.state;
 
     if (selectedSchedule !== prevState.selectedSchedule && !_.isEmpty(selectedSchedule)) {
-      const schedule = _.find(allSchedules, { name: selectedSchedule });
-      window.$('#email-composer-preview').html(schedule.html);
       this.setState({ subject: `[VitaFit VN] Gửi ${this.props.customerInfo.fullName} lịch tập ${selectedSchedule}` });
     }
   }
@@ -77,25 +81,32 @@ export default class EmailComposer extends Component {
   };
 
   onModalShown = () => {
-    const { dailySchedules, weeklySchedule } = this.props.onRenderSchedulesHTML();
-    const allSchedules = [weeklySchedule, ...dailySchedules];
+    const { allSchedules } = this.props.onRenderSchedulesHTML();
     const scheduleNames = _.map(allSchedules, 'name');
     const selectedSchedule = scheduleNames[0];
 
     this.setState({ allSchedules, scheduleNames, selectedSchedule });
   };
 
-  onInputChange = key => event => this.setState({ [key]: event.target.value, alertMessage: undefined });
+  onInputChange = key => event => {
+    const { value } = event.target;
+
+    this.setState({ [key]: value, alertMessage: undefined });
+
+    if (key === INPUT_IDS.SELECTED_SCHEDULE)
+      this.setState({ subject: `[VitaFit VN] Gửi ${this.props.customerInfo.fullName} lịch tập ${value}` });
+  };
 
   onSendEmail = async event => {
     event.preventDefault();
     if (!window.$('#email-composer-modal form')[0].reportValidity()) return;
 
     const { allSchedules, email: toAddress, selectedSchedule, subject } = this.state;
-    const { html: htmlBody } = _.find(allSchedules, { name: selectedSchedule });
 
     try {
       this.setState({ loading: true });
+      const schedule = _.find(allSchedules, { name: selectedSchedule });
+      const htmlBody = schedule.toHtml();
       await axios.sendHlvOnlineEmail({ htmlBody, subject, toAddress });
       this.setState({ alertMessage: buildAlertMessage(undefined, 'Gửi email thành công!'), loading: false });
     } catch (error) {
@@ -136,37 +147,12 @@ export default class EmailComposer extends Component {
     if (selectedSchedule == null) return;
 
     const schedule = _.find(allSchedules, { name: selectedSchedule });
-    return <div className="mt-3 mx-auto" dangerouslySetInnerHTML={{ __html: schedule.html }} />;
+    return <div className="mt-3 mx-auto">{schedule.jsxElement}</div>;
   };
 
   renderSendButton = () => (
     <TextButton icon="paper-plane" label="Gửi" loading={this.state.loading} onClick={this.onSendEmail} />
   );
-
-  // renderScheduleSelector = () => {
-  //   const { scheduleNames, selectedSchedule } = this.state;
-
-  //   return (
-  //     <div className="form-group row">
-  //       <label className="col-2 col-form-label pr-0" htmlFor="email-composer-scheduleSelect">
-  //         {'Lịch tập'}
-  //       </label>
-  //       <div className="col">
-  //         <select
-  //           className="custom-select"
-  //           id="email-composer-scheduleSelect"
-  //           onChange={this.onInputChange('selectedSchedule')}
-  //           required
-  //           value={selectedSchedule}
-  //         >
-  //           {_.map(scheduleNames, name => (
-  //             <option value={name}>{name}</option>
-  //           ))}
-  //         </select>
-  //       </div>
-  //     </div>
-  //   );
-  // };
 
   render() {
     return (
