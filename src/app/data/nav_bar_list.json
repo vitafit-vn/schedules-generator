@@ -25,6 +25,12 @@
     "label": "Sales"
   },
   {
+    "key": "health_reports",
+    "label": "Chỉ số sức khoẻ",
+    "parent": "sales",
+    "path": "/health_reports"
+  },
+  {
     "key": "lt16",
     "label": "LT16",
     "parent": "sales",

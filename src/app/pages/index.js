@@ -32,6 +32,7 @@ export default class App extends Component {
           <Home default />
           <Schedules path="/schedules" />
           <PlaceholderPage path="/meals" />
+          <PlaceholderPage path="/health_reports" />
           <PlaceholderPage path="/lt16" />
         </Router>
       </GlobalDataContext.Provider>
