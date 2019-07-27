@@ -13,5 +13,5 @@ export default {
     weight: undefined,
   },
   // eslint-disable-next-line global-require
-  // ...(process.env.NODE_ENV === 'development' ? require('app/data/fixtures/schedules_input.json') : {}),
+  // ...(process.env.NODE_ENV === 'development' ? require('app/data/fixtures/health_reports_input.json') : {}),
 };
