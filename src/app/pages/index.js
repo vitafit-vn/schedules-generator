@@ -1,5 +1,5 @@
 import { Component } from 'preact';
-import Router from 'preact-router';
+import { Router, route } from 'preact-router';
 
 // Locals
 import { GlobalDataContext } from '../contexts';
@@ -16,7 +16,12 @@ export default class App extends Component {
 
   onUpdateUser = user => this.setState({ user });
 
-  onRouteChange = event => {
+  onRouteChange = async event => {
+    if (this.state.user == null) {
+      route('/', true);
+      return;
+    }
+
     console.debug(event); // eslint-disable-line
   };
 
