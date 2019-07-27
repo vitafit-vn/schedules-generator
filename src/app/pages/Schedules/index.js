@@ -55,6 +55,8 @@ export default class Schedules extends Component {
       fileName: `${prefix}-${name}.html`,
     }));
 
+    console.debug(allFiles);
+
     try {
       await zipAndSave(allFiles, `${prefix}.zip`);
     } catch (error) {

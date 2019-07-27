@@ -2,7 +2,7 @@ import _ from 'lodash';
 import renderToString from 'preact-render-to-string';
 
 // Constants
-import { DAILY_SCHEDULES, EXERCISES_DATABASE, OFF_DAY, WEEKDAYS, WEEKLY_SCHEDULES } from 'app/constants';
+import { DAILY_SCHEDULES, EXERCISES_DATABASE, FORMATS, OFF_DAY, WEEKDAYS, WEEKLY_SCHEDULES } from 'app/constants';
 
 // Utils
 import { calculateAge, computeChecksum, convertWeekPeriod } from 'app/utils';
@@ -61,7 +61,7 @@ export function renderDailySchedule({ customerInfo, dayIndex, personalizedData }
   if (_.isEmpty(dayExercises)) return undefined;
 
   const dailyExercises = buildDayExercises({ date, dayExercises, dayIndex, personalizedData });
-  const subTitle = `Ngày ${date.toFormat('dd/MM/yyyy')}`;
+  const subTitle = `Ngày ${date.toFormat(FORMATS.DISPLAY_DATE)}`;
 
   const renderingProps = {
     dailyExercises,
@@ -75,6 +75,7 @@ export function renderDailySchedule({ customerInfo, dayIndex, personalizedData }
 
   return {
     jsxElement,
+    fileName: `daily-${date.toFormat(FORMATS.URI_PATH_DATE)}`,
     name: subTitle,
     toHtml: () => renderToString(jsxElement),
   };
@@ -95,7 +96,7 @@ export function renderWeeklySchedule({ customerInfo, personalizedData }) {
     return buildDayExercises({ dayExercises, personalizedData, date: datesInWeek[index], dayIndex: index });
   });
 
-  const subTitle = `Tuần từ ${weekStart.toFormat('dd/MM/yyyy')} đến ${weekEnd.toFormat('dd/MM/yyyy')}`;
+  const subTitle = `Tuần từ ${weekStart.toFormat(FORMATS.DISPLAY_DATE)} đến ${weekEnd.toFormat(FORMATS.DISPLAY_DATE)}`;
 
   const renderingProps = {
     dailyCodes,
@@ -111,6 +112,7 @@ export function renderWeeklySchedule({ customerInfo, personalizedData }) {
 
   return {
     jsxElement,
+    fileName: `weekly-${weekStart.toFormat(FORMATS.URI_PATH_DATE)}-${weekEnd.toFormat(FORMATS.URI_PATH_DATE)}`,
     name: subTitle,
     toHtml: () => renderToString(jsxElement),
   };
