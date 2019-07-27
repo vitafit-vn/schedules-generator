@@ -57,19 +57,23 @@ export default class HealthReports extends Component {
     return (
       <div>
         <NavBar page="health_reports" />
-        <div className="container">
+        <div className="container px-0">
           <h3 className="mb-3 text-primary">{'Công cụ Báo cáo chỉ số sức khoẻ khách hàng'}</h3>
-          <form action="#" onSubmit={this.onPreviewSchedules} ref={this.onFormRef}>
-            <CustomerInfo data={customerInfo} onUpdate={this.onUpdateCustomerInfo} />
-            <FooterFormControls
-              onComposeEmail={this.onOpenEmailComposer}
-              onCreatePermalink={this.onCreatePermalink}
-              onDownload={this.onDownloadSchedules}
-            />
-          </form>
+          <div className="row">
+            <div className="col-6">
+              <form action="#" onSubmit={this.onPreviewSchedules} ref={this.onFormRef}>
+                <CustomerInfo data={customerInfo} onUpdate={this.onUpdateCustomerInfo} />
+                <FooterFormControls
+                  onComposeEmail={this.onOpenEmailComposer}
+                  onCreatePermalink={this.onCreatePermalink}
+                  onDownload={this.onDownloadSchedules}
+                />
+              </form>
+            </div>
+            <div className="col-6 mx-auto" id="health-reports-preview"></div>
+          </div>
           {/* <EmailComposer customerInfo={customerInfo} onRenderHTML={this.onRenderReportsHTML} /> */}
         </div>
-        <div className="my-3 mx-auto" id="health-reports-preview"></div>
       </div>
     );
   }

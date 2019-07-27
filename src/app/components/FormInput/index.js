@@ -14,11 +14,9 @@ const FormInput = ({ id, inline, inlineLabelClass, label, selectData, type, ...r
     );
 
   if (inline) {
-    const labelClassName = _.compact(['col-2', 'col-form-label', inlineLabelClass]).join(' ');
-
     return (
       <div className="form-group row">
-        <label className={labelClassName} htmlFor={id}>
+        <label className={`col-form-label ${inlineLabelClass}`} htmlFor={id}>
           {label}
         </label>
         <div className="col">{controlElement}</div>
@@ -45,6 +43,7 @@ FormInput.propTypes = {
 FormInput.defaultProps = {
   ...InputControl.defaultProps,
   inline: false,
+  inlineLabelClass: 'col-2',
   type: 'text',
 };
 

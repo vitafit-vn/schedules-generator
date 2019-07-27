@@ -82,7 +82,7 @@ export default class Schedules extends Component {
     return (
       <div>
         <NavBar page="schedules" />
-        <div className="container">
+        <div className="container px-0">
           <h3 className="mb-3 text-primary">{'Công cụ Tạo lịch tập'}</h3>
           <form action="#" onSubmit={this.onPreviewSchedules} ref={this.onFormRef}>
             <div className="row">

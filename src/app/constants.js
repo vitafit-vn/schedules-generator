@@ -5,6 +5,14 @@ import DAILY_SCHEDULES_SHARED from './data/daily_schedules_shared.json';
 import EXERCISES_DATABASE from './data/exercises_database.json';
 import WEEKLY_SCHEDULES from './data/weekly_schedules.json';
 
+const ACTIVITY_RATES = [
+  { description: 'Ít hoạt động, chỉ ăn, đi làm, về ngủ', value: 1.2 },
+  { description: 'Có tập nhẹ nhàng, tuần 1 - 3 buổi', value: 1.375 },
+  { description: 'Có vận động vừa, tuần 4 - 5 buổi', value: 1.55 },
+  { description: 'Vận động nhiều, tuần 6 - 7 buổi', value: 1.725 },
+  { description: 'Vận động rất nhiều, ngày 2 lần', value: 1.9 },
+];
+
 const DAILY_SCHEDULES = {
   beginner: DAILY_SCHEDULES_BEGINNER,
   intermediate: DAILY_SCHEDULES_INTERMEDIATE,
@@ -16,12 +24,31 @@ const FORMATS = {
   URI_PATH_DATE: 'dd-MM-yyyy',
 };
 
+const GENDERS = [{ code: 'male', name: 'Nam' }, { code: 'female', name: 'Nữ' }];
+
 const HOME_PAGE = 'http://www.vitafit.vn';
 
 const OFF_DAY = 'NGHỈ';
+
+const TARGETS = [
+  { code: 'decrease', description: 'Giảm cân, giảm mỡ' },
+  { code: 'increase', description: 'Tăng cân, tăng cơ' },
+];
 
 const WEEKDAYS = ['Thứ hai', 'Thứ ba', 'Thứ tư', 'Thứ năm', 'Thứ sáu', 'Thứ bảy', 'Chủ nhật'];
 
 const WORKOUT_LEVELS = ['beginner', 'intermediate'];
 
-export { DAILY_SCHEDULES, EXERCISES_DATABASE, FORMATS, HOME_PAGE, OFF_DAY, WEEKDAYS, WEEKLY_SCHEDULES, WORKOUT_LEVELS };
+export {
+  ACTIVITY_RATES,
+  DAILY_SCHEDULES,
+  EXERCISES_DATABASE,
+  FORMATS,
+  GENDERS,
+  HOME_PAGE,
+  OFF_DAY,
+  TARGETS,
+  WEEKDAYS,
+  WEEKLY_SCHEDULES,
+  WORKOUT_LEVELS,
+};

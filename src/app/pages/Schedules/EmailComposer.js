@@ -134,7 +134,7 @@ export default class EmailComposer extends Component {
       value,
       id: `email-composer-${id}`,
       inline: true,
-      inlineLabelClass: 'pr-0',
+      inlineLabelClass: 'col-2 pr-0',
       onChange: this.onInputChange(id),
       selectData: id === INPUT_IDS.SELECTED_SCHEDULE ? _.map(scheduleNames, name => ({ value: name })) : undefined,
     };
