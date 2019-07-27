@@ -8,23 +8,34 @@ import { FormInput } from 'app/components';
 // Constants
 import { WEEKLY_SCHEDULES, WORKOUT_LEVELS } from 'app/constants';
 
+const INPUT_IDS = {
+  BIRTH_YEAR: 'birthYear',
+  CUSTOMER_ID: 'customerId',
+  FULL_NAME: 'fullName',
+  HEIGHT: 'height',
+  WEEK_PERIOD: 'weekPeriod',
+  WEEKLY_CODE: 'weeklyCode',
+  WEIGHT: 'weight',
+  WORKOUT_LEVEL: 'workoutLevel',
+};
+
 const INPUT_CONFIGS = {
-  birthYear: { label: 'Năm sinh', max: 2010, min: 1950, type: 'number' },
-  customerId: { label: 'Mã KH' },
-  fullName: { label: 'Tên gọi' },
-  height: { label: 'Chiều cao', max: 200, min: 100, step: 0.1, suffix: 'cm', type: 'number' },
-  weekPeriod: { label: 'Tuần', type: 'week' },
-  weeklyCode: {
+  [INPUT_IDS.BIRTH_YEAR]: { label: 'Năm sinh', max: 2010, min: 1950, type: 'number' },
+  [INPUT_IDS.CUSTOMER_ID]: { label: 'Mã KH' },
+  [INPUT_IDS.FULL_NAME]: { label: 'Tên gọi' },
+  [INPUT_IDS.HEIGHT]: { label: 'Chiều cao', max: 200, min: 100, step: 0.1, suffix: 'cm', type: 'number' },
+  [INPUT_IDS.WEEK_PERIOD]: { label: 'Tuần', type: 'week' },
+  [INPUT_IDS.WEEKLY_CODE]: {
     label: 'Preset lịch tuần',
-    selectData: _.map(WEEKLY_SCHEDULES, ({ code: value, description: title, frequency, shortkeys }) => ({
-      title,
-      value,
+    selectData: _.map(WEEKLY_SCHEDULES, ({ code, description, frequency, shortkeys }) => ({
+      title: description,
+      value: code,
       label: `${frequency} (${shortkeys})`,
     })),
     type: 'select',
   },
-  weight: { label: 'Cân nặng', max: 100, min: 30, step: 0.1, suffix: 'kg', type: 'number' },
-  workoutLevel: {
+  [INPUT_IDS.WEIGHT]: { label: 'Cân nặng', max: 100, min: 30, step: 0.1, suffix: 'kg', type: 'number' },
+  [INPUT_IDS.WORKOUT_LEVEL]: {
     label: 'Trình độ',
     selectData: _.map(WORKOUT_LEVELS, value => ({ value, label: _.capitalize(value) })),
     type: 'select',
@@ -81,14 +92,14 @@ export default class CustomerInfo extends Component {
 
     return (
       <div className="col-3">
-        {this.renderInput('customerId')}
-        {this.renderInput('fullName')}
-        {this.renderInput('birthYear')}
-        {this.renderInput('height')}
-        {this.renderInput('weight')}
-        {this.renderInput('workoutLevel', selectedWorkoutLevel)}
-        {this.renderInput('weeklyCode', selectedWeeklyCode)}
-        {this.renderInput('weekPeriod')}
+        {this.renderInput(INPUT_IDS.CUSTOMER_ID)}
+        {this.renderInput(INPUT_IDS.FULL_NAME)}
+        {this.renderInput(INPUT_IDS.BIRTH_YEAR)}
+        {this.renderInput(INPUT_IDS.HEIGHT)}
+        {this.renderInput(INPUT_IDS.WEIGHT)}
+        {this.renderInput(INPUT_IDS.WORKOUT_LEVEL, selectedWorkoutLevel)}
+        {this.renderInput(INPUT_IDS.WEEKLY_CODE, selectedWeeklyCode)}
+        {this.renderInput(INPUT_IDS.WEEK_PERIOD)}
       </div>
     );
   }

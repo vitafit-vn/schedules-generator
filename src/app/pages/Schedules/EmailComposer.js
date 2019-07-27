@@ -18,9 +18,16 @@ const DEFAULT_STATE = {
   subject: undefined,
 };
 
+const INPUT_IDS = {
+  EMAIL: 'email',
+  SELECTED_SCHEDULE: 'selectedSchedule',
+  SUBJECT: 'subject',
+};
+
 const INPUT_CONFIGS = {
-  email: { inline: true, label: 'Email', required: true, type: 'email' },
-  subject: { inline: true, label: 'Tiêu đề', required: true },
+  [INPUT_IDS.EMAIL]: { inline: true, label: 'Email', required: true, type: 'email' },
+  [INPUT_IDS.SELECTED_SCHEDULE]: { inline: true, label: 'Lịch tập', required: true, type: 'select' },
+  [INPUT_IDS.SUBJECT]: { inline: true, label: 'Tiêu đề', required: true },
 };
 
 function buildAlertMessage(error, successMessage) {
@@ -111,9 +118,17 @@ export default class EmailComposer extends Component {
   };
 
   renderInput = id => {
-    const { [id]: value } = this.state;
+    const { [id]: value, scheduleNames } = this.state;
     const { [id]: props } = INPUT_CONFIGS;
-    return <FormInput {...props} id={`email-composer-${id}`} onChange={this.onInputChange(id)} value={value} />;
+    const passedProps = {
+      ...props,
+      value,
+      id: `email-composer-${id}`,
+      onChange: this.onInputChange(id),
+      selectData: id === INPUT_IDS.SELECTED_SCHEDULE ? _.map(scheduleNames, name => ({ value: name })) : undefined,
+    };
+
+    return <FormInput {...passedProps} />;
   };
 
   renderEmailPreview = () => {
@@ -128,39 +143,39 @@ export default class EmailComposer extends Component {
     <TextButton icon="paper-plane" label="Gửi" loading={this.state.loading} onClick={this.onSendEmail} />
   );
 
-  renderScheduleSelector = () => {
-    const { scheduleNames, selectedSchedule } = this.state;
+  // renderScheduleSelector = () => {
+  //   const { scheduleNames, selectedSchedule } = this.state;
 
-    return (
-      <div className="form-group row">
-        <label className="col-2 col-form-label pr-0" htmlFor="email-composer-scheduleSelect">
-          {'Lịch tập'}
-        </label>
-        <div className="col">
-          <select
-            className="custom-select"
-            id="email-composer-scheduleSelect"
-            onChange={this.onInputChange('selectedSchedule')}
-            required
-            value={selectedSchedule}
-          >
-            {_.map(scheduleNames, name => (
-              <option value={name}>{name}</option>
-            ))}
-          </select>
-        </div>
-      </div>
-    );
-  };
+  //   return (
+  //     <div className="form-group row">
+  //       <label className="col-2 col-form-label pr-0" htmlFor="email-composer-scheduleSelect">
+  //         {'Lịch tập'}
+  //       </label>
+  //       <div className="col">
+  //         <select
+  //           className="custom-select"
+  //           id="email-composer-scheduleSelect"
+  //           onChange={this.onInputChange('selectedSchedule')}
+  //           required
+  //           value={selectedSchedule}
+  //         >
+  //           {_.map(scheduleNames, name => (
+  //             <option value={name}>{name}</option>
+  //           ))}
+  //         </select>
+  //       </div>
+  //     </div>
+  //   );
+  // };
 
   render() {
     return (
       <ModalContainer id="email-composer-modal" renderPrimaryButton={this.renderSendButton} title="Gửi email lịch tập">
         <form action="#">
           {this.renderAlert()}
-          {this.renderInput('email')}
-          {this.renderScheduleSelector()}
-          {this.renderInput('subject')}
+          {this.renderInput(INPUT_IDS.EMAIL)}
+          {this.renderInput(INPUT_IDS.SELECTED_SCHEDULE)}
+          {this.renderInput(INPUT_IDS.SUBJECT)}
         </form>
         {this.renderEmailPreview()}
       </ModalContainer>
