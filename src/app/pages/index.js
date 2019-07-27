@@ -6,6 +6,7 @@ import { GlobalDataContext } from '../contexts';
 
 import Home from './Home';
 import Schedules from './Schedules';
+import PlaceholderPage from './PlaceholderPage';
 
 export default class App extends Component {
   state = {
@@ -25,6 +26,8 @@ export default class App extends Component {
         <Router onChange={this.onRouteChange}>
           <Home default />
           <Schedules path="/schedules" />
+          <PlaceholderPage path="/meals" />
+          <PlaceholderPage path="/lt16" />
         </Router>
       </GlobalDataContext.Provider>
     );
