@@ -50,12 +50,10 @@ export default class Schedules extends Component {
     const { allSchedules, checksum } = renderSchedulesHTML(this.state);
     const prefix = `${this.state.customerInfo.customerId}_${checksum.substring(checksum.length - 6)}`;
 
-    const allFiles = _.map(allSchedules, ({ name, toHtml }) => ({
+    const allFiles = _.map(allSchedules, ({ fileName, toHtml }) => ({
       content: toHtml(),
-      fileName: `${prefix}-${name}.html`,
+      fileName: `${prefix}-${fileName}.html`,
     }));
-
-    console.debug(allFiles);
 
     try {
       await zipAndSave(allFiles, `${prefix}.zip`);

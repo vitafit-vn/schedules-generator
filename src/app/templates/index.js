@@ -112,7 +112,7 @@ export function renderWeeklySchedule({ customerInfo, personalizedData }) {
 
   return {
     jsxElement,
-    fileName: `weekly-${weekStart.toFormat(FORMATS.URI_PATH_DATE)}-${weekEnd.toFormat(FORMATS.URI_PATH_DATE)}`,
+    fileName: `weekly-${weekStart.toFormat(FORMATS.URI_PATH_DATE)}_${weekEnd.toFormat(FORMATS.URI_PATH_DATE)}`,
     name: subTitle,
     toHtml: () => renderToString(jsxElement),
   };
