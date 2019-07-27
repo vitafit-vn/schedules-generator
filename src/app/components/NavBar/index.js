@@ -77,14 +77,15 @@ class NavBar extends Component {
     const { user } = this.props;
     if (user == null) return <h5 className="font-weight-bold mb-0 text-uppercase text-white">{'Công cụ VitaFit'}</h5>;
 
-    const { avatar, name } = user;
+    // const { avatar, name } = user;
 
-    return (
-      <div className="align-items-center d-flex justify-content-end">
-        <h6 className="mb-0 text-white">{name}</h6>
-        <img alt={`${name}'s avatar`} className="ml-2 rounded-circle" height={40} src={avatar} width={40} />
-      </div>
-    );
+    // return (
+    //   <div className="align-items-center d-flex justify-content-end">
+    //     <h6 className="mb-0 text-white">{name}</h6>
+    //     <img alt={`${name}'s avatar`} className="ml-2 rounded-circle" height={40} src={avatar} width={40} />
+    //   </div>
+    // );
+    return <div></div>;
   };
 
   render() {

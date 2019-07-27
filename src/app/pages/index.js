@@ -11,7 +11,7 @@ import PlaceholderPage from './PlaceholderPage';
 export default class App extends Component {
   state = {
     updateUser: this.onUpdateUser,
-    user: undefined,
+    user: {},
   };
 
   onUpdateUser = user => this.setState({ user });
