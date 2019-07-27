@@ -38,14 +38,13 @@ FormInput.propTypes = {
   ...InputControl.propTypes,
   ...SelectControl.propTypes,
   inline: PropTypes.bool,
-  inlineLabelClass: PropTypes.number,
+  inlineLabelClass: PropTypes.string,
   label: PropTypes.string.isRequired,
 };
 
 FormInput.defaultProps = {
   ...InputControl.defaultProps,
   inline: false,
-  inlineLabelClass: 2,
   type: 'text',
 };
 

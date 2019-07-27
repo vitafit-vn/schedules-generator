@@ -25,15 +25,13 @@ const INPUT_IDS = {
 };
 
 const INPUT_CONFIGS = {
-  [INPUT_IDS.EMAIL]: { inline: true, label: 'Email', required: true, type: 'email' },
+  [INPUT_IDS.EMAIL]: { label: 'Email', required: true, type: 'email' },
   [INPUT_IDS.SELECTED_SCHEDULE]: {
-    inline: true,
-    inlineLabelClass: 'pr-0',
     label: 'Lịch tập',
     required: true,
     type: 'select',
   },
-  [INPUT_IDS.SUBJECT]: { inline: true, label: 'Tiêu đề', required: true },
+  [INPUT_IDS.SUBJECT]: { label: 'Tiêu đề', required: true },
 };
 
 function buildAlertMessage(error, successMessage) {
@@ -56,7 +54,7 @@ function buildAlertMessage(error, successMessage) {
 export default class EmailComposer extends Component {
   static propTypes = {
     customerInfo: PropTypes.object,
-    onRenderSchedulesHTML: PropTypes.func.isRequired,
+    onRenderHTML: PropTypes.func.isRequired,
   };
 
   state = DEFAULT_STATE;
@@ -81,7 +79,7 @@ export default class EmailComposer extends Component {
   };
 
   onModalShown = () => {
-    const { allSchedules } = this.props.onRenderSchedulesHTML();
+    const { allSchedules } = this.props.onRenderHTML();
     const scheduleNames = _.map(allSchedules, 'name');
     const selectedSchedule = scheduleNames[0];
 
@@ -135,6 +133,8 @@ export default class EmailComposer extends Component {
       ...props,
       value,
       id: `email-composer-${id}`,
+      inline: true,
+      inlineLabelClass: 'pr-0',
       onChange: this.onInputChange(id),
       selectData: id === INPUT_IDS.SELECTED_SCHEDULE ? _.map(scheduleNames, name => ({ value: name })) : undefined,
     };

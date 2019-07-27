@@ -6,14 +6,14 @@ import { Component } from 'preact';
 import { renderSchedulesHTML } from 'app/templates';
 
 // Reusables
-import { NavBar } from 'app/components';
+import { FooterFormControls, NavBar } from 'app/components';
 
 // Utils
 import { buildPermalink, parsePermalink, zipAndSave } from 'app/utils';
 
+// Locals
 import CustomerInfo from './CustomerInfo';
 import EmailComposer from './EmailComposer';
-import FormControls from './FormControls';
 import PersonalizedTable from './PersonalizedTable';
 import SchedulesAccordion from './SchedulesAccordion';
 import defaultState from './defaultState';
@@ -22,6 +22,7 @@ export default class Schedules extends Component {
   state = {
     ...defaultState,
     ...parsePermalink(),
+    allSchedules: undefined,
   };
 
   get formValid() {
@@ -80,8 +81,9 @@ export default class Schedules extends Component {
 
     return (
       <div>
-        <NavBar page="schedules" title="Công cụ tạo lịch" />
+        <NavBar page="schedules" />
         <div className="container">
+          <h3 className="mb-3 text-primary">{'Công cụ Tạo lịch tập'}</h3>
           <form action="#" onSubmit={this.onPreviewSchedules} ref={this.onFormRef}>
             <div className="row">
               <CustomerInfo data={customerInfo} onUpdate={this.onUpdateCustomerInfo} />
@@ -91,13 +93,13 @@ export default class Schedules extends Component {
                 onUpdate={this.onUpdatePersonalizedData}
               />
             </div>
-            <FormControls
+            <FooterFormControls
               onComposeEmail={this.onOpenEmailComposer}
               onCreatePermalink={this.onCreatePermalink}
               onDownload={this.onDownloadSchedules}
             />
           </form>
-          <EmailComposer customerInfo={customerInfo} onRenderSchedulesHTML={this.onRenderSchedulesHTML} />
+          <EmailComposer customerInfo={customerInfo} onRenderHTML={this.onRenderSchedulesHTML} />
         </div>
         <div className="my-3 mx-auto" id="schedules-preview">
           <SchedulesAccordion schedules={allSchedules} />

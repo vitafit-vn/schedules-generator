@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 // Components
 import TextButton from 'app/components/TextButton';
 
-const FormControls = ({ onComposeEmail, onCreatePermalink, onDownload }) => {
+const FooterFormControls = ({ onComposeEmail, onCreatePermalink, onDownload }) => {
   return (
     <div className="row">
       <div className="col"></div>
@@ -23,10 +23,10 @@ const FormControls = ({ onComposeEmail, onCreatePermalink, onDownload }) => {
   );
 };
 
-FormControls.propTypes = {
+FooterFormControls.propTypes = {
   onComposeEmail: PropTypes.func.isRequired,
   onCreatePermalink: PropTypes.func.isRequired,
   onDownload: PropTypes.func.isRequired,
 };
 
-export default FormControls;
+export default FooterFormControls;
