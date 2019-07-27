@@ -10,11 +10,11 @@ import PlaceholderPage from './PlaceholderPage';
 
 export default class App extends Component {
   state = {
-    globalData: {},
-    updateGlobalData: this.onUpdateGlobalData,
+    updateUser: this.onUpdateUser,
+    user: undefined,
   };
 
-  onUpdateGlobalData = partial => this.setState(({ globalData }) => ({ ...globalData, ...partial }));
+  onUpdateUser = user => this.setState({ user });
 
   onRouteChange = event => {
     console.debug(event); // eslint-disable-line

@@ -2,6 +2,19 @@ import { createContext } from 'preact-context';
 
 const GlobalDataContext = createContext({});
 
-/* eslint-disable import/prefer-default-export */
+function withContextConsumer(Context, onMapContextDataToProps) {
+  return Component => {
+    const ConsumedComponent = props => (
+      <Context.Consumer>
+        {data => {
+          const mappedProps = onMapContextDataToProps(data);
+          return <Component {...props} {...mappedProps} />;
+        }}
+      </Context.Consumer>
+    );
 
-export { GlobalDataContext };
+    return ConsumedComponent;
+  };
+}
+
+export { GlobalDataContext, withContextConsumer };
