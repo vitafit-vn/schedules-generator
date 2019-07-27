@@ -14,6 +14,29 @@ export function buildPermalink(service, data) {
   return `${process.env.PUBLIC_PATH}/${service}?${compressed}`;
 }
 
+export function buildNavConfigs(navList) {
+  const singleNavs = [];
+  const navWithSubs = {};
+
+  _.each(navList, nav => {
+    if (!_.isEmpty(nav.path) && _.isEmpty(nav.parent)) {
+      singleNavs.push(nav);
+      return;
+    }
+
+    if (_.isEmpty(nav.path)) {
+      navWithSubs[nav.key] = { ...nav, subNavs: [] };
+      return;
+    }
+
+    if (!_.isEmpty(nav.parent)) {
+      navWithSubs[nav.parent].subNavs.push(nav);
+    }
+  });
+
+  return [...singleNavs, ..._.values(navWithSubs)];
+}
+
 export function calculateAge(birthYear) {
   const { years: diffs } = DateTime.local()
     .diff(DateTime.fromObject({ year: birthYear }), 'years')

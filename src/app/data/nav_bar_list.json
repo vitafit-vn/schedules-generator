@@ -1,0 +1,33 @@
+[
+  {
+    "key": "home",
+    "label": "Trang chủ",
+    "path": "/"
+  },
+  {
+    "key": "ops",
+    "label": "Vận hành"
+  },
+  {
+    "key": "schedules",
+    "label": "Lịch tập",
+    "parent": "ops",
+    "path": "/schedules"
+  },
+  {
+    "key": "meals",
+    "label": "Thực đơn",
+    "parent": "ops",
+    "path": "/meals"
+  },
+  {
+    "key": "sales",
+    "label": "Sales"
+  },
+  {
+    "key": "lt16",
+    "label": "LT16",
+    "parent": "sales",
+    "path": "/lt16"
+  }
+]
