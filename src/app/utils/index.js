@@ -7,6 +7,7 @@ import LZString from 'lz-string';
 import shajs from 'sha.js';
 
 import * as axios from './axios';
+import * as calc from './calc';
 
 export function buildPermalink(service, data) {
   const stringified = JSON.stringify(data);
@@ -14,41 +15,18 @@ export function buildPermalink(service, data) {
   return `${process.env.PUBLIC_PATH}/${service}?${compressed}`;
 }
 
-export function buildNavConfigs(navList) {
-  const singleNavs = [];
-  const navWithSubs = {};
-
-  _.each(navList, nav => {
-    if (!_.isEmpty(nav.path) && _.isEmpty(nav.parent)) {
-      singleNavs.push(nav);
-      return;
-    }
-
-    if (_.isEmpty(nav.path)) {
-      navWithSubs[nav.key] = { ...nav, subNavs: [] };
-      return;
-    }
-
-    if (!_.isEmpty(nav.parent)) {
-      navWithSubs[nav.parent].subNavs.push(nav);
-    }
-  });
-
-  return [...singleNavs, ..._.values(navWithSubs)];
+export function computeChecksum(...args) {
+  return shajs('sha1')
+    .update(_.join(args, '_'))
+    .digest('hex');
 }
 
-export function calculateAge(birthYear) {
+export function convertBirthYearToAge(birthYear) {
   const { years: diffs } = DateTime.local()
     .diff(DateTime.fromObject({ year: birthYear }), 'years')
     .toObject();
 
   return Math.floor(diffs);
-}
-
-export function computeChecksum(...args) {
-  return shajs('sha1')
-    .update(_.join(args, '_'))
-    .digest('hex');
 }
 
 export function convertWeekPeriod(weekPeriod) {
@@ -79,4 +57,4 @@ export async function zipAndSave(files, zipFileName) {
   saveAs(downloadContent, zipFileName);
 }
 
-export { axios };
+export { axios, calc };

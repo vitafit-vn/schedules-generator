@@ -5,7 +5,7 @@ import renderToString from 'preact-render-to-string';
 import { DAILY_SCHEDULES, EXERCISES_DATABASE, FORMATS, OFF_DAY, WEEKDAYS, WEEKLY_SCHEDULES } from 'app/constants';
 
 // Utils
-import { calculateAge, computeChecksum, convertWeekPeriod } from 'app/utils';
+import { convertBirthYearToAge, computeChecksum, convertWeekPeriod } from 'app/utils';
 
 // Locals
 import DailySchedule from './DailySchedule';
@@ -128,7 +128,7 @@ export function renderSchedulesHTML({ customerInfo: originalInfo, personalizedDa
     customerId,
     weeklyCode,
     workoutLevel,
-    age: calculateAge(birthYear),
+    age: convertBirthYearToAge(birthYear),
     weekStart: convertWeekPeriod(weekPeriod),
   };
 

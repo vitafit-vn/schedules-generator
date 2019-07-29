@@ -24,11 +24,15 @@ const FORMATS = {
   URI_PATH_DATE: 'dd-MM-yyyy',
 };
 
-const GENDERS = [{ code: 'male', name: 'Nam' }, { code: 'female', name: 'Nữ' }];
+const GENDERS_MAPPING = { FEMALE: 'female', MALE: 'male' };
+
+const GENDERS = [{ code: GENDERS_MAPPING.MALE, name: 'Nam' }, { code: GENDERS_MAPPING.FEMALE, name: 'Nữ' }];
 
 const HOME_PAGE = 'http://www.vitafit.vn';
 
 const OFF_DAY = 'NGHỈ';
+
+const TARGETS_MAPPING = { DECREASE: 'decrease', INCREASE: 'increase' };
 
 const TARGETS = [
   { code: 'decrease', description: 'Giảm cân, giảm mỡ' },
@@ -45,9 +49,11 @@ export {
   EXERCISES_DATABASE,
   FORMATS,
   GENDERS,
+  GENDERS_MAPPING,
   HOME_PAGE,
   OFF_DAY,
   TARGETS,
+  TARGETS_MAPPING,
   WEEKDAYS,
   WEEKLY_SCHEDULES,
   WORKOUT_LEVELS,

@@ -9349,6 +9349,11 @@ unist-util-visit@^1.1.0:
   dependencies:
     unist-util-visit-parents "^2.0.0"
 
+units-converter@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/units-converter/-/units-converter-1.0.2.tgz#46cfd5eeed71e7eaa4b8fa1d6a69099a20d24f07"
+  integrity sha512-SYzh3wYwIO3Xmml94RFCmIgxmE5aEK2iqIdc8So6Fc+w0vRKZmdrqFF97GfpguacamyDUNO4HSOotHxrHUQNcQ==
+
 universalify@^0.1.0:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/universalify/-/universalify-0.1.2.tgz#b646f69be3942dabcecc9d6639c80dc105efaa66"

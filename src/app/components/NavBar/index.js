@@ -3,13 +3,33 @@ import fp from 'lodash/fp';
 import { Component } from 'preact';
 import PropTypes from 'prop-types';
 
-// Utils
-import { buildNavConfigs } from 'app/utils';
-
 // Locals
 import withContext from './withContext';
 
 const navBarList = require('app/data/nav_bar_list.json');
+
+function buildNavConfigs(navList) {
+  const singleNavs = [];
+  const navWithSubs = {};
+
+  _.each(navList, nav => {
+    if (!_.isEmpty(nav.path) && _.isEmpty(nav.parent)) {
+      singleNavs.push(nav);
+      return;
+    }
+
+    if (_.isEmpty(nav.path)) {
+      navWithSubs[nav.key] = { ...nav, subNavs: [] };
+      return;
+    }
+
+    if (!_.isEmpty(nav.parent)) {
+      navWithSubs[nav.parent].subNavs.push(nav);
+    }
+  });
+
+  return [...singleNavs, ..._.values(navWithSubs)];
+}
 
 class NavBar extends Component {
   static propTypes = {
