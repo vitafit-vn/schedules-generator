@@ -7,7 +7,7 @@ import LZString from 'lz-string';
 import shajs from 'sha.js';
 
 import * as axios from './axios';
-import * as calc from './calc';
+import Calc from './calc_';
 
 export function buildPermalink(service, data) {
   const stringified = JSON.stringify(data);
@@ -57,4 +57,4 @@ export async function zipAndSave(files, zipFileName) {
   saveAs(downloadContent, zipFileName);
 }
 
-export { axios, calc };
+export { Calc, axios };
