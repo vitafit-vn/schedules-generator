@@ -1,0 +1,209 @@
+[
+  {
+    "code": "VF0001",
+    "inputs": {
+      "abs": 82,
+      "activityRate": 1.2,
+      "gender": "female",
+      "target": "decrease",
+      "weight": 60
+    },
+    "sample_outputs": {
+      "bmr": 1210.511198,
+      "caloriesIn": 1476.292357,
+      "currentTdee": 1452.613438,
+      "fatPercentage": 0.3515,
+      "lbm": 38.91255548,
+      "macro": {
+        "carb": 182.6399333,
+        "fat": 29.52584715,
+        "protein": 120
+      },
+      "targetTdee": 1876.292357
+    }
+  },
+  {
+    "code": "VF0002",
+    "inputs": {
+      "abs": 100,
+      "activityRate": 1.55,
+      "gender": "female",
+      "target": "decrease",
+      "weight": 70
+    },
+    "sample_outputs": {
+      "bmr": 1155.475883,
+      "caloriesIn": 1390.987618,
+      "currentTdee": 1790.987618,
+      "fatPercentage": 0.4805,
+      "lbm": 36.36462419,
+      "macro": {
+        "carb": 145.1524617,
+        "fat": 27.81975236,
+        "protein": 140
+      },
+      "targetTdee": 1790.987618
+    }
+  },
+  {
+    "code": "VF0003",
+    "inputs": {
+      "abs": 88,
+      "activityRate": 1.375,
+      "gender": "female",
+      "target": "decrease",
+      "weight": 65
+    },
+    "sample_outputs": {
+      "bmr": 1231.118093,
+      "caloriesIn": 1508.233044,
+      "currentTdee": 1692.787378,
+      "fatPercentage": 0.3867,
+      "lbm": 39.86657838,
+      "macro": {
+        "carb": 179.1877741,
+        "fat": 30.16466088,
+        "protein": 130
+      },
+      "targetTdee": 1908.233044
+    }
+  },
+  {
+    "code": "VF0005",
+    "inputs": {
+      "abs": 83,
+      "activityRate": 1.2,
+      "gender": "female",
+      "target": "decrease",
+      "weight": 60
+    },
+    "sample_outputs": {
+      "bmr": 1194.469681,
+      "caloriesIn": 1451.428005,
+      "currentTdee": 1433.363617,
+      "fatPercentage": 0.3638,
+      "lbm": 38.16989263,
+      "macro": {
+        "carb": 177.5427411,
+        "fat": 29.0285601,
+        "protein": 120
+      },
+      "targetTdee": 1851.428005
+    }
+  },
+  {
+    "code": "VF0006",
+    "inputs": {
+      "abs": 90,
+      "activityRate": 1.375,
+      "gender": "female",
+      "target": "decrease",
+      "weight": 70
+    },
+    "sample_outputs": {
+      "bmr": 1315.891058,
+      "caloriesIn": 1639.63114,
+      "currentTdee": 1809.350205,
+      "fatPercentage": 0.3744,
+      "lbm": 43.79125268,
+      "macro": {
+        "carb": 196.1243837,
+        "fat": 32.7926228,
+        "protein": 140
+      },
+      "targetTdee": 2039.63114
+    }
+  },
+  {
+    "code": "VF0007",
+    "inputs": {
+      "abs": 80,
+      "activityRate": 1.55,
+      "gender": "female",
+      "target": "decrease",
+      "weight": 59
+    },
+    "sample_outputs": {
+      "bmr": 1219.223033,
+      "caloriesIn": 1489.795702,
+      "currentTdee": 1889.795702,
+      "fatPercentage": 0.3336,
+      "lbm": 39.31588117,
+      "macro": {
+        "carb": 187.4081188,
+        "fat": 29.79591403,
+        "protein": 118
+      },
+      "targetTdee": 1889.795702
+    }
+  },
+  {
+    "code": "VF0008",
+    "inputs": {
+      "abs": 85,
+      "activityRate": 1.2,
+      "gender": "female",
+      "target": "decrease",
+      "weight": 56
+    },
+    "sample_outputs": {
+      "bmr": 1068.901846,
+      "caloriesIn": 1256.797861,
+      "currentTdee": 1282.682215,
+      "fatPercentage": 0.4222,
+      "lbm": 32.35656693,
+      "macro": {
+        "carb": 145.6435615,
+        "fat": 25.13595722,
+        "protein": 112
+      },
+      "targetTdee": 1656.797861
+    }
+  },
+  {
+    "code": "VF0009",
+    "inputs": {
+      "abs": 67,
+      "activityRate": 1.725,
+      "gender": "female",
+      "target": "increase",
+      "weight": 52
+    },
+    "sample_outputs": {
+      "bmr": 1264.164361,
+      "caloriesIn": 2359.45476,
+      "currentTdee": 2180.683523,
+      "fatPercentage": 0.2039,
+      "lbm": 41.39649821,
+      "macro": {
+        "carb": 379.6882258,
+        "fat": 47.1890952,
+        "protein": 104
+      },
+      "targetTdee": 1959.45476
+    }
+  },
+  {
+    "code": "VF0010",
+    "inputs": {
+      "abs": 71,
+      "activityRate": 1.55,
+      "gender": "female",
+      "target": "decrease",
+      "weight": 45
+    },
+    "sample_outputs": {
+      "bmr": 1036.399891,
+      "caloriesIn": 1206.419831,
+      "currentTdee": 1606.419831,
+      "fatPercentage": 0.3144,
+      "lbm": 30.85184681,
+      "macro": {
+        "carb": 157.3160654,
+        "fat": 24.12839663,
+        "protein": 90
+      },
+      "targetTdee": 1606.419831
+    }
+  }
+]
