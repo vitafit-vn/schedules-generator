@@ -3,7 +3,7 @@ import App from './pages';
 
 /* eslint-disable */
 Object.assign(window, {
-  calc: require('app/utils/calc'),
+  Calc: require('app/utils/Calc').default,
 });
 /* eslint-enable */
 

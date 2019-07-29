@@ -7,7 +7,7 @@ import LZString from 'lz-string';
 import shajs from 'sha.js';
 
 import * as axios from './axios';
-import Calc from './calc_';
+import Calc from './Calc';
 
 export function buildPermalink(service, data) {
   const stringified = JSON.stringify(data);
