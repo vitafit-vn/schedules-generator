@@ -59,11 +59,12 @@ export default class HealthReports extends Component {
         <NavBar page="health_reports" />
         <div className="container px-0">
           <h3 className="mb-3 text-primary">{'Công cụ Báo cáo chỉ số sức khoẻ khách hàng'}</h3>
-          <div className="row">
-            <div className="col-6">
+          <div className="mb-3 row">
+            <div className="col-4">
               <form action="#" onSubmit={this.onPreviewSchedules} ref={this.onFormRef}>
                 <CustomerInfo data={customerInfo} onUpdate={this.onUpdateCustomerInfo} />
                 <FooterFormControls
+                  dropdown
                   onComposeEmail={this.onOpenEmailComposer}
                   onCreatePermalink={this.onCreatePermalink}
                   onDownload={this.onDownloadSchedules}
