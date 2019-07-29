@@ -9,7 +9,7 @@ import { renderSchedulesHTML } from 'app/templates';
 import { FooterFormControls, NavBar } from 'app/components';
 
 // Utils
-import { buildPermalink, parsePermalink } from 'app/utils';
+import { Calc, buildPermalink, parsePermalink } from 'app/utils';
 
 // Locals
 import CustomerInfo from './CustomerInfo';
@@ -47,8 +47,9 @@ export default class HealthReports extends Component {
     event.preventDefault();
     if (!this.formValid) return;
 
-    const { allSchedules } = renderSchedulesHTML(this.state);
-    this.setState({ allSchedules });
+    const { abs, activityRate, gender, target, weight } = this.state.customerInfo;
+    const calc = new Calc({ abs, activityRate, gender, target, weight });
+    console.debug(calc);
   };
 
   render() {
