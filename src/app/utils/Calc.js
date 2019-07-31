@@ -51,7 +51,6 @@ export default class Calc {
     const gender = _.valuesIn(GENDERS_MAPPING, params.gender) ? params.gender : GENDERS_MAPPING.FEMALE;
     const target = _.valuesIn(TARGETS_MAPPING, params.target) ? params.target : TARGETS_MAPPING.DECREASE;
     const weight = parseFloat(params.weight);
-    console.debug(params, { abs, activityRate, gender, target, weight });
 
     Object.assign(this, calcAllData({ abs, activityRate, gender, target, weight }));
   }
