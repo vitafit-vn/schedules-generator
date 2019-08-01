@@ -13,7 +13,7 @@
   },
   {
     "id": "4282",
-    "name": "Cable Hip Abduction / Adduction",
+    "name": "Cable Hip Abduction",
     "compound": "https://workoutlabs.com/train/svg.php?id=31276",
     "url": "https://workoutlabs.com/exercise-guide/cable-hip-abduction/"
   },
@@ -37,7 +37,7 @@
   },
   {
     "id": "5055",
-    "name": "Cable Squat Rows / Row Squats",
+    "name": "Cable Squat Rows",
     "compound": "https://workoutlabs.com/train/svg.php?id=32376",
     "url": "https://workoutlabs.com/exercise-guide/cable-squat-rows/"
   },
@@ -73,7 +73,7 @@
   },
   {
     "id": "2652",
-    "name": "Face Pull / Rear Delt Pull",
+    "name": "Face Pull",
     "compound": "https://workoutlabs.com/train/svg.php?id=31524",
     "url": "https://workoutlabs.com/exercise-guide/face-pull/"
   },
@@ -90,14 +90,8 @@
     "url": "https://workoutlabs.com/exercise-guide/kneeling-cable-crunches/"
   },
   {
-    "id": "1361",
-    "name": "Overhead Cable Curl / Crucifix Curls",
-    "compound": "https://workoutlabs.com/train/svg.php?id=31952",
-    "url": "https://workoutlabs.com/exercise-guide/overhead-cable-curls/"
-  },
-  {
     "id": "9377",
-    "name": "Palloff Press / Oblique Iso Hold",
+    "name": "Palloff Press",
     "compound": "https://workoutlabs.com/train/svg.php?id=31956",
     "url": "https://workoutlabs.com/exercise-guide/palloff-press-oblique-iso-hold/"
   },
@@ -145,7 +139,7 @@
   },
   {
     "id": "7454",
-    "name": "Resistance Band Lateral Raises / Side Raises",
+    "name": "Resistance Band Lateral Raises",
     "compound": "https://workoutlabs.com/train/svg.php?id=32088",
     "url": "https://workoutlabs.com/exercise-guide/resistance-band-lateral-raises-side-raises/"
   },
@@ -157,7 +151,7 @@
   },
   {
     "id": "7460",
-    "name": "Resistance Band Push-ups / Pushups",
+    "name": "Resistance Band Push-up",
     "compound": "https://workoutlabs.com/train/svg.php?id=32096",
     "url": "https://workoutlabs.com/exercise-guide/resistance-band-push-ups-pushups/"
   },
@@ -223,19 +217,19 @@
   },
   {
     "id": "1145",
-    "name": "Standing Cable Crossover Press / Flyes",
+    "name": "Standing Cable Fly Press",
     "compound": "https://workoutlabs.com/train/svg.php?id=32420",
     "url": "https://workoutlabs.com/exercise-guide/standing-cable-fly-press/"
   },
   {
     "id": "4111",
-    "name": "Straight Arm Pulldowns / Pull Downs / Pullovers",
+    "name": "Straight Arm Pulldowns",
     "compound": "https://workoutlabs.com/train/svg.php?id=32480",
     "url": "https://workoutlabs.com/exercise-guide/straight-arm-pulldowns-pull-downs/"
   },
   {
     "id": "1230",
-    "name": "Tricep Cable Rope Push / Pull Downs",
+    "name": "Tricep Cable Rope Pushdown",
     "compound": "https://workoutlabs.com/train/svg.php?id=32632",
     "url": "https://workoutlabs.com/exercise-guide/triceps-pushdowns/"
   },
