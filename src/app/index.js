@@ -1,10 +1,15 @@
 import { render } from 'preact';
-import App from './pages';
+
+import * as CONSTANTS from 'app/constants';
+import App from 'app/pages';
 
 /* eslint-disable */
-Object.assign(window, {
-  Calc: require('app/utils/Calc').default,
-});
+if (!CONSTANTS.IS_PRODUCTION) {
+  Object.assign(window, {
+    CONSTANTS,
+    Calc: require('app/utils/Calc').default,
+  });
+}
 /* eslint-enable */
 
 render(<App />, document.body);

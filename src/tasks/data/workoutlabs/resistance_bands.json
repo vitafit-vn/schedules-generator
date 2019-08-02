@@ -1,242 +1,248 @@
 [
   {
     "id": "3561",
+    "mixed_images": "https://workoutlabs.com/train/svg.php?id=31264",
     "name": "Cable Core Rotation",
-    "compound": "https://workoutlabs.com/train/svg.php?id=31264",
     "url": "https://workoutlabs.com/exercise-guide/cable-core-rotation/"
   },
   {
     "id": "16732",
+    "mixed_images": "https://workoutlabs.com/train/svg.php?id=31272",
     "name": "Cable Hammer Bicep Curls",
-    "compound": "https://workoutlabs.com/train/svg.php?id=31272",
     "url": "https://workoutlabs.com/exercise-guide/cable-hammer-bicep-curls/"
   },
   {
     "id": "4282",
+    "mixed_images": "https://workoutlabs.com/train/svg.php?id=31276",
     "name": "Cable Hip Abduction",
-    "compound": "https://workoutlabs.com/train/svg.php?id=31276",
     "url": "https://workoutlabs.com/exercise-guide/cable-hip-abduction/"
   },
   {
     "id": "5060",
+    "mixed_images": "https://workoutlabs.com/train/svg.php?id=31280",
     "name": "Cable Hip Extensions",
-    "compound": "https://workoutlabs.com/train/svg.php?id=31280",
     "url": "https://workoutlabs.com/exercise-guide/cable-hip-extensions/"
   },
   {
     "id": "1435",
+    "mixed_images": "https://workoutlabs.com/train/svg.php?id=31284",
     "name": "Cable Rope Overhead Triceps Extensions",
-    "compound": "https://workoutlabs.com/train/svg.php?id=31284",
     "url": "https://workoutlabs.com/exercise-guide/cable-rope-overhead-triceps-extensions/"
   },
   {
     "id": "3566",
+    "mixed_images": "https://workoutlabs.com/train/svg.php?id=31288",
     "name": "Cable Shrugs",
-    "compound": "https://workoutlabs.com/train/svg.php?id=31288",
     "url": "https://workoutlabs.com/exercise-guide/cable-shrugs/"
   },
   {
     "id": "5055",
+    "mixed_images": "https://workoutlabs.com/train/svg.php?id=32376",
     "name": "Cable Squat Rows",
-    "compound": "https://workoutlabs.com/train/svg.php?id=32376",
     "url": "https://workoutlabs.com/exercise-guide/cable-squat-rows/"
   },
   {
     "id": "4283",
+    "mixed_images": "https://workoutlabs.com/train/svg.php?id=31292",
     "name": "Cable Triceps Kickbacks",
-    "compound": "https://workoutlabs.com/train/svg.php?id=31292",
     "url": "https://workoutlabs.com/exercise-guide/cable-triceps-kickbacks/"
   },
   {
     "id": "1218",
+    "mixed_images": "https://workoutlabs.com/train/svg.php?id=32660",
     "name": "Cable Upright Rows",
-    "compound": "https://workoutlabs.com/train/svg.php?id=32660",
     "url": "https://workoutlabs.com/exercise-guide/upright-cable-rows/"
   },
   {
     "id": "4266",
-    "name": "Cross body Cable Rows",
-    "compound": "https://workoutlabs.com/train/svg.php?id=31352",
+    "mixed_images": "https://workoutlabs.com/train/svg.php?id=31352",
+    "name": "Cross Body Cable Rows",
     "url": "https://workoutlabs.com/exercise-guide/crossbody-cable-rows/"
   },
   {
     "id": "11302",
+    "mixed_images": "https://workoutlabs.com/train/svg.php?id=31412",
     "name": "Downward Cable Wood Chops",
-    "compound": "https://workoutlabs.com/train/svg.php?id=31412",
     "url": "https://workoutlabs.com/exercise-guide/downward-cable-wood-chops/"
   },
   {
     "id": "10692",
+    "mixed_images": "https://workoutlabs.com/train/svg.php?id=31516",
     "name": "External Cable Shoulder Rotation",
-    "compound": "https://workoutlabs.com/train/svg.php?id=31516",
     "url": "https://workoutlabs.com/exercise-guide/external-cable-shoulder-rotation/"
   },
   {
     "id": "2652",
+    "mixed_images": "https://workoutlabs.com/train/svg.php?id=31524",
     "name": "Face Pull",
-    "compound": "https://workoutlabs.com/train/svg.php?id=31524",
     "url": "https://workoutlabs.com/exercise-guide/face-pull/"
   },
   {
     "id": "12239",
+    "mixed_images": "https://workoutlabs.com/train/svg.php?id=31700",
     "name": "Internal Cable Shoulder Rotation",
-    "compound": "https://workoutlabs.com/train/svg.php?id=31700",
     "url": "https://workoutlabs.com/exercise-guide/internal-cable-shoulder-rotation/"
   },
   {
     "id": "1305",
+    "mixed_images": "https://workoutlabs.com/train/svg.php?id=31760",
     "name": "Kneeling Cable Crunches",
-    "compound": "https://workoutlabs.com/train/svg.php?id=31760",
     "url": "https://workoutlabs.com/exercise-guide/kneeling-cable-crunches/"
   },
   {
     "id": "9377",
+    "mixed_images": "https://workoutlabs.com/train/svg.php?id=31956",
     "name": "Palloff Press",
-    "compound": "https://workoutlabs.com/train/svg.php?id=31956",
     "url": "https://workoutlabs.com/exercise-guide/palloff-press-oblique-iso-hold/"
   },
   {
     "id": "7469",
+    "mixed_images": "https://workoutlabs.com/train/svg.php?id=32060",
     "name": "Resistance Band Bent Over Rows",
-    "compound": "https://workoutlabs.com/train/svg.php?id=32060",
     "url": "https://workoutlabs.com/exercise-guide/resistance-band-bent-over-rows/"
   },
   {
     "id": "7478",
+    "mixed_images": "https://workoutlabs.com/train/svg.php?id=32064",
     "name": "Resistance Band Bicep Curls",
-    "compound": "https://workoutlabs.com/train/svg.php?id=32064",
     "url": "https://workoutlabs.com/exercise-guide/resistance-band-bicep-curls/"
   },
   {
     "id": "7481",
+    "mixed_images": "https://workoutlabs.com/train/svg.php?id=32068",
     "name": "Resistance Band Chest Press",
-    "compound": "https://workoutlabs.com/train/svg.php?id=32068",
     "url": "https://workoutlabs.com/exercise-guide/resistance-band-chest-press/"
   },
   {
     "id": "16393",
+    "mixed_images": "https://workoutlabs.com/train/svg.php?id=32116",
     "name": "Resistance Band Clam Shells",
-    "compound": "https://workoutlabs.com/train/svg.php?id=32116",
     "url": "https://workoutlabs.com/exercise-guide/resistance-band-clam-shells/"
   },
   {
     "id": "8135",
+    "mixed_images": "https://workoutlabs.com/train/svg.php?id=32072",
     "name": "Resistance Band Deadlifts",
-    "compound": "https://workoutlabs.com/train/svg.php?id=32072",
     "url": "https://workoutlabs.com/exercise-guide/resistance-band-deadlifts/"
   },
   {
     "id": "16390",
+    "mixed_images": "https://workoutlabs.com/train/svg.php?id=32080",
     "name": "Resistance Band Glute Bridges",
-    "compound": "https://workoutlabs.com/train/svg.php?id=32080",
     "url": "https://workoutlabs.com/exercise-guide/resistance-band-glute-bridges/"
   },
   {
     "id": "7466",
+    "mixed_images": "https://workoutlabs.com/train/svg.php?id=32084",
     "name": "Resistance Band Glute Kickbacks",
-    "compound": "https://workoutlabs.com/train/svg.php?id=32084",
     "url": "https://workoutlabs.com/exercise-guide/resistance-band-glute-kickbacks/"
   },
   {
     "id": "7454",
+    "mixed_images": "https://workoutlabs.com/train/svg.php?id=32088",
     "name": "Resistance Band Lateral Raises",
-    "compound": "https://workoutlabs.com/train/svg.php?id=32088",
     "url": "https://workoutlabs.com/exercise-guide/resistance-band-lateral-raises-side-raises/"
   },
   {
     "id": "16387",
+    "mixed_images": "https://workoutlabs.com/train/svg.php?id=32092",
     "name": "Resistance Band Lying Leg Extensions",
-    "compound": "https://workoutlabs.com/train/svg.php?id=32092",
     "url": "https://workoutlabs.com/exercise-guide/resistance-band-lying-leg-extensions/"
   },
   {
     "id": "7460",
+    "mixed_images": "https://workoutlabs.com/train/svg.php?id=32096",
     "name": "Resistance Band Push-up",
-    "compound": "https://workoutlabs.com/train/svg.php?id=32096",
     "url": "https://workoutlabs.com/exercise-guide/resistance-band-push-ups-pushups/"
   },
   {
     "id": "7783",
+    "mixed_images": "https://workoutlabs.com/train/svg.php?id=32076",
     "name": "Resistance Band Shoulder Front Raises",
-    "compound": "https://workoutlabs.com/train/svg.php?id=32076",
     "url": "https://workoutlabs.com/exercise-guide/resistance-band-shoulder-front-raises/"
   },
   {
     "id": "8141",
+    "mixed_images": "https://workoutlabs.com/train/svg.php?id=32100",
     "name": "Resistance Band Side Steps",
-    "compound": "https://workoutlabs.com/train/svg.php?id=32100",
     "url": "https://workoutlabs.com/exercise-guide/resistance-band-side-steps/"
   },
   {
     "id": "7463",
+    "mixed_images": "https://workoutlabs.com/train/svg.php?id=32108",
     "name": "Resistance Band Squat and Overhead Press",
-    "compound": "https://workoutlabs.com/train/svg.php?id=32108",
     "url": "https://workoutlabs.com/exercise-guide/resistance-band-squat-and-overhead-press/"
   },
   {
     "id": "7484",
+    "mixed_images": "https://workoutlabs.com/train/svg.php?id=32104",
     "name": "Resistance Band Squats",
-    "compound": "https://workoutlabs.com/train/svg.php?id=32104",
     "url": "https://workoutlabs.com/exercise-guide/resistance-band-squats/"
   },
   {
     "id": "7457",
+    "mixed_images": "https://workoutlabs.com/train/svg.php?id=32112",
     "name": "Resistance Band Standing Shoulder Press / Overhead Press",
-    "compound": "https://workoutlabs.com/train/svg.php?id=32112",
     "url": "https://workoutlabs.com/exercise-guide/resistance-band-standing-shoulder-press-overhead-press/"
   },
   {
     "id": "7475",
+    "mixed_images": "https://workoutlabs.com/train/svg.php?id=32120",
     "name": "Resistance Band Tricep Kickbacks",
-    "compound": "https://workoutlabs.com/train/svg.php?id=32120",
     "url": "https://workoutlabs.com/exercise-guide/resistance-band-tricep-kickbacks/"
   },
   {
     "id": "7472",
+    "mixed_images": "https://workoutlabs.com/train/svg.php?id=32124",
     "name": "Resistance Band Tricep Overhead Extensions",
-    "compound": "https://workoutlabs.com/train/svg.php?id=32124",
     "url": "https://workoutlabs.com/exercise-guide/resistance-band-tricep-overhead-extensions/"
   },
   {
     "id": "1729",
+    "mixed_images": "https://workoutlabs.com/train/svg.php?id=32212",
     "name": "Seated / Low Cable Back Rows",
-    "compound": "https://workoutlabs.com/train/svg.php?id=32212",
     "url": "https://workoutlabs.com/exercise-guide/seated-low-cable-back-rows/"
   },
   {
     "id": "1169",
+    "mixed_images": "https://workoutlabs.com/train/svg.php?id=31268",
     "name": "Standing Bicep Cable Curls",
-    "compound": "https://workoutlabs.com/train/svg.php?id=31268",
     "url": "https://workoutlabs.com/exercise-guide/cable-curl/"
   },
   {
     "id": "11277",
+    "mixed_images": "https://workoutlabs.com/train/svg.php?id=32416",
     "name": "Standing Cable Chest Press",
-    "compound": "https://workoutlabs.com/train/svg.php?id=32416",
     "url": "https://workoutlabs.com/exercise-guide/standing-cable-chest-press/"
   },
   {
     "id": "1145",
+    "mixed_images": "https://workoutlabs.com/train/svg.php?id=32420",
     "name": "Standing Cable Fly Press",
-    "compound": "https://workoutlabs.com/train/svg.php?id=32420",
     "url": "https://workoutlabs.com/exercise-guide/standing-cable-fly-press/"
   },
   {
     "id": "4111",
+    "mixed_images": "https://workoutlabs.com/train/svg.php?id=32480",
     "name": "Straight Arm Pulldowns",
-    "compound": "https://workoutlabs.com/train/svg.php?id=32480",
     "url": "https://workoutlabs.com/exercise-guide/straight-arm-pulldowns-pull-downs/"
   },
   {
     "id": "1230",
+    "mixed_images": "https://workoutlabs.com/train/svg.php?id=32632",
     "name": "Tricep Cable Rope Pushdown",
-    "compound": "https://workoutlabs.com/train/svg.php?id=32632",
     "url": "https://workoutlabs.com/exercise-guide/triceps-pushdowns/"
   },
   {
     "id": "3657",
+    "mixed_images": "https://workoutlabs.com/train/svg.php?id=32736",
     "name": "Upward Cable Wood Chops",
-    "compound": "https://workoutlabs.com/train/svg.php?id=32736",
     "url": "https://workoutlabs.com/exercise-guide/upward-cable-wood-chops/"
+  },
+  {
+    "id": "10240",
+    "mixed_images": "https://workoutlabs.com/train/svg.php?id=31320",
+    "name": "Close Grip Lat Pulldowns",
+    "url": "https://workoutlabs.com/exercise-guide/close-grip-lat-pulldowns/"
   }
 ]

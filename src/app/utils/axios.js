@@ -1,9 +1,11 @@
 import axios from 'axios';
 
-const baseURL =
-  process.env.NODE_ENV === 'production'
-    ? 'https://4ju8elyjv7.execute-api.us-east-1.amazonaws.com/production'
-    : 'https://u03zcg5h97.execute-api.us-east-1.amazonaws.com/dev';
+// Constants
+import { IS_PRODUCTION } from 'app/constants';
+
+const baseURL = IS_PRODUCTION
+  ? 'https://4ju8elyjv7.execute-api.us-east-1.amazonaws.com/production'
+  : 'https://u03zcg5h97.execute-api.us-east-1.amazonaws.com/dev';
 
 const axiosInstance = axios.create({ baseURL });
 

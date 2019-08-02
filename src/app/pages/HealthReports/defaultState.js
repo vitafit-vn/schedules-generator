@@ -1,3 +1,5 @@
+import { IS_PRODUCTION } from 'app/constants';
+
 export default {
   customerInfo: {
     abs: undefined,
@@ -12,6 +14,5 @@ export default {
     target: undefined,
     weight: undefined,
   },
-  // eslint-disable-next-line global-require
-  // ...(process.env.NODE_ENV === 'development' ? require('app/data/fixtures/health_reports_input.json') : {}),
+  ...(IS_PRODUCTION ? {} : require('app/data/fixtures/health_reports_input.json')), // eslint-disable-line
 };

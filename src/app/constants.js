@@ -5,6 +5,8 @@ import DAILY_SCHEDULES_SHARED from './data/daily_schedules_shared.json';
 import EXERCISES_DATABASE from './data/exercises_database.json';
 import WEEKLY_SCHEDULES from './data/weekly_schedules.json';
 
+const IS_PRODUCTION = process.env.NODE_ENV === 'production';
+
 const ACTIVITY_RATES = [
   { description: 'Ít hoạt động, chỉ ăn, đi làm, về ngủ', value: 1.2 },
   { description: 'Có tập nhẹ nhàng, tuần 1 - 3 buổi', value: 1.375 },
@@ -51,6 +53,7 @@ export {
   GENDERS,
   GENDERS_MAPPING,
   HOME_PAGE,
+  IS_PRODUCTION,
   OFF_DAY,
   TARGETS,
   TARGETS_MAPPING,

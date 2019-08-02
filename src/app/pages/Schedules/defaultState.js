@@ -1,5 +1,5 @@
 // Constants
-import { WEEKLY_SCHEDULES, WORKOUT_LEVELS } from 'app/constants';
+import { IS_PRODUCTION, WEEKLY_SCHEDULES, WORKOUT_LEVELS } from 'app/constants';
 
 export default {
   customerInfo: {
@@ -20,6 +20,5 @@ export default {
     rest: {},
     rpe: {},
   },
-  // eslint-disable-next-line global-require
-  // ...(process.env.NODE_ENV === 'development' ? require('app/data/fixtures/schedules_input.json') : {}),
+  ...(IS_PRODUCTION ? {} : require('app/data/fixtures/schedules_input.json')), // eslint-disable-line
 };

@@ -13,3 +13,11 @@ obj = urls.map(({ id, url }, index) => ({
 }))
 
 JSON.stringify(obj, null, 2)
+
+d = _.map(a, ({ code, name, image }) => {
+  const ex = _.find(b, { mixed_images: image }) || _.find(c, { mixed_images: image }) || {};
+  const { url } = ex;
+  return { code, name, image, eng_url: url };
+})
+
+JSON.stringify(d, null, 2)
