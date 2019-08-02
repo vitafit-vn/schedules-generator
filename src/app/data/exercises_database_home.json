@@ -1,0 +1,407 @@
+[
+  {
+    "code": "RBA1",
+    "difficulty": "Trung bình",
+    "muscle": "Bụng",
+    "name": "Banded Core Rotation",
+    "videoUrl": "https://youtu.be/Q-j6MLgM4jo",
+    "instructions": [
+      "Bước 1: Đứng thẳng, dây cáp lắp ở bên phải ngang eo.\r",
+      "Bước 2: Kéo dây cáp ra và giữ trước ngực bằng hai tay, gối hơi khuỵu. Dây cáp không chùn. Căng cơ bụng.\r",
+      "Bước 3: Giữ nguyên thư thế, đẩy dây cáp về phía trước ngực.\r",
+      "Bước 4: Dây cáp sẽ cố xoay người bạn sang bên đầu dây, nhưng hãy ghì chặt lại.\r",
+      "Bước 5: Quay trở lại tư thế ban đầu và lặp lại."
+    ],
+    "imageUrl": "/images/exercises/RBA1.svg"
+  },
+  {
+    "code": "RBA2",
+    "difficulty": "Trung bình",
+    "muscle": "Bụng",
+    "name": "High To Low Wood Chops",
+    "videoUrl": "https://youtu.be/2AvO-FyLiEY?t=35",
+    "imageUrl": "/images/exercises/RBA2.svg"
+  },
+  {
+    "code": "RBA3",
+    "difficulty": "Trung bình",
+    "muscle": "Bụng",
+    "name": "Banded Kneeling Crunch",
+    "videoUrl": "https://youtu.be/imWlkp8w1I4?t=32",
+    "instructions": [
+      "Bước 1: Quỳ xuống phía trước cáp kéo.\r",
+      "Bước 2: Nắm dây cáp và hạ dây xuống cho tới khi tay bên cạnh mặt.\r",
+      "Bước 3: Hơi co hông và cho phép trọng lượng lan lưng dưới. Đây là vị trí ban đầu.\r",
+      "Bước 4: Giữ hông cố định, co eo trong khi siết bụng, khuỷu tay đi về phía giữa đùi. Thở ra trong khi thực hiện phần chuyển động này. Giữ ở tư thế co khoảng 1 giây.\r",
+      "Bước 5: Từ từ trở lại vị trí bạn đầu trong khi hít vào. Giữ cơ bụng siết trong khi thực hiện động tác. Đồng thời đừng chọn mức kéo nặng khiến cho lưng dưới phải chịu lực nhiều.\r",
+      "Bước 6: Lặp lại số lần yêu cầu."
+    ],
+    "imageUrl": "/images/exercises/RBA3.svg"
+  },
+  {
+    "code": "RBA4",
+    "difficulty": "Trung bình",
+    "muscle": "Bụng",
+    "name": "Banded Pallof Press",
+    "videoUrl": "https://youtu.be/Y0e2w0aKOXw",
+    "instructions": [
+      "Bước 1: Đứng vuông góc với một dây thun cột chặt vào trụ cố định với độ cao của dây thun ngang tầm vai.\r",
+      "Bước 2: Giữ dây bằng cả hai tay và kéo vào ngực sao cho dây thun phải căng.\r",
+      "Bước 3: Chân dang rộng bằng vai, cả chân, đầu gối và vai phải duy trì ngang hàng và thẳng phía trước trong suốt động tác.\r",
+      "Bước 4: Căng ngực, siết dây, đẩy tay xuống vụng bụng rồi dơ thẳng ra phía trước cách xa cơ thể, duỗi thẳng tay trong khi chống\r",
+      "Bước 5: lại lực xoắn hoặc xoay.\r",
+      "Bước 6: Tiếp tục hạ thấp xuống vùng bụng dưới và đảm bảo rằng vẫn duy trì được cơ thể đứng thẳng và chống lại lực kéo xoay người đi của dây chun.\r",
+      "Bước 7: Lặp lại số lần yêu cầu."
+    ],
+    "imageUrl": "/images/exercises/RBA4.svg"
+  },
+  {
+    "code": "RBA5",
+    "difficulty": "Trung bình",
+    "muscle": "Bụng",
+    "name": "Low To High Wood Chops",
+    "videoUrl": "https://youtu.be/kPugGvTvl1A?t=30",
+    "imageUrl": "/images/exercises/RBA5.svg"
+  },
+  {
+    "code": "RBL1",
+    "difficulty": "Trung bình",
+    "muscle": "Chân",
+    "name": "Cable Hip Abduction",
+    "videoUrl": "",
+    "imageUrl": "/images/exercises/RBL1.svg"
+  },
+  {
+    "code": "RBL2",
+    "difficulty": "Trung bình",
+    "muscle": "Chân",
+    "name": "Squat To Rows",
+    "videoUrl": "https://youtu.be/WGer5iQ6qRk",
+    "imageUrl": "/images/exercises/RBL2.svg"
+  },
+  {
+    "code": "RBL3",
+    "difficulty": "Dễ",
+    "muscle": "Chân",
+    "name": "Banded Lying Leg Press",
+    "videoUrl": "https://youtu.be/qp_RtWjHsV8",
+    "imageUrl": "/images/exercises/RBL3.svg"
+  },
+  {
+    "code": "RBL4",
+    "difficulty": "Trung bình",
+    "muscle": "Chân",
+    "name": "Banded Squat And Overhead Press",
+    "videoUrl": "",
+    "imageUrl": "/images/exercises/RBL4.svg"
+  },
+  {
+    "code": "RBL5",
+    "difficulty": "Dễ",
+    "muscle": "Chân",
+    "name": "Banded Squats",
+    "videoUrl": "https://youtu.be/duP-UZsfOaQ",
+    "imageUrl": "/images/exercises/RBL5.svg"
+  },
+  {
+    "code": "RBL6",
+    "difficulty": "Dễ",
+    "muscle": "Chân",
+    "name": "Banded Lying Leg Curl",
+    "videoUrl": "https://youtu.be/Ygy6sipH-BM?t=23",
+    "imageUrl": "/images/exercises/RBL6.jpg"
+  },
+  {
+    "code": "RBB1",
+    "difficulty": "Trung bình",
+    "muscle": "Lưng - Xô",
+    "name": "Cable Shrugs",
+    "videoUrl": "",
+    "imageUrl": "/images/exercises/RBB1.svg"
+  },
+  {
+    "code": "RBB2",
+    "difficulty": "Trung bình",
+    "muscle": "Lưng - Xô",
+    "name": "Cross Body Cable Rows",
+    "videoUrl": "",
+    "imageUrl": "/images/exercises/RBB2.svg"
+  },
+  {
+    "code": "RBB3",
+    "difficulty": "Khó",
+    "muscle": "Lưng - Xô",
+    "name": "Banded Bent Over Rows",
+    "videoUrl": "https://youtu.be/TE3v7CgXiiI?t=39",
+    "imageUrl": "/images/exercises/RBB3.svg"
+  },
+  {
+    "code": "RBB4",
+    "difficulty": "Trung bình",
+    "muscle": "Lưng - Xô",
+    "name": "Banded Seated Rows",
+    "videoUrl": "https://youtu.be/sWZ4ZSe02dk",
+    "imageUrl": "/images/exercises/RBB4.svg"
+  },
+  {
+    "code": "RBB5",
+    "difficulty": "Dễ",
+    "muscle": "Lưng - Xô",
+    "name": "Straight Arm Pulldown",
+    "videoUrl": "https://youtu.be/K4VAFznrNLk?t=29",
+    "imageUrl": "/images/exercises/RBB5.svg"
+  },
+  {
+    "code": "RBB6",
+    "difficulty": "Dễ",
+    "muscle": "Lưng - Xô",
+    "name": "Close Grip Lat Pulldown",
+    "videoUrl": "https://youtu.be/3slLx-11z9k",
+    "imageUrl": "/images/exercises/RBB6.svg"
+  },
+  {
+    "code": "RBH1",
+    "difficulty": "Trung bình",
+    "muscle": "Mông",
+    "name": "Cable Hip Extensions",
+    "videoUrl": "",
+    "imageUrl": "/images/exercises/RBH1.svg"
+  },
+  {
+    "code": "RBH2",
+    "difficulty": "Trung bình",
+    "muscle": "Mông",
+    "name": "Banded Clam Shells",
+    "videoUrl": "",
+    "imageUrl": "/images/exercises/RBH2.svg"
+  },
+  {
+    "code": "RBH3",
+    "difficulty": "Khó",
+    "muscle": "Mông",
+    "name": "Banded Deadlifts",
+    "videoUrl": "https://youtu.be/JqSk2ydDIkk",
+    "imageUrl": "/images/exercises/RBH3.svg"
+  },
+  {
+    "code": "RBH4",
+    "difficulty": "Khó",
+    "muscle": "Mông",
+    "name": "Banded Glute Bridges",
+    "videoUrl": "https://youtu.be/GdSolgmyW68",
+    "imageUrl": "/images/exercises/RBH4.svg"
+  },
+  {
+    "code": "RBH5",
+    "difficulty": "Trung bình",
+    "muscle": "Mông",
+    "name": "Banded Glute Kickbacks",
+    "videoUrl": "",
+    "imageUrl": "/images/exercises/RBH5.svg"
+  },
+  {
+    "code": "RBH6",
+    "difficulty": "Trung bình",
+    "muscle": "Mông",
+    "name": "Banded Side Steps",
+    "videoUrl": "",
+    "imageUrl": "/images/exercises/RBH6.svg"
+  },
+  {
+    "code": "RBH7",
+    "difficulty": "Khó",
+    "muscle": "Mông",
+    "name": "Banded Pull Through",
+    "videoUrl": "https://youtu.be/T3TFMFV5SSU",
+    "instructions": [
+      "Bước 1: Đứng thẳng người, 2 chân rông bằng vai, bước qua dây tập\r",
+      "Bước 2: Cúi xuống, giữ thẳng lưng, 2 tay cầm dây thực hiện kéo dây lên, siết mông\r",
+      "Bước 3: Lặp lại số lần yêu cầu."
+    ],
+    "imageUrl": "/images/exercises/RBH7.jpg"
+  },
+  {
+    "code": "RCH1",
+    "difficulty": "Khó",
+    "muscle": "Ngực",
+    "name": "Banded Chest Press",
+    "videoUrl": "https://youtu.be/j3ccNPK-P4U",
+    "imageUrl": "/images/exercises/RCH1.svg"
+  },
+  {
+    "code": "RCH2",
+    "difficulty": "Khó",
+    "muscle": "Ngực",
+    "name": "Banded Push-ups",
+    "videoUrl": "https://youtu.be/FJmNfxrOaPI?t=51",
+    "imageUrl": "/images/exercises/RCH2.svg"
+  },
+  {
+    "code": "RCH3",
+    "difficulty": "Trung bình",
+    "muscle": "Ngực",
+    "name": "Standing Chest Press",
+    "videoUrl": "",
+    "imageUrl": "/images/exercises/RCH3.svg"
+  },
+  {
+    "code": "RCH4",
+    "difficulty": "Khó",
+    "muscle": "Ngực",
+    "name": "Standing Chest Fly",
+    "videoUrl": "https://youtu.be/1076zKHV7AM?t=33",
+    "imageUrl": "/images/exercises/RCH4.svg"
+  },
+  {
+    "code": "RTC1",
+    "difficulty": "Trung bình",
+    "muscle": "Tay sau",
+    "name": "Cable Rope Overhead Triceps Extensions",
+    "videoUrl": "",
+    "imageUrl": "/images/exercises/RTC1.svg"
+  },
+  {
+    "code": "RTC2",
+    "difficulty": "Dễ",
+    "muscle": "Tay sau",
+    "name": "Cable Tricep Kickbacks",
+    "videoUrl": "",
+    "imageUrl": "/images/exercises/RTC2.svg"
+  },
+  {
+    "code": "RTC3",
+    "difficulty": "Trung bình",
+    "muscle": "Tay sau",
+    "name": "Banded Tricep Kickbacks",
+    "videoUrl": "https://youtu.be/88ex10gjaGk?t=40",
+    "imageUrl": "/images/exercises/RTC3.svg"
+  },
+  {
+    "code": "RTC4",
+    "difficulty": "Khó",
+    "muscle": "Tay sau",
+    "name": "Banded Tricep Overhead Extensions",
+    "videoUrl": "https://youtu.be/zhBNbr9dbFA?t=43",
+    "imageUrl": "/images/exercises/RTC4.svg"
+  },
+  {
+    "code": "RTC5",
+    "difficulty": "Dễ",
+    "muscle": "Tay sau",
+    "name": "Banded Tricep Pushdown",
+    "videoUrl": "https://youtu.be/dzfxVf-IOSE?t=34",
+    "imageUrl": "/images/exercises/RTC5.svg"
+  },
+  {
+    "code": "RBC1",
+    "difficulty": "Dễ",
+    "muscle": "Tay trước",
+    "name": "Banded Bicep Hammer Curl",
+    "videoUrl": "https://youtu.be/KIqRZEF_Aqg?t=42",
+    "imageUrl": "/images/exercises/RBC1.svg"
+  },
+  {
+    "code": "RBC2",
+    "difficulty": "Dễ",
+    "muscle": "Tay trước",
+    "name": "Banded Bicep Curl",
+    "videoUrl": "https://youtu.be/PXLF19Oqe3M?t=37",
+    "imageUrl": "/images/exercises/RBC2.svg"
+  },
+  {
+    "code": "RBC3",
+    "difficulty": "Trung bình",
+    "muscle": "Tay trước",
+    "name": "Cable Standing Bicep Curl",
+    "videoUrl": "",
+    "imageUrl": "/images/exercises/RBC3.svg"
+  },
+  {
+    "code": "RBS1",
+    "difficulty": "Trung bình",
+    "muscle": "Vai",
+    "name": "Cable Upright Rows",
+    "videoUrl": "",
+    "imageUrl": "/images/exercises/RBS1.svg"
+  },
+  {
+    "code": "RBS2",
+    "difficulty": "Dễ",
+    "muscle": "Vai",
+    "name": "Banded External Shoulder Rotation",
+    "videoUrl": "https://youtu.be/hWUtV-wxVQI?t=61",
+    "imageUrl": "/images/exercises/RBS2.svg"
+  },
+  {
+    "code": "RBS3",
+    "difficulty": "Dễ",
+    "muscle": "Vai",
+    "name": "Banded Face Pull",
+    "videoUrl": "https://youtu.be/Wq-Td9UXRK8",
+    "imageUrl": "/images/exercises/RBS3.svg"
+  },
+  {
+    "code": "RBS4",
+    "difficulty": "Trung bình",
+    "muscle": "Vai",
+    "name": "Banded Internal Cable Shoulder Rotation",
+    "videoUrl": "",
+    "imageUrl": "/images/exercises/RBS4.svg"
+  },
+  {
+    "code": "RBS5",
+    "difficulty": "Dễ",
+    "muscle": "Vai",
+    "name": "Banded Lateral Raises",
+    "videoUrl": "https://youtu.be/ivk5wrpBp1A?t=37",
+    "imageUrl": "/images/exercises/RBS5.svg"
+  },
+  {
+    "code": "RBS6",
+    "difficulty": "Dễ",
+    "muscle": "Vai",
+    "name": "Banded Shoulder Front Raises",
+    "videoUrl": "https://youtu.be/1lO0JTw9yNk?t=38",
+    "imageUrl": "/images/exercises/RBS6.svg"
+  },
+  {
+    "code": "RBS7",
+    "difficulty": "Trung bình",
+    "muscle": "Vai",
+    "name": "Banded Shoulder Press",
+    "videoUrl": "https://youtu.be/JMZxrSRpGhw?t=56",
+    "imageUrl": "/images/exercises/RBS7.svg"
+  },
+  {
+    "code": "BW01",
+    "difficulty": "Trung bình",
+    "muscle": "Ngực",
+    "name": "Bodyweight Push-ups",
+    "videoUrl": "",
+    "imageUrl": "/images/exercises/BW01.svg"
+  },
+  {
+    "code": "BW02",
+    "difficulty": "Dễ",
+    "muscle": "Chân",
+    "name": "Bodyweight Squats",
+    "videoUrl": "https://youtu.be/R1v152b72lo?t=61",
+    "imageUrl": "/images/exercises/BW02.svg"
+  },
+  {
+    "code": "BW03",
+    "difficulty": "Dễ",
+    "muscle": "Chân",
+    "name": "Bodyweight Walking Lunges",
+    "videoUrl": "https://youtu.be/GJUjZ9ypp-k?t=80",
+    "imageUrl": "/images/exercises/BW03.svg"
+  },
+  {
+    "code": "BW04",
+    "difficulty": "Dễ",
+    "muscle": "Vai",
+    "name": "Bodyweight Shoulder Press",
+    "videoUrl": "https://youtu.be/IEWmqrk_j2w?t=60",
+    "imageUrl": "/images/exercises/BW04.svg"
+  }
+]

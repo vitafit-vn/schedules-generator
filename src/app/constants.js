@@ -2,7 +2,8 @@
 import DAILY_SCHEDULES_BEGINNER from './data/daily_schedules_beginner.json';
 import DAILY_SCHEDULES_INTERMEDIATE from './data/daily_schedules_intermediate.json';
 import DAILY_SCHEDULES_SHARED from './data/daily_schedules_shared.json';
-import EXERCISES_DATABASE from './data/exercises_database.json';
+import EXERCISES_DATABASE_FULL_GYM from './data/exercises_database_full_gym.json';
+import EXERCISES_DATABASE_HOME from './data/exercises_database_home.json';
 import WEEKLY_SCHEDULES from './data/weekly_schedules.json';
 
 const IS_PRODUCTION = process.env.NODE_ENV === 'production';
@@ -20,6 +21,8 @@ const DAILY_SCHEDULES = {
   intermediate: DAILY_SCHEDULES_INTERMEDIATE,
   shared: DAILY_SCHEDULES_SHARED,
 };
+
+const EXERCISES_DATABASE = [...EXERCISES_DATABASE_FULL_GYM, ...EXERCISES_DATABASE_HOME];
 
 const FORMATS = {
   DISPLAY_DATE: 'dd/MM/yyyy',

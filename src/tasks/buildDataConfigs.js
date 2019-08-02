@@ -19,33 +19,35 @@ function buildDailyScheduleConfigs() {
       const dailySchedules = await parseDailySchedules(csvData);
       fs.writeFileSync(`${CONFIGS_DIR}/daily_schedules_${level}.json`, JSON.stringify(dailySchedules, null, 2));
     } catch (error) {
-      throw error;
+      console.warn(error);
     }
   });
 }
 
-async function buildExercisesDatabaseConfigs() {
-  try {
-    const csvData = fs.readFileSync(`${DATA_DIR}/exercises_database.csv`, 'utf-8');
-    const allExercises = await parseExercisesDatabase(csvData);
-    const exerciseImages = fs.readdirSync(`${IMAGES_SRC_DIR}/images/exercises`);
-    const imagesMapping = _.fromPairs(
-      _.map(exerciseImages, filename => {
-        const [code] = _.split(filename, '.');
-        return [code, IMAGES_PATH + filename];
-      })
-    );
+function buildExercisesDatabaseConfigs() {
+  _.each(['full_gym', 'home'], async variant => {
+    try {
+      const csvData = fs.readFileSync(`${DATA_DIR}/exercises_database/${variant}.csv`, 'utf-8');
+      const exercises = await parseExercisesDatabase(csvData);
+      const exerciseImages = fs.readdirSync(`${IMAGES_SRC_DIR}/images/exercises`);
+      const imagesMapping = _.fromPairs(
+        _.map(exerciseImages, filename => {
+          const [code] = _.split(filename, '.');
+          return [code, IMAGES_PATH + filename];
+        })
+      );
 
-    const exercisesDatabase = _.map(allExercises, exercise => {
-      const { code } = exercise;
-      const { [code]: imageUrl } = imagesMapping;
-      return { ...exercise, imageUrl };
-    });
+      const exercisesDatabase = _.map(exercises, exercise => {
+        const { code } = exercise;
+        const { [code]: imageUrl } = imagesMapping;
+        return { ...exercise, imageUrl };
+      });
 
-    fs.writeFileSync(`${CONFIGS_DIR}/exercises_database.json`, JSON.stringify(exercisesDatabase, null, 2));
-  } catch (error) {
-    throw error;
-  }
+      fs.writeFileSync(`${CONFIGS_DIR}/exercises_database_${variant}.json`, JSON.stringify(exercisesDatabase, null, 2));
+    } catch (error) {
+      console.warn(error);
+    }
+  });
 }
 
 async function buildWeeklyScheduleConfigs() {
