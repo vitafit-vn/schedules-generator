@@ -1,5 +1,11 @@
-/* eslint-disable */
+import axios from 'axios';
+import cheerio from 'cheerio'; // eslint-disable-line import/no-extraneous-dependencies
+import fs from 'fs';
+import _ from 'lodash';
 
+const homeExercises = require('../data/workoutlabs/home_exercises.json');
+
+/*
 urls = $('.clearAfter.neGrid a').toArray().map(a => ({ id: a.dataset.id, url: a.href }))
 names = $('.clearAfter.neGrid a span').toArray().map(span => span.innerHTML)
 compoundSvgs = $('.clearAfter.neGrid a .iImgWrp img').toArray().map(img => img.src)
@@ -13,11 +19,27 @@ obj = urls.map(({ id, url }, index) => ({
 }))
 
 JSON.stringify(obj, null, 2)
+*/
 
-d = _.map(a, ({ code, name, image }) => {
-  const ex = _.find(b, { mixed_images: image }) || _.find(c, { mixed_images: image }) || {};
-  const { url } = ex;
-  return { code, name, image, eng_url: url };
-})
+async function removeWatermark(svgUrl) {
+  try {
+    const { data } = await axios.get(svgUrl);
+    const $ = cheerio.load(data, { normalizeWhitespace: true, xmlMode: true });
+    $('svg > svg').remove();
+    return $.xml();
+  } catch (error) {
+    console.warn(error);
+    return undefined;
+  }
+}
 
-JSON.stringify(d, null, 2)
+function buildSvgImages() {
+  _.each(homeExercises, async ({ code, image_svg: svgUrl }) => {
+    if (svgUrl == null) return;
+
+    const svg = await removeWatermark(svgUrl);
+    if (svg != null) fs.writeFileSync(`./src/static/images/exercises/${code}.svg`, svg);
+  });
+}
+
+buildSvgImages();
