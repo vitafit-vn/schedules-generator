@@ -1,25 +1,25 @@
-UPPER-1 (Thân trên),,,,
+UPPER-1,Thân trên,full_gym,,
 ,BP01,Barbell Bench Press,5,5
 ,BL02,Barbell Row,4,6
 ,SP01,Barbell Overhead Press,4,4
 ,SO01,Dumbbell Lateral Raise,3,12
 ,BC02,Dumbbell Curl,3,10
 ,TC06,Triceps Rope Pushdown,3,12
-UPPER-2 (Thân trên),,,,
+UPPER-2,Thân trên,full_gym,,
 ,BL04,Dumbbell Row,4,10
 ,BP08,Dumbbell Incline Bench Press,4,10
 ,SP03,Dumbbell Shoulder Press,4,10
 ,RD01,Dumbbell Rear Delt Fly,3,10
 ,BC04,Dumbbell Hammer Curl,3,10
 ,TC06,Triceps Rope Pushdown,3,12
-UPPER-3 (Thân trên),,,,
+UPPER-3,Thân trên,full_gym,,
 ,BL01,Barbell Conventional Deadlift,5,5
 ,BP06,Dumbbell Chest Fly,3,12
 ,SP05,Dumbbell Arnold Press,4,10
 ,SO01,Dumbbell Lateral Raise,3,15
 ,BC01,Barbell Curl,3,15
 ,TC03,Dumbbell Skull Crusher,3,15
-UPPER-4 (Thân trên),,,,
+UPPER-4,Thân trên,full_gym,,
 ,BP01,Barbell Bench Press,5,5
 ,BP08,Dumbbell Incline Bench Press,3,10
 ,BL09,Lat Pulldown,4,10
@@ -27,64 +27,64 @@ UPPER-4 (Thân trên),,,,
 ,BL07,Face Pull,3,10
 ,BC02,Dumbbell Curl,3,10
 ,TC06,Triceps Rope Pushdown,3,12
-"LOWER-1 (Chân, Đùi, Mông)",,,,
+LOWER-1,"Chân, Đùi, Mông",full_gym,,
 ,SQ01,Barbell Back Squat,5,5
 ,DL04,Barbell Sumo Deadlift,4,10
 ,LC01,Lying Leg Curl,2,15
 ,DL02,Dumbbell Romania Deadlift,3,12
 ,HT01,Barbell Hip Thrust,4,10
-"LOWER-2 (Chân, Đùi, Mông)",,,,
+LOWER-2,"Chân, Đùi, Mông",full_gym,,
 ,DL04,Barbell Sumo Deadlift,4,10
 ,SQ01,Barbell Back Squat,4,12
 ,RP01,Rope Pull Through,4,12
 ,LU02,Dumbbell Lunge,2,20
 ,LC01,Lying Leg Curl,3,15
-"LOWER-3 (Chân, Đùi, Mông)",,,,
+LOWER-3,"Chân, Đùi, Mông",full_gym,,
 ,SQ01,Barbell Back Squat,6,5/3/1/5/3/3
 ,DL05,Barbell Stiff Leg Deadlift,4,6
 ,LC01,Lying Leg Curl,2,15
 ,LP01,Leg Press,3,15
 ,LE01,Leg Extension,3,15
-"LOWER-4 (Chân, Đùi, Mông)",,,,
+LOWER-4,"Chân, Đùi, Mông",full_gym,,
 ,SQ01,Barbell Back Squat,5,5
 ,LP01,Leg Press,4,12
 ,LU02,Dumbbell Lunge,3,15
 ,HT01,Barbell Hip Thrust,4,12
 ,RP01,Rope Pull Through,3,12
-"PUSH-1 (Ngực, Vai, Tay sau)",,,,
+PUSH-1,"Ngực, Vai, Tay sau",full_gym,,
 ,BP01,Barbell Bench Press,5,5
 ,BP08,Dumbbell Incline Bench Press,4,10
 ,SP01,Barbell Overhead Press,4,6
 ,FS03,Cable Front Raise,3,10
 ,TC06,Triceps Rope Pushdown,3,15
 ,TC05,Tricep Kickback,3,15
-"PUSH-2 (Ngực, Vai, Tay sau)",,,,
+PUSH-2,"Ngực, Vai, Tay sau",full_gym,,
 ,SP01,Barbell Overhead Press,5,5
 ,BP06,Dumbbell Chest Fly,3,15
 ,BP05,Cable Chest Fly,3,12
 ,RD01,Dumbbell Rear Delt Fly,4,10
 ,TC01,Dumbbell Overhead Tricep Extension,3,15
-"PULL-1 (Lưng, Xô, Tay trước)",,,,
+PULL-1,"Lưng, Xô, Tay trước",full_gym,,
 ,BL01,Barbell Conventional Deadlift,5,5
 ,BL02,Barbell Row,4,10
 ,BL09,Lat Pulldown,3,12
 ,BL13,Machine-assisted Pull-up,3,15
 ,BL07,Face Pull,3,10
 ,BC02,Dumbbell Curl,3,10
-"PULL-2 (Lưng, Xô, Tay trước)",,,,
+PULL-2,"Lưng, Xô, Tay trước",full_gym,,
 ,BL04,Dumbbell Row,4,10
 ,BL09,Lat Pulldown,4,8
 ,BL06,Seated Cable Row,3,12
 ,BL14,Close Grip Pulldown,3,12
 ,BC05,Dumbbell Preacher Curl,3,15
-"PULL-3 (Lưng, Xô, Tay trước)",,,,
+PULL-3,"Lưng, Xô, Tay trước",full_gym,,
 ,BL01,Barbell Conventional Deadlift,5,5
 ,BL05,Incline Dumbbell Row,4,10
 ,BL11,Straight Arm Pulldown,4,12
 ,BL07,Face Pull,3,10
 ,BC02,Dumbbell Curl,2,15
 ,BL13,Machine-assisted Pull-up,3,Max
-"PULL-4 (Lưng, Xô, Tay trước)",,,,
+PULL-4,"Lưng, Xô, Tay trước",full_gym,,
 ,BL02,Barbell Row,4,10
 ,BL15,Machine High Row,4,10
 ,BL09,Lat Pulldown,4,10

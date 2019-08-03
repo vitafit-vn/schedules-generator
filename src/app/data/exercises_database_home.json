@@ -2,9 +2,6 @@
   {
     "code": "RBA1",
     "difficulty": "Trung bình",
-    "muscle": "Bụng",
-    "name": "Banded Core Rotation",
-    "videoUrl": "https://youtu.be/Q-j6MLgM4jo",
     "instructions": [
       "Bước 1: Đứng thẳng, dây cáp lắp ở bên phải ngang eo.\r",
       "Bước 2: Kéo dây cáp ra và giữ trước ngực bằng hai tay, gối hơi khuỵu. Dây cáp không chùn. Căng cơ bụng.\r",
@@ -12,6 +9,9 @@
       "Bước 4: Dây cáp sẽ cố xoay người bạn sang bên đầu dây, nhưng hãy ghì chặt lại.\r",
       "Bước 5: Quay trở lại tư thế ban đầu và lặp lại."
     ],
+    "muscle": "Bụng",
+    "name": "Banded Core Rotation",
+    "videoUrl": "https://youtu.be/Q-j6MLgM4jo",
     "imageUrl": "/images/exercises/RBA1.svg"
   },
   {
@@ -25,9 +25,6 @@
   {
     "code": "RBA3",
     "difficulty": "Trung bình",
-    "muscle": "Bụng",
-    "name": "Banded Kneeling Crunch",
-    "videoUrl": "https://youtu.be/imWlkp8w1I4?t=32",
     "instructions": [
       "Bước 1: Quỳ xuống phía trước cáp kéo.\r",
       "Bước 2: Nắm dây cáp và hạ dây xuống cho tới khi tay bên cạnh mặt.\r",
@@ -36,14 +33,14 @@
       "Bước 5: Từ từ trở lại vị trí bạn đầu trong khi hít vào. Giữ cơ bụng siết trong khi thực hiện động tác. Đồng thời đừng chọn mức kéo nặng khiến cho lưng dưới phải chịu lực nhiều.\r",
       "Bước 6: Lặp lại số lần yêu cầu."
     ],
+    "muscle": "Bụng",
+    "name": "Banded Kneeling Crunch",
+    "videoUrl": "https://youtu.be/imWlkp8w1I4?t=32",
     "imageUrl": "/images/exercises/RBA3.svg"
   },
   {
     "code": "RBA4",
     "difficulty": "Trung bình",
-    "muscle": "Bụng",
-    "name": "Banded Pallof Press",
-    "videoUrl": "https://youtu.be/Y0e2w0aKOXw",
     "instructions": [
       "Bước 1: Đứng vuông góc với một dây thun cột chặt vào trụ cố định với độ cao của dây thun ngang tầm vai.\r",
       "Bước 2: Giữ dây bằng cả hai tay và kéo vào ngực sao cho dây thun phải căng.\r",
@@ -53,6 +50,9 @@
       "Bước 6: Tiếp tục hạ thấp xuống vùng bụng dưới và đảm bảo rằng vẫn duy trì được cơ thể đứng thẳng và chống lại lực kéo xoay người đi của dây chun.\r",
       "Bước 7: Lặp lại số lần yêu cầu."
     ],
+    "muscle": "Bụng",
+    "name": "Banded Pallof Press",
+    "videoUrl": "https://youtu.be/Y0e2w0aKOXw",
     "imageUrl": "/images/exercises/RBA4.svg"
   },
   {
@@ -210,14 +210,14 @@
   {
     "code": "RBH7",
     "difficulty": "Khó",
-    "muscle": "Mông",
-    "name": "Banded Pull Through",
-    "videoUrl": "https://youtu.be/T3TFMFV5SSU",
     "instructions": [
       "Bước 1: Đứng thẳng người, 2 chân rông bằng vai, bước qua dây tập\r",
       "Bước 2: Cúi xuống, giữ thẳng lưng, 2 tay cầm dây thực hiện kéo dây lên, siết mông\r",
       "Bước 3: Lặp lại số lần yêu cầu."
     ],
+    "muscle": "Mông",
+    "name": "Banded Pull Through",
+    "videoUrl": "https://youtu.be/T3TFMFV5SSU",
     "imageUrl": "/images/exercises/RBH7.jpg"
   },
   {

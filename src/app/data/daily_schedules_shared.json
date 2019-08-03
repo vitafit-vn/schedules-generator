@@ -2,378 +2,390 @@
   {
     "code": "HIP-1",
     "muscles": "Mông",
+    "variant": "full_gym",
     "exercises": [
       {
         "code": "RP01",
         "name": "Rope Pull Through",
-        "reps": "12",
-        "sets": "4"
+        "sets": "4",
+        "reps": "12"
       },
       {
         "code": "LU03",
         "name": "Walking Lunge",
-        "reps": "12",
-        "sets": "4"
+        "sets": "4",
+        "reps": "12"
       },
       {
         "code": "HT01",
         "name": "Barbell Hip Thrust",
-        "reps": "10",
-        "sets": "4"
+        "sets": "4",
+        "reps": "10"
       },
       {
         "code": "DK01",
         "name": "Cable Donkey Kick",
-        "reps": "10",
-        "sets": "4"
+        "sets": "4",
+        "reps": "10"
       }
     ]
   },
   {
     "code": "ABS-1",
     "muscles": "Bụng",
+    "variant": "full_gym",
     "exercises": [
       {
         "code": "AB02",
         "name": "Crunch",
-        "reps": "15",
-        "sets": "3"
+        "sets": "3",
+        "reps": "15"
       },
       {
         "code": "AB04",
         "name": "Russian Twist",
-        "reps": "20",
-        "sets": "3"
+        "sets": "3",
+        "reps": "20"
       },
       {
         "code": "AB03",
         "name": "Leg Raise",
-        "reps": "15",
-        "sets": "3"
+        "sets": "3",
+        "reps": "15"
       }
     ]
   },
   {
     "code": "ABS-2",
     "muscles": "Bụng",
+    "variant": "full_gym",
     "exercises": [
       {
         "code": "AB03",
         "name": "Leg Raise",
-        "reps": "15",
-        "sets": "3"
+        "sets": "3",
+        "reps": "15"
       },
       {
         "code": "AB05",
         "name": "Toe Touches",
-        "reps": "15",
-        "sets": "3"
+        "sets": "3",
+        "reps": "15"
       },
       {
         "code": "AB06",
         "name": "Seated Knee Tucks",
-        "reps": "15",
-        "sets": "3"
+        "sets": "3",
+        "reps": "15"
       }
     ]
   },
   {
     "code": "ABS-3",
     "muscles": "Bụng",
+    "variant": "full_gym",
     "exercises": [
       {
         "code": "AB01",
         "name": "Alternate Heel Touchers",
-        "reps": "15",
-        "sets": "3"
+        "sets": "3",
+        "reps": "15"
       },
       {
         "code": "AB02",
         "name": "Crunch",
-        "reps": "15",
-        "sets": "3"
+        "sets": "3",
+        "reps": "15"
       },
       {
         "code": "AB03",
         "name": "Leg Raise",
-        "reps": "15",
-        "sets": "3"
+        "sets": "3",
+        "reps": "15"
       }
     ]
   },
   {
     "code": "CARDIO-1",
     "muscles": "Thể lực",
+    "variant": "",
     "exercises": [
       {
         "code": "CD01",
         "name": "Cardio: Burpee",
-        "reps": "20",
-        "sets": "3"
+        "sets": "3",
+        "reps": "20"
       },
       {
         "code": "CD02",
         "name": "Cardio: Battle Rope",
-        "reps": "30s",
-        "sets": "10"
+        "sets": "10",
+        "reps": "30s"
       },
       {
         "code": "CD03",
         "name": "Cardio: Jump Squat",
-        "reps": "20",
-        "sets": "3"
+        "sets": "3",
+        "reps": "20"
       }
     ]
   },
   {
     "code": "CARDIO-2",
     "muscles": "Thể lực",
+    "variant": "",
     "exercises": [
       {
         "code": "CD04",
         "name": "Cardio: High Knee",
-        "reps": "30s",
-        "sets": "10"
+        "sets": "10",
+        "reps": "30s"
       },
       {
         "code": "CD05",
         "name": "Cardio: Split Jump Squat",
-        "reps": "20",
-        "sets": "3"
+        "sets": "3",
+        "reps": "20"
       },
       {
         "code": "CD06",
         "name": "Cardio: Hop Over",
-        "reps": "30s",
-        "sets": "10"
+        "sets": "10",
+        "reps": "30s"
       }
     ]
   },
   {
     "code": "CARDIO-3",
     "muscles": "Thể lực",
+    "variant": "",
     "exercises": [
       {
         "code": "CD06",
         "name": "Cardio: Hop Over",
-        "reps": "30s",
-        "sets": "10"
+        "sets": "10",
+        "reps": "30s"
       },
       {
         "code": "CD07",
         "name": "Cardio: Mountain Climbers",
-        "reps": "30s",
-        "sets": "10"
+        "sets": "10",
+        "reps": "30s"
       },
       {
         "code": "CD08",
         "name": "Cardio: Forward Hops",
-        "reps": "30s",
-        "sets": "10"
+        "sets": "10",
+        "reps": "30s"
       }
     ]
   },
   {
     "code": "CARDIO-4",
     "muscles": "Thể lực",
+    "variant": "",
     "exercises": [
       {
         "code": "CD09",
         "name": "Cardio: Running On Treadmill",
-        "reps": "10 phút",
-        "sets": "1"
+        "sets": "1",
+        "reps": "10 phút"
       }
     ]
   },
   {
     "code": "FULL-BODY-1",
     "muscles": "Toàn thân",
+    "variant": "",
     "exercises": [
       {
         "code": "SQ03",
         "name": "Goblet Squat",
-        "reps": "12",
-        "sets": "4"
+        "sets": "4",
+        "reps": "12"
       },
       {
         "code": "HT04",
         "name": "Glute Bridge",
-        "reps": "10",
-        "sets": "4"
+        "sets": "4",
+        "reps": "10"
       },
       {
         "code": "BP02",
         "name": "Dumbbell Bench Press",
-        "reps": "10",
-        "sets": "3"
+        "sets": "3",
+        "reps": "10"
       },
       {
         "code": "BL04",
         "name": "Dumbbell Row",
-        "reps": "12",
-        "sets": "3"
+        "sets": "3",
+        "reps": "12"
       },
       {
         "code": "FS01",
         "name": "Dumbbell Front Raise",
-        "reps": "12",
-        "sets": "2"
+        "sets": "2",
+        "reps": "12"
       },
       {
         "code": "BC02",
         "name": "Dumbbell Curl",
-        "reps": "12",
-        "sets": "2"
+        "sets": "2",
+        "reps": "12"
       },
       {
         "code": "TC05",
         "name": "Tricep Kickback",
-        "reps": "10",
-        "sets": "3"
+        "sets": "3",
+        "reps": "10"
       }
     ]
   },
   {
     "code": "FULL-BODY-2",
     "muscles": "Toàn thân",
+    "variant": "",
     "exercises": [
       {
         "code": "SQ04",
         "name": "Dumbbell Front Squat",
-        "reps": "8",
-        "sets": "3"
+        "sets": "3",
+        "reps": "8"
       },
       {
         "code": "LU02",
         "name": "Dumbbell Lunge",
-        "reps": "12",
-        "sets": "3"
+        "sets": "3",
+        "reps": "12"
       },
       {
         "code": "BL02",
         "name": "Barbell Row",
-        "reps": "10",
-        "sets": "3"
+        "sets": "3",
+        "reps": "10"
       },
       {
         "code": "BP08",
         "name": "Dumbbell Incline Bench Press",
-        "reps": "8",
-        "sets": "3"
+        "sets": "3",
+        "reps": "8"
       },
       {
         "code": "SP05",
         "name": "Dumbbell Arnold Press",
-        "reps": "6",
-        "sets": "3"
+        "sets": "3",
+        "reps": "6"
       },
       {
         "code": "BC04",
         "name": "Dumbbell Hammer Curl",
-        "reps": "10",
-        "sets": "3"
+        "sets": "3",
+        "reps": "10"
       },
       {
         "code": "TC05",
         "name": "Tricep Kickback",
-        "reps": "10",
-        "sets": "3"
+        "sets": "3",
+        "reps": "10"
       }
     ]
   },
   {
     "code": "FULL-BODY-3",
     "muscles": "Toàn thân",
+    "variant": "",
     "exercises": [
       {
         "code": "SQ01",
         "name": "Barbell Back Squat",
-        "reps": "5",
-        "sets": "5"
+        "sets": "5",
+        "reps": "5"
       },
       {
         "code": "DL07",
         "name": "Conventional Block Pull",
-        "reps": "8",
-        "sets": "4"
+        "sets": "4",
+        "reps": "8"
       },
       {
         "code": "BP06",
         "name": "Dumbbell Chest Fly",
-        "reps": "12",
-        "sets": "3"
+        "sets": "3",
+        "reps": "12"
       },
       {
         "code": "SP01",
         "name": "Barbell Overhead Press",
-        "reps": "5",
-        "sets": "5"
+        "sets": "5",
+        "reps": "5"
       },
       {
         "code": "BC06",
         "name": "Dumbbell Concentration Curl",
-        "reps": "15",
-        "sets": "3"
+        "sets": "3",
+        "reps": "15"
       },
       {
         "code": "TC06",
         "name": "Triceps Rope Pushdown",
-        "reps": "15",
-        "sets": "3"
+        "sets": "3",
+        "reps": "15"
       },
       {
         "code": "HT01",
         "name": "Barbell Hip Thrust",
-        "reps": "10",
-        "sets": "4"
+        "sets": "4",
+        "reps": "10"
       }
     ]
   },
   {
     "code": "FULL-BODY-4",
     "muscles": "Toàn thân",
+    "variant": "",
     "exercises": [
       {
         "code": "DL04",
         "name": "Barbell Sumo Deadlift",
-        "reps": "6",
-        "sets": "4"
+        "sets": "4",
+        "reps": "6"
       },
       {
         "code": "RP01",
         "name": "Rope Pull Through",
-        "reps": "12",
-        "sets": "4"
+        "sets": "4",
+        "reps": "12"
       },
       {
         "code": "BL02",
         "name": "Barbell Row",
-        "reps": "10",
-        "sets": "4"
+        "sets": "4",
+        "reps": "10"
       },
       {
         "code": "BP02",
         "name": "Dumbbell Bench Press",
-        "reps": "10",
-        "sets": "4"
+        "sets": "4",
+        "reps": "10"
       },
       {
         "code": "SP03",
         "name": "Dumbbell Shoulder Press",
-        "reps": "15",
-        "sets": "3"
+        "sets": "3",
+        "reps": "15"
       },
       {
         "code": "BL09",
         "name": "Lat Pulldown",
-        "reps": "15",
-        "sets": "3"
+        "sets": "3",
+        "reps": "15"
       },
       {
         "code": "BC05",
         "name": "Dumbbell Preacher Curl",
-        "reps": "15",
-        "sets": "3"
+        "sets": "3",
+        "reps": "15"
       }
     ]
   }

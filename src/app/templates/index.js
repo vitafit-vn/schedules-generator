@@ -11,7 +11,7 @@ import { convertBirthYearToAge, computeChecksum, convertWeekPeriod } from 'app/u
 import DailySchedule from './DailySchedule';
 import WeeklySchedule from './WeeklySchedule';
 
-function buildExerciseData(configs, personalizedData, index) {
+function buildExerciseData({ configs, index, personalizedData }) {
   const { code } = configs;
 
   const { difficulty, instructions, muscle, name, imageUrl, videoUrl } = _.find(EXERCISES_DATABASE, { code });
@@ -43,7 +43,7 @@ function buildDayExercises({ date, dayExercises, dayIndex, personalizedData }) {
   const flattenExercises = _.flatMap(dayExercises, 'exercises');
 
   return {
-    exercises: _.map(flattenExercises, (configs, idx) => buildExerciseData(configs, personalizedData, idx)),
+    exercises: _.map(flattenExercises, (configs, idx) => buildExerciseData({ configs, personalizedData, index: idx })),
     title: `${formattedDate}: ${code} (${muscles})`,
   };
 }

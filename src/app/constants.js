@@ -46,7 +46,15 @@ const TARGETS = [
 
 const WEEKDAYS = ['Thứ hai', 'Thứ ba', 'Thứ tư', 'Thứ năm', 'Thứ sáu', 'Thứ bảy', 'Chủ nhật'];
 
-const WORKOUT_LEVELS = ['beginner', 'intermediate'];
+const WORKOUT_LEVELS = [
+  { code: 'beginner', description: 'Beginner' },
+  { code: 'intermediate', description: 'Intermediate' },
+];
+
+const WORKOUT_VARIANTS = [
+  { code: 'full_gym', description: 'Tập tại phòng' },
+  { code: 'home', description: 'Tập tại nhà' },
+];
 
 export {
   ACTIVITY_RATES,
@@ -63,4 +71,5 @@ export {
   WEEKDAYS,
   WEEKLY_SCHEDULES,
   WORKOUT_LEVELS,
+  WORKOUT_VARIANTS,
 };

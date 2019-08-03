@@ -2,600 +2,1220 @@
   {
     "code": "UPPER-1",
     "muscles": "Thân trên",
+    "variant": "full_gym",
     "exercises": [
       {
         "code": "BP02",
         "name": "Dumbbell Bench Press",
-        "reps": "5",
-        "sets": "5"
+        "sets": "5",
+        "reps": "5"
       },
       {
         "code": "BL04",
         "name": "Dumbbell Row",
-        "reps": "15",
-        "sets": "3"
+        "sets": "3",
+        "reps": "15"
       },
       {
         "code": "SP03",
         "name": "Dumbbell Shoulder Press",
-        "reps": "8",
-        "sets": "4"
+        "sets": "4",
+        "reps": "8"
       },
       {
         "code": "BC02",
         "name": "Dumbbell Curl",
-        "reps": "15",
-        "sets": "2"
+        "sets": "2",
+        "reps": "15"
       },
       {
         "code": "TC06",
         "name": "Triceps Rope Pushdown",
-        "reps": "15",
-        "sets": "3"
+        "sets": "3",
+        "reps": "15"
       }
     ]
   },
   {
     "code": "UPPER-2",
     "muscles": "Thân trên",
+    "variant": "full_gym",
     "exercises": [
       {
         "code": "BL02",
         "name": "Barbell Row",
-        "reps": "10",
-        "sets": "4"
+        "sets": "4",
+        "reps": "10"
       },
       {
         "code": "BP08",
         "name": "Dumbbell Incline Bench Press",
-        "reps": "8",
-        "sets": "4"
+        "sets": "4",
+        "reps": "8"
       },
       {
         "code": "SP05",
         "name": "Dumbbell Arnold Press",
-        "reps": "15",
-        "sets": "4"
+        "sets": "4",
+        "reps": "15"
       },
       {
         "code": "BC04",
         "name": "Dumbbell Hammer Curl",
-        "reps": "15",
-        "sets": "4"
+        "sets": "4",
+        "reps": "15"
       },
       {
         "code": "TC05",
         "name": "Tricep Kickback",
-        "reps": "15",
-        "sets": "3"
+        "sets": "3",
+        "reps": "15"
       }
     ]
   },
   {
     "code": "UPPER-3",
     "muscles": "Thân trên",
+    "variant": "full_gym",
     "exercises": [
       {
         "code": "DL07",
         "name": "Conventional Block Pull",
-        "reps": "8",
-        "sets": "4"
+        "sets": "4",
+        "reps": "8"
       },
       {
         "code": "BP06",
         "name": "Dumbbell Chest Fly",
-        "reps": "12",
-        "sets": "3"
+        "sets": "3",
+        "reps": "12"
       },
       {
         "code": "SP01",
         "name": "Barbell Overhead Press",
-        "reps": "5",
-        "sets": "5"
+        "sets": "5",
+        "reps": "5"
       },
       {
         "code": "SO01",
         "name": "Dumbbell Lateral Raise",
-        "reps": "15",
-        "sets": "3"
+        "sets": "3",
+        "reps": "15"
       },
       {
         "code": "BC06",
         "name": "Dumbbell Concentration Curl",
-        "reps": "15",
-        "sets": "3"
+        "sets": "3",
+        "reps": "15"
       },
       {
         "code": "TC06",
         "name": "Triceps Rope Pushdown",
-        "reps": "15",
-        "sets": "3"
+        "sets": "3",
+        "reps": "15"
       }
     ]
   },
   {
     "code": "UPPER-4",
     "muscles": "Thân trên",
+    "variant": "full_gym",
     "exercises": [
       {
         "code": "BL02",
         "name": "Barbell Row",
-        "reps": "10",
-        "sets": "4"
+        "sets": "4",
+        "reps": "10"
       },
       {
         "code": "BP02",
         "name": "Dumbbell Bench Press",
-        "reps": "10",
-        "sets": "4"
+        "sets": "4",
+        "reps": "10"
       },
       {
         "code": "SP03",
         "name": "Dumbbell Shoulder Press",
-        "reps": "15",
-        "sets": "3"
+        "sets": "3",
+        "reps": "15"
       },
       {
         "code": "BL09",
         "name": "Lat Pulldown",
-        "reps": "15",
-        "sets": "3"
+        "sets": "3",
+        "reps": "15"
       },
       {
         "code": "BL13",
         "name": "Machine-assisted Pull-up",
-        "reps": "15",
-        "sets": "3"
+        "sets": "3",
+        "reps": "15"
       },
       {
         "code": "BC05",
         "name": "Dumbbell Preacher Curl",
-        "reps": "15",
-        "sets": "3"
+        "sets": "3",
+        "reps": "15"
       }
     ]
   },
   {
     "code": "LOWER-1",
     "muscles": "Chân, Đùi, Mông",
+    "variant": "full_gym",
     "exercises": [
       {
         "code": "SQ03",
         "name": "Goblet Squat",
-        "reps": "8",
-        "sets": "5"
+        "sets": "5",
+        "reps": "8"
       },
       {
         "code": "LU02",
         "name": "Dumbbell Lunge",
-        "reps": "15",
-        "sets": "3"
+        "sets": "3",
+        "reps": "15"
       },
       {
         "code": "LE01",
         "name": "Leg Extension",
-        "reps": "15",
-        "sets": "4"
+        "sets": "4",
+        "reps": "15"
       },
       {
         "code": "LC01",
         "name": "Lying Leg Curl",
-        "reps": "15",
-        "sets": "3"
+        "sets": "3",
+        "reps": "15"
       }
     ]
   },
   {
     "code": "LOWER-2",
     "muscles": "Chân, Đùi, Mông",
+    "variant": "full_gym",
     "exercises": [
       {
         "code": "SQ04",
         "name": "Dumbbell Front Squat",
-        "reps": "10",
-        "sets": "4"
+        "sets": "4",
+        "reps": "10"
       },
       {
         "code": "DL08",
         "name": "Trap Bar Deadlift",
-        "reps": "15",
-        "sets": "3"
+        "sets": "3",
+        "reps": "15"
       },
       {
         "code": "LU02",
         "name": "Dumbbell Lunge",
-        "reps": "15",
-        "sets": "3"
+        "sets": "3",
+        "reps": "15"
       },
       {
         "code": "LE01",
         "name": "Leg Extension",
-        "reps": "15",
-        "sets": "3"
+        "sets": "3",
+        "reps": "15"
       },
       {
         "code": "LC01",
         "name": "Lying Leg Curl",
-        "reps": "15",
-        "sets": "3"
+        "sets": "3",
+        "reps": "15"
       }
     ]
   },
   {
     "code": "LOWER-3",
     "muscles": "Chân, Đùi, Mông",
+    "variant": "full_gym",
     "exercises": [
       {
         "code": "SQ01",
         "name": "Barbell Back Squat",
-        "reps": "5",
-        "sets": "5"
+        "sets": "5",
+        "reps": "5"
       },
       {
         "code": "DL04",
         "name": "Barbell Sumo Deadlift",
-        "reps": "10",
-        "sets": "4"
+        "sets": "4",
+        "reps": "10"
       },
       {
         "code": "HT01",
         "name": "Barbell Hip Thrust",
-        "reps": "10",
-        "sets": "4"
+        "sets": "4",
+        "reps": "10"
       },
       {
         "code": "LP01",
         "name": "Leg Press",
-        "reps": "12",
-        "sets": "3"
+        "sets": "3",
+        "reps": "12"
       },
       {
         "code": "LC01",
         "name": "Lying Leg Curl",
-        "reps": "15",
-        "sets": "3"
+        "sets": "3",
+        "reps": "15"
       }
     ]
   },
   {
     "code": "LOWER-4",
     "muscles": "Chân, Đùi, Mông",
+    "variant": "full_gym",
     "exercises": [
       {
         "code": "DL04",
         "name": "Barbell Sumo Deadlift",
-        "reps": "6",
-        "sets": "4"
+        "sets": "4",
+        "reps": "6"
       },
       {
         "code": "SQ01",
         "name": "Barbell Back Squat",
-        "reps": "15",
-        "sets": "3"
+        "sets": "3",
+        "reps": "15"
       },
       {
         "code": "HT01",
         "name": "Barbell Hip Thrust",
-        "reps": "10",
-        "sets": "4"
+        "sets": "4",
+        "reps": "10"
       },
       {
         "code": "RP01",
         "name": "Rope Pull Through",
-        "reps": "12",
-        "sets": "4"
+        "sets": "4",
+        "reps": "12"
       },
       {
         "code": "SQ09",
         "name": "Dumbbell Sumo Squat",
-        "reps": "12",
-        "sets": "3"
+        "sets": "3",
+        "reps": "12"
       }
     ]
   },
   {
     "code": "PUSH-1",
     "muscles": "Ngực, Vai, Tay sau",
+    "variant": "full_gym",
     "exercises": [
       {
         "code": "BP02",
         "name": "Dumbbell Bench Press",
-        "reps": "10",
-        "sets": "4"
+        "sets": "4",
+        "reps": "10"
       },
       {
         "code": "BP06",
         "name": "Dumbbell Chest Fly",
-        "reps": "12",
-        "sets": "3"
+        "sets": "3",
+        "reps": "12"
       },
       {
         "code": "SP05",
         "name": "Dumbbell Arnold Press",
-        "reps": "8",
-        "sets": "4"
+        "sets": "4",
+        "reps": "8"
       },
       {
         "code": "SO01",
         "name": "Dumbbell Lateral Raise",
-        "reps": "15",
-        "sets": "3"
+        "sets": "3",
+        "reps": "15"
       },
       {
         "code": "TC06",
         "name": "Triceps Rope Pushdown",
-        "reps": "15",
-        "sets": "3"
+        "sets": "3",
+        "reps": "15"
       }
     ]
   },
   {
     "code": "PUSH-2",
     "muscles": "Ngực, Vai, Tay sau",
+    "variant": "full_gym",
     "exercises": [
       {
         "code": "SP01",
         "name": "Barbell Overhead Press",
-        "reps": "5",
-        "sets": "5"
+        "sets": "5",
+        "reps": "5"
       },
       {
         "code": "BP04",
         "name": "Dumbbell Bench Press",
-        "reps": "10",
-        "sets": "4"
+        "sets": "4",
+        "reps": "10"
       },
       {
         "code": "FS01",
         "name": "Dumbbell Front Raise",
-        "reps": "10",
-        "sets": "3"
+        "sets": "3",
+        "reps": "10"
       },
       {
         "code": "TC06",
         "name": "Triceps Rope Pushdown",
-        "reps": "15",
-        "sets": "3"
+        "sets": "3",
+        "reps": "15"
       },
       {
         "code": "TC05",
         "name": "Tricep Kickback",
-        "reps": "15",
-        "sets": "2"
+        "sets": "2",
+        "reps": "15"
       }
     ]
   },
   {
     "code": "PUSH-3",
     "muscles": "Ngực, Vai, Tay sau",
+    "variant": "full_gym",
     "exercises": [
       {
         "code": "BP01",
         "name": "Barbell Bench Press",
-        "reps": "5",
-        "sets": "5"
+        "sets": "5",
+        "reps": "5"
       },
       {
         "code": "SP06",
         "name": "Dumbbell Hammer Shoulder Press",
-        "reps": "8",
-        "sets": "4"
+        "sets": "4",
+        "reps": "8"
       },
       {
         "code": "SO04",
         "name": "Reverse Butterfly",
-        "reps": "15",
-        "sets": "3"
+        "sets": "3",
+        "reps": "15"
       },
       {
         "code": "SP05",
         "name": "Dumbbell Arnold Press",
-        "reps": "15",
-        "sets": "3"
+        "sets": "3",
+        "reps": "15"
       },
       {
         "code": "TC06",
         "name": "Triceps Rope Pushdown",
-        "reps": "15",
-        "sets": "3"
+        "sets": "3",
+        "reps": "15"
       }
     ]
   },
   {
     "code": "PUSH-4",
     "muscles": "Ngực, Vai, Tay sau",
+    "variant": "full_gym",
     "exercises": [
       {
         "code": "SP01",
         "name": " Barbell overhead Press",
-        "reps": "6",
-        "sets": "4"
+        "sets": "4",
+        "reps": "6"
       },
       {
         "code": "BP01",
         "name": "Barbell Bench Press",
-        "reps": "5",
-        "sets": "5"
+        "sets": "5",
+        "reps": "5"
       },
       {
         "code": "BP05",
         "name": "Cable Chest Fly",
-        "reps": "12",
-        "sets": "3"
+        "sets": "3",
+        "reps": "12"
       },
       {
         "code": "SO01",
         "name": "Dumbbell Lateral Raise",
-        "reps": "15",
-        "sets": "3"
+        "sets": "3",
+        "reps": "15"
       },
       {
         "code": "RD01",
         "name": "Dumbbell Rear Delt Fly",
-        "reps": "15",
-        "sets": "3"
+        "sets": "3",
+        "reps": "15"
       },
       {
         "code": "TC03",
         "name": "Dumbbell Skull Crusher",
-        "reps": "15",
-        "sets": "3"
+        "sets": "3",
+        "reps": "15"
       }
     ]
   },
   {
     "code": "PULL-1",
     "muscles": "Lưng, Xô, Tay trước",
+    "variant": "full_gym",
     "exercises": [
       {
         "code": "BL04",
         "name": "Dumbbell Row",
-        "reps": "8",
-        "sets": "3"
+        "sets": "3",
+        "reps": "8"
       },
       {
         "code": "BL09",
         "name": "Lat Pulldown",
-        "reps": "12",
-        "sets": "3"
+        "sets": "3",
+        "reps": "12"
       },
       {
         "code": "BL14",
         "name": "Close Grip Pulldown",
-        "reps": "12",
-        "sets": "3"
+        "sets": "3",
+        "reps": "12"
       },
       {
         "code": "BL13",
         "name": "Machine-assisted Pull-up",
-        "reps": "15",
-        "sets": "3"
+        "sets": "3",
+        "reps": "15"
       },
       {
         "code": "BC02",
         "name": "Dumbbell Curl",
-        "reps": "8",
-        "sets": "4"
+        "sets": "4",
+        "reps": "8"
       }
     ]
   },
   {
     "code": "PULL-2",
     "muscles": "Lưng, Xô, Tay trước",
+    "variant": "full_gym",
     "exercises": [
       {
         "code": "BL04",
         "name": "Dumbbell Row",
-        "reps": "8",
-        "sets": "4"
+        "sets": "4",
+        "reps": "8"
       },
       {
         "code": "BL09",
         "name": "Lat Pulldown",
-        "reps": "12",
-        "sets": "3"
+        "sets": "3",
+        "reps": "12"
       },
       {
         "code": "BL06",
         "name": "Seated Cable Row",
-        "reps": "12",
-        "sets": "3"
+        "sets": "3",
+        "reps": "12"
       },
       {
         "code": "BL05",
         "name": "Incline Dumbbell Row",
-        "reps": "15",
-        "sets": "3"
+        "sets": "3",
+        "reps": "15"
       },
       {
         "code": "BC04",
         "name": "Dumbbell Hammer Curl",
-        "reps": "10",
-        "sets": "3"
+        "sets": "3",
+        "reps": "10"
       }
     ]
   },
   {
     "code": "PULL-3",
     "muscles": "Lưng, Xô, Tay trước",
+    "variant": "full_gym",
     "exercises": [
       {
         "code": "BL01",
         "name": "Barbell Conventional Deadlift",
-        "reps": "5",
-        "sets": "5"
+        "sets": "5",
+        "reps": "5"
       },
       {
         "code": "BL02",
         "name": "Barbell Row",
-        "reps": "10",
-        "sets": "3"
+        "sets": "3",
+        "reps": "10"
       },
       {
         "code": "BL13",
         "name": "Machine-assisted Pull-up",
-        "reps": "15",
-        "sets": "3"
+        "sets": "3",
+        "reps": "15"
       },
       {
         "code": "BL09",
         "name": "Lat Pulldown",
-        "reps": "15",
-        "sets": "3"
+        "sets": "3",
+        "reps": "15"
       },
       {
         "code": "BL07",
         "name": "Face Pull",
-        "reps": "10",
-        "sets": "3"
+        "sets": "3",
+        "reps": "10"
       },
       {
         "code": "BC02",
         "name": "Dumbbell Curl",
-        "reps": "15",
-        "sets": "3"
+        "sets": "3",
+        "reps": "15"
       }
     ]
   },
   {
     "code": "PULL-4",
     "muscles": "Lưng, Xô, Tay trước",
+    "variant": "full_gym",
     "exercises": [
       {
         "code": "BL04",
         "name": "Dumbbell Row",
-        "reps": "6",
-        "sets": "4"
+        "sets": "4",
+        "reps": "6"
       },
       {
         "code": "BL11",
         "name": "Straight Arm Pulldown",
-        "reps": "12",
-        "sets": "4"
+        "sets": "4",
+        "reps": "12"
       },
       {
         "code": "BL09",
         "name": "Lat Pulldown",
-        "reps": "12",
-        "sets": "3"
+        "sets": "3",
+        "reps": "12"
       },
       {
         "code": "BL06",
         "name": "Seated Cable Row",
-        "reps": "12",
-        "sets": "3"
+        "sets": "3",
+        "reps": "12"
       },
       {
         "code": "SO04",
         "name": "Reverse Butterfly",
-        "reps": "15",
-        "sets": "3"
+        "sets": "3",
+        "reps": "15"
       },
       {
         "code": "BC01",
         "name": "Barbell Curl",
-        "reps": "12",
-        "sets": "3"
+        "sets": "3",
+        "reps": "12"
+      }
+    ]
+  },
+  {
+    "code": "UPPER-1",
+    "muscles": "Thân trên",
+    "variant": "home",
+    "exercises": [
+      {
+        "code": "RCH1",
+        "name": "Banded Chest Press",
+        "sets": "5",
+        "reps": "5"
+      },
+      {
+        "code": "RBB3",
+        "name": "Banded Bent Over Rows",
+        "sets": "3",
+        "reps": "15"
+      },
+      {
+        "code": "RBS7",
+        "name": "Banded Shoulder Press",
+        "sets": "4",
+        "reps": "8"
+      },
+      {
+        "code": "RBC2",
+        "name": "Banded Bicep Curl",
+        "sets": "2",
+        "reps": "15"
+      },
+      {
+        "code": "RTC5",
+        "name": "Banded Tricep Pushdown",
+        "sets": "3",
+        "reps": "15"
+      }
+    ]
+  },
+  {
+    "code": "UPPER-2",
+    "muscles": "Thân trên",
+    "variant": "home",
+    "exercises": [
+      {
+        "code": "RBB3",
+        "name": "Banded Bent Over Rows",
+        "sets": "4",
+        "reps": "10"
+      },
+      {
+        "code": "RCH1",
+        "name": "Banded Chest Press",
+        "sets": "4",
+        "reps": "8"
+      },
+      {
+        "code": "RBS7",
+        "name": "Banded Shoulder Press",
+        "sets": "4",
+        "reps": "15"
+      },
+      {
+        "code": "RBC1",
+        "name": "Banded Bicep Hammer Curl",
+        "sets": "4",
+        "reps": "15"
+      },
+      {
+        "code": "RTC3",
+        "name": "Banded Tricep Kickbacks",
+        "sets": "3",
+        "reps": "15"
+      }
+    ]
+  },
+  {
+    "code": "UPPER-3",
+    "muscles": "Thân trên",
+    "variant": "home",
+    "exercises": [
+      {
+        "code": "RBH3",
+        "name": "Banded Deadlifts",
+        "sets": "4",
+        "reps": "8"
+      },
+      {
+        "code": "RCH4",
+        "name": "Standing Chest Fly",
+        "sets": "3",
+        "reps": "12"
+      },
+      {
+        "code": "RBS7",
+        "name": "Banded Shoulder Press",
+        "sets": "5",
+        "reps": "5"
+      },
+      {
+        "code": "RBS5",
+        "name": "Banded Lateral Raises",
+        "sets": "3",
+        "reps": "15"
+      },
+      {
+        "code": "RBC2",
+        "name": "Banded Bicep Curl",
+        "sets": "3",
+        "reps": "15"
+      },
+      {
+        "code": "RTC5",
+        "name": "Banded Tricep Pushdown",
+        "sets": "3",
+        "reps": "15"
+      }
+    ]
+  },
+  {
+    "code": "UPPER-4",
+    "muscles": "Thân trên",
+    "variant": "home",
+    "exercises": [
+      {
+        "code": "RBB3",
+        "name": "Banded Bent Over Rows",
+        "sets": "4",
+        "reps": "10"
+      },
+      {
+        "code": "RCH1",
+        "name": "Banded Chest Press",
+        "sets": "4",
+        "reps": "10"
+      },
+      {
+        "code": "RBS7",
+        "name": "Banded Shoulder Press",
+        "sets": "3",
+        "reps": "15"
+      },
+      {
+        "code": "RBB5",
+        "name": "Straight Arm Pulldown",
+        "sets": "3",
+        "reps": "15"
+      },
+      {
+        "code": "RBL2",
+        "name": "Squat To Rows",
+        "sets": "3",
+        "reps": "15"
+      },
+      {
+        "code": "RBC2",
+        "name": "Banded Bicep Curl",
+        "sets": "3",
+        "reps": "15"
+      }
+    ]
+  },
+  {
+    "code": "LOWER-1",
+    "muscles": "Chân, Đùi, Mông",
+    "variant": "home",
+    "exercises": [
+      {
+        "code": "BW02",
+        "name": "Bodyweight Squats",
+        "sets": "5",
+        "reps": "8"
+      },
+      {
+        "code": "BW03",
+        "name": "Bodyweight Walking Lunges",
+        "sets": "3",
+        "reps": "12"
+      },
+      {
+        "code": "RBL3",
+        "name": "Banded Lying Leg Press",
+        "sets": "4",
+        "reps": "12"
+      },
+      {
+        "code": "RBL6",
+        "name": "Banded Lying Leg Curl",
+        "sets": "3",
+        "reps": "12"
+      }
+    ]
+  },
+  {
+    "code": "LOWER-2",
+    "muscles": "Chân, Đùi, Mông",
+    "variant": "home",
+    "exercises": [
+      {
+        "code": "RBL5",
+        "name": "Banded Squats",
+        "sets": "4",
+        "reps": "10"
+      },
+      {
+        "code": "RBH3",
+        "name": "Banded Deadlifts",
+        "sets": "3",
+        "reps": "15"
+      },
+      {
+        "code": "BW03",
+        "name": "Bodyweight Walking Lunges",
+        "sets": "3",
+        "reps": "15"
+      },
+      {
+        "code": "RBL3",
+        "name": "Banded Lying Leg Press",
+        "sets": "3",
+        "reps": "15"
+      },
+      {
+        "code": "RBL6",
+        "name": "Banded Lying Leg Curl",
+        "sets": "3",
+        "reps": "15"
+      }
+    ]
+  },
+  {
+    "code": "LOWER-3",
+    "muscles": "Chân, Đùi, Mông",
+    "variant": "home",
+    "exercises": [
+      {
+        "code": "BW02",
+        "name": "Bodyweight Squats",
+        "sets": "5",
+        "reps": "5"
+      },
+      {
+        "code": "RBH3",
+        "name": "Banded Deadlifts",
+        "sets": "4",
+        "reps": "10"
+      },
+      {
+        "code": "RBH4",
+        "name": "Banded Glute Bridges",
+        "sets": "4",
+        "reps": "10"
+      },
+      {
+        "code": "RBL3",
+        "name": "Banded Lying Leg Press",
+        "sets": "3",
+        "reps": "12"
+      },
+      {
+        "code": "RBL6",
+        "name": "Banded Lying Leg Curl",
+        "sets": "3",
+        "reps": "15"
+      }
+    ]
+  },
+  {
+    "code": "LOWER-4",
+    "muscles": "Chân, Đùi, Mông",
+    "variant": "home",
+    "exercises": [
+      {
+        "code": "RBH3",
+        "name": "Banded Deadlifts",
+        "sets": "4",
+        "reps": "6"
+      },
+      {
+        "code": "BW02",
+        "name": "Bodyweight Squats",
+        "sets": "3",
+        "reps": "15"
+      },
+      {
+        "code": "RBH4",
+        "name": "Banded Glute Bridges",
+        "sets": "4",
+        "reps": "10"
+      },
+      {
+        "code": "RBH7",
+        "name": "Banded Pull Through",
+        "sets": "4",
+        "reps": "12"
+      },
+      {
+        "code": "RBL5",
+        "name": "Banded Squats",
+        "sets": "3",
+        "reps": "12"
+      }
+    ]
+  },
+  {
+    "code": "PUSH-1",
+    "muscles": "Ngực, Vai, Tay sau",
+    "variant": "home",
+    "exercises": [
+      {
+        "code": "RCH1",
+        "name": "Banded Chest Press",
+        "sets": "4",
+        "reps": "10"
+      },
+      {
+        "code": "RCH4",
+        "name": "Standing Chest Fly",
+        "sets": "3",
+        "reps": "12"
+      },
+      {
+        "code": "RBS7",
+        "name": "Banded Shoulder Press",
+        "sets": "4",
+        "reps": "8"
+      },
+      {
+        "code": "RBS5",
+        "name": "Banded Lateral Raises",
+        "sets": "3",
+        "reps": "15"
+      },
+      {
+        "code": "RTC5",
+        "name": "Banded Tricep Pushdown",
+        "sets": "3",
+        "reps": "15"
+      }
+    ]
+  },
+  {
+    "code": "PUSH-2",
+    "muscles": "Ngực, Vai, Tay sau",
+    "variant": "home",
+    "exercises": [
+      {
+        "code": "RBS7",
+        "name": "Banded Shoulder Press",
+        "sets": "5",
+        "reps": "5"
+      },
+      {
+        "code": "RCH2",
+        "name": "Banded Push-ups",
+        "sets": "4",
+        "reps": "10"
+      },
+      {
+        "code": "RBS6",
+        "name": "Banded Shoulder Front Raises",
+        "sets": "3",
+        "reps": "10"
+      },
+      {
+        "code": "RTC5",
+        "name": "Banded Tricep Pushdown",
+        "sets": "3",
+        "reps": "15"
+      },
+      {
+        "code": "RTC2",
+        "name": "Cable Tricep Kickbacks",
+        "sets": "2",
+        "reps": "15"
+      }
+    ]
+  },
+  {
+    "code": "PUSH-3",
+    "muscles": "Ngực, Vai, Tay sau",
+    "variant": "home",
+    "exercises": [
+      {
+        "code": "RCH2",
+        "name": "Banded Push-ups",
+        "sets": "5",
+        "reps": "5"
+      },
+      {
+        "code": "BW04",
+        "name": "Bodyweight Shoulder Press",
+        "sets": "4",
+        "reps": "8"
+      },
+      {
+        "code": "RBS2",
+        "name": "Banded External Shoulder Rotation",
+        "sets": "3",
+        "reps": "15"
+      },
+      {
+        "code": "RBS7",
+        "name": "Banded Shoulder Press",
+        "sets": "3",
+        "reps": "15"
+      },
+      {
+        "code": "RTC5",
+        "name": "Banded Tricep Pushdown",
+        "sets": "3",
+        "reps": "15"
+      }
+    ]
+  },
+  {
+    "code": "PUSH-4",
+    "muscles": "Ngực, Vai, Tay sau",
+    "variant": "home",
+    "exercises": [
+      {
+        "code": "RBS7",
+        "name": "Banded Shoulder Press",
+        "sets": "4",
+        "reps": "6"
+      },
+      {
+        "code": "RCH2",
+        "name": "Banded Push-ups",
+        "sets": "5",
+        "reps": "5"
+      },
+      {
+        "code": "RCH4",
+        "name": "Standing Chest Fly",
+        "sets": "3",
+        "reps": "12"
+      },
+      {
+        "code": "RBS5",
+        "name": "Banded Lateral Raises",
+        "sets": "5",
+        "reps": "15"
+      },
+      {
+        "code": "RTC4",
+        "name": "Banded Tricep Overhead Extensions",
+        "sets": "3",
+        "reps": "15"
+      }
+    ]
+  },
+  {
+    "code": "PULL-1",
+    "muscles": "Lưng, Xô, Tay trước",
+    "variant": "home",
+    "exercises": [
+      {
+        "code": "RBB3",
+        "name": "Banded Bent Over Rows",
+        "sets": "3",
+        "reps": "8"
+      },
+      {
+        "code": "RBB5",
+        "name": "Straight Arm Pulldown",
+        "sets": "3",
+        "reps": "12"
+      },
+      {
+        "code": "RBB6",
+        "name": "Close Grip Lat Pulldown",
+        "sets": "3",
+        "reps": "12"
+      },
+      {
+        "code": "RBL2",
+        "name": "Squat To Rows",
+        "sets": "3",
+        "reps": "15"
+      },
+      {
+        "code": "RBC2",
+        "name": "Banded Bicep Curl",
+        "sets": "4",
+        "reps": "8"
+      }
+    ]
+  },
+  {
+    "code": "PULL-2",
+    "muscles": "Lưng, Xô, Tay trước",
+    "variant": "home",
+    "exercises": [
+      {
+        "code": "RBB3",
+        "name": "Banded Bent Over Rows",
+        "sets": "4",
+        "reps": "8"
+      },
+      {
+        "code": "RBB5",
+        "name": "Straight Arm Pulldown",
+        "sets": "3",
+        "reps": "12"
+      },
+      {
+        "code": "RBB4",
+        "name": "Banded Seated Rows",
+        "sets": "3",
+        "reps": "12"
+      },
+      {
+        "code": "RBB3",
+        "name": "Banded Bent Over Rows",
+        "sets": "3",
+        "reps": "15"
+      },
+      {
+        "code": "RBC1",
+        "name": "Banded Bicep Hammer Curl",
+        "sets": "3",
+        "reps": "10"
+      }
+    ]
+  },
+  {
+    "code": "PULL-3",
+    "muscles": "Lưng, Xô, Tay trước",
+    "variant": "home",
+    "exercises": [
+      {
+        "code": "RBH3",
+        "name": "Banded Deadlifts",
+        "sets": "5",
+        "reps": "5"
+      },
+      {
+        "code": "RBB3",
+        "name": "Banded Bent Over Rows",
+        "sets": "3",
+        "reps": "10"
+      },
+      {
+        "code": "RBL2",
+        "name": "Squat To Rows",
+        "sets": "3",
+        "reps": "15"
+      },
+      {
+        "code": "RBB5",
+        "name": "Straight Arm Pulldown",
+        "sets": "3",
+        "reps": "15"
+      },
+      {
+        "code": "RBS3",
+        "name": "Banded Face Pull",
+        "sets": "3",
+        "reps": "10"
+      },
+      {
+        "code": "RBC2",
+        "name": "Banded Bicep Curl",
+        "sets": "3",
+        "reps": "15"
+      }
+    ]
+  },
+  {
+    "code": "PULL-4",
+    "muscles": "Lưng, Xô, Tay trước",
+    "variant": "home",
+    "exercises": [
+      {
+        "code": "RBB3",
+        "name": "Banded Bent Over Rows",
+        "sets": "4",
+        "reps": "6"
+      },
+      {
+        "code": "RBB5",
+        "name": "Straight Arm Pulldown",
+        "sets": "6",
+        "reps": "12"
+      },
+      {
+        "code": "RBB4",
+        "name": "Banded Seated Rows",
+        "sets": "3",
+        "reps": "12"
+      },
+      {
+        "code": "RBS2",
+        "name": "Banded External Shoulder Rotation",
+        "sets": "3",
+        "reps": "15"
+      },
+      {
+        "code": "RBC2",
+        "name": "Banded Bicep Curl",
+        "sets": "3",
+        "reps": "12"
       }
     ]
   }

@@ -13,7 +13,7 @@ const IMAGES_SRC_DIR = './src/static';
 const IMAGES_PATH = '/images/exercises/';
 
 function buildDailyScheduleConfigs() {
-  _.each([...WORKOUT_LEVELS, 'shared'], async level => {
+  _.each([..._.map(WORKOUT_LEVELS, 'code'), 'shared'], async level => {
     try {
       const csvData = fs.readFileSync(`${DATA_DIR}/daily_schedules/${level}.csv`, 'utf-8');
       const dailySchedules = await parseDailySchedules(csvData);
