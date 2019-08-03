@@ -1,8 +1,9 @@
 import fs from 'fs';
 import _ from 'lodash';
+import fp from 'lodash/fp';
 
 // Constants
-import { WORKOUT_LEVELS } from '../app/constants';
+import { WORKOUT_LEVELS, WORKOUT_VARIANTS } from '../app/constants';
 
 // Locals
 import { parseDailySchedules, parseExercisesDatabase, parseWeeklySchedules } from './parsers';
@@ -13,7 +14,9 @@ const IMAGES_SRC_DIR = './src/static';
 const IMAGES_PATH = '/images/exercises/';
 
 function buildDailyScheduleConfigs() {
-  _.each([..._.map(WORKOUT_LEVELS, 'code'), 'shared'], async level => {
+  const levelCodes = _.map(WORKOUT_LEVELS, 'code');
+
+  _.each([...levelCodes, 'shared'], async level => {
     try {
       const csvData = fs.readFileSync(`${DATA_DIR}/daily_schedules/${level}.csv`, 'utf-8');
       const dailySchedules = await parseDailySchedules(csvData);
@@ -24,30 +27,32 @@ function buildDailyScheduleConfigs() {
   });
 }
 
-function buildExercisesDatabaseConfigs() {
-  _.each(['full_gym', 'home'], async variant => {
-    try {
-      const csvData = fs.readFileSync(`${DATA_DIR}/exercises_database/${variant}.csv`, 'utf-8');
-      const exercises = await parseExercisesDatabase(csvData);
-      const exerciseImages = fs.readdirSync(`${IMAGES_SRC_DIR}/images/exercises`);
-      const imagesMapping = _.fromPairs(
-        _.map(exerciseImages, filename => {
-          const [code] = _.split(filename, '.');
-          return [code, IMAGES_PATH + filename];
-        })
-      );
+async function buildExercisesDatabaseConfigs() {
+  const csvData = fp.flow(
+    fp.map(({ code }) => fs.readFileSync(`${DATA_DIR}/exercises_database/${code}.csv`, 'utf-8')),
+    fp.join('\n')
+  )(WORKOUT_VARIANTS);
 
-      const exercisesDatabase = _.map(exercises, exercise => {
-        const { code } = exercise;
-        const { [code]: imageUrl } = imagesMapping;
-        return { ...exercise, imageUrl };
-      });
+  try {
+    const exercises = await parseExercisesDatabase(csvData);
+    const exerciseImages = fs.readdirSync(`${IMAGES_SRC_DIR}/images/exercises`);
+    const imagesMapping = _.fromPairs(
+      _.map(exerciseImages, filename => {
+        const [code] = _.split(filename, '.');
+        return [code, IMAGES_PATH + filename];
+      })
+    );
 
-      fs.writeFileSync(`${CONFIGS_DIR}/exercises_database_${variant}.json`, JSON.stringify(exercisesDatabase, null, 2));
-    } catch (error) {
-      console.warn(error);
-    }
-  });
+    const allExercises = _.map(exercises, exercise => {
+      const { code } = exercise;
+      const { [code]: imageUrl } = imagesMapping;
+      return { ...exercise, imageUrl };
+    });
+
+    fs.writeFileSync(`${CONFIGS_DIR}/exercises_database.json`, JSON.stringify(allExercises, null, 2));
+  } catch (error) {
+    console.warn(error);
+  }
 }
 
 async function buildWeeklyScheduleConfigs() {

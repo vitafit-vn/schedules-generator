@@ -15,7 +15,12 @@ export function convertDailySchedulesRecords(records) {
       // Save current schedule
       if (!_.isEmpty(currentRow)) {
         const [dailyCode, muscles, variant] = currentRow;
-        dailySchedules.push({ code: dailyCode, muscles, variant, exercises: currentExercises });
+        dailySchedules.push({
+          code: _.trim(dailyCode),
+          muscles: _.trim(muscles),
+          variant: _.trim(variant),
+          exercises: currentExercises,
+        });
       }
 
       // Move to next schedule
@@ -26,7 +31,13 @@ export function convertDailySchedulesRecords(records) {
 
     // Next exercise in current daily schedule
     const [code, name, sets, reps] = _.slice(row, 1);
-    currentExercises.push({ code, name, sets, reps });
+
+    currentExercises.push({
+      code: _.trim(code),
+      name: _.trim(name),
+      sets: _.trim(sets),
+      reps: _.trim(reps),
+    });
   });
 
   // Save last schedule
@@ -41,14 +52,21 @@ export function convertDailySchedulesRecords(records) {
 export function convertExercisesDatabase(records) {
   return _.map(records, row => {
     const [code, name, muscle, difficulty, rawInstructions, videoUrl] = row;
-    const instructionsParagraph = fp.flow(
-      fp.trim,
+
+    const instructions = fp.flow(
       fp.split('\n'),
+      fp.map(_.trim),
       fp.compact
     )(rawInstructions);
 
-    const instructions = _.isEmpty(instructionsParagraph) ? undefined : instructionsParagraph;
-    return { code, difficulty, instructions, muscle, name, videoUrl };
+    return {
+      code: _.trim(code),
+      difficulty: _.trim(difficulty),
+      instructions: _.isEmpty(instructions) ? undefined : instructions,
+      muscle: _.trim(muscle),
+      name: _.trim(name),
+      videoUrl: _.trim(videoUrl),
+    };
   });
 }
 
@@ -60,6 +78,12 @@ export function convertWeeklySchedulesRecords(records) {
       _.map(_.split(codes, '\n'), _.partial(_.replace, _, 'OFF', OFF_DAY))
     );
 
-    return { code, dailyCodes, description, frequency, shortkeys };
+    return {
+      dailyCodes,
+      code: _.trim(code),
+      description: _.trim(description),
+      frequency: _.trim(frequency),
+      shortkeys: _.trim(shortkeys),
+    };
   });
 }
