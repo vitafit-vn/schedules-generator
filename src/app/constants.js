@@ -1,7 +1,5 @@
 // Data
-import DAILY_SCHEDULES_BEGINNER from './data/daily_schedules_beginner.json';
-import DAILY_SCHEDULES_INTERMEDIATE from './data/daily_schedules_intermediate.json';
-import DAILY_SCHEDULES_SHARED from './data/daily_schedules_shared.json';
+import DAILY_SCHEDULES from './data/daily_schedules.json';
 import EXERCISES_DATABASE from './data/exercises_database.json';
 import WEEKLY_SCHEDULES from './data/weekly_schedules.json';
 
@@ -14,12 +12,6 @@ const ACTIVITY_RATES = [
   { description: 'Vận động nhiều, tuần 6 - 7 buổi', value: 1.725 },
   { description: 'Vận động rất nhiều, ngày 2 lần', value: 1.9 },
 ];
-
-const DAILY_SCHEDULES = {
-  beginner: DAILY_SCHEDULES_BEGINNER,
-  intermediate: DAILY_SCHEDULES_INTERMEDIATE,
-  shared: DAILY_SCHEDULES_SHARED,
-};
 
 const FORMATS = {
   DISPLAY_DATE: 'dd/MM/yyyy',

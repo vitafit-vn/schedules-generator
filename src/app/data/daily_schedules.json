@@ -1,6 +1,409 @@
 [
   {
+    "code": "HIP-1",
+    "level": "all",
+    "muscles": "Mông",
+    "variant": "full_gym",
+    "exercises": [
+      {
+        "code": "RP01",
+        "name": "Rope Pull Through",
+        "sets": "4",
+        "reps": "12"
+      },
+      {
+        "code": "LU03",
+        "name": "Walking Lunge",
+        "sets": "4",
+        "reps": "12"
+      },
+      {
+        "code": "HT01",
+        "name": "Barbell Hip Thrust",
+        "sets": "4",
+        "reps": "10"
+      },
+      {
+        "code": "DK01",
+        "name": "Cable Donkey Kick",
+        "sets": "4",
+        "reps": "10"
+      }
+    ]
+  },
+  {
+    "code": "ABS-1",
+    "level": "all",
+    "muscles": "Bụng",
+    "variant": "full_gym",
+    "exercises": [
+      {
+        "code": "AB02",
+        "name": "Crunch",
+        "sets": "3",
+        "reps": "15"
+      },
+      {
+        "code": "AB04",
+        "name": "Russian Twist",
+        "sets": "3",
+        "reps": "20"
+      },
+      {
+        "code": "AB03",
+        "name": "Leg Raise",
+        "sets": "3",
+        "reps": "15"
+      }
+    ]
+  },
+  {
+    "code": "ABS-2",
+    "level": "all",
+    "muscles": "Bụng",
+    "variant": "full_gym",
+    "exercises": [
+      {
+        "code": "AB03",
+        "name": "Leg Raise",
+        "sets": "3",
+        "reps": "15"
+      },
+      {
+        "code": "AB05",
+        "name": "Toe Touches",
+        "sets": "3",
+        "reps": "15"
+      },
+      {
+        "code": "AB06",
+        "name": "Seated Knee Tucks",
+        "sets": "3",
+        "reps": "15"
+      }
+    ]
+  },
+  {
+    "code": "ABS-3",
+    "level": "all",
+    "muscles": "Bụng",
+    "variant": "full_gym",
+    "exercises": [
+      {
+        "code": "AB01",
+        "name": "Alternate Heel Touchers",
+        "sets": "3",
+        "reps": "15"
+      },
+      {
+        "code": "AB02",
+        "name": "Crunch",
+        "sets": "3",
+        "reps": "15"
+      },
+      {
+        "code": "AB03",
+        "name": "Leg Raise",
+        "sets": "3",
+        "reps": "15"
+      }
+    ]
+  },
+  {
+    "code": "CARDIO-1",
+    "level": "all",
+    "muscles": "Thể lực",
+    "variant": "all",
+    "exercises": [
+      {
+        "code": "CD01",
+        "name": "Cardio: Burpee",
+        "sets": "3",
+        "reps": "20"
+      },
+      {
+        "code": "CD02",
+        "name": "Cardio: Battle Rope",
+        "sets": "10",
+        "reps": "30s"
+      },
+      {
+        "code": "CD03",
+        "name": "Cardio: Jump Squat",
+        "sets": "3",
+        "reps": "20"
+      }
+    ]
+  },
+  {
+    "code": "CARDIO-2",
+    "level": "all",
+    "muscles": "Thể lực",
+    "variant": "all",
+    "exercises": [
+      {
+        "code": "CD04",
+        "name": "Cardio: High Knee",
+        "sets": "10",
+        "reps": "30s"
+      },
+      {
+        "code": "CD05",
+        "name": "Cardio: Split Jump Squat",
+        "sets": "3",
+        "reps": "20"
+      },
+      {
+        "code": "CD06",
+        "name": "Cardio: Hop Over",
+        "sets": "10",
+        "reps": "30s"
+      }
+    ]
+  },
+  {
+    "code": "CARDIO-3",
+    "level": "all",
+    "muscles": "Thể lực",
+    "variant": "all",
+    "exercises": [
+      {
+        "code": "CD06",
+        "name": "Cardio: Hop Over",
+        "sets": "10",
+        "reps": "30s"
+      },
+      {
+        "code": "CD07",
+        "name": "Cardio: Mountain Climbers",
+        "sets": "10",
+        "reps": "30s"
+      },
+      {
+        "code": "CD08",
+        "name": "Cardio: Forward Hops",
+        "sets": "10",
+        "reps": "30s"
+      }
+    ]
+  },
+  {
+    "code": "CARDIO-4",
+    "level": "all",
+    "muscles": "Thể lực",
+    "variant": "all",
+    "exercises": [
+      {
+        "code": "CD09",
+        "name": "Cardio: Running On Treadmill",
+        "sets": "1",
+        "reps": "10 phút"
+      }
+    ]
+  },
+  {
+    "code": "FULL-BODY-1",
+    "level": "all",
+    "muscles": "Toàn thân",
+    "variant": "all",
+    "exercises": [
+      {
+        "code": "SQ03",
+        "name": "Goblet Squat",
+        "sets": "4",
+        "reps": "12"
+      },
+      {
+        "code": "HT04",
+        "name": "Glute Bridge",
+        "sets": "4",
+        "reps": "10"
+      },
+      {
+        "code": "BP02",
+        "name": "Dumbbell Bench Press",
+        "sets": "3",
+        "reps": "10"
+      },
+      {
+        "code": "BL04",
+        "name": "Dumbbell Row",
+        "sets": "3",
+        "reps": "12"
+      },
+      {
+        "code": "FS01",
+        "name": "Dumbbell Front Raise",
+        "sets": "2",
+        "reps": "12"
+      },
+      {
+        "code": "BC02",
+        "name": "Dumbbell Curl",
+        "sets": "2",
+        "reps": "12"
+      },
+      {
+        "code": "TC05",
+        "name": "Tricep Kickback",
+        "sets": "3",
+        "reps": "10"
+      }
+    ]
+  },
+  {
+    "code": "FULL-BODY-2",
+    "level": "all",
+    "muscles": "Toàn thân",
+    "variant": "all",
+    "exercises": [
+      {
+        "code": "SQ04",
+        "name": "Dumbbell Front Squat",
+        "sets": "3",
+        "reps": "8"
+      },
+      {
+        "code": "LU02",
+        "name": "Dumbbell Lunge",
+        "sets": "3",
+        "reps": "12"
+      },
+      {
+        "code": "BL02",
+        "name": "Barbell Row",
+        "sets": "3",
+        "reps": "10"
+      },
+      {
+        "code": "BP08",
+        "name": "Dumbbell Incline Bench Press",
+        "sets": "3",
+        "reps": "8"
+      },
+      {
+        "code": "SP05",
+        "name": "Dumbbell Arnold Press",
+        "sets": "3",
+        "reps": "6"
+      },
+      {
+        "code": "BC04",
+        "name": "Dumbbell Hammer Curl",
+        "sets": "3",
+        "reps": "10"
+      },
+      {
+        "code": "TC05",
+        "name": "Tricep Kickback",
+        "sets": "3",
+        "reps": "10"
+      }
+    ]
+  },
+  {
+    "code": "FULL-BODY-3",
+    "level": "all",
+    "muscles": "Toàn thân",
+    "variant": "all",
+    "exercises": [
+      {
+        "code": "SQ01",
+        "name": "Barbell Back Squat",
+        "sets": "5",
+        "reps": "5"
+      },
+      {
+        "code": "DL07",
+        "name": "Conventional Block Pull",
+        "sets": "4",
+        "reps": "8"
+      },
+      {
+        "code": "BP06",
+        "name": "Dumbbell Chest Fly",
+        "sets": "3",
+        "reps": "12"
+      },
+      {
+        "code": "SP01",
+        "name": "Barbell Overhead Press",
+        "sets": "5",
+        "reps": "5"
+      },
+      {
+        "code": "BC06",
+        "name": "Dumbbell Concentration Curl",
+        "sets": "3",
+        "reps": "15"
+      },
+      {
+        "code": "TC06",
+        "name": "Triceps Rope Pushdown",
+        "sets": "3",
+        "reps": "15"
+      },
+      {
+        "code": "HT01",
+        "name": "Barbell Hip Thrust",
+        "sets": "4",
+        "reps": "10"
+      }
+    ]
+  },
+  {
+    "code": "FULL-BODY-4",
+    "level": "all",
+    "muscles": "Toàn thân",
+    "variant": "all",
+    "exercises": [
+      {
+        "code": "DL04",
+        "name": "Barbell Sumo Deadlift",
+        "sets": "4",
+        "reps": "6"
+      },
+      {
+        "code": "RP01",
+        "name": "Rope Pull Through",
+        "sets": "4",
+        "reps": "12"
+      },
+      {
+        "code": "BL02",
+        "name": "Barbell Row",
+        "sets": "4",
+        "reps": "10"
+      },
+      {
+        "code": "BP02",
+        "name": "Dumbbell Bench Press",
+        "sets": "4",
+        "reps": "10"
+      },
+      {
+        "code": "SP03",
+        "name": "Dumbbell Shoulder Press",
+        "sets": "3",
+        "reps": "15"
+      },
+      {
+        "code": "BL09",
+        "name": "Lat Pulldown",
+        "sets": "3",
+        "reps": "15"
+      },
+      {
+        "code": "BC05",
+        "name": "Dumbbell Preacher Curl",
+        "sets": "3",
+        "reps": "15"
+      }
+    ]
+  },
+  {
     "code": "UPPER-1",
+    "level": "beginner",
     "muscles": "Thân trên",
     "variant": "full_gym",
     "exercises": [
@@ -38,6 +441,7 @@
   },
   {
     "code": "UPPER-2",
+    "level": "beginner",
     "muscles": "Thân trên",
     "variant": "full_gym",
     "exercises": [
@@ -75,6 +479,7 @@
   },
   {
     "code": "UPPER-3",
+    "level": "beginner",
     "muscles": "Thân trên",
     "variant": "full_gym",
     "exercises": [
@@ -118,6 +523,7 @@
   },
   {
     "code": "UPPER-4",
+    "level": "beginner",
     "muscles": "Thân trên",
     "variant": "full_gym",
     "exercises": [
@@ -161,6 +567,7 @@
   },
   {
     "code": "LOWER-1",
+    "level": "beginner",
     "muscles": "Chân, Đùi, Mông",
     "variant": "full_gym",
     "exercises": [
@@ -192,6 +599,7 @@
   },
   {
     "code": "LOWER-2",
+    "level": "beginner",
     "muscles": "Chân, Đùi, Mông",
     "variant": "full_gym",
     "exercises": [
@@ -229,6 +637,7 @@
   },
   {
     "code": "LOWER-3",
+    "level": "beginner",
     "muscles": "Chân, Đùi, Mông",
     "variant": "full_gym",
     "exercises": [
@@ -266,6 +675,7 @@
   },
   {
     "code": "LOWER-4",
+    "level": "beginner",
     "muscles": "Chân, Đùi, Mông",
     "variant": "full_gym",
     "exercises": [
@@ -303,6 +713,7 @@
   },
   {
     "code": "PUSH-1",
+    "level": "beginner",
     "muscles": "Ngực, Vai, Tay sau",
     "variant": "full_gym",
     "exercises": [
@@ -340,6 +751,7 @@
   },
   {
     "code": "PUSH-2",
+    "level": "beginner",
     "muscles": "Ngực, Vai, Tay sau",
     "variant": "full_gym",
     "exercises": [
@@ -377,6 +789,7 @@
   },
   {
     "code": "PUSH-3",
+    "level": "beginner",
     "muscles": "Ngực, Vai, Tay sau",
     "variant": "full_gym",
     "exercises": [
@@ -414,6 +827,7 @@
   },
   {
     "code": "PUSH-4",
+    "level": "beginner",
     "muscles": "Ngực, Vai, Tay sau",
     "variant": "full_gym",
     "exercises": [
@@ -457,6 +871,7 @@
   },
   {
     "code": "PULL-1",
+    "level": "beginner",
     "muscles": "Lưng, Xô, Tay trước",
     "variant": "full_gym",
     "exercises": [
@@ -494,6 +909,7 @@
   },
   {
     "code": "PULL-2",
+    "level": "beginner",
     "muscles": "Lưng, Xô, Tay trước",
     "variant": "full_gym",
     "exercises": [
@@ -531,6 +947,7 @@
   },
   {
     "code": "PULL-3",
+    "level": "beginner",
     "muscles": "Lưng, Xô, Tay trước",
     "variant": "full_gym",
     "exercises": [
@@ -574,6 +991,7 @@
   },
   {
     "code": "PULL-4",
+    "level": "beginner",
     "muscles": "Lưng, Xô, Tay trước",
     "variant": "full_gym",
     "exercises": [
@@ -617,6 +1035,7 @@
   },
   {
     "code": "UPPER-1",
+    "level": "beginner",
     "muscles": "Thân trên",
     "variant": "home",
     "exercises": [
@@ -654,6 +1073,7 @@
   },
   {
     "code": "UPPER-2",
+    "level": "beginner",
     "muscles": "Thân trên",
     "variant": "home",
     "exercises": [
@@ -691,6 +1111,7 @@
   },
   {
     "code": "UPPER-3",
+    "level": "beginner",
     "muscles": "Thân trên",
     "variant": "home",
     "exercises": [
@@ -734,6 +1155,7 @@
   },
   {
     "code": "UPPER-4",
+    "level": "beginner",
     "muscles": "Thân trên",
     "variant": "home",
     "exercises": [
@@ -777,6 +1199,7 @@
   },
   {
     "code": "LOWER-1",
+    "level": "beginner",
     "muscles": "Chân, Đùi, Mông",
     "variant": "home",
     "exercises": [
@@ -808,6 +1231,7 @@
   },
   {
     "code": "LOWER-2",
+    "level": "beginner",
     "muscles": "Chân, Đùi, Mông",
     "variant": "home",
     "exercises": [
@@ -845,6 +1269,7 @@
   },
   {
     "code": "LOWER-3",
+    "level": "beginner",
     "muscles": "Chân, Đùi, Mông",
     "variant": "home",
     "exercises": [
@@ -882,6 +1307,7 @@
   },
   {
     "code": "LOWER-4",
+    "level": "beginner",
     "muscles": "Chân, Đùi, Mông",
     "variant": "home",
     "exercises": [
@@ -919,6 +1345,7 @@
   },
   {
     "code": "PUSH-1",
+    "level": "beginner",
     "muscles": "Ngực, Vai, Tay sau",
     "variant": "home",
     "exercises": [
@@ -956,6 +1383,7 @@
   },
   {
     "code": "PUSH-2",
+    "level": "beginner",
     "muscles": "Ngực, Vai, Tay sau",
     "variant": "home",
     "exercises": [
@@ -993,6 +1421,7 @@
   },
   {
     "code": "PUSH-3",
+    "level": "beginner",
     "muscles": "Ngực, Vai, Tay sau",
     "variant": "home",
     "exercises": [
@@ -1030,6 +1459,7 @@
   },
   {
     "code": "PUSH-4",
+    "level": "beginner",
     "muscles": "Ngực, Vai, Tay sau",
     "variant": "home",
     "exercises": [
@@ -1067,6 +1497,7 @@
   },
   {
     "code": "PULL-1",
+    "level": "beginner",
     "muscles": "Lưng, Xô, Tay trước",
     "variant": "home",
     "exercises": [
@@ -1104,6 +1535,7 @@
   },
   {
     "code": "PULL-2",
+    "level": "beginner",
     "muscles": "Lưng, Xô, Tay trước",
     "variant": "home",
     "exercises": [
@@ -1141,6 +1573,7 @@
   },
   {
     "code": "PULL-3",
+    "level": "beginner",
     "muscles": "Lưng, Xô, Tay trước",
     "variant": "home",
     "exercises": [
@@ -1184,6 +1617,7 @@
   },
   {
     "code": "PULL-4",
+    "level": "beginner",
     "muscles": "Lưng, Xô, Tay trước",
     "variant": "home",
     "exercises": [
@@ -1216,6 +1650,592 @@
         "name": "Banded Bicep Curl",
         "sets": "3",
         "reps": "12"
+      }
+    ]
+  },
+  {
+    "code": "UPPER-1",
+    "level": "intermediate",
+    "muscles": "Thân trên",
+    "variant": "full_gym",
+    "exercises": [
+      {
+        "code": "BP01",
+        "name": "Barbell Bench Press",
+        "sets": "5",
+        "reps": "5"
+      },
+      {
+        "code": "BL02",
+        "name": "Barbell Row",
+        "sets": "4",
+        "reps": "6"
+      },
+      {
+        "code": "SP01",
+        "name": "Barbell Overhead Press",
+        "sets": "4",
+        "reps": "4"
+      },
+      {
+        "code": "SO01",
+        "name": "Dumbbell Lateral Raise",
+        "sets": "3",
+        "reps": "12"
+      },
+      {
+        "code": "BC02",
+        "name": "Dumbbell Curl",
+        "sets": "3",
+        "reps": "10"
+      },
+      {
+        "code": "TC06",
+        "name": "Triceps Rope Pushdown",
+        "sets": "3",
+        "reps": "12"
+      }
+    ]
+  },
+  {
+    "code": "UPPER-2",
+    "level": "intermediate",
+    "muscles": "Thân trên",
+    "variant": "full_gym",
+    "exercises": [
+      {
+        "code": "BL04",
+        "name": "Dumbbell Row",
+        "sets": "4",
+        "reps": "10"
+      },
+      {
+        "code": "BP08",
+        "name": "Dumbbell Incline Bench Press",
+        "sets": "4",
+        "reps": "10"
+      },
+      {
+        "code": "SP03",
+        "name": "Dumbbell Shoulder Press",
+        "sets": "4",
+        "reps": "10"
+      },
+      {
+        "code": "RD01",
+        "name": "Dumbbell Rear Delt Fly",
+        "sets": "3",
+        "reps": "10"
+      },
+      {
+        "code": "BC04",
+        "name": "Dumbbell Hammer Curl",
+        "sets": "3",
+        "reps": "10"
+      },
+      {
+        "code": "TC06",
+        "name": "Triceps Rope Pushdown",
+        "sets": "3",
+        "reps": "12"
+      }
+    ]
+  },
+  {
+    "code": "UPPER-3",
+    "level": "intermediate",
+    "muscles": "Thân trên",
+    "variant": "full_gym",
+    "exercises": [
+      {
+        "code": "BL01",
+        "name": "Barbell Conventional Deadlift",
+        "sets": "5",
+        "reps": "5"
+      },
+      {
+        "code": "BP06",
+        "name": "Dumbbell Chest Fly",
+        "sets": "3",
+        "reps": "12"
+      },
+      {
+        "code": "SP05",
+        "name": "Dumbbell Arnold Press",
+        "sets": "4",
+        "reps": "10"
+      },
+      {
+        "code": "SO01",
+        "name": "Dumbbell Lateral Raise",
+        "sets": "3",
+        "reps": "15"
+      },
+      {
+        "code": "BC01",
+        "name": "Barbell Curl",
+        "sets": "3",
+        "reps": "15"
+      },
+      {
+        "code": "TC03",
+        "name": "Dumbbell Skull Crusher",
+        "sets": "3",
+        "reps": "15"
+      }
+    ]
+  },
+  {
+    "code": "UPPER-4",
+    "level": "intermediate",
+    "muscles": "Thân trên",
+    "variant": "full_gym",
+    "exercises": [
+      {
+        "code": "BP01",
+        "name": "Barbell Bench Press",
+        "sets": "5",
+        "reps": "5"
+      },
+      {
+        "code": "BP08",
+        "name": "Dumbbell Incline Bench Press",
+        "sets": "3",
+        "reps": "10"
+      },
+      {
+        "code": "BL09",
+        "name": "Lat Pulldown",
+        "sets": "4",
+        "reps": "10"
+      },
+      {
+        "code": "SP03",
+        "name": "Dumbbell Shoulder Press",
+        "sets": "4",
+        "reps": "8"
+      },
+      {
+        "code": "BL07",
+        "name": "Face Pull",
+        "sets": "3",
+        "reps": "10"
+      },
+      {
+        "code": "BC02",
+        "name": "Dumbbell Curl",
+        "sets": "3",
+        "reps": "10"
+      },
+      {
+        "code": "TC06",
+        "name": "Triceps Rope Pushdown",
+        "sets": "3",
+        "reps": "12"
+      }
+    ]
+  },
+  {
+    "code": "LOWER-1",
+    "level": "intermediate",
+    "muscles": "Chân, Đùi, Mông",
+    "variant": "full_gym",
+    "exercises": [
+      {
+        "code": "SQ01",
+        "name": "Barbell Back Squat",
+        "sets": "5",
+        "reps": "5"
+      },
+      {
+        "code": "DL04",
+        "name": "Barbell Sumo Deadlift",
+        "sets": "4",
+        "reps": "10"
+      },
+      {
+        "code": "LC01",
+        "name": "Lying Leg Curl",
+        "sets": "2",
+        "reps": "15"
+      },
+      {
+        "code": "DL02",
+        "name": "Dumbbell Romania Deadlift",
+        "sets": "3",
+        "reps": "12"
+      },
+      {
+        "code": "HT01",
+        "name": "Barbell Hip Thrust",
+        "sets": "4",
+        "reps": "10"
+      }
+    ]
+  },
+  {
+    "code": "LOWER-2",
+    "level": "intermediate",
+    "muscles": "Chân, Đùi, Mông",
+    "variant": "full_gym",
+    "exercises": [
+      {
+        "code": "DL04",
+        "name": "Barbell Sumo Deadlift",
+        "sets": "4",
+        "reps": "10"
+      },
+      {
+        "code": "SQ01",
+        "name": "Barbell Back Squat",
+        "sets": "4",
+        "reps": "12"
+      },
+      {
+        "code": "RP01",
+        "name": "Rope Pull Through",
+        "sets": "4",
+        "reps": "12"
+      },
+      {
+        "code": "LU02",
+        "name": "Dumbbell Lunge",
+        "sets": "2",
+        "reps": "20"
+      },
+      {
+        "code": "LC01",
+        "name": "Lying Leg Curl",
+        "sets": "3",
+        "reps": "15"
+      }
+    ]
+  },
+  {
+    "code": "LOWER-3",
+    "level": "intermediate",
+    "muscles": "Chân, Đùi, Mông",
+    "variant": "full_gym",
+    "exercises": [
+      {
+        "code": "SQ01",
+        "name": "Barbell Back Squat",
+        "sets": "6",
+        "reps": "5/3/1/5/3/3"
+      },
+      {
+        "code": "DL05",
+        "name": "Barbell Stiff Leg Deadlift",
+        "sets": "4",
+        "reps": "6"
+      },
+      {
+        "code": "LC01",
+        "name": "Lying Leg Curl",
+        "sets": "2",
+        "reps": "15"
+      },
+      {
+        "code": "LP01",
+        "name": "Leg Press",
+        "sets": "3",
+        "reps": "15"
+      },
+      {
+        "code": "LE01",
+        "name": "Leg Extension",
+        "sets": "3",
+        "reps": "15"
+      }
+    ]
+  },
+  {
+    "code": "LOWER-4",
+    "level": "intermediate",
+    "muscles": "Chân, Đùi, Mông",
+    "variant": "full_gym",
+    "exercises": [
+      {
+        "code": "SQ01",
+        "name": "Barbell Back Squat",
+        "sets": "5",
+        "reps": "5"
+      },
+      {
+        "code": "LP01",
+        "name": "Leg Press",
+        "sets": "4",
+        "reps": "12"
+      },
+      {
+        "code": "LU02",
+        "name": "Dumbbell Lunge",
+        "sets": "3",
+        "reps": "15"
+      },
+      {
+        "code": "HT01",
+        "name": "Barbell Hip Thrust",
+        "sets": "4",
+        "reps": "12"
+      },
+      {
+        "code": "RP01",
+        "name": "Rope Pull Through",
+        "sets": "3",
+        "reps": "12"
+      }
+    ]
+  },
+  {
+    "code": "PUSH-1",
+    "level": "intermediate",
+    "muscles": "Ngực, Vai, Tay sau",
+    "variant": "full_gym",
+    "exercises": [
+      {
+        "code": "BP01",
+        "name": "Barbell Bench Press",
+        "sets": "5",
+        "reps": "5"
+      },
+      {
+        "code": "BP08",
+        "name": "Dumbbell Incline Bench Press",
+        "sets": "4",
+        "reps": "10"
+      },
+      {
+        "code": "SP01",
+        "name": "Barbell Overhead Press",
+        "sets": "4",
+        "reps": "6"
+      },
+      {
+        "code": "FS03",
+        "name": "Cable Front Raise",
+        "sets": "3",
+        "reps": "10"
+      },
+      {
+        "code": "TC06",
+        "name": "Triceps Rope Pushdown",
+        "sets": "3",
+        "reps": "15"
+      },
+      {
+        "code": "TC05",
+        "name": "Tricep Kickback",
+        "sets": "3",
+        "reps": "15"
+      }
+    ]
+  },
+  {
+    "code": "PUSH-2",
+    "level": "intermediate",
+    "muscles": "Ngực, Vai, Tay sau",
+    "variant": "full_gym",
+    "exercises": [
+      {
+        "code": "SP01",
+        "name": "Barbell Overhead Press",
+        "sets": "5",
+        "reps": "5"
+      },
+      {
+        "code": "BP06",
+        "name": "Dumbbell Chest Fly",
+        "sets": "3",
+        "reps": "15"
+      },
+      {
+        "code": "BP05",
+        "name": "Cable Chest Fly",
+        "sets": "3",
+        "reps": "12"
+      },
+      {
+        "code": "RD01",
+        "name": "Dumbbell Rear Delt Fly",
+        "sets": "4",
+        "reps": "10"
+      },
+      {
+        "code": "TC01",
+        "name": "Dumbbell Overhead Tricep Extension",
+        "sets": "3",
+        "reps": "15"
+      }
+    ]
+  },
+  {
+    "code": "PULL-1",
+    "level": "intermediate",
+    "muscles": "Lưng, Xô, Tay trước",
+    "variant": "full_gym",
+    "exercises": [
+      {
+        "code": "BL01",
+        "name": "Barbell Conventional Deadlift",
+        "sets": "5",
+        "reps": "5"
+      },
+      {
+        "code": "BL02",
+        "name": "Barbell Row",
+        "sets": "4",
+        "reps": "10"
+      },
+      {
+        "code": "BL09",
+        "name": "Lat Pulldown",
+        "sets": "3",
+        "reps": "12"
+      },
+      {
+        "code": "BL13",
+        "name": "Machine-assisted Pull-up",
+        "sets": "3",
+        "reps": "15"
+      },
+      {
+        "code": "BL07",
+        "name": "Face Pull",
+        "sets": "3",
+        "reps": "10"
+      },
+      {
+        "code": "BC02",
+        "name": "Dumbbell Curl",
+        "sets": "3",
+        "reps": "10"
+      }
+    ]
+  },
+  {
+    "code": "PULL-2",
+    "level": "intermediate",
+    "muscles": "Lưng, Xô, Tay trước",
+    "variant": "full_gym",
+    "exercises": [
+      {
+        "code": "BL04",
+        "name": "Dumbbell Row",
+        "sets": "4",
+        "reps": "10"
+      },
+      {
+        "code": "BL09",
+        "name": "Lat Pulldown",
+        "sets": "4",
+        "reps": "8"
+      },
+      {
+        "code": "BL06",
+        "name": "Seated Cable Row",
+        "sets": "3",
+        "reps": "12"
+      },
+      {
+        "code": "BL14",
+        "name": "Close Grip Pulldown",
+        "sets": "3",
+        "reps": "12"
+      },
+      {
+        "code": "BC05",
+        "name": "Dumbbell Preacher Curl",
+        "sets": "3",
+        "reps": "15"
+      }
+    ]
+  },
+  {
+    "code": "PULL-3",
+    "level": "intermediate",
+    "muscles": "Lưng, Xô, Tay trước",
+    "variant": "full_gym",
+    "exercises": [
+      {
+        "code": "BL01",
+        "name": "Barbell Conventional Deadlift",
+        "sets": "5",
+        "reps": "5"
+      },
+      {
+        "code": "BL05",
+        "name": "Incline Dumbbell Row",
+        "sets": "4",
+        "reps": "10"
+      },
+      {
+        "code": "BL11",
+        "name": "Straight Arm Pulldown",
+        "sets": "4",
+        "reps": "12"
+      },
+      {
+        "code": "BL07",
+        "name": "Face Pull",
+        "sets": "3",
+        "reps": "10"
+      },
+      {
+        "code": "BC02",
+        "name": "Dumbbell Curl",
+        "sets": "2",
+        "reps": "15"
+      },
+      {
+        "code": "BL13",
+        "name": "Machine-assisted Pull-up",
+        "sets": "3",
+        "reps": "Max"
+      }
+    ]
+  },
+  {
+    "code": "PULL-4",
+    "level": "intermediate",
+    "muscles": "Lưng, Xô, Tay trước",
+    "variant": "full_gym",
+    "exercises": [
+      {
+        "code": "BL02",
+        "name": "Barbell Row",
+        "sets": "4",
+        "reps": "10"
+      },
+      {
+        "code": "BL15",
+        "name": "Machine High Row",
+        "sets": "4",
+        "reps": "10"
+      },
+      {
+        "code": "BL09",
+        "name": "Lat Pulldown",
+        "sets": "4",
+        "reps": "10"
+      },
+      {
+        "code": "BL06",
+        "name": "Seated Cable Row",
+        "sets": "4",
+        "reps": "10"
+      },
+      {
+        "code": "BC04",
+        "name": "Dumbbell Hammer Curl",
+        "sets": "3",
+        "reps": "8"
+      },
+      {
+        "code": "BC02",
+        "name": "Dumbbell Curl",
+        "sets": "2",
+        "reps": "15"
       }
     ]
   }

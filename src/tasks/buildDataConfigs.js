@@ -13,18 +13,20 @@ const DATA_DIR = './src/tasks/data';
 const IMAGES_SRC_DIR = './src/static';
 const IMAGES_PATH = '/images/exercises/';
 
-function buildDailyScheduleConfigs() {
-  const levelCodes = _.map(WORKOUT_LEVELS, 'code');
+async function buildDailyScheduleConfigs() {
+  const csvData = fp.flow(
+    fp.map('code'),
+    fp.concat(['shared']),
+    fp.map(code => fs.readFileSync(`${DATA_DIR}/daily_schedules/${code}.csv`, 'utf-8')),
+    fp.join('\n')
+  )(WORKOUT_LEVELS);
 
-  _.each([...levelCodes, 'shared'], async level => {
-    try {
-      const csvData = fs.readFileSync(`${DATA_DIR}/daily_schedules/${level}.csv`, 'utf-8');
-      const dailySchedules = await parseDailySchedules(csvData);
-      fs.writeFileSync(`${CONFIGS_DIR}/daily_schedules_${level}.json`, JSON.stringify(dailySchedules, null, 2));
-    } catch (error) {
-      console.warn(error);
-    }
-  });
+  try {
+    const dailySchedules = await parseDailySchedules(csvData);
+    fs.writeFileSync(`${CONFIGS_DIR}/daily_schedules.json`, JSON.stringify(dailySchedules, null, 2));
+  } catch (error) {
+    console.warn(error);
+  }
 }
 
 async function buildExercisesDatabaseConfigs() {

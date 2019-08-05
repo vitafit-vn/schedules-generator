@@ -54,8 +54,13 @@ export function renderDailySchedule({ customerInfo, dayIndex, personalizedData }
   const codes = dailyCodes[dayIndex];
   const date = weekStart.plus({ days: dayIndex });
 
-  const allSchedules = _.union(DAILY_SCHEDULES[workoutLevel], DAILY_SCHEDULES.shared);
-  const dayExercises = _.filter(allSchedules, ({ code }) => _.includes(codes, code));
+  const dayExercises = _.filter(
+    DAILY_SCHEDULES,
+    ({ code, level, variant }) =>
+      (level === workoutLevel || level === 'all') &&
+      (variant === 'full_gym' || variant === 'all') &&
+      _.includes(codes, code)
+  );
 
   // Off day
   if (_.isEmpty(dayExercises)) return undefined;
@@ -89,8 +94,12 @@ export function renderWeeklySchedule({ customerInfo, personalizedData }) {
   const weekEnd = _.last(datesInWeek);
 
   const daySchedules = _.map(dailyCodes, (codes, index) => {
-    const dayExercises = _.filter(_.union(DAILY_SCHEDULES[workoutLevel], DAILY_SCHEDULES.shared), ({ code }) =>
-      _.includes(codes, code)
+    const dayExercises = _.filter(
+      DAILY_SCHEDULES,
+      ({ code, level, variant }) =>
+        (level === workoutLevel || level === 'all') &&
+        (variant === 'full_gym' || variant === 'all') &&
+        _.includes(codes, code)
     );
 
     return buildDayExercises({ dayExercises, personalizedData, date: datesInWeek[index], dayIndex: index });

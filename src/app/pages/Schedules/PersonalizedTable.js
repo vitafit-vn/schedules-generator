@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import fp from 'lodash/fp';
 import { Component } from 'preact';
 import PropTypes from 'prop-types';
 
@@ -41,14 +42,22 @@ export default class PersonalizedTable extends Component {
   buildBodyRows = ({ weeklyCode, workoutLevel }) => {
     if (_.isEmpty(weeklyCode) || _.isEmpty(workoutLevel)) return;
 
-    const { dailyCodes } = _.find(WEEKLY_SCHEDULES, { code: weeklyCode });
+    const dailyCodes = fp.flow(
+      fp.find({ code: weeklyCode }),
+      fp.get('dailyCodes'),
+      fp.flatMap(_.identity)
+    )(WEEKLY_SCHEDULES);
 
-    const exerciseCodes = _.flatMap(dailyCodes, codes => {
-      const dayExercises = _.filter(_.union(DAILY_SCHEDULES[workoutLevel], DAILY_SCHEDULES.shared), ({ code }) =>
-        _.includes(codes, code)
-      );
-
-      return _.flatMap(dayExercises, ({ exercises }) => _.map(exercises, 'code'));
+    const exerciseCodes = _.flatMap(dailyCodes, dailyCode => {
+      return fp.flow(
+        fp.filter(
+          ({ code, level, variant }) =>
+            (level === workoutLevel || level === 'all') &&
+            (variant === 'full_gym' || variant === 'all') &&
+            code === dailyCode
+        ),
+        fp.flatMap(({ exercises }) => _.map(exercises, 'code'))
+      )(DAILY_SCHEDULES);
     });
 
     const bodyRows = _.map(_.uniq(exerciseCodes), code => {

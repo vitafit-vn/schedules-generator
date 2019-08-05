@@ -4,6 +4,17 @@ import fp from 'lodash/fp';
 // Constants
 import { OFF_DAY } from '../../app/constants';
 
+function parseDailyRow(row) {
+  const [dailyCode, muscles, level, variant] = row;
+
+  return {
+    code: _.trim(dailyCode),
+    level: _.trim(level),
+    muscles: _.trim(muscles),
+    variant: _.trim(variant),
+  };
+}
+
 export function convertDailySchedulesRecords(records) {
   const dailySchedules = [];
   let currentRow;
@@ -14,11 +25,8 @@ export function convertDailySchedulesRecords(records) {
     if (!_.isEmpty(row[0])) {
       // Save current schedule
       if (!_.isEmpty(currentRow)) {
-        const [dailyCode, muscles, variant] = currentRow;
         dailySchedules.push({
-          code: _.trim(dailyCode),
-          muscles: _.trim(muscles),
-          variant: _.trim(variant),
+          ...parseDailyRow(currentRow),
           exercises: currentExercises,
         });
       }
@@ -41,10 +49,11 @@ export function convertDailySchedulesRecords(records) {
   });
 
   // Save last schedule
-  if (!_.isEmpty(currentRow)) {
-    const [dailyCode, muscles, variant] = currentRow;
-    dailySchedules.push({ code: dailyCode, muscles, variant, exercises: currentExercises });
-  }
+  if (!_.isEmpty(currentRow))
+    dailySchedules.push({
+      ...parseDailyRow(currentRow),
+      exercises: currentExercises,
+    });
 
   return dailySchedules;
 }
