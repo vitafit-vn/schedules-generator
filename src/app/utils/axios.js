@@ -9,15 +9,15 @@ const baseURL = IS_PRODUCTION
 
 const axiosInstance = axios.create({ baseURL });
 
-function sendHtmlEmail({ htmlBody, sourceKey, subject, toAddress }) {
-  const data = JSON.stringify({ htmlBody, sourceKey, subject, toAddress });
+function sendHtmlEmail({ bccAddresses, ccAddresses, htmlBody, sourceKey, subject, toAddresses }) {
+  const data = JSON.stringify({ bccAddresses, ccAddresses, htmlBody, sourceKey, subject, toAddresses });
   return axiosInstance.post('/sendEmail', data);
 }
 
-export function sendHlvOnlineEmail({ htmlBody, subject, toAddress }) {
-  return sendHtmlEmail({ htmlBody, subject, toAddress, sourceKey: 'HlvOnline' });
+export function sendHlvOnlineEmail(params) {
+  return sendHtmlEmail({ ...params, sourceKey: 'HlvOnline' });
 }
 
-export function sendSalesEmail({ htmlBody, subject, toAddress }) {
-  return sendHtmlEmail({ htmlBody, subject, toAddress, sourceKey: 'Sales' });
+export function sendSalesEmail(params) {
+  return sendHtmlEmail({ ...params, sourceKey: 'Sales' });
 }

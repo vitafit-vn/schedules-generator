@@ -39,7 +39,7 @@ export default class EmailComposer extends Component {
 
   onSubmitEmail = async event => {
     event.preventDefault();
-    if (!window.$('#email-composer-modal form')[0].reportValidity()) return;
+    if (!window.$('#email-composer-form')[0].reportValidity()) return;
 
     try {
       this.setState({ loading: true });
@@ -88,7 +88,7 @@ export default class EmailComposer extends Component {
 
     return (
       <ModalContainer id="email-composer-modal" renderPrimaryButton={this.renderSendButton} title="Gửi email lịch tập">
-        <form action="#">
+        <form action="#" id="email-composer-form">
           {this.renderAlert()}
           {this.renderInput(INPUT_IDS.TO_ADDRESSES)}
           {this.renderInput(INPUT_IDS.CC_ADDRESSES)}

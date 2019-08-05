@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import { EmailComposer, FormInput } from 'app/components';
 
 // Utils
-// import { axios } from 'app/utils';
+import { axios } from 'app/utils';
 
 const DEFAULT_STATE = {
   allSchedules: [],
@@ -55,12 +55,11 @@ export default class SchedulesEmailComposer extends Component {
     this.setState({ selectedSchedule, subject });
   };
 
-  onSendEmail = async ({ bccAddresses, ccAddresses, toAddresses, subject }) => {
+  onSendEmail = ({ bccAddresses, ccAddresses, toAddresses, subject }) => {
     const { allSchedules, selectedSchedule } = this.state;
     const schedule = _.find(allSchedules, { name: selectedSchedule });
     const htmlBody = schedule.toHtml();
-    console.debug({ bccAddresses, ccAddresses, htmlBody, subject, toAddresses });
-    // axios.sendHlvOnlineEmail({ bccAddresses, ccAddresses, htmlBody, subject, toAddresses });
+    return axios.sendHlvOnlineEmail({ bccAddresses, ccAddresses, htmlBody, subject, toAddresses });
   };
 
   renderEmailPreview = () => {
