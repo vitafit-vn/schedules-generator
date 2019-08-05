@@ -39,8 +39,8 @@ export default class PersonalizedTable extends Component {
     }
   }
 
-  buildBodyRows = ({ weeklyCode, workoutLevel }) => {
-    if (_.isEmpty(weeklyCode) || _.isEmpty(workoutLevel)) return;
+  buildBodyRows = ({ weeklyCode, workoutLevel, workoutVariant }) => {
+    if (_.isEmpty(weeklyCode) || _.isEmpty(workoutLevel) || _.isEmpty(workoutVariant)) return;
 
     const dailyCodes = fp.flow(
       fp.find({ code: weeklyCode }),
@@ -53,7 +53,7 @@ export default class PersonalizedTable extends Component {
         fp.filter(
           ({ code, level, variant }) =>
             (level === workoutLevel || level === 'all') &&
-            (variant === 'full_gym' || variant === 'all') &&
+            (variant === workoutVariant || variant === 'all') &&
             code === dailyCode
         ),
         fp.flatMap('exercises'),

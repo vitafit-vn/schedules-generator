@@ -49,7 +49,7 @@ function buildDayExercises({ date, dayExercises, dayIndex, personalizedData }) {
 }
 
 export function renderDailySchedule({ customerInfo, dayIndex, personalizedData }) {
-  const { weekStart, weeklyCode, workoutLevel, ...userInfo } = customerInfo;
+  const { weekStart, weeklyCode, workoutLevel, workoutVariant, ...userInfo } = customerInfo;
   const { dailyCodes } = _.find(WEEKLY_SCHEDULES, { code: weeklyCode });
   const codes = dailyCodes[dayIndex];
   const date = weekStart.plus({ days: dayIndex });
@@ -58,7 +58,7 @@ export function renderDailySchedule({ customerInfo, dayIndex, personalizedData }
     DAILY_SCHEDULES,
     ({ code, level, variant }) =>
       (level === workoutLevel || level === 'all') &&
-      (variant === 'full_gym' || variant === 'all') &&
+      (variant === workoutVariant || variant === 'all') &&
       _.includes(codes, code)
   );
 
@@ -87,7 +87,7 @@ export function renderDailySchedule({ customerInfo, dayIndex, personalizedData }
 }
 
 export function renderWeeklySchedule({ customerInfo, personalizedData }) {
-  const { weekStart, weeklyCode, workoutLevel, ...userInfo } = customerInfo;
+  const { weekStart, weeklyCode, workoutLevel, workoutVariant, ...userInfo } = customerInfo;
   const { dailyCodes } = _.find(WEEKLY_SCHEDULES, { code: weeklyCode });
 
   const datesInWeek = _.map(_.range(WEEKDAYS.length), days => weekStart.plus({ days }));
@@ -98,7 +98,7 @@ export function renderWeeklySchedule({ customerInfo, personalizedData }) {
       DAILY_SCHEDULES,
       ({ code, level, variant }) =>
         (level === workoutLevel || level === 'all') &&
-        (variant === 'full_gym' || variant === 'all') &&
+        (variant === workoutVariant || variant === 'all') &&
         _.includes(codes, code)
     );
 

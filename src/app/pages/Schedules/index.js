@@ -29,11 +29,17 @@ export default class Schedules extends Component {
     return this.schedulesForm.reportValidity();
   }
 
-  onUpdateCustomerInfo = partial =>
-    this.setState(({ customerInfo }) => ({ customerInfo: { ...customerInfo, ...partial } }));
+  onUpdateCustomerInfo = partial => {
+    const { customerInfo: currentInfo } = this.state;
+    const customerInfo = { ...currentInfo, ...partial };
+    this.setState({ customerInfo });
+  };
 
-  onUpdatePersonalizedData = partial =>
-    this.setState(({ personalizedData }) => ({ personalizedData: { ...personalizedData, ...partial } }));
+  onUpdatePersonalizedData = partial => {
+    const { personalizedData: currentData } = this.state;
+    const personalizedData = { ...currentData, ...partial };
+    this.setState({ personalizedData });
+  };
 
   onFormRef = ref => (this.schedulesForm = ref); // eslint-disable-line no-return-assign
 

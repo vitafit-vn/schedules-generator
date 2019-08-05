@@ -65,26 +65,6 @@ export default class CustomerInfo extends Component {
     onUpdate: PropTypes.func.isRequired,
   };
 
-  constructor(props) {
-    super(props);
-
-    const {
-      birthYear,
-      customerId,
-      fullName,
-      height,
-      weekPeriod,
-      weeklyCode: presetWeeklyCode,
-      weight,
-      workoutLevel: presetWorkoutLevel,
-    } = this.props.data;
-
-    const weeklyCode = presetWeeklyCode || WEEKLY_SCHEDULES[0].code;
-    const workoutLevel = presetWorkoutLevel || WORKOUT_LEVELS[0].code;
-
-    this.state = { birthYear, customerId, fullName, height, weekPeriod, weeklyCode, weight, workoutLevel };
-  }
-
   onInputChange = key => event => this.props.onUpdate({ [key]: event.target.value });
 
   renderInput = (id, currentValue) => {
