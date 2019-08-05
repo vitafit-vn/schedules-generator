@@ -3,7 +3,7 @@ import { Component } from 'preact';
 import PropTypes from 'prop-types';
 
 // Template renderers
-import { renderSchedulesHTML } from 'app/templates';
+import { renderLT16Report } from 'app/templates';
 
 // Reusables
 import { FooterFormControls, NavBar } from 'app/components';
@@ -34,11 +34,11 @@ export default class LT16 extends Component {
 
   onFormRef = ref => (this.healthReportsForm = ref); // eslint-disable-line no-return-assign
 
-  onRenderReportsHTML = () => renderSchedulesHTML(this.state);
+  onRenderReports = () => renderLT16Report(this.state);
 
   onCreatePermalink = () => {
-    const { customerInfo, personalizedData } = this.state;
-    const permalink = buildPermalink('health_reports', { customerInfo, personalizedData });
+    const { customerInfo } = this.state;
+    const permalink = buildPermalink('lt16', { customerInfo });
     clipboardCopy(permalink);
   };
 
@@ -51,8 +51,9 @@ export default class LT16 extends Component {
     event.preventDefault();
     if (!this.formValid) return;
 
-    const calc = new Calc(this.state.customerInfo);
-    console.debug(calc);
+    const { customerInfo } = this.state;
+    const { computedValues } = new Calc(customerInfo);
+    console.debug({ computedValues, customerInfo });
   };
 
   render() {
@@ -75,9 +76,9 @@ export default class LT16 extends Component {
                 />
               </form>
             </div>
-            <div className="col-6 mx-auto" id="health-reports-preview"></div>
+            <div className="col-6 mx-auto" id="lt16-preview"></div>
           </div>
-          {/* <EmailComposer customerInfo={customerInfo} onRenderHTML={this.onRenderReportsHTML} /> */}
+          {/* <EmailComposer customerInfo={customerInfo} onRenderHTML={this.onRenderReports} /> */}
         </div>
       </div>
     );

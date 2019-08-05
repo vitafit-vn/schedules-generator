@@ -12,7 +12,7 @@ const TDEE_ADJUSTMENTS = {
 const TARGET_BMI = 20;
 const TARGET_FAT_PERCENTAGE = 0.2;
 
-function calcFatPercentage({ abs, gender, weight }) {
+function computeFatPercentage({ abs, gender, weight }) {
   const absInInch = converters
     .length(abs)
     .from('cm')
@@ -28,7 +28,7 @@ function calcFatPercentage({ abs, gender, weight }) {
   return (prefix - 0.082 * weightInPound) / weightInPound;
 }
 
-function calcMacro({ caloriesIn, weight }) {
+function computeMacro({ caloriesIn, weight }) {
   const protein = weight * 2;
   const fat = 0.02 * caloriesIn;
   const carb = (caloriesIn - (protein * 4 + fat * 9)) / 4;
@@ -44,14 +44,14 @@ function calTargetWeight(height) {
   return heightInMeter * heightInMeter * TARGET_BMI;
 }
 
-function calcAllData({ abs, activityRate, gender, height, target, weight }) {
-  const fatPercentage = calcFatPercentage({ abs, gender, weight });
+function computeAllData({ abs, activityRate, gender, height, target, weight }) {
+  const fatPercentage = computeFatPercentage({ abs, gender, weight });
   const lbm = (1 - fatPercentage) * weight;
   const bmr = 370 + 21.6 * lbm;
   const currentTdee = activityRate * bmr;
   const targetTdee = 1.55 * bmr;
   const caloriesIn = targetTdee + TDEE_ADJUSTMENTS[target];
-  const macro = calcMacro({ caloriesIn, weight });
+  const macro = computeMacro({ caloriesIn, weight });
   const targetWeight = calTargetWeight(height);
   const weightDelta = weight * fatPercentage - targetWeight * TARGET_FAT_PERCENTAGE;
 
@@ -73,6 +73,7 @@ export default class Calc {
     const target = checkObjectContains(TARGETS_MAPPING, params.target);
     const weight = parseFloat(params.weight);
 
-    Object.assign(this, calcAllData({ abs, activityRate, gender, height, target, weight }));
+    Object.assign(this, { abs, activityRate, gender, height, target, weight });
+    this.computedValues = computeAllData({ abs, activityRate, gender, height, target, weight });
   }
 }

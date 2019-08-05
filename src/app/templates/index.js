@@ -9,6 +9,7 @@ import { convertBirthYearToAge, computeChecksum, convertWeekPeriod } from 'app/u
 
 // Locals
 import DailySchedule from './DailySchedule';
+import LT16Report from './LT16Report';
 import WeeklySchedule from './WeeklySchedule';
 
 function buildExerciseData({ configs, index, personalizedData }) {
@@ -48,7 +49,7 @@ function buildDayExercises({ date, dayExercises, dayIndex, personalizedData }) {
   };
 }
 
-export function renderDailySchedule({ customerInfo, dayIndex, personalizedData }) {
+function renderDailySchedule({ customerInfo, dayIndex, personalizedData }) {
   const { weekStart, weeklyCode, workoutLevel, workoutVariant, ...userInfo } = customerInfo;
   const { dailyCodes } = _.find(WEEKLY_SCHEDULES, { code: weeklyCode });
   const codes = dailyCodes[dayIndex];
@@ -86,7 +87,7 @@ export function renderDailySchedule({ customerInfo, dayIndex, personalizedData }
   };
 }
 
-export function renderWeeklySchedule({ customerInfo, personalizedData }) {
+function renderWeeklySchedule({ customerInfo, personalizedData }) {
   const { weekStart, weeklyCode, workoutLevel, workoutVariant, ...userInfo } = customerInfo;
   const { dailyCodes } = _.find(WEEKLY_SCHEDULES, { code: weeklyCode });
 
@@ -127,7 +128,7 @@ export function renderWeeklySchedule({ customerInfo, personalizedData }) {
   };
 }
 
-export function renderSchedulesHTML({ customerInfo: originalInfo, personalizedData }) {
+export function renderAllSchedules({ customerInfo: originalInfo, personalizedData }) {
   const { birthYear, customerId, weeklyCode, weekPeriod, workoutLevel, ...restInfo } = originalInfo;
 
   const checksum = computeChecksum(customerId, workoutLevel, weeklyCode, weekPeriod);
@@ -148,4 +149,27 @@ export function renderSchedulesHTML({ customerInfo: originalInfo, personalizedDa
   const allSchedules = [weeklySchedule, ..._.compact(dailySchedules)];
 
   return { allSchedules, checksum };
+}
+
+export function renderLT16Report({ customerInfo }) {
+  const { birthYear, ...restInfo } = customerInfo;
+
+  const userInfo = {
+    ...restInfo,
+    age: convertBirthYearToAge(birthYear),
+  };
+
+  const renderingProps = {
+    userInfo,
+    pageTitle: 'VitaFit VN - Lộ trình Dinh dưỡng & Luyện tập thay đổi sức khoẻ & vóc dáng sau 16 tuần',
+    title: 'Lộ trình Dinh dưỡng & Luyện tập thay đổi sức khoẻ & vóc dáng sau 16 tuần',
+  };
+
+  const jsxElement = <LT16Report {...renderingProps} />;
+
+  return {
+    jsxElement,
+    name: 'lt16',
+    toHtml: () => renderToString(jsxElement),
+  };
 }

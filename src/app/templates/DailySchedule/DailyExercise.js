@@ -13,7 +13,7 @@ const DailyExercise = ({ exercises, title }) => (
         <ExerciseRow {...exercise} />
         {!_.isEmpty(imageUrl) && (
           <tr>
-            <td className="border border-primary p-2 text-justify" colSpan="2">
+            <td className="border border-primary p-2 text-center" colSpan="2">
               <img className="img-fluid" src={process.env.PUBLIC_PATH + imageUrl} />
             </td>
           </tr>

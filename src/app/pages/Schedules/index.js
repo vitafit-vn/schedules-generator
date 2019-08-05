@@ -4,7 +4,7 @@ import { Component } from 'preact';
 import PropTypes from 'prop-types';
 
 // Template renderers
-import { renderSchedulesHTML } from 'app/templates';
+import { renderAllSchedules } from 'app/templates';
 
 // Reusables
 import { FooterFormControls, NavBar } from 'app/components';
@@ -48,7 +48,7 @@ export default class Schedules extends Component {
 
   onFormRef = ref => (this.schedulesForm = ref); // eslint-disable-line no-return-assign
 
-  onRenderSchedules = () => renderSchedulesHTML(this.state);
+  onRenderSchedules = () => renderAllSchedules(this.state);
 
   onCreatePermalink = () => {
     const { customerInfo, personalizedData } = this.state;
@@ -59,15 +59,15 @@ export default class Schedules extends Component {
   onDownloadSchedules = async () => {
     if (!this.formValid) return;
 
-    const { allSchedules, checksum } = renderSchedulesHTML(this.state);
-    const prefix = `${this.state.customerInfo.customerId}_${checksum.substring(checksum.length - 6)}`;
-
-    const allFiles = _.map(allSchedules, ({ fileName, toHtml }) => ({
-      content: toHtml(),
-      fileName: `${prefix}-${fileName}.html`,
-    }));
-
     try {
+      const { allSchedules, checksum } = this.onRenderSchedules();
+      const prefix = `${this.state.customerInfo.customerId}_${checksum.substring(checksum.length - 6)}`;
+
+      const allFiles = _.map(allSchedules, ({ fileName, toHtml }) => ({
+        content: toHtml(),
+        fileName: `${prefix}-${fileName}.html`,
+      }));
+
       await zipAndSave(allFiles, `${prefix}.zip`);
     } catch (error) {
       alert(error.message); // eslint-disable-line no-alert
@@ -83,7 +83,7 @@ export default class Schedules extends Component {
     event.preventDefault();
     if (!this.formValid) return;
 
-    const { allSchedules } = renderSchedulesHTML(this.state);
+    const { allSchedules } = this.onRenderSchedules();
     this.setState({ allSchedules });
   };
 
