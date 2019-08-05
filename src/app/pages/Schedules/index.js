@@ -13,9 +13,9 @@ import { buildPermalink, parsePermalink, zipAndSave } from 'app/utils';
 
 // Locals
 import CustomerInfo from './CustomerInfo';
-import EmailComposer from './EmailComposer';
 import PersonalizedTable from './PersonalizedTable';
 import SchedulesAccordion from './SchedulesAccordion';
+import SchedulesEmailComposer from './SchedulesEmailComposer';
 import defaultState from './defaultState';
 
 export default class Schedules extends Component {
@@ -43,7 +43,7 @@ export default class Schedules extends Component {
 
   onFormRef = ref => (this.schedulesForm = ref); // eslint-disable-line no-return-assign
 
-  onRenderSchedulesHTML = () => renderSchedulesHTML(this.state);
+  onRenderSchedules = () => renderSchedulesHTML(this.state);
 
   onCreatePermalink = () => {
     const { customerInfo, personalizedData } = this.state;
@@ -105,7 +105,7 @@ export default class Schedules extends Component {
               onDownload={this.onDownloadSchedules}
             />
           </form>
-          <EmailComposer customerInfo={customerInfo} onRenderHTML={this.onRenderSchedulesHTML} />
+          <SchedulesEmailComposer customerInfo={customerInfo} onRenderSchedules={this.onRenderSchedules} />
         </div>
         <div className="my-3 mx-auto" id="schedules-preview">
           <SchedulesAccordion schedules={allSchedules} />

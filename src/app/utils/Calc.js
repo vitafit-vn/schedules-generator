@@ -48,8 +48,8 @@ export default class Calc {
   constructor(params) {
     const abs = parseFloat(params.abs);
     const activityRate = parseFloat(params.activityRate);
-    const gender = _.valuesIn(GENDERS_MAPPING, params.gender) ? params.gender : GENDERS_MAPPING.FEMALE;
-    const target = _.valuesIn(TARGETS_MAPPING, params.target) ? params.target : TARGETS_MAPPING.DECREASE;
+    const gender = _.includes(_.values(GENDERS_MAPPING), params.gender) ? params.gender : GENDERS_MAPPING.FEMALE;
+    const target = _.includes(_.values(TARGETS_MAPPING), params.target) ? params.target : TARGETS_MAPPING.DECREASE;
     const weight = parseFloat(params.weight);
 
     Object.assign(this, calcAllData({ abs, activityRate, gender, target, weight }));
