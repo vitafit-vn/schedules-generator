@@ -33,8 +33,12 @@ function buildNavConfigs(navList) {
 
 class NavBar extends Component {
   static propTypes = {
-    currentPath: PropTypes.string.isRequired,
+    currentPath: PropTypes.string,
     user: PropTypes.object,
+  };
+
+  static defaultProps = {
+    currentPath: '/',
   };
 
   renderNavMenu = () => {
