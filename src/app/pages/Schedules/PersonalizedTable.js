@@ -56,7 +56,8 @@ export default class PersonalizedTable extends Component {
             (variant === 'full_gym' || variant === 'all') &&
             code === dailyCode
         ),
-        fp.flatMap(({ exercises }) => _.map(exercises, 'code'))
+        fp.flatMap('exercises'),
+        fp.map('code')
       )(DAILY_SCHEDULES);
     });
 
