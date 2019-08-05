@@ -17,7 +17,7 @@ async function buildDailyScheduleConfigs() {
   const csvData = fp.flow(
     fp.map('code'),
     fp.concat(['shared']),
-    fp.map(code => fs.readFileSync(`${DATA_DIR}/daily_schedules/${code}.csv`, 'utf-8')),
+    fp.map(chunk => fs.readFileSync(`${DATA_DIR}/daily_schedules/${chunk}.csv`, 'utf-8')),
     fp.join('\n')
   )(WORKOUT_LEVELS);
 
@@ -31,7 +31,9 @@ async function buildDailyScheduleConfigs() {
 
 async function buildExercisesDatabaseConfigs() {
   const csvData = fp.flow(
-    fp.map(({ code }) => fs.readFileSync(`${DATA_DIR}/exercises_database/${code}.csv`, 'utf-8')),
+    fp.map('code'),
+    fp.concat(['shared']),
+    fp.map(chunk => fs.readFileSync(`${DATA_DIR}/exercises_database/${chunk}.csv`, 'utf-8')),
     fp.join('\n')
   )(WORKOUT_VARIANTS);
 
