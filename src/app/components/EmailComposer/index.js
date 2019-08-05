@@ -2,7 +2,10 @@ import { Component } from 'preact';
 import PropTypes from 'prop-types';
 
 // Components
-import { Alert, FormInput, ModalContainer, TextButton } from 'app/components';
+import Alert from '../Alert';
+import FormInput from '../FormInput';
+import ModalContainer from '../ModalContainer';
+import TextButton from '../TextButton';
 
 // Locals
 import { DEFAULT_STATE, INPUT_IDS, INPUT_CONFIGS, buildAlertMessage, normalizeInputValue } from './primitives';

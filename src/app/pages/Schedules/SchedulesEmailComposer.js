@@ -3,8 +3,7 @@ import { Component } from 'preact';
 import PropTypes from 'prop-types';
 
 // Components
-import { FormInput } from 'app/components';
-import EmailComposer from 'app/pages/Schedules/EmailComposer';
+import { EmailComposer, FormInput } from 'app/components';
 
 // Utils
 // import { axios } from 'app/utils';
