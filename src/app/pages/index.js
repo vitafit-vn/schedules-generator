@@ -4,10 +4,10 @@ import { Router, route } from 'preact-router';
 // Locals
 import { GlobalDataContext } from '../contexts';
 
-import HealthReports from './HealthReports';
 import Home from './Home';
-import Schedules from './Schedules';
+import LT16 from './LT16';
 import PlaceholderPage from './PlaceholderPage';
+import Schedules from './Schedules';
 
 export default class App extends Component {
   state = {
@@ -33,8 +33,8 @@ export default class App extends Component {
           <Home default />
           <Schedules path="/schedules" />
           <PlaceholderPage path="/meals" />
-          <HealthReports path="/health_reports" />
-          <PlaceholderPage path="/lt16" />
+          <LT16 path="/lt16" />
+          <PlaceholderPage path="/health_reports" />
         </Router>
       </GlobalDataContext.Provider>
     );

@@ -33,7 +33,7 @@ function buildNavConfigs(navList) {
 
 class NavBar extends Component {
   static propTypes = {
-    page: PropTypes.string.isRequired,
+    currentPath: PropTypes.string.isRequired,
     user: PropTypes.object,
   };
 
@@ -49,14 +49,14 @@ class NavBar extends Component {
   };
 
   renderNavItem = ({ label, key, path, subNavs }) => {
-    const { page } = this.props;
+    const { currentPath } = this.props;
 
     if (path == null && _.isEmpty(subNavs)) return null;
 
     // Single navs
     if (_.isEmpty(subNavs)) {
       return (
-        <li className={`${key === page ? 'active' : ''} nav-item`}>
+        <li className={`${path === currentPath ? 'active' : ''} nav-item`}>
           <a className="nav-link" href={path}>
             {label}
           </a>
@@ -65,8 +65,8 @@ class NavBar extends Component {
     }
 
     const isActive = fp.flow(
-      fp.map('key'),
-      fp.includes(page)
+      fp.map('path'),
+      fp.includes(currentPath)
     )(subNavs);
 
     return (
@@ -84,7 +84,7 @@ class NavBar extends Component {
         </a>
         <div aria-labelledby={`nav-bar-dropdown-${key}`} className="dropdown-menu">
           {_.map(subNavs, nav => (
-            <a className={`${nav.key === page ? 'active' : ''} dropdown-item`} href={nav.path}>
+            <a className={`${nav.path === currentPath ? 'active' : ''} dropdown-item`} href={nav.path}>
               {nav.label}
             </a>
           ))}

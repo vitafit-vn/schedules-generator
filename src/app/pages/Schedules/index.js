@@ -1,6 +1,7 @@
 import clipboardCopy from 'clipboard-copy';
 import _ from 'lodash';
 import { Component } from 'preact';
+import PropTypes from 'prop-types';
 
 // Template renderers
 import { renderSchedulesHTML } from 'app/templates';
@@ -19,6 +20,10 @@ import SchedulesEmailComposer from './SchedulesEmailComposer';
 import defaultState from './defaultState';
 
 export default class Schedules extends Component {
+  static propTypes = {
+    path: PropTypes.string.isRequired,
+  };
+
   state = {
     ...defaultState,
     ...parsePermalink(),
@@ -87,7 +92,7 @@ export default class Schedules extends Component {
 
     return (
       <div>
-        <NavBar page="schedules" />
+        <NavBar currentPath={this.props.path} />
         <div className="container px-0">
           <h3 className="mb-3 text-primary">{'Công cụ Tạo lịch tập'}</h3>
           <form action="#" onSubmit={this.onPreviewSchedules} ref={this.onFormRef}>

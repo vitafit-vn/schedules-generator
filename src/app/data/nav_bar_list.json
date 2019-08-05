@@ -1,8 +1,7 @@
 [
   {
     "key": "home",
-    "label": "Trang chủ",
-    "path": "/"
+    "label": "Trang chủ"
   },
   {
     "key": "ops",

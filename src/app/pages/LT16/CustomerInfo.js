@@ -93,13 +93,10 @@ export default class CustomerInfo extends Component {
         </div>
         <div className="row">
           <div className="col">{this.renderInput(INPUT_IDS.ABS)}</div>
-          <div className="col">{this.renderInput(INPUT_IDS.HIP)}</div>
-        </div>
-        <div className="row">
           <div className="col">{this.renderInput(INPUT_IDS.ACTIVITY_RATE)}</div>
-          <div className="col">{this.renderInput(INPUT_IDS.TARGET)}</div>
         </div>
         <div className="row">
+          <div className="col">{this.renderInput(INPUT_IDS.TARGET)}</div>
           <div className="col">{this.renderInput(INPUT_IDS.ISSUE_DATE)}</div>
         </div>
       </div>

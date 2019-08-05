@@ -15,6 +15,12 @@ export function buildPermalink(service, data) {
   return `${process.env.PUBLIC_PATH}/${service}?${compressed}`;
 }
 
+export function checkObjectContains(object, value) {
+  const allValues = _.values(object);
+  if (_.includes(allValues, value)) return value;
+  return object[allValues[0]];
+}
+
 export function computeChecksum(...args) {
   return shajs('sha1')
     .update(_.join(args, '_'))

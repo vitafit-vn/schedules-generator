@@ -1,15 +1,14 @@
 {
   "customerInfo": {
-    "abs": "82",
+    "abs": "80",
     "activityRate": "1.2",
-    "birthYear": "1989",
-    "customerId": "VF0001",
-    "fullName": "Chị Kiều Thùy",
+    "birthYear": "1982",
+    "customerId": "VF0238",
+    "fullName": "Chị Hằng",
     "gender": "female",
-    "height": "162",
-    "hip": "89",
+    "height": "157",
     "issueDate": "2019-07-27",
     "target": "decrease",
-    "weight": "60"
+    "weight": "62"
   }
 }

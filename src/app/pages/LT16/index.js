@@ -1,6 +1,6 @@
 import clipboardCopy from 'clipboard-copy';
-// import _ from 'lodash';
 import { Component } from 'preact';
+import PropTypes from 'prop-types';
 
 // Template renderers
 import { renderSchedulesHTML } from 'app/templates';
@@ -15,7 +15,11 @@ import { Calc, buildPermalink, parsePermalink } from 'app/utils';
 import CustomerInfo from './CustomerInfo';
 import defaultState from './defaultState';
 
-export default class HealthReports extends Component {
+export default class LT16 extends Component {
+  static propTypes = {
+    path: PropTypes.string.isRequired,
+  };
+
   state = {
     ...defaultState,
     ...parsePermalink(),
@@ -47,8 +51,7 @@ export default class HealthReports extends Component {
     event.preventDefault();
     if (!this.formValid) return;
 
-    const { abs, activityRate, gender, target, weight } = this.state.customerInfo;
-    const calc = new Calc({ abs, activityRate, gender, target, weight });
+    const calc = new Calc(this.state.customerInfo);
     console.debug(calc);
   };
 
@@ -57,9 +60,9 @@ export default class HealthReports extends Component {
 
     return (
       <div>
-        <NavBar page="health_reports" />
+        <NavBar currentPath={this.props.path} />
         <div className="container px-0">
-          <h3 className="mb-3 text-primary">{'Công cụ Báo cáo chỉ số sức khoẻ khách hàng'}</h3>
+          <h3 className="mb-3 text-primary">{'Công cụ tạo lộ trình LT16'}</h3>
           <div className="mb-3 row">
             <div className="col-4">
               <form action="#" onSubmit={this.onPreviewSchedules} ref={this.onFormRef}>

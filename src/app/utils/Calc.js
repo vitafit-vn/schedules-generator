@@ -9,6 +9,9 @@ const TDEE_ADJUSTMENTS = {
   [TARGETS_MAPPING.INCREASE]: 400,
 };
 
+const TARGET_BMI = 20;
+const TARGET_FAT_PERCENTAGE = 0.2;
+
 function calcFatPercentage({ abs, gender, weight }) {
   const absInInch = converters
     .length(abs)
@@ -32,7 +35,16 @@ function calcMacro({ caloriesIn, weight }) {
   return { carb, fat, protein };
 }
 
-function calcAllData({ abs, activityRate, gender, target, weight }) {
+function calTargetWeight(height) {
+  const heightInMeter = converters
+    .length(height)
+    .from('cm')
+    .to('m').value;
+
+  return heightInMeter * heightInMeter * TARGET_BMI;
+}
+
+function calcAllData({ abs, activityRate, gender, height, target, weight }) {
   const fatPercentage = calcFatPercentage({ abs, gender, weight });
   const lbm = (1 - fatPercentage) * weight;
   const bmr = 370 + 21.6 * lbm;
@@ -40,18 +52,27 @@ function calcAllData({ abs, activityRate, gender, target, weight }) {
   const targetTdee = 1.55 * bmr;
   const caloriesIn = targetTdee + TDEE_ADJUSTMENTS[target];
   const macro = calcMacro({ caloriesIn, weight });
+  const targetWeight = calTargetWeight(height);
+  const weightDelta = weight * fatPercentage - targetWeight * TARGET_FAT_PERCENTAGE;
 
-  return { bmr, caloriesIn, currentTdee, fatPercentage, lbm, macro, targetTdee };
+  return { bmr, caloriesIn, currentTdee, fatPercentage, lbm, macro, targetTdee, targetWeight, weightDelta };
+}
+
+function checkObjectContains(object, value) {
+  const allValues = _.values(object);
+  if (_.includes(allValues, value)) return value;
+  return object[allValues[0]];
 }
 
 export default class Calc {
   constructor(params) {
     const abs = parseFloat(params.abs);
     const activityRate = parseFloat(params.activityRate);
-    const gender = _.includes(_.values(GENDERS_MAPPING), params.gender) ? params.gender : GENDERS_MAPPING.FEMALE;
-    const target = _.includes(_.values(TARGETS_MAPPING), params.target) ? params.target : TARGETS_MAPPING.DECREASE;
+    const gender = checkObjectContains(GENDERS_MAPPING, params.gender);
+    const height = parseFloat(params.height);
+    const target = checkObjectContains(TARGETS_MAPPING, params.target);
     const weight = parseFloat(params.weight);
 
-    Object.assign(this, calcAllData({ abs, activityRate, gender, target, weight }));
+    Object.assign(this, calcAllData({ abs, activityRate, gender, height, target, weight }));
   }
 }

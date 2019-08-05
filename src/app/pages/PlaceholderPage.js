@@ -9,7 +9,7 @@ const PlaceholderPage = ({ path }) => {
 
   return (
     <div>
-      <NavBar page={page} />
+      <NavBar currentPath={path} />
       <p>{_.capitalize(page)}</p>
     </div>
   );
