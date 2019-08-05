@@ -7,12 +7,15 @@
   "license": "MIT",
   "scripts": {
     "build": "BABEL_ENV=production webpack --config webpack.config.prod.js",
-    "deploy:s3": "yarn build && aws s3 sync ./dist s3://tools.vitafit.vn --profile vitafit && aws cloudfront create-invalidation --distribution-id E1O3X5N9XVWYK6 --paths \"/*\" --profile vitafit",
+    "deploy:s3": "yarn build && yarn sync-s3 && yarn invalidate-cloudfront",
+    "invalidate-cloudfront": "aws cloudfront create-invalidation --distribution-id E1O3X5N9XVWYK6 --paths \"/*\" --profile vitafit",
     "lint:html": "pa11y-ci ./src/**/*.html",
     "lint:js": "eslint src/app/**/*.js",
     "lint:styles": "stylelint \"src/**/*.scss\"",
     "prebuild": "babel-node ./src/tasks/buildDataConfigs.js",
-    "start": "yarn build && serve ./dist --single",
+    "sync-s3": "aws s3 sync ./dist s3://tools.vitafit.vn --profile vitafit",
+    "serve": "serve ./dist --single",
+    "start": "yarn build && yarn serve",
     "start:dev": "webpack-dev-server --config webpack.config.dev.js"
   },
   "devDependencies": {
