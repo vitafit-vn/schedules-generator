@@ -48,24 +48,25 @@ export default class PersonalizedTable extends Component {
       fp.flatMap(_.identity)
     )(WEEKLY_SCHEDULES);
 
-    const exerciseCodes = _.flatMap(dailyCodes, dailyCode => {
-      return fp.flow(
-        fp.filter(
-          ({ code, level, variant }) =>
-            (level === workoutLevel || level === 'all') &&
-            (variant === workoutVariant || variant === 'all') &&
-            code === dailyCode
-        ),
-        fp.flatMap('exercises'),
-        fp.map('code')
-      )(DAILY_SCHEDULES);
-    });
+    const exerciseCodes = fp.flow(
+      fp.filter(
+        ({ code, level, variant }) =>
+          (level === workoutLevel || level === 'all') &&
+          (variant === workoutVariant || variant === 'all') &&
+          _.includes(dailyCodes, code)
+      ),
+      fp.flatMap('exercises'),
+      fp.map('code')
+    )(DAILY_SCHEDULES);
 
-    const bodyRows = _.map(_.uniq(exerciseCodes), code => {
-      const exercise = _.find(EXERCISES_DATABASE, { code });
-      const { name } = exercise;
-      return { code, name };
-    });
+    const bodyRows = fp.flow(
+      fp.uniq,
+      fp.map(code => {
+        const exercise = _.find(EXERCISES_DATABASE, { code });
+        const { name } = exercise;
+        return { code, name };
+      })
+    )(exerciseCodes);
 
     return bodyRows;
   };

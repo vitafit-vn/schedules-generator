@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import fp from 'lodash/fp';
 import renderToString from 'preact-render-to-string';
 
 // Constants
@@ -11,6 +12,16 @@ import { convertBirthYearToAge, computeChecksum, convertWeekPeriod } from 'app/u
 import DailySchedule from './DailySchedule';
 import LT16Report from './LT16Report';
 import WeeklySchedule from './WeeklySchedule';
+
+function findDayExercise({ dailyCode, workoutLevel, workoutVariant }) {
+  return _.find(
+    DAILY_SCHEDULES,
+    ({ code, level, variant }) =>
+      (level === workoutLevel || level === 'all') &&
+      (variant === workoutVariant || variant === 'all') &&
+      code === dailyCode
+  );
+}
 
 function buildExerciseData({ configs, index, personalizedData }) {
   const { code } = configs;
@@ -43,8 +54,12 @@ function buildDayExercises({ date, dayExercises, dayIndex, personalizedData }) {
   const { code, muscles } = dayExercises[0];
   const flattenExercises = _.flatMap(dayExercises, 'exercises');
 
+  const exercises = _.map(flattenExercises, (configs, idx) =>
+    buildExerciseData({ configs, personalizedData, index: idx })
+  );
+
   return {
-    exercises: _.map(flattenExercises, (configs, idx) => buildExerciseData({ configs, personalizedData, index: idx })),
+    exercises,
     title: `${formattedDate}: ${code} (${muscles})`,
   };
 }
@@ -55,13 +70,10 @@ function renderDailySchedule({ customerInfo, dayIndex, personalizedData }) {
   const codes = dailyCodes[dayIndex];
   const date = weekStart.plus({ days: dayIndex });
 
-  const dayExercises = _.filter(
-    DAILY_SCHEDULES,
-    ({ code, level, variant }) =>
-      (level === workoutLevel || level === 'all') &&
-      (variant === workoutVariant || variant === 'all') &&
-      _.includes(codes, code)
-  );
+  const dayExercises = fp.flow(
+    fp.map(dailyCode => findDayExercise({ dailyCode, workoutLevel, workoutVariant })),
+    fp.compact
+  )(codes);
 
   // Off day
   if (_.isEmpty(dayExercises)) return undefined;
@@ -95,13 +107,10 @@ function renderWeeklySchedule({ customerInfo, personalizedData }) {
   const weekEnd = _.last(datesInWeek);
 
   const daySchedules = _.map(dailyCodes, (codes, index) => {
-    const dayExercises = _.filter(
-      DAILY_SCHEDULES,
-      ({ code, level, variant }) =>
-        (level === workoutLevel || level === 'all') &&
-        (variant === workoutVariant || variant === 'all') &&
-        _.includes(codes, code)
-    );
+    const dayExercises = fp.flow(
+      fp.map(dailyCode => findDayExercise({ dailyCode, workoutLevel, workoutVariant })),
+      fp.compact
+    )(codes);
 
     return buildDayExercises({ dayExercises, personalizedData, date: datesInWeek[index], dayIndex: index });
   });
