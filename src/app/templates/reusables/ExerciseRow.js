@@ -24,7 +24,7 @@ const ExerciseRow = ({ difficulty, muscle, name, order, recommendedWeight, reps,
 
   const rows = _.compact([
     { label: 'Nhóm cơ', value: `${muscle} (${difficulty})` },
-    weight != null && { label: 'Mức tạ', value: buildWeightValue({ recommendedWeight, rpe }) },
+    weight != null && { label: 'Mức tạ', value: weight },
     { label: 'Số lượng', value: buildSetReps({ reps, sets }) },
     { label: 'Nghỉ', value: _.isEmpty(rest) ? '-' : `${rest}s` },
   ]);
@@ -41,7 +41,7 @@ const ExerciseRow = ({ difficulty, muscle, name, order, recommendedWeight, reps,
         </h5>
         <ul className="m-0 p-0">
           {_.map(rows, ({ label, value }) => (
-            <li className="list-inline-item mr-4">
+            <li className="list-inline-item ml-0 mr-4">
               {`${label}: `}
               <strong>{value}</strong>
             </li>
