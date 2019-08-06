@@ -168,12 +168,6 @@
     "variant": "all",
     "exercises": [
       {
-        "code": "CD06",
-        "name": "Cardio: Hop Over",
-        "sets": "10",
-        "reps": "30s"
-      },
-      {
         "code": "CD07",
         "name": "Cardio: Mountain Climbers",
         "sets": "10",
