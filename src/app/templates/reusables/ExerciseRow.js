@@ -41,7 +41,7 @@ const ExerciseRow = ({ difficulty, muscle, name, order, recommendedWeight, reps,
         </h5>
         <ul className="m-0 p-0">
           {_.map(rows, ({ label, value }) => (
-            <li className="list-inline-item ml-0 mr-4">
+            <li className="list-inline-item mr-4">
               {`${label}: `}
               <strong>{value}</strong>
             </li>
