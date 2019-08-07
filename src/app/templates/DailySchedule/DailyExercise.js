@@ -14,7 +14,7 @@ const DailyExercise = ({ exercises, title }) => (
         {!_.isEmpty(imageUrl) && (
           <tr>
             <td className="border border-primary p-2 text-center" colSpan="2">
-              <img className="img-fluid" src={process.env.PUBLIC_PATH + imageUrl} />
+              <img className="bg-white img-fluid" src={process.env.PUBLIC_PATH + imageUrl} />
             </td>
           </tr>
         )}
