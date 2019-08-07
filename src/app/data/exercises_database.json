@@ -1369,7 +1369,7 @@
     "muscle": "Bụng",
     "name": "Banded Core Rotation",
     "videoUrl": "https://youtu.be/Q-j6MLgM4jo",
-    "imageUrl": "/images/exercises/RBA1.svg"
+    "imageUrl": "/images/exercises/RBA1.png"
   },
   {
     "code": "RBA2",
@@ -1377,7 +1377,7 @@
     "muscle": "Bụng",
     "name": "High To Low Wood Chops",
     "videoUrl": "https://youtu.be/2AvO-FyLiEY?t=35",
-    "imageUrl": "/images/exercises/RBA2.svg"
+    "imageUrl": "/images/exercises/RBA2.png"
   },
   {
     "code": "RBA3",
@@ -1393,7 +1393,7 @@
     "muscle": "Bụng",
     "name": "Banded Kneeling Crunch",
     "videoUrl": "https://youtu.be/imWlkp8w1I4?t=32",
-    "imageUrl": "/images/exercises/RBA3.svg"
+    "imageUrl": "/images/exercises/RBA3.png"
   },
   {
     "code": "RBA4",
@@ -1410,7 +1410,7 @@
     "muscle": "Bụng",
     "name": "Banded Pallof Press",
     "videoUrl": "https://youtu.be/Y0e2w0aKOXw",
-    "imageUrl": "/images/exercises/RBA4.svg"
+    "imageUrl": "/images/exercises/RBA4.png"
   },
   {
     "code": "RBA5",
@@ -1418,7 +1418,7 @@
     "muscle": "Bụng",
     "name": "Low To High Wood Chops",
     "videoUrl": "https://youtu.be/kPugGvTvl1A?t=30",
-    "imageUrl": "/images/exercises/RBA5.svg"
+    "imageUrl": "/images/exercises/RBA5.png"
   },
   {
     "code": "RBL1",
@@ -1426,7 +1426,7 @@
     "muscle": "Chân",
     "name": "Cable Hip Abduction",
     "videoUrl": "",
-    "imageUrl": "/images/exercises/RBL1.svg"
+    "imageUrl": "/images/exercises/RBL1.png"
   },
   {
     "code": "RBL2",
@@ -1434,7 +1434,7 @@
     "muscle": "Chân",
     "name": "Squat To Rows",
     "videoUrl": "https://youtu.be/WGer5iQ6qRk",
-    "imageUrl": "/images/exercises/RBL2.svg"
+    "imageUrl": "/images/exercises/RBL2.png"
   },
   {
     "code": "RBL3",
@@ -1442,7 +1442,7 @@
     "muscle": "Chân",
     "name": "Banded Lying Leg Press",
     "videoUrl": "https://youtu.be/qp_RtWjHsV8",
-    "imageUrl": "/images/exercises/RBL3.svg"
+    "imageUrl": "/images/exercises/RBL3.png"
   },
   {
     "code": "RBL4",
@@ -1450,7 +1450,7 @@
     "muscle": "Chân",
     "name": "Banded Squat And Overhead Press",
     "videoUrl": "",
-    "imageUrl": "/images/exercises/RBL4.svg"
+    "imageUrl": "/images/exercises/RBL4.png"
   },
   {
     "code": "RBL5",
@@ -1458,7 +1458,7 @@
     "muscle": "Chân",
     "name": "Banded Squats",
     "videoUrl": "https://youtu.be/duP-UZsfOaQ",
-    "imageUrl": "/images/exercises/RBL5.svg"
+    "imageUrl": "/images/exercises/RBL5.png"
   },
   {
     "code": "RBL6",
@@ -1474,7 +1474,7 @@
     "muscle": "Lưng - Xô",
     "name": "Cable Shrugs",
     "videoUrl": "",
-    "imageUrl": "/images/exercises/RBB1.svg"
+    "imageUrl": "/images/exercises/RBB1.png"
   },
   {
     "code": "RBB2",
@@ -1482,7 +1482,7 @@
     "muscle": "Lưng - Xô",
     "name": "Cross Body Cable Rows",
     "videoUrl": "",
-    "imageUrl": "/images/exercises/RBB2.svg"
+    "imageUrl": "/images/exercises/RBB2.png"
   },
   {
     "code": "RBB3",
@@ -1490,7 +1490,7 @@
     "muscle": "Lưng - Xô",
     "name": "Banded Bent Over Rows",
     "videoUrl": "https://youtu.be/TE3v7CgXiiI?t=39",
-    "imageUrl": "/images/exercises/RBB3.svg"
+    "imageUrl": "/images/exercises/RBB3.png"
   },
   {
     "code": "RBB4",
@@ -1498,7 +1498,7 @@
     "muscle": "Lưng - Xô",
     "name": "Banded Seated Rows",
     "videoUrl": "https://youtu.be/sWZ4ZSe02dk",
-    "imageUrl": "/images/exercises/RBB4.svg"
+    "imageUrl": "/images/exercises/RBB4.png"
   },
   {
     "code": "RBB5",
@@ -1506,7 +1506,7 @@
     "muscle": "Lưng - Xô",
     "name": "Straight Arm Pulldown",
     "videoUrl": "https://youtu.be/K4VAFznrNLk?t=29",
-    "imageUrl": "/images/exercises/RBB5.svg"
+    "imageUrl": "/images/exercises/RBB5.png"
   },
   {
     "code": "RBB6",
@@ -1514,7 +1514,7 @@
     "muscle": "Lưng - Xô",
     "name": "Close Grip Lat Pulldown",
     "videoUrl": "https://youtu.be/3slLx-11z9k",
-    "imageUrl": "/images/exercises/RBB6.svg"
+    "imageUrl": "/images/exercises/RBB6.png"
   },
   {
     "code": "RBH1",
@@ -1522,7 +1522,7 @@
     "muscle": "Mông",
     "name": "Cable Hip Extensions",
     "videoUrl": "",
-    "imageUrl": "/images/exercises/RBH1.svg"
+    "imageUrl": "/images/exercises/RBH1.png"
   },
   {
     "code": "RBH2",
@@ -1530,7 +1530,7 @@
     "muscle": "Mông",
     "name": "Banded Clam Shells",
     "videoUrl": "",
-    "imageUrl": "/images/exercises/RBH2.svg"
+    "imageUrl": "/images/exercises/RBH2.png"
   },
   {
     "code": "RBH3",
@@ -1538,7 +1538,7 @@
     "muscle": "Mông",
     "name": "Banded Deadlifts",
     "videoUrl": "https://youtu.be/JqSk2ydDIkk",
-    "imageUrl": "/images/exercises/RBH3.svg"
+    "imageUrl": "/images/exercises/RBH3.png"
   },
   {
     "code": "RBH4",
@@ -1546,7 +1546,7 @@
     "muscle": "Mông",
     "name": "Banded Glute Bridges",
     "videoUrl": "https://youtu.be/GdSolgmyW68",
-    "imageUrl": "/images/exercises/RBH4.svg"
+    "imageUrl": "/images/exercises/RBH4.png"
   },
   {
     "code": "RBH5",
@@ -1554,7 +1554,7 @@
     "muscle": "Mông",
     "name": "Banded Glute Kickbacks",
     "videoUrl": "",
-    "imageUrl": "/images/exercises/RBH5.svg"
+    "imageUrl": "/images/exercises/RBH5.png"
   },
   {
     "code": "RBH6",
@@ -1562,7 +1562,7 @@
     "muscle": "Mông",
     "name": "Banded Side Steps",
     "videoUrl": "",
-    "imageUrl": "/images/exercises/RBH6.svg"
+    "imageUrl": "/images/exercises/RBH6.png"
   },
   {
     "code": "RBH7",
@@ -1583,7 +1583,7 @@
     "muscle": "Ngực",
     "name": "Banded Chest Press",
     "videoUrl": "https://youtu.be/j3ccNPK-P4U",
-    "imageUrl": "/images/exercises/RCH1.svg"
+    "imageUrl": "/images/exercises/RCH1.png"
   },
   {
     "code": "RCH2",
@@ -1591,7 +1591,7 @@
     "muscle": "Ngực",
     "name": "Banded Push-ups",
     "videoUrl": "https://youtu.be/FJmNfxrOaPI?t=51",
-    "imageUrl": "/images/exercises/RCH2.svg"
+    "imageUrl": "/images/exercises/RCH2.png"
   },
   {
     "code": "RCH3",
@@ -1599,7 +1599,7 @@
     "muscle": "Ngực",
     "name": "Standing Chest Press",
     "videoUrl": "",
-    "imageUrl": "/images/exercises/RCH3.svg"
+    "imageUrl": "/images/exercises/RCH3.png"
   },
   {
     "code": "RCH4",
@@ -1607,7 +1607,7 @@
     "muscle": "Ngực",
     "name": "Standing Chest Fly",
     "videoUrl": "https://youtu.be/1076zKHV7AM?t=33",
-    "imageUrl": "/images/exercises/RCH4.svg"
+    "imageUrl": "/images/exercises/RCH4.png"
   },
   {
     "code": "RTC1",
@@ -1615,7 +1615,7 @@
     "muscle": "Tay sau",
     "name": "Cable Rope Overhead Triceps Extensions",
     "videoUrl": "",
-    "imageUrl": "/images/exercises/RTC1.svg"
+    "imageUrl": "/images/exercises/RTC1.png"
   },
   {
     "code": "RTC2",
@@ -1623,7 +1623,7 @@
     "muscle": "Tay sau",
     "name": "Cable Tricep Kickbacks",
     "videoUrl": "",
-    "imageUrl": "/images/exercises/RTC2.svg"
+    "imageUrl": "/images/exercises/RTC2.png"
   },
   {
     "code": "RTC3",
@@ -1631,7 +1631,7 @@
     "muscle": "Tay sau",
     "name": "Banded Tricep Kickbacks",
     "videoUrl": "https://youtu.be/88ex10gjaGk?t=40",
-    "imageUrl": "/images/exercises/RTC3.svg"
+    "imageUrl": "/images/exercises/RTC3.png"
   },
   {
     "code": "RTC4",
@@ -1639,7 +1639,7 @@
     "muscle": "Tay sau",
     "name": "Banded Tricep Overhead Extensions",
     "videoUrl": "https://youtu.be/zhBNbr9dbFA?t=43",
-    "imageUrl": "/images/exercises/RTC4.svg"
+    "imageUrl": "/images/exercises/RTC4.png"
   },
   {
     "code": "RTC5",
@@ -1647,7 +1647,7 @@
     "muscle": "Tay sau",
     "name": "Banded Tricep Pushdown",
     "videoUrl": "https://youtu.be/dzfxVf-IOSE?t=34",
-    "imageUrl": "/images/exercises/RTC5.svg"
+    "imageUrl": "/images/exercises/RTC5.png"
   },
   {
     "code": "RBC1",
@@ -1655,7 +1655,7 @@
     "muscle": "Tay trước",
     "name": "Banded Bicep Hammer Curl",
     "videoUrl": "https://youtu.be/KIqRZEF_Aqg?t=42",
-    "imageUrl": "/images/exercises/RBC1.svg"
+    "imageUrl": "/images/exercises/RBC1.png"
   },
   {
     "code": "RBC2",
@@ -1663,7 +1663,7 @@
     "muscle": "Tay trước",
     "name": "Banded Bicep Curl",
     "videoUrl": "https://youtu.be/PXLF19Oqe3M?t=37",
-    "imageUrl": "/images/exercises/RBC2.svg"
+    "imageUrl": "/images/exercises/RBC2.png"
   },
   {
     "code": "RBC3",
@@ -1671,7 +1671,7 @@
     "muscle": "Tay trước",
     "name": "Cable Standing Bicep Curl",
     "videoUrl": "",
-    "imageUrl": "/images/exercises/RBC3.svg"
+    "imageUrl": "/images/exercises/RBC3.png"
   },
   {
     "code": "RBS1",
@@ -1679,7 +1679,7 @@
     "muscle": "Vai",
     "name": "Cable Upright Rows",
     "videoUrl": "",
-    "imageUrl": "/images/exercises/RBS1.svg"
+    "imageUrl": "/images/exercises/RBS1.png"
   },
   {
     "code": "RBS2",
@@ -1687,7 +1687,7 @@
     "muscle": "Vai",
     "name": "Banded External Shoulder Rotation",
     "videoUrl": "https://youtu.be/hWUtV-wxVQI?t=61",
-    "imageUrl": "/images/exercises/RBS2.svg"
+    "imageUrl": "/images/exercises/RBS2.png"
   },
   {
     "code": "RBS3",
@@ -1695,7 +1695,7 @@
     "muscle": "Vai",
     "name": "Banded Face Pull",
     "videoUrl": "https://youtu.be/Wq-Td9UXRK8",
-    "imageUrl": "/images/exercises/RBS3.svg"
+    "imageUrl": "/images/exercises/RBS3.png"
   },
   {
     "code": "RBS4",
@@ -1703,7 +1703,7 @@
     "muscle": "Vai",
     "name": "Banded Internal Cable Shoulder Rotation",
     "videoUrl": "",
-    "imageUrl": "/images/exercises/RBS4.svg"
+    "imageUrl": "/images/exercises/RBS4.png"
   },
   {
     "code": "RBS5",
@@ -1711,7 +1711,7 @@
     "muscle": "Vai",
     "name": "Banded Lateral Raises",
     "videoUrl": "https://youtu.be/ivk5wrpBp1A?t=37",
-    "imageUrl": "/images/exercises/RBS5.svg"
+    "imageUrl": "/images/exercises/RBS5.png"
   },
   {
     "code": "RBS6",
@@ -1719,7 +1719,7 @@
     "muscle": "Vai",
     "name": "Banded Shoulder Front Raises",
     "videoUrl": "https://youtu.be/1lO0JTw9yNk?t=38",
-    "imageUrl": "/images/exercises/RBS6.svg"
+    "imageUrl": "/images/exercises/RBS6.png"
   },
   {
     "code": "RBS7",
@@ -1727,7 +1727,7 @@
     "muscle": "Vai",
     "name": "Banded Shoulder Press",
     "videoUrl": "https://youtu.be/JMZxrSRpGhw?t=56",
-    "imageUrl": "/images/exercises/RBS7.svg"
+    "imageUrl": "/images/exercises/RBS7.png"
   },
   {
     "code": "BW01",
@@ -1735,7 +1735,7 @@
     "muscle": "Ngực",
     "name": "Bodyweight Push-ups",
     "videoUrl": "",
-    "imageUrl": "/images/exercises/BW01.svg"
+    "imageUrl": "/images/exercises/BW01.png"
   },
   {
     "code": "BW02",
@@ -1743,7 +1743,7 @@
     "muscle": "Chân",
     "name": "Bodyweight Squats",
     "videoUrl": "https://youtu.be/R1v152b72lo?t=61",
-    "imageUrl": "/images/exercises/BW02.svg"
+    "imageUrl": "/images/exercises/BW02.png"
   },
   {
     "code": "BW03",
@@ -1751,7 +1751,7 @@
     "muscle": "Chân",
     "name": "Bodyweight Walking Lunges",
     "videoUrl": "https://youtu.be/GJUjZ9ypp-k?t=80",
-    "imageUrl": "/images/exercises/BW03.svg"
+    "imageUrl": "/images/exercises/BW03.png"
   },
   {
     "code": "BW04",
@@ -1759,6 +1759,6 @@
     "muscle": "Vai",
     "name": "Bodyweight Shoulder Press",
     "videoUrl": "https://youtu.be/IEWmqrk_j2w?t=60",
-    "imageUrl": "/images/exercises/BW04.svg"
+    "imageUrl": "/images/exercises/BW04.png"
   }
 ]
