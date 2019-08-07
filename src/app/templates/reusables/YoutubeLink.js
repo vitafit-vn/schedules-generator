@@ -10,7 +10,6 @@ const YoutubeLink = ({ name, url }) => {
         alt={`${name} video url`}
         className="mb-1 ml-2"
         src={`${process.env.PUBLIC_PATH}/images/youtube-logo.png`}
-        srcSet={`${process.env.PUBLIC_PATH}/images/youtube-logo.svg`}
         width={25}
       />
     </a>
